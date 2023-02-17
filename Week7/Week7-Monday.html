@@ -1,0 +1,2331 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 7 Monday &#8212; UC Irvine Math 10, Fall 2022</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 7 Wednesday" href="Week7-Wednesday.html" />
+    <link rel="prev" title="Week 7" href="Week7-Intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10, Fall 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week0/Week0-Intro.html">
+   Week 0
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week0/Worksheet0.html">
+     Worksheet 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week0/Week0-Friday.html">
+     Week 0 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week1/Week1-Intro.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Monday.html">
+     Week 1 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Worksheet1.html">
+     Worksheet 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Tuesday.html">
+     Week 1 Tuesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Wednesday.html">
+     Week 1 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Worksheet2.html">
+     Worksheet 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Videos.html">
+     Week 1 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Friday.html">
+     Week 1 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week2/Week2-Intro.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Monday.html">
+     Week 2 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Wednesday.html">
+     Week 2 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Friday.html">
+     Week 2 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Worksheet3.html">
+     Worksheet 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Worksheet4.html">
+     Worksheet 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Videos.html">
+     Week 2 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week3/Week3-Intro.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Monday.html">
+     Week 3 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Wednesday.html">
+     Week 3 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Friday.html">
+     Week 3 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Worksheet5.html">
+     Worksheet 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Worksheet6.html">
+     Worksheet 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Videos.html">
+     Week 3 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week4/Week4-Intro.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Monday.html">
+     Week 4 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Wednesday.html">
+     Week 4 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Friday.html">
+     Week 4 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Worksheet7.html">
+     Worksheet 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Worksheet8.html">
+     Worksheet 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Videos.html">
+     Week 4 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week5/Week5-Intro.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Monday.html">
+     Week 5 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Friday.html">
+     Week 5 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Monday.html">
+     Week 6 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Wednesday.html">
+     Week 6 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Friday.html">
+     Week 6 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Worksheet9.html">
+     Worksheet 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Worksheet10.html">
+     Worksheet 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Videos.html">
+     Week 6 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week7-Intro.html">
+   Week 7
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Week 7 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week7-Wednesday.html">
+     Week 7 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Worksheet11.html">
+     Worksheet 11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Worksheet12.html">
+     Worksheet 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week7-Videos.html">
+     Week 7 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week8/Week8-Intro.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Videos.html">
+     Week 8 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Monday.html">
+     Week 8 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Wednesday.html">
+     Week 8 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Friday.html">
+     Week 8 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Worksheet13.html">
+     Worksheet 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Worksheet14.html">
+     Worksheet 14
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week9/Week9-Intro.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Monday.html">
+     Week 9 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Wednesday.html">
+     Week 9 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Worksheet15.html">
+     Worksheet 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Worksheet16.html">
+     Worksheet 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Videos.html">
+     Week 9 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week10/Week10-Intro.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Monday.html">
+     Week 10 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Wednesday.html">
+     Week 10 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Friday.html">
+     Week 10 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/ExtraTopics.html">
+     Possible extra topics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/StudentProjects.html">
+   Student Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MariaAvalos.html">
+     Analyzing and Visualizing Top Soccer Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NicholasBogarin.html">
+     Hollywood Movie Gross Income
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MingyuChen.html">
+     Attempts about finding aspects that can influence the effects of Music Therapy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NuoChen.html">
+     Predict the Chance of admission to Graduate School
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YuanGao.html">
+     Major League Baseball (MLB) Team Performances Predictions &amp; Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/RyanHarner.html">
+     Predicting Australian Cities With Weather
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AnerHuang.html">
+     Customer Personality Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/DerekJiang.html">
+     Replace this with your project title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EricJones.html">
+     Chip from Specs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EdenKim.html">
+     Global Life Expectancy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AryaKondur.html">
+     NBA Shot Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MichelleKwan.html">
+     Analysis on Starbucks &amp; McDonald’s Menu Items
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/SaraGraceLien.html">
+     Applying Machine Learning techniques to the Fashion MNIST data set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/DanielLim.html">
+     Spotify Popular Songs Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NatalieMartinez.html">
+     New York City Taxi Rides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AdityaKrishnanRadhakrishnan.html">
+     Video Game Sales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/CeceSun.html">
+     What contributes to a movie’s commercial success?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/KexinSun.html">
+     Car Price Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NanakoTatewaki.html">
+     Prediction of Canadian Car Accident
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/LeanderVonSchoenfeld.html">
+     Key Financial Metrics Analysis of S&amp;P 500 Stocks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EmilyWang.html">
+     Predicting Heart Disease
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/HaoyangWang.html">
+     The analysis of relations between the total covid-affected population and other datas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YifengXiong.html">
+     Predict Diabetes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/KevinXu.html">
+     Salary Classification By Using Decision Tree
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MingyanXu.html">
+     The relationship and prediction between Pokemon’s stats and generation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/ShengkaiYang.html">
+     NFL offense performance and analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/HuangxiaoZhang.html">
+     Netflix Stock Price
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YihaoZhang.html">
+     Title
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10-F22/main?urlpath=tree/Week7/Week7-Monday.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-F22"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Week7/Week7-Monday.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#announcements">
+   Announcements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-pandas-dataframe-merge-method">
+   The pandas DataFrame
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     merge
+    </span>
+   </code>
+   method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-code-from-the-last-class">
+   Some code from the last class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-regression-using-a-categorical-variable">
+   Linear Regression using a categorical variable
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 7 Monday</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#announcements">
+   Announcements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-pandas-dataframe-merge-method">
+   The pandas DataFrame
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     merge
+    </span>
+   </code>
+   method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-code-from-the-last-class">
+   Some code from the last class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-regression-using-a-categorical-variable">
+   Linear Regression using a categorical variable
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="week-7-monday">
+<h1>Week 7 Monday<a class="headerlink" href="#week-7-monday" title="Permalink to this headline">#</a></h1>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The next videos and video quizzes are posted.  Due Monday of Week 8 (because Friday is a holiday this week).</p></li>
+<li><p>Worksheets 9 and 10 due tomorrow.</p></li>
+<li><p>In-class quiz tomorrow based on K-means clustering and also has one question on <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> (which William discussed on Tuesday and we discussed on Friday).</p></li>
+<li><p>I have office hours after class at 11am, next door in ALP 3610.</p></li>
+<li><p>I posted sample solutions to Midterm 1.  They’re linked from the Course Updates section on our Canvas homepage.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-pandas-dataframe-merge-method">
+<h2>The pandas DataFrame <code class="docutils literal notranslate"><span class="pre">merge</span></code> method<a class="headerlink" href="#the-pandas-dataframe-merge-method" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">merge</span></code> method could have been covered in the first half of Math 10.  We are covering it now because it appears on today’s worksheet. There is also a related method <code class="docutils literal notranslate"><span class="pre">join</span></code>, but I am in the habit of using <code class="docutils literal notranslate"><span class="pre">merge</span></code>.</p>
+<ul class="simple">
+<li><p>Combine the data from the following two DataFrames using <code class="docutils literal notranslate"><span class="pre">df_menu.merge</span></code> together with <code class="docutils literal notranslate"><span class="pre">how=&quot;inner&quot;</span></code>.</p></li>
+<li><p>Practice question (won’t go over today): can you make the same result using the <code class="docutils literal notranslate"><span class="pre">map</span></code> method, like what we did with the stocks dataset?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_menu</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+                    <span class="s2">&quot;item&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;BLT&quot;</span><span class="p">,</span> <span class="s2">&quot;Egg sandwich&quot;</span><span class="p">,</span> <span class="s2">&quot;Ramen&quot;</span><span class="p">,</span> <span class="s2">&quot;Pumpkin Pie&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;Caesar salad&quot;</span><span class="p">,</span> <span class="s2">&quot;House salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Falafel wrap&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;food_type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Sandwich&quot;</span><span class="p">,</span> <span class="s2">&quot;Sandwich&quot;</span><span class="p">,</span> <span class="s2">&quot;Soup&quot;</span><span class="p">,</span> <span class="s2">&quot;Dessert&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Sandwich&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;Vegan&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+                    <span class="p">})</span>
+
+<span class="n">df_price</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+                    <span class="s2">&quot;food_type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Drink&quot;</span><span class="p">,</span> <span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Sandwich&quot;</span><span class="p">,</span> <span class="s2">&quot;Soup&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+                    <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_menu</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>food_type</th>
+      <th>Vegan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BLT</td>
+      <td>Sandwich</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Egg sandwich</td>
+      <td>Sandwich</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ramen</td>
+      <td>Soup</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pumpkin Pie</td>
+      <td>Dessert</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Caesar salad</td>
+      <td>Salad</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>House salad</td>
+      <td>Salad</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Falafel wrap</td>
+      <td>Sandwich</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_price</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>food_type</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Drink</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Salad</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Sandwich</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Soup</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The following doesn’t raise an error, but it also doesn’t do what we want.  For example, the prices are not aligned with the correct categories.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># doesn&#39;t work</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">df_menu</span><span class="p">,</span> <span class="n">df_price</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>food_type</th>
+      <th>Vegan</th>
+      <th>food_type</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BLT</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>Drink</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Egg sandwich</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>Salad</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ramen</td>
+      <td>Soup</td>
+      <td>False</td>
+      <td>Sandwich</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pumpkin Pie</td>
+      <td>Dessert</td>
+      <td>False</td>
+      <td>Soup</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Caesar salad</td>
+      <td>Salad</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>House salad</td>
+      <td>Salad</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Falafel wrap</td>
+      <td>Sandwich</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The following <code class="docutils literal notranslate"><span class="pre">how=&quot;left&quot;</span></code> syntax and its variants are related to database methods.  In this case, because the <code class="docutils literal notranslate"><span class="pre">df_menu</span></code> DataFrame is the DataFrame that occurs on the left side of the code, we are telling pandas to keep all of the rows from that DataFrame.  We match them to rows in the other DataFrame using the <code class="docutils literal notranslate"><span class="pre">&quot;food_type&quot;</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_menu</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_price</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;food_type&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>food_type</th>
+      <th>Vegan</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BLT</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Egg sandwich</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ramen</td>
+      <td>Soup</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pumpkin Pie</td>
+      <td>Dessert</td>
+      <td>False</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Caesar salad</td>
+      <td>Salad</td>
+      <td>False</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>House salad</td>
+      <td>Salad</td>
+      <td>True</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Falafel wrap</td>
+      <td>Sandwich</td>
+      <td>True</td>
+      <td>12.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The following is similar, but we use all of the rows from the <code class="docutils literal notranslate"><span class="pre">df_price</span></code> DataFrame.  Notice how the “Salad” row occurs twice, because it occurs twice in the <code class="docutils literal notranslate"><span class="pre">df_menu</span></code> DataFrame.  Notice how the “Pumpkin Pie” row does not show up, because “Dessert” does not occur in the right DataFrame.  (Don’t worry about the order of the rows.  I’m not certain how that is determined.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_menu</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_price</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;food_type&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>food_type</th>
+      <th>Vegan</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>Drink</td>
+      <td>NaN</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Caesar salad</td>
+      <td>Salad</td>
+      <td>False</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>House salad</td>
+      <td>Salad</td>
+      <td>True</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>BLT</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Egg sandwich</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Falafel wrap</td>
+      <td>Sandwich</td>
+      <td>True</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ramen</td>
+      <td>Soup</td>
+      <td>False</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The keyword argument <code class="docutils literal notranslate"><span class="pre">how=&quot;inner&quot;</span></code> is like an intersection.  We only keep rows if the corresponding “food_type” value occurs in both DataFrames.  Notice how there are no missing values in the following DataFrame, unlike the two previous DataFrames which did have <code class="docutils literal notranslate"><span class="pre">nan</span></code> values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_menu</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_price</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;food_type&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>food_type</th>
+      <th>Vegan</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BLT</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Egg sandwich</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Falafel wrap</td>
+      <td>Sandwich</td>
+      <td>True</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Ramen</td>
+      <td>Soup</td>
+      <td>False</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Caesar salad</td>
+      <td>Salad</td>
+      <td>False</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>House salad</td>
+      <td>Salad</td>
+      <td>True</td>
+      <td>16</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The following is like a union.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_menu</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_price</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;food_type&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>food_type</th>
+      <th>Vegan</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BLT</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Egg sandwich</td>
+      <td>Sandwich</td>
+      <td>False</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Falafel wrap</td>
+      <td>Sandwich</td>
+      <td>True</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Ramen</td>
+      <td>Soup</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Pumpkin Pie</td>
+      <td>Dessert</td>
+      <td>False</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Caesar salad</td>
+      <td>Salad</td>
+      <td>False</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>House salad</td>
+      <td>Salad</td>
+      <td>True</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>NaN</td>
+      <td>Drink</td>
+      <td>NaN</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>What if we don’t specify the <code class="docutils literal notranslate"><span class="pre">how</span></code> keyword argument?  We can check the documentation, which shows us that <code class="docutils literal notranslate"><span class="pre">&quot;inner&quot;</span></code> is the default value of this keyword argument.  So if we don’t specify <code class="docutils literal notranslate"><span class="pre">how</span></code>, it will be the same as specifying <code class="docutils literal notranslate"><span class="pre">how=&quot;inner&quot;</span></code>.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">df_menu</span><span class="o">.</span><span class="n">merge</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method merge in module pandas.core.frame:
+
+merge(right, how=&#39;inner&#39;, on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=(&#39;_x&#39;, &#39;_y&#39;), copy=True, indicator=False, validate=None) -&gt; &#39;DataFrame&#39; method of pandas.core.frame.DataFrame instance
+    Merge DataFrame or named Series objects with a database-style join.
+    
+    The join is done on columns or indexes. If joining columns on
+    columns, the DataFrame indexes *will be ignored*. Otherwise if joining indexes
+    on indexes or indexes on a column or columns, the index will be passed on.
+    When performing a cross merge, no column specifications to merge on are
+    allowed.
+    
+    Parameters
+    ----------
+    right : DataFrame or named Series
+        Object to merge with.
+    how : {&#39;left&#39;, &#39;right&#39;, &#39;outer&#39;, &#39;inner&#39;, &#39;cross&#39;}, default &#39;inner&#39;
+        Type of merge to be performed.
+    
+        * left: use only keys from left frame, similar to a SQL left outer join;
+          preserve key order.
+        * right: use only keys from right frame, similar to a SQL right outer join;
+          preserve key order.
+        * outer: use union of keys from both frames, similar to a SQL full outer
+          join; sort keys lexicographically.
+        * inner: use intersection of keys from both frames, similar to a SQL inner
+          join; preserve the order of the left keys.
+        * cross: creates the cartesian product from both frames, preserves the order
+          of the left keys.
+    
+          .. versionadded:: 1.2.0
+    
+    on : label or list
+        Column or index level names to join on. These must be found in both
+        DataFrames. If `on` is None and not merging on indexes then this defaults
+        to the intersection of the columns in both DataFrames.
+    left_on : label or list, or array-like
+        Column or index level names to join on in the left DataFrame. Can also
+        be an array or list of arrays of the length of the left DataFrame.
+        These arrays are treated as if they are columns.
+    right_on : label or list, or array-like
+        Column or index level names to join on in the right DataFrame. Can also
+        be an array or list of arrays of the length of the right DataFrame.
+        These arrays are treated as if they are columns.
+    left_index : bool, default False
+        Use the index from the left DataFrame as the join key(s). If it is a
+        MultiIndex, the number of keys in the other DataFrame (either the index
+        or a number of columns) must match the number of levels.
+    right_index : bool, default False
+        Use the index from the right DataFrame as the join key. Same caveats as
+        left_index.
+    sort : bool, default False
+        Sort the join keys lexicographically in the result DataFrame. If False,
+        the order of the join keys depends on the join type (how keyword).
+    suffixes : list-like, default is (&quot;_x&quot;, &quot;_y&quot;)
+        A length-2 sequence where each element is optionally a string
+        indicating the suffix to add to overlapping column names in
+        `left` and `right` respectively. Pass a value of `None` instead
+        of a string to indicate that the column name from `left` or
+        `right` should be left as-is, with no suffix. At least one of the
+        values must not be None.
+    copy : bool, default True
+        If False, avoid copy if possible.
+    indicator : bool or str, default False
+        If True, adds a column to the output DataFrame called &quot;_merge&quot; with
+        information on the source of each row. The column can be given a different
+        name by providing a string argument. The column will have a Categorical
+        type with the value of &quot;left_only&quot; for observations whose merge key only
+        appears in the left DataFrame, &quot;right_only&quot; for observations
+        whose merge key only appears in the right DataFrame, and &quot;both&quot;
+        if the observation&#39;s merge key is found in both DataFrames.
+    
+    validate : str, optional
+        If specified, checks if merge is of specified type.
+    
+        * &quot;one_to_one&quot; or &quot;1:1&quot;: check if merge keys are unique in both
+          left and right datasets.
+        * &quot;one_to_many&quot; or &quot;1:m&quot;: check if merge keys are unique in left
+          dataset.
+        * &quot;many_to_one&quot; or &quot;m:1&quot;: check if merge keys are unique in right
+          dataset.
+        * &quot;many_to_many&quot; or &quot;m:m&quot;: allowed, but does not result in checks.
+    
+    Returns
+    -------
+    DataFrame
+        A DataFrame of the two merged objects.
+    
+    See Also
+    --------
+    merge_ordered : Merge with optional filling/interpolation.
+    merge_asof : Merge on nearest keys.
+    DataFrame.join : Similar method using indices.
+    
+    Notes
+    -----
+    Support for specifying index levels as the `on`, `left_on`, and
+    `right_on` parameters was added in version 0.23.0
+    Support for merging named Series objects was added in version 0.24.0
+    
+    Examples
+    --------
+    &gt;&gt;&gt; df1 = pd.DataFrame({&#39;lkey&#39;: [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;, &#39;foo&#39;],
+    ...                     &#39;value&#39;: [1, 2, 3, 5]})
+    &gt;&gt;&gt; df2 = pd.DataFrame({&#39;rkey&#39;: [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;, &#39;foo&#39;],
+    ...                     &#39;value&#39;: [5, 6, 7, 8]})
+    &gt;&gt;&gt; df1
+        lkey value
+    0   foo      1
+    1   bar      2
+    2   baz      3
+    3   foo      5
+    &gt;&gt;&gt; df2
+        rkey value
+    0   foo      5
+    1   bar      6
+    2   baz      7
+    3   foo      8
+    
+    Merge df1 and df2 on the lkey and rkey columns. The value columns have
+    the default suffixes, _x and _y, appended.
+    
+    &gt;&gt;&gt; df1.merge(df2, left_on=&#39;lkey&#39;, right_on=&#39;rkey&#39;)
+      lkey  value_x rkey  value_y
+    0  foo        1  foo        5
+    1  foo        1  foo        8
+    2  foo        5  foo        5
+    3  foo        5  foo        8
+    4  bar        2  bar        6
+    5  baz        3  baz        7
+    
+    Merge DataFrames df1 and df2 with specified left and right suffixes
+    appended to any overlapping columns.
+    
+    &gt;&gt;&gt; df1.merge(df2, left_on=&#39;lkey&#39;, right_on=&#39;rkey&#39;,
+    ...           suffixes=(&#39;_left&#39;, &#39;_right&#39;))
+      lkey  value_left rkey  value_right
+    0  foo           1  foo            5
+    1  foo           1  foo            8
+    2  foo           5  foo            5
+    3  foo           5  foo            8
+    4  bar           2  bar            6
+    5  baz           3  baz            7
+    
+    Merge DataFrames df1 and df2, but raise an exception if the DataFrames have
+    any overlapping columns.
+    
+    &gt;&gt;&gt; df1.merge(df2, left_on=&#39;lkey&#39;, right_on=&#39;rkey&#39;, suffixes=(False, False))
+    Traceback (most recent call last):
+    ...
+    ValueError: columns overlap but no suffix specified:
+        Index([&#39;value&#39;], dtype=&#39;object&#39;)
+    
+    &gt;&gt;&gt; df1 = pd.DataFrame({&#39;a&#39;: [&#39;foo&#39;, &#39;bar&#39;], &#39;b&#39;: [1, 2]})
+    &gt;&gt;&gt; df2 = pd.DataFrame({&#39;a&#39;: [&#39;foo&#39;, &#39;baz&#39;], &#39;c&#39;: [3, 4]})
+    &gt;&gt;&gt; df1
+          a  b
+    0   foo  1
+    1   bar  2
+    &gt;&gt;&gt; df2
+          a  c
+    0   foo  3
+    1   baz  4
+    
+    &gt;&gt;&gt; df1.merge(df2, how=&#39;inner&#39;, on=&#39;a&#39;)
+          a  b  c
+    0   foo  1  3
+    
+    &gt;&gt;&gt; df1.merge(df2, how=&#39;left&#39;, on=&#39;a&#39;)
+          a  b  c
+    0   foo  1  3.0
+    1   bar  2  NaN
+    
+    &gt;&gt;&gt; df1 = pd.DataFrame({&#39;left&#39;: [&#39;foo&#39;, &#39;bar&#39;]})
+    &gt;&gt;&gt; df2 = pd.DataFrame({&#39;right&#39;: [7, 8]})
+    &gt;&gt;&gt; df1
+        left
+    0   foo
+    1   bar
+    &gt;&gt;&gt; df2
+        right
+    0   7
+    1   8
+    
+    &gt;&gt;&gt; df1.merge(df2, how=&#39;cross&#39;)
+       left  right
+    0   foo      7
+    1   foo      8
+    2   bar      7
+    3   bar      8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="some-code-from-the-last-class">
+<h2>Some code from the last class<a class="headerlink" href="#some-code-from-the-last-class" title="Permalink to this headline">#</a></h2>
+<p>Here is the base code we were using for linear regression on Friday.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;horsepower&quot;</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="s2">&quot;model_year&quot;</span><span class="p">,</span> <span class="s2">&quot;cylinders&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;mpg&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>horsepower   -0.003615
+weight       -0.006275
+model_year    0.746632
+cylinders    -0.127687
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet chevelle malibu</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>165.0</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick skylark 320</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150.0</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth satellite</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="linear-regression-using-a-categorical-variable">
+<h2>Linear Regression using a categorical variable<a class="headerlink" href="#linear-regression-using-a-categorical-variable" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Again perform linear regression, this time also including “origin” as an additional predictor.  Use a <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> object.</p></li>
+<li><p>These three new origin columns act like a separate intercept for each origin (one intercept for “europe”, one intercept for “japan”, one intercept for “usa”). Thus it makes sense to remove the <code class="docutils literal notranslate"><span class="pre">intercept</span></code> (also called bias) when we instantiate the <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> object.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;origin&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;usa&#39;, &#39;japan&#39;, &#39;europe&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>It would not make sense to perform linear regression using the “origin” column, because it contains strings.  Even if we convert those three strings to for example <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, that is still not a good idea, because it is forcing an order on the strings, as well as forcing the spacing between them.  Instead we will add a column to the DataFrame for each possible value in this column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This syntax is similar to the <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> syntax.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is our common error, of passing a one-dimensional object (a Series) instead of a two-dimensional object (a DataFrame).</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;origin&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;origin&quot;</span><span class="p">])</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py:818,</span> in <span class="ni">OneHotEncoder.fit</span><span class="nt">(self, X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">801</span><span class="sd"> Fit OneHotEncoder to X.</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span><span class="sd">     Fitted encoder.</span>
+<span class="g g-Whitespace">    </span><span class="mi">816</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_keywords</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">818</span> <span class="n">fit_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">819</span>     <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>     <span class="n">handle_unknown</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_unknown</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">821</span>     <span class="n">force_all_finite</span><span class="o">=</span><span class="s2">&quot;allow-nan&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">822</span>     <span class="n">return_counts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_infrequent_enabled</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">824</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_infrequent_enabled</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">825</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_fit_infrequent_category_mapping</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span>         <span class="n">fit_results</span><span class="p">[</span><span class="s2">&quot;n_samples&quot;</span><span class="p">],</span> <span class="n">fit_results</span><span class="p">[</span><span class="s2">&quot;category_counts&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span>     <span class="p">)</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py:80,</span> in <span class="ni">_BaseEncoder._fit</span><span class="nt">(self, X, handle_unknown, force_all_finite, return_counts)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_n_features</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_feature_names</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">80</span> <span class="n">X_list</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_X</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="n">X</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="n">force_all_finite</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">=</span> <span class="n">n_features</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">categories</span> <span class="o">!=</span> <span class="s2">&quot;auto&quot;</span><span class="p">:</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py:45,</span> in <span class="ni">_BaseEncoder._check_X</span><span class="nt">(self, X, force_all_finite)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd"> Perform custom check_array:</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd"> - convert list of strings to object dtype</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="s2">&quot;iloc&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="c1"># if not a dataframe, do normal check_array validation</span>
+<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="n">X_temp</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="n">force_all_finite</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">X_temp</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">str_</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="n">force_all_finite</span><span class="p">)</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/utils/validation.py:879,</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>     <span class="c1"># If input is 1D raise error</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>     <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">879</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>             <span class="s2">&quot;Expected 2D array, got 1D array instead:</span><span class="se">\n</span><span class="s2">array=</span><span class="si">{}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>             <span class="s2">&quot;Reshape your data either using array.reshape(-1, 1) if &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>             <span class="s2">&quot;your data has a single feature or array.reshape(1, -1) &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">883</span>             <span class="s2">&quot;if it contains a single sample.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">884</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">886</span> <span class="k">if</span> <span class="n">dtype_numeric</span> <span class="ow">and</span> <span class="n">array</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="s2">&quot;USV&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span>         <span class="s2">&quot;dtype=&#39;numeric&#39; is not compatible with arrays of bytes/strings.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span>         <span class="s2">&quot;Convert your data to numeric values explicitly instead.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">890</span>     <span class="p">)</span>
+
+<span class="ne">ValueError</span>: Expected 2D array, got 1D array instead:
+<span class="n">array</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span>
+ <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span>
+ <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span>
+ <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span>
+ <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;japan&#39;</span>
+ <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;japan&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;europe&#39;</span> <span class="s1">&#39;usa&#39;</span>
+ <span class="s1">&#39;usa&#39;</span> <span class="s1">&#39;usa&#39;</span><span class="p">]</span><span class="o">.</span>
+<span class="n">Reshape</span> <span class="n">your</span> <span class="n">data</span> <span class="n">either</span> <span class="n">using</span> <span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">your</span> <span class="n">data</span> <span class="n">has</span> <span class="n">a</span> <span class="n">single</span> <span class="n">feature</span> <span class="ow">or</span> <span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">it</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">single</span> <span class="n">sample</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the correct way to pass this single column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;origin&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-2 {color: black;background-color: white;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>OneHotEncoder()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder()</pre></div></div></div></div></div></div></div>
+</div>
+<p>We now transform the data.  (Notice how we use the method <code class="docutils literal notranslate"><span class="pre">transform</span></code> instead of <code class="docutils literal notranslate"><span class="pre">predict</span></code>.  We are not in the Machine Learning portion at the moment, we are not predicting anything.  Instead we are in the preprocessing or the data cleaning stage.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;origin&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;392x3 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 392 stored elements in Compressed Sparse Row format&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The produced object is a little strange, but we can convert it to a NumPy array.  (The array will contain mostly zeros, and so it can be more efficient to not store all of those rows separately.  That is why, by default, scikit-learn uses this sparse matrix object instead of a usual NumPy array.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;origin&quot;</span><span class="p">]])</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 1.],
+       [0., 0., 1.],
+       [0., 0., 1.],
+       ...,
+       [0., 0., 1.],
+       [0., 0., 1.],
+       [0., 0., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are three columns, corresponding to three values in the “origin” column.  Which column corresponds to which value?  We can use the following method to check.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;origin_europe&#39;, &#39;origin_japan&#39;, &#39;origin_usa&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s add these three new columns to our DataFrame.  To be safe, we will make the changes in a new DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>At some point (I don’t remember exactly where), we will get an error if we have the new column names in a NumPy array instead of a list, so here we convert it to a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">encoder</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_cols</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;origin_europe&#39;, &#39;origin_japan&#39;, &#39;origin_usa&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we put the above NumPy array into these three new columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="n">new_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;origin&quot;</span><span class="p">]])</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Think of these last three columns as like Boolean Series.  For example, everywhere we see a <code class="docutils literal notranslate"><span class="pre">1</span></code> in the “origin_europe” column, that signifies that the origin value is “europe”.  These columns don’t contain any new information (it was all already present in the “origin” column), but they are numeric, so they can be used for linear regression (or clustering or many other Machine Learning techniques that require numerical values).</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>origin_europe</th>
+      <th>origin_japan</th>
+      <th>origin_usa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>146</th>
+      <td>28.0</td>
+      <td>4</td>
+      <td>90.0</td>
+      <td>75.0</td>
+      <td>2125</td>
+      <td>14.5</td>
+      <td>74</td>
+      <td>usa</td>
+      <td>dodge colt</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>30.5</td>
+      <td>4</td>
+      <td>97.0</td>
+      <td>78.0</td>
+      <td>2190</td>
+      <td>14.1</td>
+      <td>77</td>
+      <td>europe</td>
+      <td>volkswagen dasher</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>23.0</td>
+      <td>4</td>
+      <td>120.0</td>
+      <td>97.0</td>
+      <td>2506</td>
+      <td>14.5</td>
+      <td>72</td>
+      <td>japan</td>
+      <td>toyouta corona mark ii (sw)</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>165.0</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick skylark 320</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>345</th>
+      <td>35.1</td>
+      <td>4</td>
+      <td>81.0</td>
+      <td>60.0</td>
+      <td>1760</td>
+      <td>16.1</td>
+      <td>81</td>
+      <td>japan</td>
+      <td>honda civic 1300</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>I think that on Wednesday we’ll perform linear regression to predict the miles-per-gallon of a car using these new columns as well as our <code class="docutils literal notranslate"><span class="pre">cols</span></code> list of columns from before.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Week7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week7-Intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 7</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Week7-Wednesday.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 7 Wednesday</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Christopher Davis<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

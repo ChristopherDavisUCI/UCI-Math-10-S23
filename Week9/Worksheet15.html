@@ -1,0 +1,1240 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Worksheet 15 &#8212; UC Irvine Math 10, Fall 2022</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Worksheet 16" href="Worksheet16.html" />
+    <link rel="prev" title="Week 9 Wednesday" href="Week9-Wednesday.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10, Fall 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week0/Week0-Intro.html">
+   Week 0
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week0/Worksheet0.html">
+     Worksheet 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week0/Week0-Friday.html">
+     Week 0 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week1/Week1-Intro.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Monday.html">
+     Week 1 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Worksheet1.html">
+     Worksheet 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Tuesday.html">
+     Week 1 Tuesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Wednesday.html">
+     Week 1 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Worksheet2.html">
+     Worksheet 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Videos.html">
+     Week 1 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Friday.html">
+     Week 1 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week2/Week2-Intro.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Monday.html">
+     Week 2 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Wednesday.html">
+     Week 2 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Friday.html">
+     Week 2 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Worksheet3.html">
+     Worksheet 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Worksheet4.html">
+     Worksheet 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Videos.html">
+     Week 2 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week3/Week3-Intro.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Monday.html">
+     Week 3 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Wednesday.html">
+     Week 3 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Friday.html">
+     Week 3 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Worksheet5.html">
+     Worksheet 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Worksheet6.html">
+     Worksheet 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Videos.html">
+     Week 3 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week4/Week4-Intro.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Monday.html">
+     Week 4 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Wednesday.html">
+     Week 4 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Friday.html">
+     Week 4 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Worksheet7.html">
+     Worksheet 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Worksheet8.html">
+     Worksheet 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Videos.html">
+     Week 4 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week5/Week5-Intro.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Monday.html">
+     Week 5 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Friday.html">
+     Week 5 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Monday.html">
+     Week 6 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Wednesday.html">
+     Week 6 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Friday.html">
+     Week 6 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Worksheet9.html">
+     Worksheet 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Worksheet10.html">
+     Worksheet 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Videos.html">
+     Week 6 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Monday.html">
+     Week 7 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Wednesday.html">
+     Week 7 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Worksheet11.html">
+     Worksheet 11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Worksheet12.html">
+     Worksheet 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Videos.html">
+     Week 7 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week8/Week8-Intro.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Videos.html">
+     Week 8 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Monday.html">
+     Week 8 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Wednesday.html">
+     Week 8 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Friday.html">
+     Week 8 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Worksheet13.html">
+     Worksheet 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Worksheet14.html">
+     Worksheet 14
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week9-Intro.html">
+   Week 9
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week9-Monday.html">
+     Week 9 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week9-Wednesday.html">
+     Week 9 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Worksheet 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Worksheet16.html">
+     Worksheet 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week9-Videos.html">
+     Week 9 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week10/Week10-Intro.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Monday.html">
+     Week 10 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Wednesday.html">
+     Week 10 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Friday.html">
+     Week 10 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/ExtraTopics.html">
+     Possible extra topics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/StudentProjects.html">
+   Student Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MariaAvalos.html">
+     Analyzing and Visualizing Top Soccer Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NicholasBogarin.html">
+     Hollywood Movie Gross Income
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MingyuChen.html">
+     Attempts about finding aspects that can influence the effects of Music Therapy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NuoChen.html">
+     Predict the Chance of admission to Graduate School
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YuanGao.html">
+     Major League Baseball (MLB) Team Performances Predictions &amp; Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/RyanHarner.html">
+     Predicting Australian Cities With Weather
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AnerHuang.html">
+     Customer Personality Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/DerekJiang.html">
+     Replace this with your project title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EricJones.html">
+     Chip from Specs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EdenKim.html">
+     Global Life Expectancy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AryaKondur.html">
+     NBA Shot Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MichelleKwan.html">
+     Analysis on Starbucks &amp; McDonald’s Menu Items
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/SaraGraceLien.html">
+     Applying Machine Learning techniques to the Fashion MNIST data set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/DanielLim.html">
+     Spotify Popular Songs Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NatalieMartinez.html">
+     New York City Taxi Rides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AdityaKrishnanRadhakrishnan.html">
+     Video Game Sales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/CeceSun.html">
+     What contributes to a movie’s commercial success?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/KexinSun.html">
+     Car Price Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NanakoTatewaki.html">
+     Prediction of Canadian Car Accident
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/LeanderVonSchoenfeld.html">
+     Key Financial Metrics Analysis of S&amp;P 500 Stocks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EmilyWang.html">
+     Predicting Heart Disease
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/HaoyangWang.html">
+     The analysis of relations between the total covid-affected population and other datas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YifengXiong.html">
+     Predict Diabetes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/KevinXu.html">
+     Salary Classification By Using Decision Tree
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MingyanXu.html">
+     The relationship and prediction between Pokemon’s stats and generation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/ShengkaiYang.html">
+     NFL offense performance and analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/HuangxiaoZhang.html">
+     Netflix Stock Price
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YihaoZhang.html">
+     Title
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10-F22/main?urlpath=tree/Week9/Worksheet15.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-F22"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Week9/Worksheet15.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-0-setting-up-the-workspace">
+   Question 0 - Setting up the workspace
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1-loading-the-data">
+   Question 1 - Loading the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2-displaying-a-handwritten-digit">
+   Question 2 - Displaying a handwritten digit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3-fitting-a-random-forest-classifier">
+   Question 3 - Fitting a random forest classifier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-4-the-individual-trees-in-the-random-forest">
+   Question 4 - The individual trees in the random forest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-5-a-dataframe-containing-the-results">
+   Question 5 - A DataFrame containing the results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-6-confusion-matrix">
+   Question 6 - Confusion matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-7-interpreting-the-confusion-matrix">
+   Question 7 - Interpreting the confusion matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-8-feature-importances">
+   Question 8 - Feature importances
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-9-an-incorrect-digit">
+   Question 9 - An incorrect digit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reminder">
+   Reminder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submission">
+   Submission
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Worksheet 15</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-0-setting-up-the-workspace">
+   Question 0 - Setting up the workspace
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1-loading-the-data">
+   Question 1 - Loading the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2-displaying-a-handwritten-digit">
+   Question 2 - Displaying a handwritten digit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3-fitting-a-random-forest-classifier">
+   Question 3 - Fitting a random forest classifier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-4-the-individual-trees-in-the-random-forest">
+   Question 4 - The individual trees in the random forest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-5-a-dataframe-containing-the-results">
+   Question 5 - A DataFrame containing the results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-6-confusion-matrix">
+   Question 6 - Confusion matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-7-interpreting-the-confusion-matrix">
+   Question 7 - Interpreting the confusion matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-8-feature-importances">
+   Question 8 - Feature importances
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-9-an-incorrect-digit">
+   Question 9 - An incorrect digit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reminder">
+   Reminder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submission">
+   Submission
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="worksheet-15">
+<h1>Worksheet 15<a class="headerlink" href="#worksheet-15" title="Permalink to this headline">#</a></h1>
+<p>Authors (3 maximum; use your full names): <strong>BLANK</strong></p>
+<p>In this worksheet, we will use a random forest classifier to classify handwritten digits.</p>
+<p>When we used a single unconstrained decision tree in the <a class="reference external" href="https://christopherdavisuci.github.io/UCI-Math-10-F22/Week8/Week8-Videos.html#using-a-decision-tree-with-mnist">Week 8 videos</a>, we got a test accuracy of 88%.  That is already a good performance, but we will be able to do better using a random forest.</p>
+<section id="question-0-setting-up-the-workspace">
+<h2>Question 0 - Setting up the workspace<a class="headerlink" href="#question-0-setting-up-the-workspace" title="Permalink to this headline">#</a></h2>
+<p>Make sure you are working in a (free) Pro Deepnote workspace; see the <a class="reference external" href="https://christopherdavisuci.github.io/UCI-Math-10-F22/Week0/Worksheet0.html#question">Worksheet 0 instructions</a>.  The computations are more memory-intensive than usual in this worksheet.  It should say “Pro” or “Education” in the lower-left corner.</p>
+<p><img alt="Pro logo" src="../_images/pro.png" /></p>
+</section>
+<section id="question-1-loading-the-data">
+<h2>Question 1 - Loading the data<a class="headerlink" href="#question-1-loading-the-data" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Load the handwritten digit dataset by executing the following code.  (<strong>Warning</strong>. This dataset is bigger than all of the other datasets we’ve used in Math 10. If you run this code multiple times, the system may restart.)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_openml</span>
+
+<span class="n">mnist</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="s1">&#39;mnist_784&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>How many input columns are there?  How many data points are there?  (You might want to review the <a class="reference external" href="https://christopherdavisuci.github.io/UCI-Math-10-F22/Week8/Week8-Videos.html">Week 8 videos</a> for reminders about this dataset.)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Convert the pandas DataFrame <code class="docutils literal notranslate"><span class="pre">mnist.data</span></code> to a NumPy array by using the <code class="docutils literal notranslate"><span class="pre">to_numpy</span></code> method.  The entries are all positive integers between 0 and 255 (inclusive), so convert that NumPy array to an unsigned 8-bit integer dtype by using the NumPy array method <code class="docutils literal notranslate"><span class="pre">astype</span></code> with the argument <code class="docutils literal notranslate"><span class="pre">np.uint8</span></code> (be sure you import NumPy).  Name the resulting NumPy array <code class="docutils literal notranslate"><span class="pre">X</span></code>.  (Having to make these NumPy conversions is a little strange.  I’ll point out below which step requires the conversions.)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Convert the pandas Series <code class="docutils literal notranslate"><span class="pre">mnist.target</span></code> to a NumPy array again by using the <code class="docutils literal notranslate"><span class="pre">to_numpy</span></code> method, and again convert the data type to unsigned 8-bit integers.  Name the resulting NumPy array <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>How many bytes is <code class="docutils literal notranslate"><span class="pre">X</span></code>?  Use the <code class="docutils literal notranslate"><span class="pre">getsizeof</span></code> function from the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module.  Make the number easier to read by using an f-string and including commas: <code class="docutils literal notranslate"><span class="pre">print(???&quot;The</span> <span class="pre">NumPy</span> <span class="pre">array</span> <span class="pre">X</span> <span class="pre">is</span> <span class="pre">{???:,}</span> <span class="pre">bytes.&quot;)</span></code>.  This is significantly bigger than our usual datasets (but it still probably does not qualify as “big data”).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Divide <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> into a training set and a test set, <code class="docutils literal notranslate"><span class="pre">X_train,</span> <span class="pre">X_test,</span> <span class="pre">y_train,</span> <span class="pre">y_test</span></code>, by using <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> with a <code class="docutils literal notranslate"><span class="pre">train_size</span></code> of <code class="docutils literal notranslate"><span class="pre">0.8</span></code> and a <code class="docutils literal notranslate"><span class="pre">random_state</span></code> of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Check your answer: <code class="docutils literal notranslate"><span class="pre">y_test</span></code> should be a length 14,000 NumPy array with a <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of <code class="docutils literal notranslate"><span class="pre">uint8</span></code>.  The first three values in <code class="docutils literal notranslate"><span class="pre">y_test</span></code> should be <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+</ul>
+</section>
+<section id="question-2-displaying-a-handwritten-digit">
+<h2>Question 2 - Displaying a handwritten digit<a class="headerlink" href="#question-2-displaying-a-handwritten-digit" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>We just saw that <code class="docutils literal notranslate"><span class="pre">y_test[1]</span></code> corresponds to the digit <code class="docutils literal notranslate"><span class="pre">4</span></code>.  Display the corresponding handwritten digit from <code class="docutils literal notranslate"><span class="pre">X_test</span></code> using <code class="docutils literal notranslate"><span class="pre">ax.imshow</span></code> where <code class="docutils literal notranslate"><span class="pre">ax</span></code> is a Matplotlib Axes object.  Again, see the Week 8 videos for a reminder of how to do this.  You will need to use <code class="docutils literal notranslate"><span class="pre">reshape</span></code> because the original handwritten digits are 28-by-28 pixels, whereas they are stored in <code class="docutils literal notranslate"><span class="pre">X_test</span></code> as one-dimensional NumPy arrays of length <span class="math notranslate nohighlight">\(28^2 = 784\)</span>.</p></li>
+</ul>
+</section>
+<section id="question-3-fitting-a-random-forest-classifier">
+<h2>Question 3 - Fitting a random forest classifier<a class="headerlink" href="#question-3-fitting-a-random-forest-classifier" title="Permalink to this headline">#</a></h2>
+<p>In the third <a class="reference external" href="https://youtu.be/TOFFhHO_NNk">Week 8 video</a>, we used a decision tree classifier with no restrictions and got a test accuracy of 88% (meaning 88% of handwritten digits were correctly identified).  Your goal in this question is to get a test accuracy of at least 92% using a random forest classifier.</p>
+<ul class="simple">
+<li><p>Import the <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code> class from scikit-learn’s <code class="docutils literal notranslate"><span class="pre">ensemble</span></code> module.</p></li>
+<li><p>Create an instance of this class and name it <code class="docutils literal notranslate"><span class="pre">rfc</span></code> (for random forest classifier).  Experiment with different values of <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>, <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> and/or <code class="docutils literal notranslate"><span class="pre">max_leaf_nodes</span></code>.  Also use <code class="docutils literal notranslate"><span class="pre">random_state</span></code> to get reproducible results.  Fit the classifier to the training data.  Try to find values which yield a test score (<code class="docutils literal notranslate"><span class="pre">rfc.score(X_test,</span> <span class="pre">y_test)</span></code>) of at least <code class="docutils literal notranslate"><span class="pre">0.92</span></code>.  (<strong>Warning</strong>.  Start with small values and work your way up.  If you start with even medium-sized values, the computer may run out of memory and you will have to restart the notebook.  The <code class="docutils literal notranslate"><span class="pre">fit</span></code> step for my values took about 20 seconds.)</p></li>
+</ul>
+</section>
+<section id="question-4-the-individual-trees-in-the-random-forest">
+<h2>Question 4 - The individual trees in the random forest<a class="headerlink" href="#question-4-the-individual-trees-in-the-random-forest" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>What type of object is <code class="docutils literal notranslate"><span class="pre">rfc.estimators_</span></code>?</p></li>
+<li><p>What is the length of <code class="docutils literal notranslate"><span class="pre">rfc.estimators_</span></code>?  (This and the following questions will only work if you have fit <code class="docutils literal notranslate"><span class="pre">rfc</span></code> in the previous step.)</p></li>
+<li><p>How does the length of <code class="docutils literal notranslate"><span class="pre">rfc.estimators_</span></code> relate to the parameters you used above?</p></li>
+<li><p>What is the type of the zero-th element in <code class="docutils literal notranslate"><span class="pre">rfc.estimators_</span></code>?</p></li>
+<li><p>Using list comprehension, make a list <code class="docutils literal notranslate"><span class="pre">score_list</span></code> containing <code class="docutils literal notranslate"><span class="pre">clf.score(X_test,</span> <span class="pre">y_test)</span></code> for each classifier in <code class="docutils literal notranslate"><span class="pre">rfc.estimators_</span></code>.  (This is the step that would not work if we didn’t convert to NumPy arrays above.)</p></li>
+<li><p>What is the maximum value in <code class="docutils literal notranslate"><span class="pre">score_list</span></code>?</p></li>
+<li><p>How does this result relate to the expression, “greater than the sum of its parts”, or to the phrase, “the wisdom of crowds”?</p></li>
+</ul>
+</section>
+<section id="question-5-a-dataframe-containing-the-results">
+<h2>Question 5 - A DataFrame containing the results<a class="headerlink" href="#question-5-a-dataframe-containing-the-results" title="Permalink to this headline">#</a></h2>
+<p>We now return back to <code class="docutils literal notranslate"><span class="pre">rfc</span></code>.</p>
+<ul class="simple">
+<li><p>Make a pandas DataFrame df containing two columns.  The first column should be called “Digit” and should contain the values from <code class="docutils literal notranslate"><span class="pre">y_test</span></code>.  The second column should be called “Pred” and should contain the values predicted by <code class="docutils literal notranslate"><span class="pre">rfc</span></code> for the input <code class="docutils literal notranslate"><span class="pre">X_test</span></code>.  (Reality check: <code class="docutils literal notranslate"><span class="pre">df</span></code> should have 14000 rows and 2 columns.)</p></li>
+</ul>
+</section>
+<section id="question-6-confusion-matrix">
+<h2>Question 6 - Confusion matrix<a class="headerlink" href="#question-6-confusion-matrix" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Begin making a confusion matrix for this DataFrame using the following code.  This code consists of two Altair charts, a rectangle chart and a text chart.  For now it will look a little strange.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">15000</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_rect</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Digit:N&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Pred:N&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">c_text</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Digit:N&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Pred:N&quot;</span><span class="p">,</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Pred&quot;</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="n">c_text</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">400</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Specify that the color on the rectangle chart should correspond to <code class="docutils literal notranslate"><span class="pre">&quot;count()&quot;</span></code>, and use one of the <a class="reference external" href="https://vega.github.io/vega/docs/schemes/">color schemes</a> that seems appropriate, as in <code class="docutils literal notranslate"><span class="pre">scale=alt.Scale(scheme=&quot;???&quot;))</span></code>.  (Don’t use a categorical scheme and don’t use a cyclical scheme.  Try to find a scheme where the differences among the smaller numbers are visible.)</p></li>
+<li><p>You can also add <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> inside <code class="docutils literal notranslate"><span class="pre">alt.Scale</span></code> if you want the colors to go in the opposite order.  Feel free to change the text color from white if it makes it easier to see.</p></li>
+<li><p>Change the text on the text chart from <code class="docutils literal notranslate"><span class="pre">&quot;Pred&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;count()&quot;</span></code>.</p></li>
+</ul>
+</section>
+<section id="question-7-interpreting-the-confusion-matrix">
+<h2>Question 7 - Interpreting the confusion matrix<a class="headerlink" href="#question-7-interpreting-the-confusion-matrix" title="Permalink to this headline">#</a></h2>
+<p>Use the above confusion matrix to answer the following questions.</p>
+<ul class="simple">
+<li><p>What is an example of a (true digit, predicted digit) pair that never occurs in the test data?  (Hint/warning.  Pay attention to the order.  The “Digit” column corresponds to the true digit.)</p></li>
+<li><p>What is the most common mistake made by the classifier when attempting to classify a 9 digit?</p></li>
+<li><p>Does that mistake seem reasonable?  Why or why not?</p></li>
+<li><p>Try evaluating the following code.  Do you see why the pandas Series it displays relates to the confusion matrix?</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Pred&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;Digit&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-8-feature-importances">
+<h2>Question 8 - Feature importances<a class="headerlink" href="#question-8-feature-importances" title="Permalink to this headline">#</a></h2>
+<p>In general, random forests are more difficult to interpret than decision trees.  (There is no corresponding diagram, for example.)  But random forests can still be used to identify feature importances.</p>
+<ul class="simple">
+<li><p>Call the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> method on the <code class="docutils literal notranslate"><span class="pre">feature_imporances_</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">rfc</span></code> so that it becomes a 28-by-28 NumPy array.</p></li>
+<li><p>Visualize the result by using the following, where <code class="docutils literal notranslate"><span class="pre">???</span></code> gets replaced by the 28-by-28 NumPy array.  (Here we are using the standard name of <code class="docutils literal notranslate"><span class="pre">plt</span></code> for the Pyplot module.)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
+ax.imshow(???)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Why do you think the pixels around the perimeter are all the same color?</p></li>
+</ul>
+</section>
+<section id="question-9-an-incorrect-digit">
+<h2>Question 9 - An incorrect digit<a class="headerlink" href="#question-9-an-incorrect-digit" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Find an example of a digit in the test set that was mis-classified by <code class="docutils literal notranslate"><span class="pre">rfc</span></code>.  (Hint.  Start by using <code class="docutils literal notranslate"><span class="pre">df[&quot;Digit&quot;]</span> <span class="pre">!=</span> <span class="pre">df[&quot;Pred&quot;]</span></code>.  Then you could for example use Boolean indexing, or you could convert to a NumPy array and then use NumPy’s <code class="docutils literal notranslate"><span class="pre">nonzero</span></code> function, which will return a length-1 tuple whose only element is a NumPy array containing the integer locations where the value is <code class="docutils literal notranslate"><span class="pre">True</span></code>.)</p></li>
+<li><p>Display the mis-classified handwritten digit using <code class="docutils literal notranslate"><span class="pre">imshow</span></code>.</p></li>
+<li><p>Display the true value (from <code class="docutils literal notranslate"><span class="pre">y_test</span></code> or from <code class="docutils literal notranslate"><span class="pre">df[&quot;Digit&quot;]</span></code>).</p></li>
+<li><p>Display the predicted value (using <code class="docutils literal notranslate"><span class="pre">rfc.predict</span></code> or using <code class="docutils literal notranslate"><span class="pre">df[&quot;Pred&quot;]</span></code>).</p></li>
+<li><p>Does the mistake by our random forest classifier seem reasonable?  (Some will, some won’t.  Find an example where the mistake seems reasonable.)</p></li>
+</ul>
+</section>
+<section id="reminder">
+<h2>Reminder<a class="headerlink" href="#reminder" title="Permalink to this headline">#</a></h2>
+<p>Every group member needs to submit this on Canvas (even if you all submit the same link).</p>
+<p>Be sure you’ve included the (full) names of you and your group members at the top after “Authors”.  You might consider restarting this notebook (the Deepnote refresh icon, not your browser refresh icon) and running it again to make sure it’s working.</p>
+</section>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Permalink to this headline">#</a></h2>
+<p>Using the Share button at the top right, <strong>enable Comment access level</strong> for anyone with the link. Then submit that link on Canvas.</p>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=b5575e63-6a41-4f29-bf1d-88636c6d01ec' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Week9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week9-Wednesday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 9 Wednesday</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Worksheet16.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Worksheet 16</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Christopher Davis<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
