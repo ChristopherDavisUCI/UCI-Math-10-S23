@@ -1,4 +1,4 @@
-# UC Irvine, Math 10, Fall 2022 
+# UC Irvine, Math 10, Spring 2023 
 
 Use the Navigation menu on the left to find the course content. 
 
@@ -22,6 +22,7 @@ Use the Navigation menu on the left to find the course content.
 
 **Earlier versions of these notes**
 
+* [Fall 2022 version](https://christopherdavisuci.github.io/UCI-Math-10-F22/intro.html)
 * [Spring 2022 version](https://christopherdavisuci.github.io/UCI-Math-10-S22/intro.html)
 * [Winter 2022 version](https://christopherdavisuci.github.io/UCI-Math-10-W22/intro.html)
 * [Fall 2021 version](https://christopherdavisuci.github.io/UCI-Math-10-F21/intro.html)

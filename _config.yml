@@ -52,4 +52,4 @@ sphinx:
     html_extra_path:
       - data
       - extra
-      # - .github
+      - .github
