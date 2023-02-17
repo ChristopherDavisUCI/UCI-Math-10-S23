@@ -1,0 +1,140 @@
+mylist = [3,1,4,1,5,9]
+
+type(mylist)
+
+mytuple = (3,1,4,1,5,9)
+
+type(mytuple)
+
+tup2 = tuple(mylist)
+
+tup2
+
+mytuple == tup2
+
+mylist[2]
+
+mytuple[2]
+
+mylist.append(20.4)
+
+mylist
+
+mytuple.append(20.4)
+
+mytuple.append(3)
+
+myset = {3,1,4,1,5,9}
+
+myset[2]
+
+myset
+
+myset2 = {3,1,[2,1,5]}
+
+myset2 = {3,1,(2,1,5)}
+
+myset2
+
+len(myset2)
+
+d = {3:0, 1:5, 4:10, 1:2}
+
+d
+
+d[2]
+
+d[4]
+
+d[(2,10)] = "Chris"
+
+d
+
+d[[1,10]] = "Davis"
+
+d["4"] = [1,10]
+
+d
+
+r = range(10)
+
+r
+
+list(r)
+
+y = range(3,20,5)
+
+tuple(y)
+
+list(range(3,23,5))
+
+range(0,10,0.1)
+
+for i in range(8):
+    print("Hello, world")
+
+mylist = [3,1,4,1,-5,-9,2]
+
+for i in range(7):
+    print(mylist[i]**2)
+
+for i in range(len(mylist)):
+    print(mylist[i]**2)
+
+for x in mylist:
+    print(x**2)
+
+mylist
+
+for x in mylist:
+    if x > 0:
+        print(x**2)
+
+newlist = []
+for x in mylist:
+    newlist.append(x-2)
+
+newlist
+
+def f(x):
+    return x**2 - 5
+
+f(7)
+
+def g(x):
+    print(x**2 - 5)
+
+g(7)
+
+y = f(7)
+
+z = g(7)
+
+y
+
+z
+
+z+2
+
+type(z)
+
+def check(x,y):
+    z = x + 2*y
+    if z > 10:
+        return z
+    elif z > 5:
+        return 2*z
+    else:
+        return "Choose bigger numbers"
+
+check(2,1)
+
+check(2,2)
+
+x
+
+y
+
+f2 = lambda w: w**2 - 5
+
+f2(10)

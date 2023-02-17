@@ -1,0 +1,84 @@
+mylist = []
+
+for i in range(8):
+    mylist.append(6)
+
+mylist
+
+[6 for i in range(8)]
+
+mylist = [3,1,-2,10,-5,3,6,2,8]
+
+[x**2 for x in mylist]
+
+[x for x in mylist if (x > -2) and (x <= 3)]
+
+[0 if x < 0 else x for x in mylist]
+
+mylist = [[0,1,2] for _ in range(8)]
+mylist
+
+import pandas as pd
+
+pd.DataFrame(mylist)
+
+mylist = []
+
+for i in range(8):
+    for j in range(3):
+        mylist.append(j)
+
+mylist
+
+[j for i in range(8) for j in range(3)]
+
+desc = "Introduction to Python for data science. Selecting appropriate data types; functions and methods; plotting;
+the libraries NumPy, pandas, scikit-learn. Foundations of machine learning."
+
+desc = '''Introduction to Python for data science. Selecting appropriate data types; functions and methods; plotting;
+the libraries NumPy, pandas, scikit-learn. Foundations of machine learning.'''
+
+[c for c in desc]
+
+desc.split()
+
+[word for word in desc.split()]
+
+[word.capitalize() for word in desc.split()]
+
+'Christopher'.join([word.capitalize() for word in desc.split()])
+
+' '.join([word.capitalize() for word in desc.split()])
+
+import pandas as pd
+df = pd.read_csv("spotify_dataset.csv")
+
+df.head()
+
+df["Artist"].value_counts()
+
+top_artists = df["Artist"].value_counts().index[:10]
+
+type(top_artists)
+
+row_labels = [i for i in df.index if df.loc[i, "Artist"] in top_artists]
+
+df.loc[row_labels]
+
+top_artists
+
+df["Artist"]
+
+df["Artist"].isin(top_artists)
+
+df[df["Artist"].isin(top_artists)]
+
+df1 = df.loc[row_labels]
+
+df2 = df[df["Artist"].isin(top_artists)]
+
+df1.index == df2.index
+
+(df1.index == df2.index).all()
+
+

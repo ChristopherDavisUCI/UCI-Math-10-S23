@@ -1,0 +1,181 @@
+import pandas as pd
+import numpy as np
+
+# Read the dataset
+df=pd.read_csv("Costomer_Personality.csv")
+df
+
+# Dimension of dataset
+df.shape
+
+# Counting numbers of missing values in each column
+df.isna().sum()
+
+df['Income']=df['Income'].fillna(df['Income'].median())
+
+# List out all the names of columns
+df.columns
+
+# Normalizing Dataset
+df.rename({"Dt_Customer ":"Date","MntWines":"Wines","MntFruits":"Fruits","MntMeatProducts":"Meat","MntFishProducts":"Fish","MntSweetProducts":"Sweet","MntGoldProds":"Gold","NumDealsPurchases":"Deals","NumWebPurchases":"Web","NumCatalogPurchases":"Catalog","NumWebVisitsMonth":"WebVisit"},axis=1,inplace=True)
+
+df["Total"] = df["Wines"]+df["Fruits"]+df["Meat"]+df["Fish"]+df["Sweet"]+df["Gold"]
+df['Marital_Status'] = df['Marital_Status'].replace({'Married':'Relationship', 'Together':'Relationship','Divorced':'Alone','Widow':'Alone','YOLO':'Alone', 'Absurd':'Alone'})
+to_drop = ["Kidhome","Teenhome", "Z_CostContact", "Z_Revenue"]
+df = df.drop(to_drop, axis=1)
+
+# Description of Data
+df.describe()
+
+#Current year minus the year of birth will be the age of customers 
+df["Age"] = 2022-df["Year_Birth"]
+df = df[df["Age"]<80] #Narrow my age range
+
+df["Age"]=df["Age"].apply(str)
+df["Generation"] = df["Age"].map(lambda x: x[:1])
+
+df.groupby("Generation", sort=True).mean()
+
+df["Generation"].value_counts()
+
+# Using groupby to find out the distribution of the custormers' generation.
+for gp, df_mini in df.groupby("Generation"):
+    print(f"The generation is {gp} and the number of rows is {df_mini.shape[0]}.")
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Plot of the distribution of generation
+plt.figure(figsize=(8,8))
+sns.distplot(df["Age"],color = 'turquoise')
+plt.show()
+
+df = df[df["Income"]<100000]
+
+import altair as alt
+brush = alt.selection_interval()
+c1 = alt.Chart(df).mark_circle().encode(
+    x=alt.X('Income', scale=alt.Scale(zero=False)),
+    y='Total',
+    color='Generation:N',
+    tooltip=["ID", "Income", "Total"]
+).add_selection(brush)
+
+c2= alt.Chart(df).mark_bar().encode(
+    x = 'ID',
+    y='Total'
+).transform_filter(brush)
+
+c1|c2
+
+from sklearn.linear_model import LinearRegression
+reg=LinearRegression()
+reg.fit(df[["Income"]], df["Total"])
+df["Pred"]=reg.predict(df[["Income"]]) 
+df.head()
+
+c = alt.Chart(df).mark_circle().encode(
+    x=alt.X('Income', scale=alt.Scale(zero=False)),
+    y=alt.Y('Total', scale=alt.Scale(zero=False)),
+    color="ID"
+)
+c1=alt.Chart(df).mark_line(color="red").encode(
+    x=alt.X('Income', scale=alt.Scale(zero=False)),
+    y="Pred"
+)
+c+c1
+
+df["I2"]=df["Income"]**2
+df["I3"]=df["Income"]**3
+poly_cols = ["Income","I2", "I3"]
+reg2 = LinearRegression()
+reg2.fit(df[poly_cols], df["Total"])
+df["poly_pred"] = reg2.predict(df[poly_cols])
+
+c = alt.Chart(df).mark_circle().encode(
+    x=alt.X('Income', scale=alt.Scale(zero=False)),
+    y=alt.Y('Total', scale=alt.Scale(zero=False)),
+    color="ID"
+)
+
+c1 = alt.Chart(df).mark_line(color="black").encode(
+    x=alt.X('Income', scale=alt.Scale(zero=False)),
+    y="poly_pred"
+)
+
+c+c1
+
+from sklearn.linear_model import LogisticRegression #import
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+import numpy as np
+
+# Make a sub-dataframe that only containes the necessary input that we want to predict
+cols = ["Income","Total"]
+df["Rel1"]=(df["Marital_Status"]== "Relationship") #Make the new colnmn that returns "True" if the customer is in a relationship, otherwise returns "False".
+
+X_train, X_test, y_train, y_test = train_test_split(df[cols], df["Rel1"], test_size=0.4, random_state=0)
+
+clf=LogisticRegression()
+clf.fit(X_train, y_train) #fit
+(clf.predict(X_test) == y_test).sum() # Frequency 
+
+# The proportion that we made correct prediction based on the whole dataset.
+(clf.predict(X_test) == y_test).sum()/len(X_test)
+
+clf.coef_
+Income_coef,Total_coef=clf.coef_[0]
+Total_coef
+
+sigmoid = lambda x: 1/(1+np.exp(-x))
+Income = 71613
+Total = 776
+sigmoid(Income_coef*Income+Total_coef*Total+clf.intercept_)
+
+clf.predict_proba([[Income,Total]]) 
+
+#Import
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import log_loss
+
+clf = KNeighborsClassifier()
+clf.fit(X_train, y_train)
+loss_train=log_loss(y_train, clf.predict_proba(X_train))
+loss_test=log_loss(y_test,clf.predict_proba(X_test))
+
+loss_train
+
+loss_test
+
+# Import
+from sklearn.tree import DecisionTreeClassifier
+
+#Normalize the "Education" column
+df["Education"]=df["Education"].replace({"Basic":"Undergraduate","2n Cycle":"Undergraduate", "Graduation":"Graduate", "Master":"Postgraduate", "PhD":"Postgraduate"})
+
+input = ["Income","Total","Generation"]
+X =df[input]
+y = df["Education"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.6, random_state=49196138)
+
+clf = DecisionTreeClassifier(max_leaf_nodes=8)
+clf.fit(X_train, y_train) # Fit the classifier to the training data using X for the input features and using "Education" for the target.
+
+clf.score(X_train, y_train)
+
+clf.score(X_test, y_test)
+
+# Illustrate the resulting tree using matplotlib. 
+import matplotlib.pyplot as plt
+from sklearn.tree import plot_tree
+
+fig = plt.figure()
+_ = plot_tree(clf, 
+                   feature_names=clf.feature_names_in_,
+                   class_names=clf.classes_,
+                   filled=True)
+
+clf.feature_importances_
+
+pd.Series(clf.feature_importances_, index=clf.feature_names_in_)

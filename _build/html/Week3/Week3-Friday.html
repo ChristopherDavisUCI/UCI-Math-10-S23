@@ -1,0 +1,4401 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 3 Friday &#8212; UC Irvine Math 10, Fall 2022</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Worksheet 5" href="Worksheet5.html" />
+    <link rel="prev" title="Week 3 Wednesday" href="Week3-Wednesday.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10, Fall 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Fall 2022
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week0/Week0-Intro.html">
+   Week 0
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week0/Worksheet0.html">
+     Worksheet 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week0/Week0-Friday.html">
+     Week 0 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week1/Week1-Intro.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Monday.html">
+     Week 1 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Worksheet1.html">
+     Worksheet 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Tuesday.html">
+     Week 1 Tuesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Wednesday.html">
+     Week 1 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Worksheet2.html">
+     Worksheet 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Videos.html">
+     Week 1 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week1/Week1-Friday.html">
+     Week 1 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week2/Week2-Intro.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Monday.html">
+     Week 2 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Wednesday.html">
+     Week 2 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Friday.html">
+     Week 2 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Worksheet3.html">
+     Worksheet 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Worksheet4.html">
+     Worksheet 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Videos.html">
+     Week 2 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week3-Intro.html">
+   Week 3
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week3-Monday.html">
+     Week 3 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week3-Wednesday.html">
+     Week 3 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Week 3 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Worksheet5.html">
+     Worksheet 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Worksheet6.html">
+     Worksheet 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week3-Videos.html">
+     Week 3 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week4/Week4-Intro.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Monday.html">
+     Week 4 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Wednesday.html">
+     Week 4 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Friday.html">
+     Week 4 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Worksheet7.html">
+     Worksheet 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Worksheet8.html">
+     Worksheet 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Videos.html">
+     Week 4 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week5/Week5-Intro.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Monday.html">
+     Week 5 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Friday.html">
+     Week 5 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Monday.html">
+     Week 6 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Wednesday.html">
+     Week 6 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Friday.html">
+     Week 6 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Worksheet9.html">
+     Worksheet 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Worksheet10.html">
+     Worksheet 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Videos.html">
+     Week 6 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Monday.html">
+     Week 7 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Wednesday.html">
+     Week 7 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Worksheet11.html">
+     Worksheet 11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Worksheet12.html">
+     Worksheet 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Videos.html">
+     Week 7 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week8/Week8-Intro.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Videos.html">
+     Week 8 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Monday.html">
+     Week 8 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Wednesday.html">
+     Week 8 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Friday.html">
+     Week 8 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Worksheet13.html">
+     Worksheet 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Worksheet14.html">
+     Worksheet 14
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week9/Week9-Intro.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Monday.html">
+     Week 9 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Wednesday.html">
+     Week 9 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Worksheet15.html">
+     Worksheet 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Worksheet16.html">
+     Worksheet 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Videos.html">
+     Week 9 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week10/Week10-Intro.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Monday.html">
+     Week 10 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Wednesday.html">
+     Week 10 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Friday.html">
+     Week 10 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/ExtraTopics.html">
+     Possible extra topics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/StudentProjects.html">
+   Student Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MariaAvalos.html">
+     Analyzing and Visualizing Top Soccer Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NicholasBogarin.html">
+     Hollywood Movie Gross Income
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MingyuChen.html">
+     Attempts about finding aspects that can influence the effects of Music Therapy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NuoChen.html">
+     Predict the Chance of admission to Graduate School
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YuanGao.html">
+     Major League Baseball (MLB) Team Performances Predictions &amp; Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/RyanHarner.html">
+     Predicting Australian Cities With Weather
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AnerHuang.html">
+     Customer Personality Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/DerekJiang.html">
+     Replace this with your project title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EricJones.html">
+     Chip from Specs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EdenKim.html">
+     Global Life Expectancy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AryaKondur.html">
+     NBA Shot Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MichelleKwan.html">
+     Analysis on Starbucks &amp; McDonald’s Menu Items
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/SaraGraceLien.html">
+     Applying Machine Learning techniques to the Fashion MNIST data set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/DanielLim.html">
+     Spotify Popular Songs Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NatalieMartinez.html">
+     New York City Taxi Rides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AdityaKrishnanRadhakrishnan.html">
+     Video Game Sales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/CeceSun.html">
+     What contributes to a movie’s commercial success?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/KexinSun.html">
+     Car Price Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NanakoTatewaki.html">
+     Prediction of Canadian Car Accident
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/LeanderVonSchoenfeld.html">
+     Key Financial Metrics Analysis of S&amp;P 500 Stocks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EmilyWang.html">
+     Predicting Heart Disease
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/HaoyangWang.html">
+     The analysis of relations between the total covid-affected population and other datas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YifengXiong.html">
+     Predict Diabetes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/KevinXu.html">
+     Salary Classification By Using Decision Tree
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MingyanXu.html">
+     The relationship and prediction between Pokemon’s stats and generation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/ShengkaiYang.html">
+     NFL offense performance and analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/HuangxiaoZhang.html">
+     Netflix Stock Price
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YihaoZhang.html">
+     Title
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10-F22/main?urlpath=tree/Week3/Week3-Friday.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-F22"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Week3/Week3-Friday.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#announcements">
+   Announcements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plan">
+   Plan
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-groupby-with-a-for-loop">
+   Using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     groupby
+    </span>
+   </code>
+   with a for loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-mean-method-of-a-pandas-groupby-object">
+   Using the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mean
+    </span>
+   </code>
+   method of a pandas GroupBy object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-the-data">
+   Visualizing the data
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 3 Friday</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#announcements">
+   Announcements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plan">
+   Plan
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-groupby-with-a-for-loop">
+   Using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     groupby
+    </span>
+   </code>
+   with a for loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-mean-method-of-a-pandas-groupby-object">
+   Using the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mean
+    </span>
+   </code>
+   method of a pandas GroupBy object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-the-data">
+   Visualizing the data
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="week-3-friday">
+<h1>Week 3 Friday<a class="headerlink" href="#week-3-friday" title="Permalink to this headline">#</a></h1>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Videos and video quizzes due.  Finish them later if you haven’t already.</p></li>
+<li><p>Worksheet 3 is graded.  (If you got a 0 and submitted something, probably you did not enable public sharing.  Enable public sharing following the instructions on the bottom of Worksheet 3 and send me an email to let me know.)</p></li>
+<li><p>Worksheets 5 and 6 are due Tuesday before discussion section.</p></li>
+<li><p>The in-class quiz on Tuesday will be based on the material up to and including Worksheet 6</p></li>
+</ul>
+</section>
+<section id="plan">
+<h2>Plan<a class="headerlink" href="#plan" title="Permalink to this headline">#</a></h2>
+<p>The main goal of today is to see how to use <code class="docutils literal notranslate"><span class="pre">groupby</span></code> with a for loop.  (I have had that on the agenda several times but never gotten to it.)  We will have plenty of time for questions, so please ask when something doesn’t make sense.</p>
+<ul class="simple">
+<li><p>Overall question: Within the “mpg” dataset from Seaborn, do newer cars seem to become more fuel-efficient (i.e., have higher mpg)?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet chevelle malibu</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>165.0</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick skylark 320</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150.0</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth satellite</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="using-groupby-with-a-for-loop">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">groupby</span></code> with a for loop<a class="headerlink" href="#using-groupby-with-a-for-loop" title="Permalink to this headline">#</a></h2>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> produces its own type of object.  I often abbreviate the long name to a pandas GroupBy object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fad5d6cb7f0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s a brief reminder about for loops in an easier example.  Here we are iterating over a range object.  Later we will iterate over a pandas GroupBy object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we call <code class="docutils literal notranslate"><span class="pre">print</span></code> on the <code class="docutils literal notranslate"><span class="pre">type</span></code> of an object, we see an expression like the following.  As far as I know, <code class="docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;</span></code> is exactly the same as <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It would be very reasonable to think that <code class="docutils literal notranslate"><span class="pre">z</span></code> is not defined, because it only occurred as a variable inside a for loop, but that’s not how Python works with respect to for loops.  The variables are accessible external to the for loop.  We only see <code class="docutils literal notranslate"><span class="pre">4</span></code> because the assignment <code class="docutils literal notranslate"><span class="pre">z=4</span></code> overwrote the earlier assignments <code class="docutils literal notranslate"><span class="pre">z=0</span></code>, then <code class="docutils literal notranslate"><span class="pre">z=1</span></code>, and so on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is what we usually see when we check the <code class="docutils literal notranslate"><span class="pre">type</span></code> of an object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<p>But if we <code class="docutils literal notranslate"><span class="pre">print</span></code> the type of the object, we see the same expression we saw above.  (<strong>Comment</strong>.  This material about <code class="docutils literal notranslate"><span class="pre">print(type(z))</span></code> is not itself important for us.  The only reason we are covering it, is so you are not confused when we see the word <code class="docutils literal notranslate"><span class="pre">class</span></code> below.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s finally get to the topic of today, which is what type of objects do we get when we iterate through a pandas GroupBy object.  We get tuples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The most natural question to ask then is, what is the length of these tuples?  The length is 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is the initial element of the length 2 tuple?  Here they are.  Notice that these values are exactly the “model_year” values that occur in our pandas DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will usually “unpack” the tuple into two separate variables.  The <code class="docutils literal notranslate"><span class="pre">a</span></code> value in the following is exactly the same as the <code class="docutils literal notranslate"><span class="pre">z[0]</span></code> value above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">z</span> <span class="c1"># tuple unpacking</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a more elegant way to do the tuple unpacking; we unpack immediately when we create the for loop, as opposed to defining a variable <code class="docutils literal notranslate"><span class="pre">z</span></code> which we never use.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+</pre></div>
+</div>
+</div>
+</div>
+<p>This tuple unpacking only works because the elements produced when we iterate over <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> are length 2 tuples.  If we try to do this same unpacking with our <code class="docutils literal notranslate"><span class="pre">range(5)</span></code> for loop, we get an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: cannot unpack non-iterable int object
+</pre></div>
+</div>
+</div>
+</div>
+<p>We get the exact same error if we try to unpack the initial thing in that for loop, <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="ne">TypeError</span>: cannot unpack non-iterable int object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Why do we see <code class="docutils literal notranslate"><span class="pre">2</span></code> so many times?  Does the following help?  Initially <code class="docutils literal notranslate"><span class="pre">z</span></code> is assigned to be <code class="docutils literal notranslate"><span class="pre">(3,5)</span></code>, and its length is <code class="docutils literal notranslate"><span class="pre">2</span></code>.  Then <code class="docutils literal notranslate"><span class="pre">z</span></code> is assigned to be <code class="docutils literal notranslate"><span class="pre">(1,2,3,4)</span></code>, and its length is <code class="docutils literal notranslate"><span class="pre">4</span></code>, and so on.  In our GroupBy for loop, the values of <code class="docutils literal notranslate"><span class="pre">z</span></code> always have the same length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">)]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+3
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ve already seen the following example.  The initial element (the zeroth element) in the length 2 tuples is the value we are grouping by.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we try to do the analogous thing for <code class="docutils literal notranslate"><span class="pre">b</span></code>, the second object in the tuple, it is much less helpful.  We can at least tell that <code class="docutils literal notranslate"><span class="pre">b</span></code> is much more complicated than <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     mpg  cylinders  displacement  horsepower  weight  acceleration  \
+0   18.0          8         307.0       130.0    3504          12.0   
+1   15.0          8         350.0       165.0    3693          11.5   
+2   18.0          8         318.0       150.0    3436          11.0   
+3   16.0          8         304.0       150.0    3433          12.0   
+4   17.0          8         302.0       140.0    3449          10.5   
+5   15.0          8         429.0       198.0    4341          10.0   
+6   14.0          8         454.0       220.0    4354           9.0   
+7   14.0          8         440.0       215.0    4312           8.5   
+8   14.0          8         455.0       225.0    4425          10.0   
+9   15.0          8         390.0       190.0    3850           8.5   
+10  15.0          8         383.0       170.0    3563          10.0   
+11  14.0          8         340.0       160.0    3609           8.0   
+12  15.0          8         400.0       150.0    3761           9.5   
+13  14.0          8         455.0       225.0    3086          10.0   
+14  24.0          4         113.0        95.0    2372          15.0   
+15  22.0          6         198.0        95.0    2833          15.5   
+16  18.0          6         199.0        97.0    2774          15.5   
+17  21.0          6         200.0        85.0    2587          16.0   
+18  27.0          4          97.0        88.0    2130          14.5   
+19  26.0          4          97.0        46.0    1835          20.5   
+20  25.0          4         110.0        87.0    2672          17.5   
+21  24.0          4         107.0        90.0    2430          14.5   
+22  25.0          4         104.0        95.0    2375          17.5   
+23  26.0          4         121.0       113.0    2234          12.5   
+24  21.0          6         199.0        90.0    2648          15.0   
+25  10.0          8         360.0       215.0    4615          14.0   
+26  10.0          8         307.0       200.0    4376          15.0   
+27  11.0          8         318.0       210.0    4382          13.5   
+28   9.0          8         304.0       193.0    4732          18.5   
+
+    model_year  origin                          name  
+0           70     usa     chevrolet chevelle malibu  
+1           70     usa             buick skylark 320  
+2           70     usa            plymouth satellite  
+3           70     usa                 amc rebel sst  
+4           70     usa                   ford torino  
+5           70     usa              ford galaxie 500  
+6           70     usa              chevrolet impala  
+7           70     usa             plymouth fury iii  
+8           70     usa              pontiac catalina  
+9           70     usa            amc ambassador dpl  
+10          70     usa           dodge challenger se  
+11          70     usa            plymouth &#39;cuda 340  
+12          70     usa         chevrolet monte carlo  
+13          70     usa       buick estate wagon (sw)  
+14          70   japan         toyota corona mark ii  
+15          70     usa               plymouth duster  
+16          70     usa                    amc hornet  
+17          70     usa                 ford maverick  
+18          70   japan                  datsun pl510  
+19          70  europe  volkswagen 1131 deluxe sedan  
+20          70  europe                   peugeot 504  
+21          70  europe                   audi 100 ls  
+22          70  europe                      saab 99e  
+23          70  europe                      bmw 2002  
+24          70     usa                   amc gremlin  
+25          70     usa                     ford f250  
+26          70     usa                     chevy c20  
+27          70     usa                    dodge d200  
+28          70     usa                      hi 1200d  
+     mpg  cylinders  displacement  horsepower  weight  acceleration  \
+29  27.0          4          97.0        88.0    2130          14.5   
+30  28.0          4         140.0        90.0    2264          15.5   
+31  25.0          4         113.0        95.0    2228          14.0   
+32  25.0          4          98.0         NaN    2046          19.0   
+33  19.0          6         232.0       100.0    2634          13.0   
+34  16.0          6         225.0       105.0    3439          15.5   
+35  17.0          6         250.0       100.0    3329          15.5   
+36  19.0          6         250.0        88.0    3302          15.5   
+37  18.0          6         232.0       100.0    3288          15.5   
+38  14.0          8         350.0       165.0    4209          12.0   
+39  14.0          8         400.0       175.0    4464          11.5   
+40  14.0          8         351.0       153.0    4154          13.5   
+41  14.0          8         318.0       150.0    4096          13.0   
+42  12.0          8         383.0       180.0    4955          11.5   
+43  13.0          8         400.0       170.0    4746          12.0   
+44  13.0          8         400.0       175.0    5140          12.0   
+45  18.0          6         258.0       110.0    2962          13.5   
+46  22.0          4         140.0        72.0    2408          19.0   
+47  19.0          6         250.0       100.0    3282          15.0   
+48  18.0          6         250.0        88.0    3139          14.5   
+49  23.0          4         122.0        86.0    2220          14.0   
+50  28.0          4         116.0        90.0    2123          14.0   
+51  30.0          4          79.0        70.0    2074          19.5   
+52  30.0          4          88.0        76.0    2065          14.5   
+53  31.0          4          71.0        65.0    1773          19.0   
+54  35.0          4          72.0        69.0    1613          18.0   
+55  27.0          4          97.0        60.0    1834          19.0   
+56  26.0          4          91.0        70.0    1955          20.5   
+
+    model_year  origin                        name  
+29          71   japan                datsun pl510  
+30          71     usa         chevrolet vega 2300  
+31          71   japan               toyota corona  
+32          71     usa                  ford pinto  
+33          71     usa                 amc gremlin  
+34          71     usa   plymouth satellite custom  
+35          71     usa   chevrolet chevelle malibu  
+36          71     usa             ford torino 500  
+37          71     usa                 amc matador  
+38          71     usa            chevrolet impala  
+39          71     usa   pontiac catalina brougham  
+40          71     usa            ford galaxie 500  
+41          71     usa           plymouth fury iii  
+42          71     usa           dodge monaco (sw)  
+43          71     usa    ford country squire (sw)  
+44          71     usa         pontiac safari (sw)  
+45          71     usa  amc hornet sportabout (sw)  
+46          71     usa         chevrolet vega (sw)  
+47          71     usa            pontiac firebird  
+48          71     usa                ford mustang  
+49          71     usa          mercury capri 2000  
+50          71  europe                   opel 1900  
+51          71  europe                 peugeot 304  
+52          71  europe                   fiat 124b  
+53          71   japan         toyota corolla 1200  
+54          71   japan                 datsun 1200  
+55          71  europe        volkswagen model 111  
+56          71     usa            plymouth cricket  
+     mpg  cylinders  displacement  horsepower  weight  acceleration  \
+57  24.0          4         113.0        95.0    2278          15.5   
+58  25.0          4          97.5        80.0    2126          17.0   
+59  23.0          4          97.0        54.0    2254          23.5   
+60  20.0          4         140.0        90.0    2408          19.5   
+61  21.0          4         122.0        86.0    2226          16.5   
+62  13.0          8         350.0       165.0    4274          12.0   
+63  14.0          8         400.0       175.0    4385          12.0   
+64  15.0          8         318.0       150.0    4135          13.5   
+65  14.0          8         351.0       153.0    4129          13.0   
+66  17.0          8         304.0       150.0    3672          11.5   
+67  11.0          8         429.0       208.0    4633          11.0   
+68  13.0          8         350.0       155.0    4502          13.5   
+69  12.0          8         350.0       160.0    4456          13.5   
+70  13.0          8         400.0       190.0    4422          12.5   
+71  19.0          3          70.0        97.0    2330          13.5   
+72  15.0          8         304.0       150.0    3892          12.5   
+73  13.0          8         307.0       130.0    4098          14.0   
+74  13.0          8         302.0       140.0    4294          16.0   
+75  14.0          8         318.0       150.0    4077          14.0   
+76  18.0          4         121.0       112.0    2933          14.5   
+77  22.0          4         121.0        76.0    2511          18.0   
+78  21.0          4         120.0        87.0    2979          19.5   
+79  26.0          4          96.0        69.0    2189          18.0   
+80  22.0          4         122.0        86.0    2395          16.0   
+81  28.0          4          97.0        92.0    2288          17.0   
+82  23.0          4         120.0        97.0    2506          14.5   
+83  28.0          4          98.0        80.0    2164          15.0   
+84  27.0          4          97.0        88.0    2100          16.5   
+
+    model_year  origin                              name  
+57          72   japan             toyota corona hardtop  
+58          72     usa                dodge colt hardtop  
+59          72  europe                 volkswagen type 3  
+60          72     usa                    chevrolet vega  
+61          72     usa               ford pinto runabout  
+62          72     usa                  chevrolet impala  
+63          72     usa                  pontiac catalina  
+64          72     usa                 plymouth fury iii  
+65          72     usa                  ford galaxie 500  
+66          72     usa                amc ambassador sst  
+67          72     usa                   mercury marquis  
+68          72     usa              buick lesabre custom  
+69          72     usa        oldsmobile delta 88 royale  
+70          72     usa            chrysler newport royal  
+71          72   japan                   mazda rx2 coupe  
+72          72     usa                  amc matador (sw)  
+73          72     usa  chevrolet chevelle concours (sw)  
+74          72     usa             ford gran torino (sw)  
+75          72     usa    plymouth satellite custom (sw)  
+76          72  europe                   volvo 145e (sw)  
+77          72  europe               volkswagen 411 (sw)  
+78          72  europe                  peugeot 504 (sw)  
+79          72  europe                   renault 12 (sw)  
+80          72     usa                   ford pinto (sw)  
+81          72   japan                   datsun 510 (sw)  
+82          72   japan       toyouta corona mark ii (sw)  
+83          72     usa                   dodge colt (sw)  
+84          72   japan          toyota corolla 1600 (sw)  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+85   13.0          8         350.0       175.0    4100          13.0   
+86   14.0          8         304.0       150.0    3672          11.5   
+87   13.0          8         350.0       145.0    3988          13.0   
+88   14.0          8         302.0       137.0    4042          14.5   
+89   15.0          8         318.0       150.0    3777          12.5   
+90   12.0          8         429.0       198.0    4952          11.5   
+91   13.0          8         400.0       150.0    4464          12.0   
+92   13.0          8         351.0       158.0    4363          13.0   
+93   14.0          8         318.0       150.0    4237          14.5   
+94   13.0          8         440.0       215.0    4735          11.0   
+95   12.0          8         455.0       225.0    4951          11.0   
+96   13.0          8         360.0       175.0    3821          11.0   
+97   18.0          6         225.0       105.0    3121          16.5   
+98   16.0          6         250.0       100.0    3278          18.0   
+99   18.0          6         232.0       100.0    2945          16.0   
+100  18.0          6         250.0        88.0    3021          16.5   
+101  23.0          6         198.0        95.0    2904          16.0   
+102  26.0          4          97.0        46.0    1950          21.0   
+103  11.0          8         400.0       150.0    4997          14.0   
+104  12.0          8         400.0       167.0    4906          12.5   
+105  13.0          8         360.0       170.0    4654          13.0   
+106  12.0          8         350.0       180.0    4499          12.5   
+107  18.0          6         232.0       100.0    2789          15.0   
+108  20.0          4          97.0        88.0    2279          19.0   
+109  21.0          4         140.0        72.0    2401          19.5   
+110  22.0          4         108.0        94.0    2379          16.5   
+111  18.0          3          70.0        90.0    2124          13.5   
+112  19.0          4         122.0        85.0    2310          18.5   
+113  21.0          6         155.0       107.0    2472          14.0   
+114  26.0          4          98.0        90.0    2265          15.5   
+115  15.0          8         350.0       145.0    4082          13.0   
+116  16.0          8         400.0       230.0    4278           9.5   
+117  29.0          4          68.0        49.0    1867          19.5   
+118  24.0          4         116.0        75.0    2158          15.5   
+119  20.0          4         114.0        91.0    2582          14.0   
+120  19.0          4         121.0       112.0    2868          15.5   
+121  15.0          8         318.0       150.0    3399          11.0   
+122  24.0          4         121.0       110.0    2660          14.0   
+123  20.0          6         156.0       122.0    2807          13.5   
+124  11.0          8         350.0       180.0    3664          11.0   
+
+     model_year  origin                          name  
+85           73     usa             buick century 350  
+86           73     usa                   amc matador  
+87           73     usa              chevrolet malibu  
+88           73     usa              ford gran torino  
+89           73     usa          dodge coronet custom  
+90           73     usa      mercury marquis brougham  
+91           73     usa     chevrolet caprice classic  
+92           73     usa                      ford ltd  
+93           73     usa      plymouth fury gran sedan  
+94           73     usa  chrysler new yorker brougham  
+95           73     usa      buick electra 225 custom  
+96           73     usa       amc ambassador brougham  
+97           73     usa              plymouth valiant  
+98           73     usa         chevrolet nova custom  
+99           73     usa                    amc hornet  
+100          73     usa                 ford maverick  
+101          73     usa               plymouth duster  
+102          73  europe       volkswagen super beetle  
+103          73     usa              chevrolet impala  
+104          73     usa                  ford country  
+105          73     usa        plymouth custom suburb  
+106          73     usa      oldsmobile vista cruiser  
+107          73     usa                   amc gremlin  
+108          73   japan                 toyota carina  
+109          73     usa                chevrolet vega  
+110          73   japan                    datsun 610  
+111          73   japan                     maxda rx3  
+112          73     usa                    ford pinto  
+113          73     usa              mercury capri v6  
+114          73  europe          fiat 124 sport coupe  
+115          73     usa       chevrolet monte carlo s  
+116          73     usa            pontiac grand prix  
+117          73  europe                      fiat 128  
+118          73  europe                    opel manta  
+119          73  europe                    audi 100ls  
+120          73  europe                   volvo 144ea  
+121          73     usa             dodge dart custom  
+122          73  europe                     saab 99le  
+123          73   japan                toyota mark ii  
+124          73     usa              oldsmobile omega  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+125  20.0          6         198.0        95.0    3102          16.5   
+126  21.0          6         200.0         NaN    2875          17.0   
+127  19.0          6         232.0       100.0    2901          16.0   
+128  15.0          6         250.0       100.0    3336          17.0   
+129  31.0          4          79.0        67.0    1950          19.0   
+130  26.0          4         122.0        80.0    2451          16.5   
+131  32.0          4          71.0        65.0    1836          21.0   
+132  25.0          4         140.0        75.0    2542          17.0   
+133  16.0          6         250.0       100.0    3781          17.0   
+134  16.0          6         258.0       110.0    3632          18.0   
+135  18.0          6         225.0       105.0    3613          16.5   
+136  16.0          8         302.0       140.0    4141          14.0   
+137  13.0          8         350.0       150.0    4699          14.5   
+138  14.0          8         318.0       150.0    4457          13.5   
+139  14.0          8         302.0       140.0    4638          16.0   
+140  14.0          8         304.0       150.0    4257          15.5   
+141  29.0          4          98.0        83.0    2219          16.5   
+142  26.0          4          79.0        67.0    1963          15.5   
+143  26.0          4          97.0        78.0    2300          14.5   
+144  31.0          4          76.0        52.0    1649          16.5   
+145  32.0          4          83.0        61.0    2003          19.0   
+146  28.0          4          90.0        75.0    2125          14.5   
+147  24.0          4          90.0        75.0    2108          15.5   
+148  26.0          4         116.0        75.0    2246          14.0   
+149  24.0          4         120.0        97.0    2489          15.0   
+150  26.0          4         108.0        93.0    2391          15.5   
+151  31.0          4          79.0        67.0    2000          16.0   
+
+     model_year  origin                               name  
+125          74     usa                    plymouth duster  
+126          74     usa                      ford maverick  
+127          74     usa                         amc hornet  
+128          74     usa                     chevrolet nova  
+129          74   japan                        datsun b210  
+130          74     usa                         ford pinto  
+131          74   japan                toyota corolla 1200  
+132          74     usa                     chevrolet vega  
+133          74     usa  chevrolet chevelle malibu classic  
+134          74     usa                        amc matador  
+135          74     usa         plymouth satellite sebring  
+136          74     usa                   ford gran torino  
+137          74     usa           buick century luxus (sw)  
+138          74     usa          dodge coronet custom (sw)  
+139          74     usa              ford gran torino (sw)  
+140          74     usa                   amc matador (sw)  
+141          74  europe                           audi fox  
+142          74  europe                  volkswagen dasher  
+143          74  europe                         opel manta  
+144          74   japan                      toyota corona  
+145          74   japan                         datsun 710  
+146          74     usa                         dodge colt  
+147          74  europe                           fiat 128  
+148          74  europe                        fiat 124 tc  
+149          74   japan                        honda civic  
+150          74   japan                             subaru  
+151          74  europe                          fiat x1.9  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+152  19.0          6         225.0        95.0    3264          16.0   
+153  18.0          6         250.0       105.0    3459          16.0   
+154  15.0          6         250.0        72.0    3432          21.0   
+155  15.0          6         250.0        72.0    3158          19.5   
+156  16.0          8         400.0       170.0    4668          11.5   
+157  15.0          8         350.0       145.0    4440          14.0   
+158  16.0          8         318.0       150.0    4498          14.5   
+159  14.0          8         351.0       148.0    4657          13.5   
+160  17.0          6         231.0       110.0    3907          21.0   
+161  16.0          6         250.0       105.0    3897          18.5   
+162  15.0          6         258.0       110.0    3730          19.0   
+163  18.0          6         225.0        95.0    3785          19.0   
+164  21.0          6         231.0       110.0    3039          15.0   
+165  20.0          8         262.0       110.0    3221          13.5   
+166  13.0          8         302.0       129.0    3169          12.0   
+167  29.0          4          97.0        75.0    2171          16.0   
+168  23.0          4         140.0        83.0    2639          17.0   
+169  20.0          6         232.0       100.0    2914          16.0   
+170  23.0          4         140.0        78.0    2592          18.5   
+171  24.0          4         134.0        96.0    2702          13.5   
+172  25.0          4          90.0        71.0    2223          16.5   
+173  24.0          4         119.0        97.0    2545          17.0   
+174  18.0          6         171.0        97.0    2984          14.5   
+175  29.0          4          90.0        70.0    1937          14.0   
+176  19.0          6         232.0        90.0    3211          17.0   
+177  23.0          4         115.0        95.0    2694          15.0   
+178  23.0          4         120.0        88.0    2957          17.0   
+179  22.0          4         121.0        98.0    2945          14.5   
+180  25.0          4         121.0       115.0    2671          13.5   
+181  33.0          4          91.0        53.0    1795          17.5   
+
+     model_year  origin                       name  
+152          75     usa    plymouth valiant custom  
+153          75     usa             chevrolet nova  
+154          75     usa            mercury monarch  
+155          75     usa              ford maverick  
+156          75     usa           pontiac catalina  
+157          75     usa          chevrolet bel air  
+158          75     usa        plymouth grand fury  
+159          75     usa                   ford ltd  
+160          75     usa              buick century  
+161          75     usa  chevroelt chevelle malibu  
+162          75     usa                amc matador  
+163          75     usa              plymouth fury  
+164          75     usa              buick skyhawk  
+165          75     usa        chevrolet monza 2+2  
+166          75     usa            ford mustang ii  
+167          75   japan             toyota corolla  
+168          75     usa                 ford pinto  
+169          75     usa                amc gremlin  
+170          75     usa              pontiac astro  
+171          75   japan              toyota corona  
+172          75  europe          volkswagen dasher  
+173          75   japan                 datsun 710  
+174          75     usa                 ford pinto  
+175          75  europe          volkswagen rabbit  
+176          75     usa                  amc pacer  
+177          75  europe                 audi 100ls  
+178          75  europe                peugeot 504  
+179          75  europe                volvo 244dl  
+180          75  europe                  saab 99le  
+181          75   japan           honda civic cvcc  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+182  28.0          4         107.0        86.0    2464          15.5   
+183  25.0          4         116.0        81.0    2220          16.9   
+184  25.0          4         140.0        92.0    2572          14.9   
+185  26.0          4          98.0        79.0    2255          17.7   
+186  27.0          4         101.0        83.0    2202          15.3   
+187  17.5          8         305.0       140.0    4215          13.0   
+188  16.0          8         318.0       150.0    4190          13.0   
+189  15.5          8         304.0       120.0    3962          13.9   
+190  14.5          8         351.0       152.0    4215          12.8   
+191  22.0          6         225.0       100.0    3233          15.4   
+192  22.0          6         250.0       105.0    3353          14.5   
+193  24.0          6         200.0        81.0    3012          17.6   
+194  22.5          6         232.0        90.0    3085          17.6   
+195  29.0          4          85.0        52.0    2035          22.2   
+196  24.5          4          98.0        60.0    2164          22.1   
+197  29.0          4          90.0        70.0    1937          14.2   
+198  33.0          4          91.0        53.0    1795          17.4   
+199  20.0          6         225.0       100.0    3651          17.7   
+200  18.0          6         250.0        78.0    3574          21.0   
+201  18.5          6         250.0       110.0    3645          16.2   
+202  17.5          6         258.0        95.0    3193          17.8   
+203  29.5          4          97.0        71.0    1825          12.2   
+204  32.0          4          85.0        70.0    1990          17.0   
+205  28.0          4          97.0        75.0    2155          16.4   
+206  26.5          4         140.0        72.0    2565          13.6   
+207  20.0          4         130.0       102.0    3150          15.7   
+208  13.0          8         318.0       150.0    3940          13.2   
+209  19.0          4         120.0        88.0    3270          21.9   
+210  19.0          6         156.0       108.0    2930          15.5   
+211  16.5          6         168.0       120.0    3820          16.7   
+212  16.5          8         350.0       180.0    4380          12.1   
+213  13.0          8         350.0       145.0    4055          12.0   
+214  13.0          8         302.0       130.0    3870          15.0   
+215  13.0          8         318.0       150.0    3755          14.0   
+
+     model_year  origin                               name  
+182          76  europe                           fiat 131  
+183          76  europe                          opel 1900  
+184          76     usa                           capri ii  
+185          76     usa                         dodge colt  
+186          76  europe                       renault 12tl  
+187          76     usa  chevrolet chevelle malibu classic  
+188          76     usa             dodge coronet brougham  
+189          76     usa                        amc matador  
+190          76     usa                   ford gran torino  
+191          76     usa                   plymouth valiant  
+192          76     usa                     chevrolet nova  
+193          76     usa                      ford maverick  
+194          76     usa                         amc hornet  
+195          76     usa                 chevrolet chevette  
+196          76     usa                    chevrolet woody  
+197          76  europe                          vw rabbit  
+198          76   japan                        honda civic  
+199          76     usa                     dodge aspen se  
+200          76     usa                  ford granada ghia  
+201          76     usa                 pontiac ventura sj  
+202          76     usa                      amc pacer d/l  
+203          76  europe                  volkswagen rabbit  
+204          76   japan                       datsun b-210  
+205          76   japan                     toyota corolla  
+206          76     usa                         ford pinto  
+207          76  europe                          volvo 245  
+208          76     usa         plymouth volare premier v8  
+209          76  europe                        peugeot 504  
+210          76   japan                     toyota mark ii  
+211          76  europe                 mercedes-benz 280s  
+212          76     usa                   cadillac seville  
+213          76     usa                          chevy c10  
+214          76     usa                          ford f108  
+215          76     usa                         dodge d100  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+216  31.5          4          98.0        68.0    2045          18.5   
+217  30.0          4         111.0        80.0    2155          14.8   
+218  36.0          4          79.0        58.0    1825          18.6   
+219  25.5          4         122.0        96.0    2300          15.5   
+220  33.5          4          85.0        70.0    1945          16.8   
+221  17.5          8         305.0       145.0    3880          12.5   
+222  17.0          8         260.0       110.0    4060          19.0   
+223  15.5          8         318.0       145.0    4140          13.7   
+224  15.0          8         302.0       130.0    4295          14.9   
+225  17.5          6         250.0       110.0    3520          16.4   
+226  20.5          6         231.0       105.0    3425          16.9   
+227  19.0          6         225.0       100.0    3630          17.7   
+228  18.5          6         250.0        98.0    3525          19.0   
+229  16.0          8         400.0       180.0    4220          11.1   
+230  15.5          8         350.0       170.0    4165          11.4   
+231  15.5          8         400.0       190.0    4325          12.2   
+232  16.0          8         351.0       149.0    4335          14.5   
+233  29.0          4          97.0        78.0    1940          14.5   
+234  24.5          4         151.0        88.0    2740          16.0   
+235  26.0          4          97.0        75.0    2265          18.2   
+236  25.5          4         140.0        89.0    2755          15.8   
+237  30.5          4          98.0        63.0    2051          17.0   
+238  33.5          4          98.0        83.0    2075          15.9   
+239  30.0          4          97.0        67.0    1985          16.4   
+240  30.5          4          97.0        78.0    2190          14.1   
+241  22.0          6         146.0        97.0    2815          14.5   
+242  21.5          4         121.0       110.0    2600          12.8   
+243  21.5          3          80.0       110.0    2720          13.5   
+
+     model_year  origin                          name  
+216          77   japan             honda accord cvcc  
+217          77     usa       buick opel isuzu deluxe  
+218          77  europe                 renault 5 gtl  
+219          77     usa             plymouth arrow gs  
+220          77   japan         datsun f-10 hatchback  
+221          77     usa     chevrolet caprice classic  
+222          77     usa    oldsmobile cutlass supreme  
+223          77     usa         dodge monaco brougham  
+224          77     usa       mercury cougar brougham  
+225          77     usa            chevrolet concours  
+226          77     usa                 buick skylark  
+227          77     usa        plymouth volare custom  
+228          77     usa                  ford granada  
+229          77     usa         pontiac grand prix lj  
+230          77     usa  chevrolet monte carlo landau  
+231          77     usa              chrysler cordoba  
+232          77     usa              ford thunderbird  
+233          77  europe      volkswagen rabbit custom  
+234          77     usa         pontiac sunbird coupe  
+235          77   japan       toyota corolla liftback  
+236          77     usa           ford mustang ii 2+2  
+237          77     usa            chevrolet chevette  
+238          77     usa                dodge colt m/m  
+239          77   japan                     subaru dl  
+240          77  europe             volkswagen dasher  
+241          77   japan                    datsun 810  
+242          77  europe                      bmw 320i  
+243          77   japan                    mazda rx-4  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+244  43.1          4          90.0        48.0    1985          21.5   
+245  36.1          4          98.0        66.0    1800          14.4   
+246  32.8          4          78.0        52.0    1985          19.4   
+247  39.4          4          85.0        70.0    2070          18.6   
+248  36.1          4          91.0        60.0    1800          16.4   
+249  19.9          8         260.0       110.0    3365          15.5   
+250  19.4          8         318.0       140.0    3735          13.2   
+251  20.2          8         302.0       139.0    3570          12.8   
+252  19.2          6         231.0       105.0    3535          19.2   
+253  20.5          6         200.0        95.0    3155          18.2   
+254  20.2          6         200.0        85.0    2965          15.8   
+255  25.1          4         140.0        88.0    2720          15.4   
+256  20.5          6         225.0       100.0    3430          17.2   
+257  19.4          6         232.0        90.0    3210          17.2   
+258  20.6          6         231.0       105.0    3380          15.8   
+259  20.8          6         200.0        85.0    3070          16.7   
+260  18.6          6         225.0       110.0    3620          18.7   
+261  18.1          6         258.0       120.0    3410          15.1   
+262  19.2          8         305.0       145.0    3425          13.2   
+263  17.7          6         231.0       165.0    3445          13.4   
+264  18.1          8         302.0       139.0    3205          11.2   
+265  17.5          8         318.0       140.0    4080          13.7   
+266  30.0          4          98.0        68.0    2155          16.5   
+267  27.5          4         134.0        95.0    2560          14.2   
+268  27.2          4         119.0        97.0    2300          14.7   
+269  30.9          4         105.0        75.0    2230          14.5   
+270  21.1          4         134.0        95.0    2515          14.8   
+271  23.2          4         156.0       105.0    2745          16.7   
+272  23.8          4         151.0        85.0    2855          17.6   
+273  23.9          4         119.0        97.0    2405          14.9   
+274  20.3          5         131.0       103.0    2830          15.9   
+275  17.0          6         163.0       125.0    3140          13.6   
+276  21.6          4         121.0       115.0    2795          15.7   
+277  16.2          6         163.0       133.0    3410          15.8   
+278  31.5          4          89.0        71.0    1990          14.9   
+279  29.5          4          98.0        68.0    2135          16.6   
+
+     model_year  origin                               name  
+244          78  europe    volkswagen rabbit custom diesel  
+245          78     usa                        ford fiesta  
+246          78   japan                   mazda glc deluxe  
+247          78   japan                     datsun b210 gx  
+248          78   japan                   honda civic cvcc  
+249          78     usa  oldsmobile cutlass salon brougham  
+250          78     usa                     dodge diplomat  
+251          78     usa               mercury monarch ghia  
+252          78     usa                 pontiac phoenix lj  
+253          78     usa                   chevrolet malibu  
+254          78     usa               ford fairmont (auto)  
+255          78     usa                ford fairmont (man)  
+256          78     usa                    plymouth volare  
+257          78     usa                        amc concord  
+258          78     usa              buick century special  
+259          78     usa                     mercury zephyr  
+260          78     usa                        dodge aspen  
+261          78     usa                    amc concord d/l  
+262          78     usa       chevrolet monte carlo landau  
+263          78     usa    buick regal sport coupe (turbo)  
+264          78     usa                        ford futura  
+265          78     usa                    dodge magnum xe  
+266          78     usa                 chevrolet chevette  
+267          78   japan                      toyota corona  
+268          78   japan                         datsun 510  
+269          78     usa                         dodge omni  
+270          78   japan          toyota celica gt liftback  
+271          78     usa                   plymouth sapporo  
+272          78     usa             oldsmobile starfire sx  
+273          78   japan                      datsun 200-sx  
+274          78  europe                          audi 5000  
+275          78  europe                        volvo 264gl  
+276          78  europe                         saab 99gle  
+277          78  europe                      peugeot 604sl  
+278          78  europe                volkswagen scirocco  
+279          78   japan                    honda accord lx  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+280  21.5          6         231.0       115.0    3245          15.4   
+281  19.8          6         200.0        85.0    2990          18.2   
+282  22.3          4         140.0        88.0    2890          17.3   
+283  20.2          6         232.0        90.0    3265          18.2   
+284  20.6          6         225.0       110.0    3360          16.6   
+285  17.0          8         305.0       130.0    3840          15.4   
+286  17.6          8         302.0       129.0    3725          13.4   
+287  16.5          8         351.0       138.0    3955          13.2   
+288  18.2          8         318.0       135.0    3830          15.2   
+289  16.9          8         350.0       155.0    4360          14.9   
+290  15.5          8         351.0       142.0    4054          14.3   
+291  19.2          8         267.0       125.0    3605          15.0   
+292  18.5          8         360.0       150.0    3940          13.0   
+293  31.9          4          89.0        71.0    1925          14.0   
+294  34.1          4          86.0        65.0    1975          15.2   
+295  35.7          4          98.0        80.0    1915          14.4   
+296  27.4          4         121.0        80.0    2670          15.0   
+297  25.4          5         183.0        77.0    3530          20.1   
+298  23.0          8         350.0       125.0    3900          17.4   
+299  27.2          4         141.0        71.0    3190          24.8   
+300  23.9          8         260.0        90.0    3420          22.2   
+301  34.2          4         105.0        70.0    2200          13.2   
+302  34.5          4         105.0        70.0    2150          14.9   
+303  31.8          4          85.0        65.0    2020          19.2   
+304  37.3          4          91.0        69.0    2130          14.7   
+305  28.4          4         151.0        90.0    2670          16.0   
+306  28.8          6         173.0       115.0    2595          11.3   
+307  26.8          6         173.0       115.0    2700          12.9   
+308  33.5          4         151.0        90.0    2556          13.2   
+
+     model_year  origin                                  name  
+280          79     usa                     pontiac lemans v6  
+281          79     usa                      mercury zephyr 6  
+282          79     usa                       ford fairmont 4  
+283          79     usa                      amc concord dl 6  
+284          79     usa                         dodge aspen 6  
+285          79     usa             chevrolet caprice classic  
+286          79     usa                       ford ltd landau  
+287          79     usa                 mercury grand marquis  
+288          79     usa                       dodge st. regis  
+289          79     usa               buick estate wagon (sw)  
+290          79     usa              ford country squire (sw)  
+291          79     usa         chevrolet malibu classic (sw)  
+292          79     usa  chrysler lebaron town @ country (sw)  
+293          79  europe                      vw rabbit custom  
+294          79   japan                      maxda glc deluxe  
+295          79     usa           dodge colt hatchback custom  
+296          79     usa                         amc spirit dl  
+297          79  europe                    mercedes benz 300d  
+298          79     usa                     cadillac eldorado  
+299          79  europe                           peugeot 504  
+300          79     usa     oldsmobile cutlass salon brougham  
+301          79     usa                      plymouth horizon  
+302          79     usa                  plymouth horizon tc3  
+303          79   japan                            datsun 210  
+304          79  europe                    fiat strada custom  
+305          79     usa                 buick skylark limited  
+306          79     usa                    chevrolet citation  
+307          79     usa             oldsmobile omega brougham  
+308          79     usa                       pontiac phoenix  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+309  41.5          4          98.0        76.0    2144          14.7   
+310  38.1          4          89.0        60.0    1968          18.8   
+311  32.1          4          98.0        70.0    2120          15.5   
+312  37.2          4          86.0        65.0    2019          16.4   
+313  28.0          4         151.0        90.0    2678          16.5   
+314  26.4          4         140.0        88.0    2870          18.1   
+315  24.3          4         151.0        90.0    3003          20.1   
+316  19.1          6         225.0        90.0    3381          18.7   
+317  34.3          4          97.0        78.0    2188          15.8   
+318  29.8          4         134.0        90.0    2711          15.5   
+319  31.3          4         120.0        75.0    2542          17.5   
+320  37.0          4         119.0        92.0    2434          15.0   
+321  32.2          4         108.0        75.0    2265          15.2   
+322  46.6          4          86.0        65.0    2110          17.9   
+323  27.9          4         156.0       105.0    2800          14.4   
+324  40.8          4          85.0        65.0    2110          19.2   
+325  44.3          4          90.0        48.0    2085          21.7   
+326  43.4          4          90.0        48.0    2335          23.7   
+327  36.4          5         121.0        67.0    2950          19.9   
+328  30.0          4         146.0        67.0    3250          21.8   
+329  44.6          4          91.0        67.0    1850          13.8   
+330  40.9          4          85.0         NaN    1835          17.3   
+331  33.8          4          97.0        67.0    2145          18.0   
+332  29.8          4          89.0        62.0    1845          15.3   
+333  32.7          6         168.0       132.0    2910          11.4   
+334  23.7          3          70.0       100.0    2420          12.5   
+335  35.0          4         122.0        88.0    2500          15.1   
+336  23.6          4         140.0         NaN    2905          14.3   
+337  32.4          4         107.0        72.0    2290          17.0   
+
+     model_year  origin                    name  
+309          80  europe               vw rabbit  
+310          80   japan   toyota corolla tercel  
+311          80     usa      chevrolet chevette  
+312          80   japan              datsun 310  
+313          80     usa      chevrolet citation  
+314          80     usa           ford fairmont  
+315          80     usa             amc concord  
+316          80     usa             dodge aspen  
+317          80  europe               audi 4000  
+318          80   japan  toyota corona liftback  
+319          80   japan               mazda 626  
+320          80   japan    datsun 510 hatchback  
+321          80   japan          toyota corolla  
+322          80   japan               mazda glc  
+323          80     usa              dodge colt  
+324          80   japan              datsun 210  
+325          80  europe    vw rabbit c (diesel)  
+326          80  europe      vw dasher (diesel)  
+327          80  europe     audi 5000s (diesel)  
+328          80  europe      mercedes-benz 240d  
+329          80   japan     honda civic 1500 gl  
+330          80  europe    renault lecar deluxe  
+331          80   japan               subaru dl  
+332          80  europe        vokswagen rabbit  
+333          80   japan           datsun 280-zx  
+334          80   japan           mazda rx-7 gs  
+335          80  europe       triumph tr7 coupe  
+336          80     usa      ford mustang cobra  
+337          80   japan            honda accord  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+338  27.2          4         135.0        84.0    2490          15.7   
+339  26.6          4         151.0        84.0    2635          16.4   
+340  25.8          4         156.0        92.0    2620          14.4   
+341  23.5          6         173.0       110.0    2725          12.6   
+342  30.0          4         135.0        84.0    2385          12.9   
+343  39.1          4          79.0        58.0    1755          16.9   
+344  39.0          4          86.0        64.0    1875          16.4   
+345  35.1          4          81.0        60.0    1760          16.1   
+346  32.3          4          97.0        67.0    2065          17.8   
+347  37.0          4          85.0        65.0    1975          19.4   
+348  37.7          4          89.0        62.0    2050          17.3   
+349  34.1          4          91.0        68.0    1985          16.0   
+350  34.7          4         105.0        63.0    2215          14.9   
+351  34.4          4          98.0        65.0    2045          16.2   
+352  29.9          4          98.0        65.0    2380          20.7   
+353  33.0          4         105.0        74.0    2190          14.2   
+354  34.5          4         100.0         NaN    2320          15.8   
+355  33.7          4         107.0        75.0    2210          14.4   
+356  32.4          4         108.0        75.0    2350          16.8   
+357  32.9          4         119.0       100.0    2615          14.8   
+358  31.6          4         120.0        74.0    2635          18.3   
+359  28.1          4         141.0        80.0    3230          20.4   
+360  30.7          6         145.0        76.0    3160          19.6   
+361  25.4          6         168.0       116.0    2900          12.6   
+362  24.2          6         146.0       120.0    2930          13.8   
+363  22.4          6         231.0       110.0    3415          15.8   
+364  26.6          8         350.0       105.0    3725          19.0   
+365  20.2          6         200.0        88.0    3060          17.1   
+366  17.6          6         225.0        85.0    3465          16.6   
+
+     model_year  origin                       name  
+338          81     usa           plymouth reliant  
+339          81     usa              buick skylark  
+340          81     usa     dodge aries wagon (sw)  
+341          81     usa         chevrolet citation  
+342          81     usa           plymouth reliant  
+343          81   japan             toyota starlet  
+344          81     usa             plymouth champ  
+345          81   japan           honda civic 1300  
+346          81   japan                     subaru  
+347          81   japan             datsun 210 mpg  
+348          81   japan              toyota tercel  
+349          81   japan                mazda glc 4  
+350          81     usa         plymouth horizon 4  
+351          81     usa             ford escort 4w  
+352          81     usa             ford escort 2h  
+353          81  europe           volkswagen jetta  
+354          81  europe                renault 18i  
+355          81   japan              honda prelude  
+356          81   japan             toyota corolla  
+357          81   japan               datsun 200sx  
+358          81   japan                  mazda 626  
+359          81  europe  peugeot 505s turbo diesel  
+360          81  europe               volvo diesel  
+361          81   japan            toyota cressida  
+362          81   japan          datsun 810 maxima  
+363          81     usa              buick century  
+364          81     usa      oldsmobile cutlass ls  
+365          81     usa            ford granada gl  
+366          81     usa     chrysler lebaron salon  
+      mpg  cylinders  displacement  horsepower  weight  acceleration  \
+367  28.0          4         112.0        88.0    2605          19.6   
+368  27.0          4         112.0        88.0    2640          18.6   
+369  34.0          4         112.0        88.0    2395          18.0   
+370  31.0          4         112.0        85.0    2575          16.2   
+371  29.0          4         135.0        84.0    2525          16.0   
+372  27.0          4         151.0        90.0    2735          18.0   
+373  24.0          4         140.0        92.0    2865          16.4   
+374  23.0          4         151.0         NaN    3035          20.5   
+375  36.0          4         105.0        74.0    1980          15.3   
+376  37.0          4          91.0        68.0    2025          18.2   
+377  31.0          4          91.0        68.0    1970          17.6   
+378  38.0          4         105.0        63.0    2125          14.7   
+379  36.0          4          98.0        70.0    2125          17.3   
+380  36.0          4         120.0        88.0    2160          14.5   
+381  36.0          4         107.0        75.0    2205          14.5   
+382  34.0          4         108.0        70.0    2245          16.9   
+383  38.0          4          91.0        67.0    1965          15.0   
+384  32.0          4          91.0        67.0    1965          15.7   
+385  38.0          4          91.0        67.0    1995          16.2   
+386  25.0          6         181.0       110.0    2945          16.4   
+387  38.0          6         262.0        85.0    3015          17.0   
+388  26.0          4         156.0        92.0    2585          14.5   
+389  22.0          6         232.0       112.0    2835          14.7   
+390  32.0          4         144.0        96.0    2665          13.9   
+391  36.0          4         135.0        84.0    2370          13.0   
+392  27.0          4         151.0        90.0    2950          17.3   
+393  27.0          4         140.0        86.0    2790          15.6   
+394  44.0          4          97.0        52.0    2130          24.6   
+395  32.0          4         135.0        84.0    2295          11.6   
+396  28.0          4         120.0        79.0    2625          18.6   
+397  31.0          4         119.0        82.0    2720          19.4   
+
+     model_year  origin                               name  
+367          82     usa                 chevrolet cavalier  
+368          82     usa           chevrolet cavalier wagon  
+369          82     usa          chevrolet cavalier 2-door  
+370          82     usa         pontiac j2000 se hatchback  
+371          82     usa                     dodge aries se  
+372          82     usa                    pontiac phoenix  
+373          82     usa               ford fairmont futura  
+374          82     usa                     amc concord dl  
+375          82  europe                volkswagen rabbit l  
+376          82   japan                 mazda glc custom l  
+377          82   japan                   mazda glc custom  
+378          82     usa             plymouth horizon miser  
+379          82     usa                     mercury lynx l  
+380          82   japan                   nissan stanza xe  
+381          82   japan                       honda accord  
+382          82   japan                     toyota corolla  
+383          82   japan                        honda civic  
+384          82   japan                 honda civic (auto)  
+385          82   japan                      datsun 310 gx  
+386          82     usa              buick century limited  
+387          82     usa  oldsmobile cutlass ciera (diesel)  
+388          82     usa         chrysler lebaron medallion  
+389          82     usa                     ford granada l  
+390          82   japan                   toyota celica gt  
+391          82     usa                  dodge charger 2.2  
+392          82     usa                   chevrolet camaro  
+393          82     usa                    ford mustang gl  
+394          82  europe                          vw pickup  
+395          82     usa                      dodge rampage  
+396          82     usa                        ford ranger  
+397          82     usa                         chevy s-10  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of using <code class="docutils literal notranslate"><span class="pre">print</span></code>, let’s use <code class="docutils literal notranslate"><span class="pre">display</span></code> for <code class="docutils literal notranslate"><span class="pre">b</span></code>.  The information is the same, but it will be in a more familiar presentation.  Let’s also use the expression <code class="docutils literal notranslate"><span class="pre">break</span></code> to leave the for loop immediately.  (So here we are doing the code inside the for loop exactly one time.)</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">70</span></code> in this case and <code class="docutils literal notranslate"><span class="pre">b</span></code> is a pandas DataFrame.  In fact, it is the sub-DataFrame corresponding to the model_year of 70.  We would normally get this sub-DataFrame <code class="docutils literal notranslate"><span class="pre">b</span></code> using Boolean indexing, but here pandas <code class="docutils literal notranslate"><span class="pre">groupby</span></code> is doing that work for us.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">break</span> <span class="c1"># leave the for loop</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet chevelle malibu</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>165.0</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick skylark 320</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150.0</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth satellite</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304.0</td>
+      <td>150.0</td>
+      <td>3433</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>amc rebel sst</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302.0</td>
+      <td>140.0</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>ford torino</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>429.0</td>
+      <td>198.0</td>
+      <td>4341</td>
+      <td>10.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>ford galaxie 500</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>14.0</td>
+      <td>8</td>
+      <td>454.0</td>
+      <td>220.0</td>
+      <td>4354</td>
+      <td>9.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet impala</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>14.0</td>
+      <td>8</td>
+      <td>440.0</td>
+      <td>215.0</td>
+      <td>4312</td>
+      <td>8.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth fury iii</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>14.0</td>
+      <td>8</td>
+      <td>455.0</td>
+      <td>225.0</td>
+      <td>4425</td>
+      <td>10.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>pontiac catalina</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>390.0</td>
+      <td>190.0</td>
+      <td>3850</td>
+      <td>8.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>amc ambassador dpl</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>383.0</td>
+      <td>170.0</td>
+      <td>3563</td>
+      <td>10.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>dodge challenger se</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>14.0</td>
+      <td>8</td>
+      <td>340.0</td>
+      <td>160.0</td>
+      <td>3609</td>
+      <td>8.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth 'cuda 340</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>400.0</td>
+      <td>150.0</td>
+      <td>3761</td>
+      <td>9.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet monte carlo</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14.0</td>
+      <td>8</td>
+      <td>455.0</td>
+      <td>225.0</td>
+      <td>3086</td>
+      <td>10.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick estate wagon (sw)</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>24.0</td>
+      <td>4</td>
+      <td>113.0</td>
+      <td>95.0</td>
+      <td>2372</td>
+      <td>15.0</td>
+      <td>70</td>
+      <td>japan</td>
+      <td>toyota corona mark ii</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>22.0</td>
+      <td>6</td>
+      <td>198.0</td>
+      <td>95.0</td>
+      <td>2833</td>
+      <td>15.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth duster</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>18.0</td>
+      <td>6</td>
+      <td>199.0</td>
+      <td>97.0</td>
+      <td>2774</td>
+      <td>15.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>amc hornet</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>21.0</td>
+      <td>6</td>
+      <td>200.0</td>
+      <td>85.0</td>
+      <td>2587</td>
+      <td>16.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>ford maverick</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>27.0</td>
+      <td>4</td>
+      <td>97.0</td>
+      <td>88.0</td>
+      <td>2130</td>
+      <td>14.5</td>
+      <td>70</td>
+      <td>japan</td>
+      <td>datsun pl510</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>26.0</td>
+      <td>4</td>
+      <td>97.0</td>
+      <td>46.0</td>
+      <td>1835</td>
+      <td>20.5</td>
+      <td>70</td>
+      <td>europe</td>
+      <td>volkswagen 1131 deluxe sedan</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>25.0</td>
+      <td>4</td>
+      <td>110.0</td>
+      <td>87.0</td>
+      <td>2672</td>
+      <td>17.5</td>
+      <td>70</td>
+      <td>europe</td>
+      <td>peugeot 504</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>24.0</td>
+      <td>4</td>
+      <td>107.0</td>
+      <td>90.0</td>
+      <td>2430</td>
+      <td>14.5</td>
+      <td>70</td>
+      <td>europe</td>
+      <td>audi 100 ls</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>25.0</td>
+      <td>4</td>
+      <td>104.0</td>
+      <td>95.0</td>
+      <td>2375</td>
+      <td>17.5</td>
+      <td>70</td>
+      <td>europe</td>
+      <td>saab 99e</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>26.0</td>
+      <td>4</td>
+      <td>121.0</td>
+      <td>113.0</td>
+      <td>2234</td>
+      <td>12.5</td>
+      <td>70</td>
+      <td>europe</td>
+      <td>bmw 2002</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>21.0</td>
+      <td>6</td>
+      <td>199.0</td>
+      <td>90.0</td>
+      <td>2648</td>
+      <td>15.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>amc gremlin</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>10.0</td>
+      <td>8</td>
+      <td>360.0</td>
+      <td>215.0</td>
+      <td>4615</td>
+      <td>14.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>ford f250</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>10.0</td>
+      <td>8</td>
+      <td>307.0</td>
+      <td>200.0</td>
+      <td>4376</td>
+      <td>15.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevy c20</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>11.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>210.0</td>
+      <td>4382</td>
+      <td>13.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>dodge d200</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>9.0</td>
+      <td>8</td>
+      <td>304.0</td>
+      <td>193.0</td>
+      <td>4732</td>
+      <td>18.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>hi 1200d</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The above DataFrame <code class="docutils literal notranslate"><span class="pre">b</span></code> has length <code class="docutils literal notranslate"><span class="pre">29</span></code>.  The full DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code> has length <code class="docutils literal notranslate"><span class="pre">398</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>398
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is another example.  We tell the for loop to stop if we reach <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">75</span></code>.  What I really want to see is, what is the value of <code class="docutils literal notranslate"><span class="pre">b</span></code> when <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">75</span></code>.  If the <code class="docutils literal notranslate"><span class="pre">break</span></code> part is confusing, you can remove the <code class="docutils literal notranslate"><span class="pre">break</span></code> and just print “hi” or something, and you can then work with a later value of <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">75</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because we broke out of the for loop when <code class="docutils literal notranslate"><span class="pre">a</span></code> was equal to <code class="docutils literal notranslate"><span class="pre">75</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> is still <code class="docutils literal notranslate"><span class="pre">75</span></code>.  It never reached the later values of <code class="docutils literal notranslate"><span class="pre">76</span></code> through <code class="docutils literal notranslate"><span class="pre">82</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75
+</pre></div>
+</div>
+</div>
+</div>
+<p>What I really want to emphasize is, what is the value of <code class="docutils literal notranslate"><span class="pre">b</span></code> when <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">75</span></code>?  It is exactly the sub-DataFrame of <code class="docutils literal notranslate"><span class="pre">df</span></code> corresponding to model_year 75.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>152</th>
+      <td>19.0</td>
+      <td>6</td>
+      <td>225.0</td>
+      <td>95.0</td>
+      <td>3264</td>
+      <td>16.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>plymouth valiant custom</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>18.0</td>
+      <td>6</td>
+      <td>250.0</td>
+      <td>105.0</td>
+      <td>3459</td>
+      <td>16.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>chevrolet nova</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>15.0</td>
+      <td>6</td>
+      <td>250.0</td>
+      <td>72.0</td>
+      <td>3432</td>
+      <td>21.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>mercury monarch</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>15.0</td>
+      <td>6</td>
+      <td>250.0</td>
+      <td>72.0</td>
+      <td>3158</td>
+      <td>19.5</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>ford maverick</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>400.0</td>
+      <td>170.0</td>
+      <td>4668</td>
+      <td>11.5</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>pontiac catalina</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>145.0</td>
+      <td>4440</td>
+      <td>14.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>chevrolet bel air</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150.0</td>
+      <td>4498</td>
+      <td>14.5</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>plymouth grand fury</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>14.0</td>
+      <td>8</td>
+      <td>351.0</td>
+      <td>148.0</td>
+      <td>4657</td>
+      <td>13.5</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>ford ltd</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>17.0</td>
+      <td>6</td>
+      <td>231.0</td>
+      <td>110.0</td>
+      <td>3907</td>
+      <td>21.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>buick century</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>16.0</td>
+      <td>6</td>
+      <td>250.0</td>
+      <td>105.0</td>
+      <td>3897</td>
+      <td>18.5</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>chevroelt chevelle malibu</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>15.0</td>
+      <td>6</td>
+      <td>258.0</td>
+      <td>110.0</td>
+      <td>3730</td>
+      <td>19.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>amc matador</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>18.0</td>
+      <td>6</td>
+      <td>225.0</td>
+      <td>95.0</td>
+      <td>3785</td>
+      <td>19.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>plymouth fury</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>21.0</td>
+      <td>6</td>
+      <td>231.0</td>
+      <td>110.0</td>
+      <td>3039</td>
+      <td>15.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>buick skyhawk</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>20.0</td>
+      <td>8</td>
+      <td>262.0</td>
+      <td>110.0</td>
+      <td>3221</td>
+      <td>13.5</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>chevrolet monza 2+2</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>13.0</td>
+      <td>8</td>
+      <td>302.0</td>
+      <td>129.0</td>
+      <td>3169</td>
+      <td>12.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>ford mustang ii</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>29.0</td>
+      <td>4</td>
+      <td>97.0</td>
+      <td>75.0</td>
+      <td>2171</td>
+      <td>16.0</td>
+      <td>75</td>
+      <td>japan</td>
+      <td>toyota corolla</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>23.0</td>
+      <td>4</td>
+      <td>140.0</td>
+      <td>83.0</td>
+      <td>2639</td>
+      <td>17.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>ford pinto</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>20.0</td>
+      <td>6</td>
+      <td>232.0</td>
+      <td>100.0</td>
+      <td>2914</td>
+      <td>16.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>amc gremlin</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>23.0</td>
+      <td>4</td>
+      <td>140.0</td>
+      <td>78.0</td>
+      <td>2592</td>
+      <td>18.5</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>pontiac astro</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>24.0</td>
+      <td>4</td>
+      <td>134.0</td>
+      <td>96.0</td>
+      <td>2702</td>
+      <td>13.5</td>
+      <td>75</td>
+      <td>japan</td>
+      <td>toyota corona</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>25.0</td>
+      <td>4</td>
+      <td>90.0</td>
+      <td>71.0</td>
+      <td>2223</td>
+      <td>16.5</td>
+      <td>75</td>
+      <td>europe</td>
+      <td>volkswagen dasher</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>24.0</td>
+      <td>4</td>
+      <td>119.0</td>
+      <td>97.0</td>
+      <td>2545</td>
+      <td>17.0</td>
+      <td>75</td>
+      <td>japan</td>
+      <td>datsun 710</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>18.0</td>
+      <td>6</td>
+      <td>171.0</td>
+      <td>97.0</td>
+      <td>2984</td>
+      <td>14.5</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>ford pinto</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>29.0</td>
+      <td>4</td>
+      <td>90.0</td>
+      <td>70.0</td>
+      <td>1937</td>
+      <td>14.0</td>
+      <td>75</td>
+      <td>europe</td>
+      <td>volkswagen rabbit</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>19.0</td>
+      <td>6</td>
+      <td>232.0</td>
+      <td>90.0</td>
+      <td>3211</td>
+      <td>17.0</td>
+      <td>75</td>
+      <td>usa</td>
+      <td>amc pacer</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>23.0</td>
+      <td>4</td>
+      <td>115.0</td>
+      <td>95.0</td>
+      <td>2694</td>
+      <td>15.0</td>
+      <td>75</td>
+      <td>europe</td>
+      <td>audi 100ls</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>23.0</td>
+      <td>4</td>
+      <td>120.0</td>
+      <td>88.0</td>
+      <td>2957</td>
+      <td>17.0</td>
+      <td>75</td>
+      <td>europe</td>
+      <td>peugeot 504</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>22.0</td>
+      <td>4</td>
+      <td>121.0</td>
+      <td>98.0</td>
+      <td>2945</td>
+      <td>14.5</td>
+      <td>75</td>
+      <td>europe</td>
+      <td>volvo 244dl</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>25.0</td>
+      <td>4</td>
+      <td>121.0</td>
+      <td>115.0</td>
+      <td>2671</td>
+      <td>13.5</td>
+      <td>75</td>
+      <td>europe</td>
+      <td>saab 99le</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>33.0</td>
+      <td>4</td>
+      <td>91.0</td>
+      <td>53.0</td>
+      <td>1795</td>
+      <td>17.5</td>
+      <td>75</td>
+      <td>japan</td>
+      <td>honda civic cvcc</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s contrast that with how we would normally find this sub-DataFrame, using Boolean indexing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boolean indexing</span>
+<span class="n">sub_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;model_year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">75</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I claim that the sub-DataFrame <code class="docutils literal notranslate"><span class="pre">sub_df</span></code> we just defined is the same as <code class="docutils literal notranslate"><span class="pre">b</span></code> that was produced above.  If we evaluate <code class="docutils literal notranslate"><span class="pre">sub_df</span> <span class="pre">==</span> <span class="pre">b</span></code>, we get a whole DataFrame of <code class="docutils literal notranslate"><span class="pre">True</span></code>s and <code class="docutils literal notranslate"><span class="pre">False</span></code>s.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_df</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>152</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Are all of the values <code class="docutils literal notranslate"><span class="pre">True</span></code>?  (In other words, are the sub-DataFrames really equal?)  The following will tell us if all the values are equal along each individual row.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">sub_df</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>152    True
+153    True
+154    True
+155    True
+156    True
+157    True
+158    True
+159    True
+160    True
+161    True
+162    True
+163    True
+164    True
+165    True
+166    True
+167    True
+168    True
+169    True
+170    True
+171    True
+172    True
+173    True
+174    True
+175    True
+176    True
+177    True
+178    True
+179    True
+180    True
+181    True
+dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can add another <code class="docutils literal notranslate"><span class="pre">all</span></code> to verify that all the rows really are equal.  The following confirms that the two DataFrames are equal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">sub_df</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s finally get to a question we can solve by iterating over a GroupBy object with a for loop.</p>
+<ul class="simple">
+<li><p>For each year, how many cars had mpg at least 25?</p></li>
+</ul>
+<p>Here we change to better variable names than <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.  We use the variable names <code class="docutils literal notranslate"><span class="pre">year</span></code> and <code class="docutils literal notranslate"><span class="pre">sub_df</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can’t realistically print out every value of <code class="docutils literal notranslate"><span class="pre">sub_df</span></code>, but here is the final value.  (Inside of the for loop, <code class="docutils literal notranslate"><span class="pre">sub_df</span></code> takes a different value for each year from 70 to 82.  When we leave the for loop, <code class="docutils literal notranslate"><span class="pre">sub_df</span></code> is still the final value, the sub-DataFrame corresponding to model_year 82.)  Notice how the model_year is 82 throughout this DataFrame.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>367</th>
+      <td>28.0</td>
+      <td>4</td>
+      <td>112.0</td>
+      <td>88.0</td>
+      <td>2605</td>
+      <td>19.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>chevrolet cavalier</td>
+    </tr>
+    <tr>
+      <th>368</th>
+      <td>27.0</td>
+      <td>4</td>
+      <td>112.0</td>
+      <td>88.0</td>
+      <td>2640</td>
+      <td>18.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>chevrolet cavalier wagon</td>
+    </tr>
+    <tr>
+      <th>369</th>
+      <td>34.0</td>
+      <td>4</td>
+      <td>112.0</td>
+      <td>88.0</td>
+      <td>2395</td>
+      <td>18.0</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>chevrolet cavalier 2-door</td>
+    </tr>
+    <tr>
+      <th>370</th>
+      <td>31.0</td>
+      <td>4</td>
+      <td>112.0</td>
+      <td>85.0</td>
+      <td>2575</td>
+      <td>16.2</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>pontiac j2000 se hatchback</td>
+    </tr>
+    <tr>
+      <th>371</th>
+      <td>29.0</td>
+      <td>4</td>
+      <td>135.0</td>
+      <td>84.0</td>
+      <td>2525</td>
+      <td>16.0</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>dodge aries se</td>
+    </tr>
+    <tr>
+      <th>372</th>
+      <td>27.0</td>
+      <td>4</td>
+      <td>151.0</td>
+      <td>90.0</td>
+      <td>2735</td>
+      <td>18.0</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>pontiac phoenix</td>
+    </tr>
+    <tr>
+      <th>373</th>
+      <td>24.0</td>
+      <td>4</td>
+      <td>140.0</td>
+      <td>92.0</td>
+      <td>2865</td>
+      <td>16.4</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>ford fairmont futura</td>
+    </tr>
+    <tr>
+      <th>374</th>
+      <td>23.0</td>
+      <td>4</td>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>3035</td>
+      <td>20.5</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>amc concord dl</td>
+    </tr>
+    <tr>
+      <th>375</th>
+      <td>36.0</td>
+      <td>4</td>
+      <td>105.0</td>
+      <td>74.0</td>
+      <td>1980</td>
+      <td>15.3</td>
+      <td>82</td>
+      <td>europe</td>
+      <td>volkswagen rabbit l</td>
+    </tr>
+    <tr>
+      <th>376</th>
+      <td>37.0</td>
+      <td>4</td>
+      <td>91.0</td>
+      <td>68.0</td>
+      <td>2025</td>
+      <td>18.2</td>
+      <td>82</td>
+      <td>japan</td>
+      <td>mazda glc custom l</td>
+    </tr>
+    <tr>
+      <th>377</th>
+      <td>31.0</td>
+      <td>4</td>
+      <td>91.0</td>
+      <td>68.0</td>
+      <td>1970</td>
+      <td>17.6</td>
+      <td>82</td>
+      <td>japan</td>
+      <td>mazda glc custom</td>
+    </tr>
+    <tr>
+      <th>378</th>
+      <td>38.0</td>
+      <td>4</td>
+      <td>105.0</td>
+      <td>63.0</td>
+      <td>2125</td>
+      <td>14.7</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>plymouth horizon miser</td>
+    </tr>
+    <tr>
+      <th>379</th>
+      <td>36.0</td>
+      <td>4</td>
+      <td>98.0</td>
+      <td>70.0</td>
+      <td>2125</td>
+      <td>17.3</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>mercury lynx l</td>
+    </tr>
+    <tr>
+      <th>380</th>
+      <td>36.0</td>
+      <td>4</td>
+      <td>120.0</td>
+      <td>88.0</td>
+      <td>2160</td>
+      <td>14.5</td>
+      <td>82</td>
+      <td>japan</td>
+      <td>nissan stanza xe</td>
+    </tr>
+    <tr>
+      <th>381</th>
+      <td>36.0</td>
+      <td>4</td>
+      <td>107.0</td>
+      <td>75.0</td>
+      <td>2205</td>
+      <td>14.5</td>
+      <td>82</td>
+      <td>japan</td>
+      <td>honda accord</td>
+    </tr>
+    <tr>
+      <th>382</th>
+      <td>34.0</td>
+      <td>4</td>
+      <td>108.0</td>
+      <td>70.0</td>
+      <td>2245</td>
+      <td>16.9</td>
+      <td>82</td>
+      <td>japan</td>
+      <td>toyota corolla</td>
+    </tr>
+    <tr>
+      <th>383</th>
+      <td>38.0</td>
+      <td>4</td>
+      <td>91.0</td>
+      <td>67.0</td>
+      <td>1965</td>
+      <td>15.0</td>
+      <td>82</td>
+      <td>japan</td>
+      <td>honda civic</td>
+    </tr>
+    <tr>
+      <th>384</th>
+      <td>32.0</td>
+      <td>4</td>
+      <td>91.0</td>
+      <td>67.0</td>
+      <td>1965</td>
+      <td>15.7</td>
+      <td>82</td>
+      <td>japan</td>
+      <td>honda civic (auto)</td>
+    </tr>
+    <tr>
+      <th>385</th>
+      <td>38.0</td>
+      <td>4</td>
+      <td>91.0</td>
+      <td>67.0</td>
+      <td>1995</td>
+      <td>16.2</td>
+      <td>82</td>
+      <td>japan</td>
+      <td>datsun 310 gx</td>
+    </tr>
+    <tr>
+      <th>386</th>
+      <td>25.0</td>
+      <td>6</td>
+      <td>181.0</td>
+      <td>110.0</td>
+      <td>2945</td>
+      <td>16.4</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>buick century limited</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>38.0</td>
+      <td>6</td>
+      <td>262.0</td>
+      <td>85.0</td>
+      <td>3015</td>
+      <td>17.0</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>oldsmobile cutlass ciera (diesel)</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>26.0</td>
+      <td>4</td>
+      <td>156.0</td>
+      <td>92.0</td>
+      <td>2585</td>
+      <td>14.5</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>chrysler lebaron medallion</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>22.0</td>
+      <td>6</td>
+      <td>232.0</td>
+      <td>112.0</td>
+      <td>2835</td>
+      <td>14.7</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>ford granada l</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>32.0</td>
+      <td>4</td>
+      <td>144.0</td>
+      <td>96.0</td>
+      <td>2665</td>
+      <td>13.9</td>
+      <td>82</td>
+      <td>japan</td>
+      <td>toyota celica gt</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>36.0</td>
+      <td>4</td>
+      <td>135.0</td>
+      <td>84.0</td>
+      <td>2370</td>
+      <td>13.0</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>dodge charger 2.2</td>
+    </tr>
+    <tr>
+      <th>392</th>
+      <td>27.0</td>
+      <td>4</td>
+      <td>151.0</td>
+      <td>90.0</td>
+      <td>2950</td>
+      <td>17.3</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>chevrolet camaro</td>
+    </tr>
+    <tr>
+      <th>393</th>
+      <td>27.0</td>
+      <td>4</td>
+      <td>140.0</td>
+      <td>86.0</td>
+      <td>2790</td>
+      <td>15.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>ford mustang gl</td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>44.0</td>
+      <td>4</td>
+      <td>97.0</td>
+      <td>52.0</td>
+      <td>2130</td>
+      <td>24.6</td>
+      <td>82</td>
+      <td>europe</td>
+      <td>vw pickup</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>32.0</td>
+      <td>4</td>
+      <td>135.0</td>
+      <td>84.0</td>
+      <td>2295</td>
+      <td>11.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>dodge rampage</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>28.0</td>
+      <td>4</td>
+      <td>120.0</td>
+      <td>79.0</td>
+      <td>2625</td>
+      <td>18.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>ford ranger</td>
+    </tr>
+    <tr>
+      <th>397</th>
+      <td>31.0</td>
+      <td>4</td>
+      <td>119.0</td>
+      <td>82.0</td>
+      <td>2720</td>
+      <td>19.4</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>chevy s-10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Focusing just on this single sub-DataFrame, how can we determine how many values of “mpg” are greater than or equal to 25?  We won’t be using Boolean indexing, but we will be using a Boolean Series.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;mpg&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>367     True
+368     True
+369     True
+370     True
+371     True
+372     True
+373    False
+374    False
+375     True
+376     True
+377     True
+378     True
+379     True
+380     True
+381     True
+382     True
+383     True
+384     True
+385     True
+386     True
+387     True
+388     True
+389    False
+390     True
+391     True
+392     True
+393     True
+394     True
+395     True
+396     True
+397     True
+Name: mpg, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that Python treats <code class="docutils literal notranslate"><span class="pre">True</span></code> like <code class="docutils literal notranslate"><span class="pre">1</span></code> and treats <code class="docutils literal notranslate"><span class="pre">False</span></code> like <code class="docutils literal notranslate"><span class="pre">0</span></code>.  So we can count the number of <code class="docutils literal notranslate"><span class="pre">True</span></code> values just by adding up the values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;mpg&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28
+</pre></div>
+</div>
+</div>
+</div>
+<p>There was nothing special about this <code class="docutils literal notranslate"><span class="pre">sub_df</span></code> corresponding to model_year 82.  Within the for loop, we can use the exact same code.  For example, the results below say that in the sub-DataFrame corresponding to 75, there were only 5 cars with mpg of at least 25.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">((</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;mpg&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+5
+
+71
+11
+
+72
+5
+
+73
+3
+
+74
+13
+
+75
+5
+
+76
+12
+
+77
+12
+
+78
+12
+
+79
+14
+
+80
+25
+
+81
+24
+
+82
+28
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try to make the output more readable using an f-string.  There is a very subtle mistake here.  Because my f-string uses double quotation marks <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and my column name also uses double quotation marks, Python doesn’t know which quotation marks go together.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In the year 19</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> there were </span><span class="si">{</span><span class="p">(</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;mpg&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> cars in the dataset with mpg at least 25.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In the year 19</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> there were </span><span class="si">{</span><span class="p">(</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;mpg&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> cars in the dataset with mpg at least 25.&quot;</span><span class="p">)</span>
+                                                      <span class="o">^</span>
+<span class="ne">SyntaxError</span>: f-string: unmatched &#39;[&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luckily this error is very easy to fix once we identify it.  We just switch one of the pairs of quotation marks to single apostrophes.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In the year 19</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> there were </span><span class="si">{</span><span class="p">(</span><span class="n">sub_df</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> cars in the dataset with mpg at least 25.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the year 1970 there were 5 cars in the dataset with mpg at least 25.
+In the year 1971 there were 11 cars in the dataset with mpg at least 25.
+In the year 1972 there were 5 cars in the dataset with mpg at least 25.
+In the year 1973 there were 3 cars in the dataset with mpg at least 25.
+In the year 1974 there were 13 cars in the dataset with mpg at least 25.
+In the year 1975 there were 5 cars in the dataset with mpg at least 25.
+In the year 1976 there were 12 cars in the dataset with mpg at least 25.
+In the year 1977 there were 12 cars in the dataset with mpg at least 25.
+In the year 1978 there were 12 cars in the dataset with mpg at least 25.
+In the year 1979 there were 14 cars in the dataset with mpg at least 25.
+In the year 1980 there were 25 cars in the dataset with mpg at least 25.
+In the year 1981 there were 24 cars in the dataset with mpg at least 25.
+In the year 1982 there were 28 cars in the dataset with mpg at least 25.
+</pre></div>
+</div>
+</div>
+</div>
+<p>I think the code is more readable if we move the <code class="docutils literal notranslate"><span class="pre">(sub_df['mpg']</span> <span class="pre">&gt;=</span> <span class="pre">25).sum()</span></code> portion onto its own line.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># most important: understand what are year and sub_df as we move through this for loop</span>
+<span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="n">num_cars</span> <span class="o">=</span> <span class="p">(</span><span class="n">sub_df</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In the year 19</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> there were </span><span class="si">{</span><span class="n">num_cars</span><span class="si">}</span><span class="s2"> cars in the dataset with mpg at least 25.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the year 1970 there were 5 cars in the dataset with mpg at least 25.
+In the year 1971 there were 11 cars in the dataset with mpg at least 25.
+In the year 1972 there were 5 cars in the dataset with mpg at least 25.
+In the year 1973 there were 3 cars in the dataset with mpg at least 25.
+In the year 1974 there were 13 cars in the dataset with mpg at least 25.
+In the year 1975 there were 5 cars in the dataset with mpg at least 25.
+In the year 1976 there were 12 cars in the dataset with mpg at least 25.
+In the year 1977 there were 12 cars in the dataset with mpg at least 25.
+In the year 1978 there were 12 cars in the dataset with mpg at least 25.
+In the year 1979 there were 14 cars in the dataset with mpg at least 25.
+In the year 1980 there were 25 cars in the dataset with mpg at least 25.
+In the year 1981 there were 24 cars in the dataset with mpg at least 25.
+In the year 1982 there were 28 cars in the dataset with mpg at least 25.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how <code class="docutils literal notranslate"><span class="pre">num_cars</span></code> is <code class="docutils literal notranslate"><span class="pre">28</span></code>, the same value we saw above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_cars</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aside: there was a question about how <code class="docutils literal notranslate"><span class="pre">break</span></code> works.  Here is a simpler example (but it’s very easy to be off slightly in your expectation).  Imagine <code class="docutils literal notranslate"><span class="pre">i</span></code> is <code class="docutils literal notranslate"><span class="pre">18</span></code>.  Then the condition in the if statement fails, so <code class="docutils literal notranslate"><span class="pre">i</span></code> increases to <code class="docutils literal notranslate"><span class="pre">21</span></code>, then the condition in the if statement is True, os we break out of the for loop.  So when we leave the for loop, <code class="docutils literal notranslate"><span class="pre">i</span></code> is <code class="docutils literal notranslate"><span class="pre">21</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ll be impressed at how easily we can switch from the above question, about absolute numbers, to the following question, about proportions.  The key reason behind this is again that <code class="docutils literal notranslate"><span class="pre">True</span></code> counts as <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> counts as <code class="docutils literal notranslate"><span class="pre">0</span></code>, so if we compute the <code class="docutils literal notranslate"><span class="pre">mean</span></code> of a collection of Trues and Falses, then that mean will represent exactly the proprtion of <code class="docutils literal notranslate"><span class="pre">True</span></code> values.</p>
+<ul class="simple">
+<li><p>For each year, what proportion of cars had mpg at least 25?</p></li>
+</ul>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Because True is like 1 and False is like 0, can use mean to get the proportion</span>
+<span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="n">prop_cars</span> <span class="o">=</span> <span class="p">(</span><span class="n">sub_df</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In the year 19</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">prop_cars</span><span class="si">}</span><span class="s2"> proportion of cars in the dataset had mpg at least 25.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the year 1970, 0.1724137931034483 proportion of cars in the dataset had mpg at least 25.
+In the year 1971, 0.39285714285714285 proportion of cars in the dataset had mpg at least 25.
+In the year 1972, 0.17857142857142858 proportion of cars in the dataset had mpg at least 25.
+In the year 1973, 0.075 proportion of cars in the dataset had mpg at least 25.
+In the year 1974, 0.48148148148148145 proportion of cars in the dataset had mpg at least 25.
+In the year 1975, 0.16666666666666666 proportion of cars in the dataset had mpg at least 25.
+In the year 1976, 0.35294117647058826 proportion of cars in the dataset had mpg at least 25.
+In the year 1977, 0.42857142857142855 proportion of cars in the dataset had mpg at least 25.
+In the year 1978, 0.3333333333333333 proportion of cars in the dataset had mpg at least 25.
+In the year 1979, 0.4827586206896552 proportion of cars in the dataset had mpg at least 25.
+In the year 1980, 0.8620689655172413 proportion of cars in the dataset had mpg at least 25.
+In the year 1981, 0.8275862068965517 proportion of cars in the dataset had mpg at least 25.
+In the year 1982, 0.9032258064516129 proportion of cars in the dataset had mpg at least 25.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Stare at the <code class="docutils literal notranslate"><span class="pre">prop_cars</span></code> code above until it makes sense.  For example, try it with a smaller Boolean Series, maybe a Boolean Series with three <code class="docutils literal notranslate"><span class="pre">True</span></code> values and one <code class="docutils literal notranslate"><span class="pre">False</span></code> value.  The <code class="docutils literal notranslate"><span class="pre">mean</span></code> of such a Series would be <code class="docutils literal notranslate"><span class="pre">0.75</span></code>.</p>
+<p>The next two cells are just for fun, and are meant to show you some of the possibilities with string formatting.  Here the string formatting automatically converts from a proportion (between 0 and 1) to a percentage (between 0 and 100).</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Because True is like 1 and False is like 0, can use mean to get the proportion</span>
+<span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="n">prop_cars</span> <span class="o">=</span> <span class="p">(</span><span class="n">sub_df</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In the year 19</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">prop_cars</span><span class="si">:</span><span class="s2">%</span><span class="si">}</span><span class="s2"> percent of cars in the dataset had mpg at least 25.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the year 1970, 17.241379% percent of cars in the dataset had mpg at least 25.
+In the year 1971, 39.285714% percent of cars in the dataset had mpg at least 25.
+In the year 1972, 17.857143% percent of cars in the dataset had mpg at least 25.
+In the year 1973, 7.500000% percent of cars in the dataset had mpg at least 25.
+In the year 1974, 48.148148% percent of cars in the dataset had mpg at least 25.
+In the year 1975, 16.666667% percent of cars in the dataset had mpg at least 25.
+In the year 1976, 35.294118% percent of cars in the dataset had mpg at least 25.
+In the year 1977, 42.857143% percent of cars in the dataset had mpg at least 25.
+In the year 1978, 33.333333% percent of cars in the dataset had mpg at least 25.
+In the year 1979, 48.275862% percent of cars in the dataset had mpg at least 25.
+In the year 1980, 86.206897% percent of cars in the dataset had mpg at least 25.
+In the year 1981, 82.758621% percent of cars in the dataset had mpg at least 25.
+In the year 1982, 90.322581% percent of cars in the dataset had mpg at least 25.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also make things look a little nicer by saying we only want two decimal places in the percentage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Because True is like 1 and False is like 0, can use mean to get the proportion</span>
+<span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;model_year&quot;</span><span class="p">):</span>
+    <span class="n">prop_cars</span> <span class="o">=</span> <span class="p">(</span><span class="n">sub_df</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In the year 19</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">prop_cars</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2"> percent of cars in the dataset had mpg at least 25.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the year 1970, 17.24% percent of cars in the dataset had mpg at least 25.
+In the year 1971, 39.29% percent of cars in the dataset had mpg at least 25.
+In the year 1972, 17.86% percent of cars in the dataset had mpg at least 25.
+In the year 1973, 7.50% percent of cars in the dataset had mpg at least 25.
+In the year 1974, 48.15% percent of cars in the dataset had mpg at least 25.
+In the year 1975, 16.67% percent of cars in the dataset had mpg at least 25.
+In the year 1976, 35.29% percent of cars in the dataset had mpg at least 25.
+In the year 1977, 42.86% percent of cars in the dataset had mpg at least 25.
+In the year 1978, 33.33% percent of cars in the dataset had mpg at least 25.
+In the year 1979, 48.28% percent of cars in the dataset had mpg at least 25.
+In the year 1980, 86.21% percent of cars in the dataset had mpg at least 25.
+In the year 1981, 82.76% percent of cars in the dataset had mpg at least 25.
+In the year 1982, 90.32% percent of cars in the dataset had mpg at least 25.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We didn’t get to any of the later portions of this notebook.</p>
+</section>
+<section id="using-the-mean-method-of-a-pandas-groupby-object">
+<h2>Using the <code class="docutils literal notranslate"><span class="pre">mean</span></code> method of a pandas GroupBy object<a class="headerlink" href="#using-the-mean-method-of-a-pandas-groupby-object" title="Permalink to this headline">#</a></h2>
+<p>The above for-loop method is very flexible, but for easier questions, often there are easier approaches.</p>
+<ul class="simple">
+<li><p>For each year, what was the average mpg?</p></li>
+</ul>
+</section>
+<section id="visualizing-the-data">
+<h2>Visualizing the data<a class="headerlink" href="#visualizing-the-data" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Using Altair, make a scatter plot where the x-axis is the model_year, the y-axis is the mpg, and the color is encoded from the “origin” column.</p></li>
+<li><p>Which of these fields (model_year, mpg, origin) could be most improved by specifying an encoding type?</p></li>
+</ul>
+<ul class="simple">
+<li><p>How could we use <code class="docutils literal notranslate"><span class="pre">mean</span></code> and a bar chart to encode the average mpg data by year?  (Remove the color for this one.)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Put these last two Altair charts side by side using <code class="docutils literal notranslate"><span class="pre">alt.hconcat</span></code>.</p></li>
+</ul>
+<p>(There probably won’t be time for this example.)</p>
+<ul class="simple">
+<li><p>What if we put the data into a facet chart, where we divide by weight?</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Week3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week3-Wednesday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 3 Wednesday</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Worksheet5.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Worksheet 5</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Christopher Davis<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,3051 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 1 Tuesday &#8212; UC Irvine Math 10, Fall 2022</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 1 Wednesday" href="Week1-Wednesday.html" />
+    <link rel="prev" title="Worksheet 1" href="Worksheet1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/digitsyellow.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10, Fall 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Fall 2022
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week0/Week0-Intro.html">
+   Week 0
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week0/Worksheet0.html">
+     Worksheet 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week0/Week0-Friday.html">
+     Week 0 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week1-Intro.html">
+   Week 1
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week1-Monday.html">
+     Week 1 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Worksheet1.html">
+     Worksheet 1
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Week 1 Tuesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week1-Wednesday.html">
+     Week 1 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Worksheet2.html">
+     Worksheet 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week1-Videos.html">
+     Week 1 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week1-Friday.html">
+     Week 1 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week2/Week2-Intro.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Monday.html">
+     Week 2 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Wednesday.html">
+     Week 2 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Friday.html">
+     Week 2 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Worksheet3.html">
+     Worksheet 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Worksheet4.html">
+     Worksheet 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week2/Week2-Videos.html">
+     Week 2 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week3/Week3-Intro.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Monday.html">
+     Week 3 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Wednesday.html">
+     Week 3 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Friday.html">
+     Week 3 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Worksheet5.html">
+     Worksheet 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Worksheet6.html">
+     Worksheet 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week3/Week3-Videos.html">
+     Week 3 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week4/Week4-Intro.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Monday.html">
+     Week 4 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Wednesday.html">
+     Week 4 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Friday.html">
+     Week 4 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Worksheet7.html">
+     Worksheet 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Worksheet8.html">
+     Worksheet 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week4/Week4-Videos.html">
+     Week 4 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week5/Week5-Intro.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Monday.html">
+     Week 5 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Friday.html">
+     Week 5 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Monday.html">
+     Week 6 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Wednesday.html">
+     Week 6 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Friday.html">
+     Week 6 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Worksheet9.html">
+     Worksheet 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Worksheet10.html">
+     Worksheet 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Videos.html">
+     Week 6 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Monday.html">
+     Week 7 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Wednesday.html">
+     Week 7 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Worksheet11.html">
+     Worksheet 11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Worksheet12.html">
+     Worksheet 12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Videos.html">
+     Week 7 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week8/Week8-Intro.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Videos.html">
+     Week 8 Videos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Monday.html">
+     Week 8 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Wednesday.html">
+     Week 8 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Friday.html">
+     Week 8 Friday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Worksheet13.html">
+     Worksheet 13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Worksheet14.html">
+     Worksheet 14
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week9/Week9-Intro.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Monday.html">
+     Week 9 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Wednesday.html">
+     Week 9 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Worksheet15.html">
+     Worksheet 15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Worksheet16.html">
+     Worksheet 16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week9/Week9-Videos.html">
+     Week 9 Videos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week10/Week10-Intro.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Monday.html">
+     Week 10 Monday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Wednesday.html">
+     Week 10 Wednesday
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Friday.html">
+     Week 10 Friday
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/ExtraTopics.html">
+     Possible extra topics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/StudentProjects.html">
+   Student Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MariaAvalos.html">
+     Analyzing and Visualizing Top Soccer Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NicholasBogarin.html">
+     Hollywood Movie Gross Income
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MingyuChen.html">
+     Attempts about finding aspects that can influence the effects of Music Therapy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NuoChen.html">
+     Predict the Chance of admission to Graduate School
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YuanGao.html">
+     Major League Baseball (MLB) Team Performances Predictions &amp; Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/RyanHarner.html">
+     Predicting Australian Cities With Weather
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AnerHuang.html">
+     Customer Personality Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/DerekJiang.html">
+     Replace this with your project title
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EricJones.html">
+     Chip from Specs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EdenKim.html">
+     Global Life Expectancy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AryaKondur.html">
+     NBA Shot Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MichelleKwan.html">
+     Analysis on Starbucks &amp; McDonald’s Menu Items
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/SaraGraceLien.html">
+     Applying Machine Learning techniques to the Fashion MNIST data set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/DanielLim.html">
+     Spotify Popular Songs Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NatalieMartinez.html">
+     New York City Taxi Rides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/AdityaKrishnanRadhakrishnan.html">
+     Video Game Sales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/CeceSun.html">
+     What contributes to a movie’s commercial success?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/KexinSun.html">
+     Car Price Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/NanakoTatewaki.html">
+     Prediction of Canadian Car Accident
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/LeanderVonSchoenfeld.html">
+     Key Financial Metrics Analysis of S&amp;P 500 Stocks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/EmilyWang.html">
+     Predicting Heart Disease
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/HaoyangWang.html">
+     The analysis of relations between the total covid-affected population and other datas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YifengXiong.html">
+     Predict Diabetes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/KevinXu.html">
+     Salary Classification By Using Decision Tree
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/MingyanXu.html">
+     The relationship and prediction between Pokemon’s stats and generation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/ShengkaiYang.html">
+     NFL offense performance and analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/HuangxiaoZhang.html">
+     Netflix Stock Price
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/StudentProjects/YihaoZhang.html">
+     Title
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10-F22/main?urlpath=tree/Week1/Week1-Tuesday.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-F22"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Week1/Week1-Tuesday.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-string-methods">
+   Using string methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-string-methods-with-a-series">
+   Using string methods with a Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-timestamp-methods">
+   Using timestamp methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-timestamp-methods-with-a-series">
+   Using timestamp methods with a Series
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 1 Tuesday</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-string-methods">
+   Using string methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-string-methods-with-a-series">
+   Using string methods with a Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-timestamp-methods">
+   Using timestamp methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-timestamp-methods-with-a-series">
+   Using timestamp methods with a Series
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="week-1-tuesday">
+<h1>Week 1 Tuesday<a class="headerlink" href="#week-1-tuesday" title="Permalink to this headline">#</a></h1>
+<p>Overall question for today (we will need some new techniques to answer it).</p>
+<ul class="simple">
+<li><p>In the vending machines dataset, how many transactions occurred on Saturday?</p></li>
+</ul>
+<p>We’ll our solution into two parts.</p>
+<ol class="simple">
+<li><p>How to determine if a string corresponds to Saturday.</p></li>
+<li><p>How to determine how many elements in a pandas Series correspond to Saturday.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;vend.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s remind our selves what this DataFrame looks like.  In the following, we’ve made a common mistake, and you’ll be well-served to be able to recognize it.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;bound method NDFrame.head of          Status    Device ID           Location                  Machine  \
+0     Processed  VJ300320611  Brunswick Sq Mall     BSQ Mall x1366 - ATT   
+1     Processed  VJ300320611  Brunswick Sq Mall     BSQ Mall x1366 - ATT   
+2     Processed  VJ300320611  Brunswick Sq Mall     BSQ Mall x1366 - ATT   
+3     Processed  VJ300320611  Brunswick Sq Mall     BSQ Mall x1366 - ATT   
+4     Processed  VJ300320611  Brunswick Sq Mall     BSQ Mall x1366 - ATT   
+...         ...          ...                ...                      ...   
+6440  Processed  VJ300320692  EB Public Library  EB Public Library x1380   
+6441  Processed  VJ300320692  EB Public Library  EB Public Library x1380   
+6442  Processed  VJ300320692  EB Public Library  EB Public Library x1380   
+6443  Processed  VJ300320609        GuttenPlans        GuttenPlans x1367   
+6444  Processed  VJ300320692  EB Public Library  EB Public Library x1380   
+
+                                   Product        Category  Transaction  \
+0     Red Bull - Energy Drink - Sugar Free      Carbonated  14515778905   
+1     Red Bull - Energy Drink - Sugar Free      Carbonated  14516018629   
+2         Takis - Hot Chilli Pepper &amp; Lime            Food  14516018629   
+3         Takis - Hot Chilli Pepper &amp; Lime            Food  14516020373   
+4     Red Bull - Energy Drink - Sugar Free      Carbonated  14516021756   
+...                                    ...             ...          ...   
+6440          Lindens - Chocolate Chippers            Food  15603201222   
+6441        Wonderful Pistachios - Variety            Food  15603201222   
+6442        Hungry Buddha - Chocolate Chip            Food  15603201222   
+6443                   Snapple Tea - Lemon  Non Carbonated  15603853105   
+6444              Goldfish Baked - Cheddar            Food  15603921383   
+
+                       TransDate    Type  RCoil  RPrice  RQty  MCoil  MPrice  \
+0      Saturday, January 1, 2022  Credit    148     3.5     1    148     3.5   
+1      Saturday, January 1, 2022  Credit    148     3.5     1    148     3.5   
+2      Saturday, January 1, 2022  Credit    123     1.5     1    123     1.5   
+3      Saturday, January 1, 2022  Credit    123     1.5     1    123     1.5   
+4      Saturday, January 1, 2022  Credit    148     3.5     1    148     3.5   
+...                          ...     ...    ...     ...   ...    ...     ...   
+6440  Wednesday, August 31, 2022  Credit    122     2.0     1    122     2.0   
+6441  Wednesday, August 31, 2022  Credit    131     2.0     1    131     2.0   
+6442  Wednesday, August 31, 2022  Credit    137     2.0     1    137     2.0   
+6443  Wednesday, August 31, 2022  Credit    145     2.5     1    145     2.5   
+6444  Wednesday, August 31, 2022    Cash    125     1.5     1    125     1.5   
+
+      MQty  LineTotal  TransTotal  Prcd Date  
+0        1        3.5         3.5   1/1/2022  
+1        1        3.5         5.0   1/1/2022  
+2        1        1.5         5.0   1/1/2022  
+3        1        1.5         1.5   1/1/2022  
+4        1        3.5         3.5   1/1/2022  
+...    ...        ...         ...        ...  
+6440     1        2.0         6.0  8/31/2022  
+6441     1        2.0         6.0  8/31/2022  
+6442     1        2.0         6.0  8/31/2022  
+6443     1        2.5         2.5  8/31/2022  
+6444     1        1.5         1.5  8/31/2022  
+
+[6445 rows x 18 columns]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you look at the very first few words displayed in the output above, <code class="docutils literal notranslate"><span class="pre">&lt;bound</span> <span class="pre">method</span> <span class="pre">...</span></code>, that is a hint that we have forgotten to evaluate the function by using parentheses.  We need to use <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> rather than <code class="docutils literal notranslate"><span class="pre">df.head</span></code>.  (The former, <code class="docutils literal notranslate"><span class="pre">df.head()</span></code>, is treating <code class="docutils literal notranslate"><span class="pre">head</span></code> as a method, which is correct.  The latter, <code class="docutils literal notranslate"><span class="pre">df.head</span></code>, is treating <code class="docutils literal notranslate"><span class="pre">head</span></code> as an attribute.)</p>
+<p>In a Math 10 quiz or exam, you’re not expected to have memorized when parentheses are necessary, but if you see an incorrect output like the above, you might be expected to recognize what has gone wrong.  And when completing the worksheets, it is very important to be able to correct these sorts of errors.</p>
+<p>Here is a correct use of <code class="docutils literal notranslate"><span class="pre">df.head()</span></code>.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Status</th>
+      <th>Device ID</th>
+      <th>Location</th>
+      <th>Machine</th>
+      <th>Product</th>
+      <th>Category</th>
+      <th>Transaction</th>
+      <th>TransDate</th>
+      <th>Type</th>
+      <th>RCoil</th>
+      <th>RPrice</th>
+      <th>RQty</th>
+      <th>MCoil</th>
+      <th>MPrice</th>
+      <th>MQty</th>
+      <th>LineTotal</th>
+      <th>TransTotal</th>
+      <th>Prcd Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Red Bull - Energy Drink - Sugar Free</td>
+      <td>Carbonated</td>
+      <td>14515778905</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>3.5</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Red Bull - Energy Drink - Sugar Free</td>
+      <td>Carbonated</td>
+      <td>14516018629</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>5.0</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Takis - Hot Chilli Pepper &amp; Lime</td>
+      <td>Food</td>
+      <td>14516018629</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>5.0</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Takis - Hot Chilli Pepper &amp; Lime</td>
+      <td>Food</td>
+      <td>14516020373</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>1.5</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Red Bull - Energy Drink - Sugar Free</td>
+      <td>Carbonated</td>
+      <td>14516021756</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>3.5</td>
+      <td>1/1/2022</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here is the full DataFrame.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Status</th>
+      <th>Device ID</th>
+      <th>Location</th>
+      <th>Machine</th>
+      <th>Product</th>
+      <th>Category</th>
+      <th>Transaction</th>
+      <th>TransDate</th>
+      <th>Type</th>
+      <th>RCoil</th>
+      <th>RPrice</th>
+      <th>RQty</th>
+      <th>MCoil</th>
+      <th>MPrice</th>
+      <th>MQty</th>
+      <th>LineTotal</th>
+      <th>TransTotal</th>
+      <th>Prcd Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Red Bull - Energy Drink - Sugar Free</td>
+      <td>Carbonated</td>
+      <td>14515778905</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>3.5</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Red Bull - Energy Drink - Sugar Free</td>
+      <td>Carbonated</td>
+      <td>14516018629</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>5.0</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Takis - Hot Chilli Pepper &amp; Lime</td>
+      <td>Food</td>
+      <td>14516018629</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>5.0</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Takis - Hot Chilli Pepper &amp; Lime</td>
+      <td>Food</td>
+      <td>14516020373</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>1.5</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Red Bull - Energy Drink - Sugar Free</td>
+      <td>Carbonated</td>
+      <td>14516021756</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>3.5</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6440</th>
+      <td>Processed</td>
+      <td>VJ300320692</td>
+      <td>EB Public Library</td>
+      <td>EB Public Library x1380</td>
+      <td>Lindens - Chocolate Chippers</td>
+      <td>Food</td>
+      <td>15603201222</td>
+      <td>Wednesday, August 31, 2022</td>
+      <td>Credit</td>
+      <td>122</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>122</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>8/31/2022</td>
+    </tr>
+    <tr>
+      <th>6441</th>
+      <td>Processed</td>
+      <td>VJ300320692</td>
+      <td>EB Public Library</td>
+      <td>EB Public Library x1380</td>
+      <td>Wonderful Pistachios - Variety</td>
+      <td>Food</td>
+      <td>15603201222</td>
+      <td>Wednesday, August 31, 2022</td>
+      <td>Credit</td>
+      <td>131</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>131</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>8/31/2022</td>
+    </tr>
+    <tr>
+      <th>6442</th>
+      <td>Processed</td>
+      <td>VJ300320692</td>
+      <td>EB Public Library</td>
+      <td>EB Public Library x1380</td>
+      <td>Hungry Buddha - Chocolate Chip</td>
+      <td>Food</td>
+      <td>15603201222</td>
+      <td>Wednesday, August 31, 2022</td>
+      <td>Credit</td>
+      <td>137</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>137</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>8/31/2022</td>
+    </tr>
+    <tr>
+      <th>6443</th>
+      <td>Processed</td>
+      <td>VJ300320609</td>
+      <td>GuttenPlans</td>
+      <td>GuttenPlans x1367</td>
+      <td>Snapple Tea - Lemon</td>
+      <td>Non Carbonated</td>
+      <td>15603853105</td>
+      <td>Wednesday, August 31, 2022</td>
+      <td>Credit</td>
+      <td>145</td>
+      <td>2.5</td>
+      <td>1</td>
+      <td>145</td>
+      <td>2.5</td>
+      <td>1</td>
+      <td>2.5</td>
+      <td>2.5</td>
+      <td>8/31/2022</td>
+    </tr>
+    <tr>
+      <th>6444</th>
+      <td>Processed</td>
+      <td>VJ300320692</td>
+      <td>EB Public Library</td>
+      <td>EB Public Library x1380</td>
+      <td>Goldfish Baked - Cheddar</td>
+      <td>Food</td>
+      <td>15603921383</td>
+      <td>Wednesday, August 31, 2022</td>
+      <td>Cash</td>
+      <td>125</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>125</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>1.5</td>
+      <td>8/31/2022</td>
+    </tr>
+  </tbody>
+</table>
+<p>6445 rows × 18 columns</p>
+</div></div></div>
+</div>
+<section id="using-string-methods">
+<h2>Using string methods<a class="headerlink" href="#using-string-methods" title="Permalink to this headline">#</a></h2>
+<p>Our overall goal is to count how many transactions occurred on Saturday.  We’ll first see how to determine if a specific string represents Saturday, and then we’ll see how to use the same approach on an entire pandas Series.</p>
+<p>As humans, it’s obvious to us that the following string represents a Saturday, but how can we programmatically get Python to recognize that?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Saturday, January 1, 2022&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Scan through these string methods and attributes, skipping the “dunder methods” that begin and end with double underscores.  (In fact, you should just skip everything that starts with even one underscore.)  Do you see a method or attribute that could be used to determine if <code class="docutils literal notranslate"><span class="pre">s</span></code> contains the word “Saturday”?</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__add__&#39;,
+ &#39;__class__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__getnewargs__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__mod__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rmod__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;capitalize&#39;,
+ &#39;casefold&#39;,
+ &#39;center&#39;,
+ &#39;count&#39;,
+ &#39;encode&#39;,
+ &#39;endswith&#39;,
+ &#39;expandtabs&#39;,
+ &#39;find&#39;,
+ &#39;format&#39;,
+ &#39;format_map&#39;,
+ &#39;index&#39;,
+ &#39;isalnum&#39;,
+ &#39;isalpha&#39;,
+ &#39;isascii&#39;,
+ &#39;isdecimal&#39;,
+ &#39;isdigit&#39;,
+ &#39;isidentifier&#39;,
+ &#39;islower&#39;,
+ &#39;isnumeric&#39;,
+ &#39;isprintable&#39;,
+ &#39;isspace&#39;,
+ &#39;istitle&#39;,
+ &#39;isupper&#39;,
+ &#39;join&#39;,
+ &#39;ljust&#39;,
+ &#39;lower&#39;,
+ &#39;lstrip&#39;,
+ &#39;maketrans&#39;,
+ &#39;partition&#39;,
+ &#39;removeprefix&#39;,
+ &#39;removesuffix&#39;,
+ &#39;replace&#39;,
+ &#39;rfind&#39;,
+ &#39;rindex&#39;,
+ &#39;rjust&#39;,
+ &#39;rpartition&#39;,
+ &#39;rsplit&#39;,
+ &#39;rstrip&#39;,
+ &#39;split&#39;,
+ &#39;splitlines&#39;,
+ &#39;startswith&#39;,
+ &#39;strip&#39;,
+ &#39;swapcase&#39;,
+ &#39;title&#39;,
+ &#39;translate&#39;,
+ &#39;upper&#39;,
+ &#39;zfill&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A student suggested we try the <code class="docutils literal notranslate"><span class="pre">find</span></code> method, which is a great idea.  I don’t know that method well, so let’s check its help documentation.  The following doesn’t work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">find</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">help</span><span class="p">(</span><span class="n">find</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;find&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>The reason <code class="docutils literal notranslate"><span class="pre">help(find)</span></code> raised an error is because <code class="docutils literal notranslate"><span class="pre">find</span></code> is not defined independtly in Python, instead it is bound to this string object <code class="docutils literal notranslate"><span class="pre">s</span></code>.  So we need to instead call <code class="docutils literal notranslate"><span class="pre">help(s.find)</span></code>.  Notice how we <em>do not</em> use <code class="docutils literal notranslate"><span class="pre">help(s.find())</span></code>, because that would attempt to call <code class="docutils literal notranslate"><span class="pre">find</span></code> before we ever get to the <code class="docutils literal notranslate"><span class="pre">help</span></code> portion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function find:
+
+find(...) method of builtins.str instance
+    S.find(sub[, start[, end]]) -&gt; int
+    
+    Return the lowest index in S where substring sub is found,
+    such that sub is contained within S[start:end].  Optional
+    arguments start and end are interpreted as in slice notation.
+    
+    Return -1 on failure.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to input the substring (denoted <code class="docutils literal notranslate"><span class="pre">sub</span></code> in the help documentation) that we want to find.  Here is a reminder of the value of the string <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Saturday, January 1, 2022&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we call the <code class="docutils literal notranslate"><span class="pre">find</span></code> method of <code class="docutils literal notranslate"><span class="pre">s</span></code>. We don’t need to use the optional arguments denoted by <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> in the documentation.  The following call outputs <code class="docutils literal notranslate"><span class="pre">0</span></code>, which is telling us that the substring was found at the very beginning (integer position 0) of <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>These string searches are case sensitive, so <code class="docutils literal notranslate"><span class="pre">&quot;Day&quot;</span></code> does not occur in <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Day&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<p>But <code class="docutils literal notranslate"><span class="pre">&quot;day&quot;</span></code> does occur, and it starts at integer position 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;day&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we’re confident that <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code> will always occur at the beginning of the string, then another option is to use the <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method.  Instead of returning a location, it returns a Boolean value of <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s important to remember that <code class="docutils literal notranslate"><span class="pre">True</span></code> is capitalized and that it does not use quotation marks (because it is not a string).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see an example of calling this same method on a value taken directly from the DataFrame.  The following is a string, just like our <code class="docutils literal notranslate"><span class="pre">s</span></code> variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;TransDate&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Monday, January 3, 2022&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This string does not start with <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code>, so the following outputs <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;TransDate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-string-methods-with-a-series">
+<h2>Using string methods with a Series<a class="headerlink" href="#using-string-methods-with-a-series" title="Permalink to this headline">#</a></h2>
+<p>We now know how to determine if an individual string contains <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code> or starts with <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code>.  How can we use that same approach on an entire pandas Series of strings?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myseries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the “TransDate” column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myseries</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        Saturday, January 1, 2022
+1        Saturday, January 1, 2022
+2        Saturday, January 1, 2022
+3        Saturday, January 1, 2022
+4        Saturday, January 1, 2022
+                   ...            
+6440    Wednesday, August 31, 2022
+6441    Wednesday, August 31, 2022
+6442    Wednesday, August 31, 2022
+6443    Wednesday, August 31, 2022
+6444    Wednesday, August 31, 2022
+Name: TransDate, Length: 6445, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you ask Python, what is the type of a string, it outputs <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>Given a pandas Series containing strings, there is what is called an “accessor attribute” <code class="docutils literal notranslate"><span class="pre">str</span></code> which gives us access to Python string methods.  The type of <code class="docutils literal notranslate"><span class="pre">myseries.str</span></code> is not so important; I think I evaluated the following just to show that it is some special type of object, it’s not a string and not a pandas Series.  (Much of Python is based on “Object Oriented Programming”, and an effect of this is that Python libraries like pandas are filled with special objects that serve very specific purposes.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">myseries</span><span class="o">.</span><span class="n">str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.strings.accessor.StringMethods
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how similar the attributes and methods listed here are to the methods and attributes defined on strings.  They are not exactly the same, but they’re very similar.  (If you tried calling <code class="docutils literal notranslate"><span class="pre">dir</span></code> on a pandas Series, you would see almost no overlap between its methods and string methods, especially if you don’t count the underscore methods.)</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">myseries</span><span class="o">.</span><span class="n">str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__annotations__&#39;,
+ &#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__frozen&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;_data&#39;,
+ &#39;_doc_args&#39;,
+ &#39;_freeze&#39;,
+ &#39;_get_series_list&#39;,
+ &#39;_index&#39;,
+ &#39;_inferred_dtype&#39;,
+ &#39;_is_categorical&#39;,
+ &#39;_is_string&#39;,
+ &#39;_name&#39;,
+ &#39;_orig&#39;,
+ &#39;_parent&#39;,
+ &#39;_validate&#39;,
+ &#39;_wrap_result&#39;,
+ &#39;capitalize&#39;,
+ &#39;casefold&#39;,
+ &#39;cat&#39;,
+ &#39;center&#39;,
+ &#39;contains&#39;,
+ &#39;count&#39;,
+ &#39;decode&#39;,
+ &#39;encode&#39;,
+ &#39;endswith&#39;,
+ &#39;extract&#39;,
+ &#39;extractall&#39;,
+ &#39;find&#39;,
+ &#39;findall&#39;,
+ &#39;fullmatch&#39;,
+ &#39;get&#39;,
+ &#39;get_dummies&#39;,
+ &#39;index&#39;,
+ &#39;isalnum&#39;,
+ &#39;isalpha&#39;,
+ &#39;isdecimal&#39;,
+ &#39;isdigit&#39;,
+ &#39;islower&#39;,
+ &#39;isnumeric&#39;,
+ &#39;isspace&#39;,
+ &#39;istitle&#39;,
+ &#39;isupper&#39;,
+ &#39;join&#39;,
+ &#39;len&#39;,
+ &#39;ljust&#39;,
+ &#39;lower&#39;,
+ &#39;lstrip&#39;,
+ &#39;match&#39;,
+ &#39;normalize&#39;,
+ &#39;pad&#39;,
+ &#39;partition&#39;,
+ &#39;repeat&#39;,
+ &#39;replace&#39;,
+ &#39;rfind&#39;,
+ &#39;rindex&#39;,
+ &#39;rjust&#39;,
+ &#39;rpartition&#39;,
+ &#39;rsplit&#39;,
+ &#39;rstrip&#39;,
+ &#39;slice&#39;,
+ &#39;slice_replace&#39;,
+ &#39;split&#39;,
+ &#39;startswith&#39;,
+ &#39;strip&#39;,
+ &#39;swapcase&#39;,
+ &#39;title&#39;,
+ &#39;translate&#39;,
+ &#39;upper&#39;,
+ &#39;wrap&#39;,
+ &#39;zfill&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A quick reminder on slicing syntax.  We’ve only seen this for a DataFrame, but it works the same way for a Series.  Here we are getting the first four values of the pandas Series <code class="docutils literal notranslate"><span class="pre">myseries</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myseries</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    Saturday, January 1, 2022
+1    Saturday, January 1, 2022
+2    Saturday, January 1, 2022
+3    Saturday, January 1, 2022
+Name: TransDate, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is as good of a time as any to mention the negative indexing notation.  Here is a way to get the last 4 values of something (whether a pandas Series as in this case, or a pandas DataFrame, or a Python list, etc).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myseries</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6441    Wednesday, August 31, 2022
+6442    Wednesday, August 31, 2022
+6443    Wednesday, August 31, 2022
+6444    Wednesday, August 31, 2022
+Name: TransDate, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using this string accessor attribute, <code class="docutils literal notranslate"><span class="pre">str</span></code>, we can use the <code class="docutils literal notranslate"><span class="pre">find</span></code> method, just like we used it above.  We see <code class="docutils literal notranslate"><span class="pre">0</span></code> at the top, because <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code> occurs starting at position <code class="docutils literal notranslate"><span class="pre">0</span></code> in the top few values, and we see <code class="docutils literal notranslate"><span class="pre">-1</span></code> at the bottom, because <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code> does not occur in the last few values, so the <code class="docutils literal notranslate"><span class="pre">find</span></code> call fails in that case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myseries</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       0
+1       0
+2       0
+3       0
+4       0
+       ..
+6440   -1
+6441   -1
+6442   -1
+6443   -1
+6444   -1
+Name: TransDate, Length: 6445, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or we can use the <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method.  Instead of returning a Series of integer values, this returns a series of Boolean values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myseries</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        True
+1        True
+2        True
+3        True
+4        True
+        ...  
+6440    False
+6441    False
+6442    False
+6443    False
+6444    False
+Name: TransDate, Length: 6445, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our overall goal is to count, and that counting is somewhat more natural using the Boolean values.  The reason is because <code class="docutils literal notranslate"><span class="pre">True</span></code> behaves like <code class="docutils literal notranslate"><span class="pre">1</span></code> in Python (or in Matlab) and <code class="docutils literal notranslate"><span class="pre">False</span></code> behaves like <code class="docutils literal notranslate"><span class="pre">0</span></code>, so if we add up Boolean values, the result is the exact same as how many times <code class="docutils literal notranslate"><span class="pre">True</span></code> occurred.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span><span class="o">+</span><span class="kc">True</span><span class="o">+</span><span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even though <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> are not literally the same object in Python, <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">==</span> <span class="pre">1</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>A pandas Series, like <code class="docutils literal notranslate"><span class="pre">myseries.str.startswith(&quot;Saturday&quot;)</span></code>, has a <code class="docutils literal notranslate"><span class="pre">sum</span></code> method, which adds up all the values in the Series.  So the following is the first answer to our overall question, how many transaction dates correspond to Saturday?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myseries</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>684
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is another example solution, very similar, using Boolean indexing.  We first get the sub-DataFrame of <code class="docutils literal notranslate"><span class="pre">df</span></code> containing only those rows which correspond to a transaction that occurred on Saturday.  Notice how what goes inside the square brackets is our Boolean Series from above.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boolean indexing</span>
+<span class="n">df</span><span class="p">[</span><span class="n">myseries</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Status</th>
+      <th>Device ID</th>
+      <th>Location</th>
+      <th>Machine</th>
+      <th>Product</th>
+      <th>Category</th>
+      <th>Transaction</th>
+      <th>TransDate</th>
+      <th>Type</th>
+      <th>RCoil</th>
+      <th>RPrice</th>
+      <th>RQty</th>
+      <th>MCoil</th>
+      <th>MPrice</th>
+      <th>MQty</th>
+      <th>LineTotal</th>
+      <th>TransTotal</th>
+      <th>Prcd Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Red Bull - Energy Drink - Sugar Free</td>
+      <td>Carbonated</td>
+      <td>14515778905</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>3.5</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Red Bull - Energy Drink - Sugar Free</td>
+      <td>Carbonated</td>
+      <td>14516018629</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>5.0</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Takis - Hot Chilli Pepper &amp; Lime</td>
+      <td>Food</td>
+      <td>14516018629</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>5.0</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Takis - Hot Chilli Pepper &amp; Lime</td>
+      <td>Food</td>
+      <td>14516020373</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>123</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>1.5</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Red Bull - Energy Drink - Sugar Free</td>
+      <td>Carbonated</td>
+      <td>14516021756</td>
+      <td>Saturday, January 1, 2022</td>
+      <td>Credit</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>148</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>3.5</td>
+      <td>1/1/2022</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6322</th>
+      <td>Processed</td>
+      <td>VJ300320692</td>
+      <td>EB Public Library</td>
+      <td>EB Public Library x1380</td>
+      <td>Goldfish Baked - Cheddar</td>
+      <td>Food</td>
+      <td>15586314095</td>
+      <td>Saturday, August 27, 2022</td>
+      <td>Credit</td>
+      <td>125</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>125</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>1.5</td>
+      <td>8/27/2022</td>
+    </tr>
+    <tr>
+      <th>6323</th>
+      <td>Processed</td>
+      <td>VJ300320692</td>
+      <td>EB Public Library</td>
+      <td>EB Public Library x1380</td>
+      <td>Lenny &amp; Larrys - SnickerDoodle</td>
+      <td>Food</td>
+      <td>15586432746</td>
+      <td>Saturday, August 27, 2022</td>
+      <td>Cash</td>
+      <td>157</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>157</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>8/27/2022</td>
+    </tr>
+    <tr>
+      <th>6324</th>
+      <td>Processed</td>
+      <td>VJ300320692</td>
+      <td>EB Public Library</td>
+      <td>EB Public Library x1380</td>
+      <td>SunChips Multigrain - Harvest Cheddar</td>
+      <td>Food</td>
+      <td>15586827743</td>
+      <td>Saturday, August 27, 2022</td>
+      <td>Cash</td>
+      <td>110</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>110</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>1.5</td>
+      <td>8/27/2022</td>
+    </tr>
+    <tr>
+      <th>6325</th>
+      <td>Processed</td>
+      <td>VJ300320611</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1366 - ATT</td>
+      <td>Poland Springs Water</td>
+      <td>Water</td>
+      <td>15586849358</td>
+      <td>Saturday, August 27, 2022</td>
+      <td>Credit</td>
+      <td>143</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>143</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>8/27/2022</td>
+    </tr>
+    <tr>
+      <th>6326</th>
+      <td>Processed</td>
+      <td>VJ300205292</td>
+      <td>Brunswick Sq Mall</td>
+      <td>BSQ Mall x1364 - Zales</td>
+      <td>Pop Corners - White Cheddar</td>
+      <td>Food</td>
+      <td>15586848996</td>
+      <td>Saturday, August 27, 2022</td>
+      <td>Cash</td>
+      <td>114</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>114</td>
+      <td>1.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>1.5</td>
+      <td>8/27/2022</td>
+    </tr>
+  </tbody>
+</table>
+<p>684 rows × 18 columns</p>
+</div></div></div>
+</div>
+<p>The answer to our question (which we already found above using the <code class="docutils literal notranslate"><span class="pre">sum</span></code> method) can now be found by determining the number of rows in the sub-DataFrame.  The sub-DataFrame has 684 rows and 18 columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">myseries</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(684, 18)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we just want the number of rows, we can extract the number at position <code class="docutils literal notranslate"><span class="pre">0</span></code> from the <code class="docutils literal notranslate"><span class="pre">shape</span></code> tuple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">myseries</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>684
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-timestamp-methods">
+<h2>Using timestamp methods<a class="headerlink" href="#using-timestamp-methods" title="Permalink to this headline">#</a></h2>
+<p>It was easy to tell (at least as a human, if not as a computer) that our string <code class="docutils literal notranslate"><span class="pre">s</span></code> above corresponded to Saturday, because the word “Saturday” was in the string <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Saturday, January 1, 2022&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A lot of times, dates will be provided to us in a more compact format.  For example, even in this same dataset, the dates in the “Prcd Date” column are written differently.  Here we access the date in the row labeled <code class="docutils literal notranslate"><span class="pre">20</span></code> and the column labeled <code class="docutils literal notranslate"><span class="pre">&quot;Prcd</span> <span class="pre">Date&quot;</span></code> using <code class="docutils literal notranslate"><span class="pre">.loc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;Prcd Date&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s much more difficult to tell what day of the week this date corresponds to.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1/3/2022&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a first step, we will use the <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> function in pandas to convert <code class="docutils literal notranslate"><span class="pre">t</span></code> into a Timestamp.  The following is not the correct syntax, because we have not told Python where to find the <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the to_datetime function in pandas</span>
+<span class="n">to_datetime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># use the to_datetime function in pandas</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">to_datetime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;to_datetime&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>The correct syntax to use is <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code>, which tells Python to get the <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> function from the pandas library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">ts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2022-01-03 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">t</span></code> is still a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">ts</span></code> that we just defined is a pandas Timestamp.  Because it is a new type of object that is specifically related to a time, it will have lots of new functionality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas._libs.tslibs.timestamps.Timestamp
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like usual, we can see all of the methods and attributes defined on <code class="docutils literal notranslate"><span class="pre">ts</span></code> by using Python’s <code class="docutils literal notranslate"><span class="pre">dir</span></code> function.  Scroll through these and try to decide which ones will tell us that the date represents a Monday.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__add__&#39;,
+ &#39;__array_priority__&#39;,
+ &#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__pyx_vtable__&#39;,
+ &#39;__radd__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_cython__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rsub__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setstate__&#39;,
+ &#39;__setstate_cython__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__sub__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;_date_repr&#39;,
+ &#39;_repr_base&#39;,
+ &#39;_round&#39;,
+ &#39;_short_repr&#39;,
+ &#39;_time_repr&#39;,
+ &#39;asm8&#39;,
+ &#39;astimezone&#39;,
+ &#39;ceil&#39;,
+ &#39;combine&#39;,
+ &#39;ctime&#39;,
+ &#39;date&#39;,
+ &#39;day&#39;,
+ &#39;day_name&#39;,
+ &#39;day_of_week&#39;,
+ &#39;day_of_year&#39;,
+ &#39;dayofweek&#39;,
+ &#39;dayofyear&#39;,
+ &#39;days_in_month&#39;,
+ &#39;daysinmonth&#39;,
+ &#39;dst&#39;,
+ &#39;floor&#39;,
+ &#39;fold&#39;,
+ &#39;freq&#39;,
+ &#39;freqstr&#39;,
+ &#39;fromisocalendar&#39;,
+ &#39;fromisoformat&#39;,
+ &#39;fromordinal&#39;,
+ &#39;fromtimestamp&#39;,
+ &#39;hour&#39;,
+ &#39;is_leap_year&#39;,
+ &#39;is_month_end&#39;,
+ &#39;is_month_start&#39;,
+ &#39;is_quarter_end&#39;,
+ &#39;is_quarter_start&#39;,
+ &#39;is_year_end&#39;,
+ &#39;is_year_start&#39;,
+ &#39;isocalendar&#39;,
+ &#39;isoformat&#39;,
+ &#39;isoweekday&#39;,
+ &#39;max&#39;,
+ &#39;microsecond&#39;,
+ &#39;min&#39;,
+ &#39;minute&#39;,
+ &#39;month&#39;,
+ &#39;month_name&#39;,
+ &#39;nanosecond&#39;,
+ &#39;normalize&#39;,
+ &#39;now&#39;,
+ &#39;quarter&#39;,
+ &#39;replace&#39;,
+ &#39;resolution&#39;,
+ &#39;round&#39;,
+ &#39;second&#39;,
+ &#39;strftime&#39;,
+ &#39;strptime&#39;,
+ &#39;time&#39;,
+ &#39;timestamp&#39;,
+ &#39;timetuple&#39;,
+ &#39;timetz&#39;,
+ &#39;to_datetime64&#39;,
+ &#39;to_julian_date&#39;,
+ &#39;to_numpy&#39;,
+ &#39;to_period&#39;,
+ &#39;to_pydatetime&#39;,
+ &#39;today&#39;,
+ &#39;toordinal&#39;,
+ &#39;tz&#39;,
+ &#39;tz_convert&#39;,
+ &#39;tz_localize&#39;,
+ &#39;tzinfo&#39;,
+ &#39;tzname&#39;,
+ &#39;utcfromtimestamp&#39;,
+ &#39;utcnow&#39;,
+ &#39;utcoffset&#39;,
+ &#39;utctimetuple&#39;,
+ &#39;value&#39;,
+ &#39;week&#39;,
+ &#39;weekday&#39;,
+ &#39;weekofyear&#39;,
+ &#39;year&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A good guess is to use <code class="docutils literal notranslate"><span class="pre">day</span></code>, but that tells us the day of the month.  Because <code class="docutils literal notranslate"><span class="pre">ts</span></code> represents January 3rd 2022, the <code class="docutils literal notranslate"><span class="pre">day</span></code> attribute returns the integer <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">day</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Warning.  As far as I know, there is no good way to know in advance which of these are methods and which are attributes.  (And you certainly won’t be tested on that.)  The important thing is to recognize when you have called one incorrectly.  Here we try calling <code class="docutils literal notranslate"><span class="pre">day</span></code> as a method.  The error says that “‘int’ object is not callable”.  That is because <code class="docutils literal notranslate"><span class="pre">ts.day</span></code> is getting converted into <code class="docutils literal notranslate"><span class="pre">3</span></code>, so calling <code class="docutils literal notranslate"><span class="pre">ts.day()</span></code> is like calling <code class="docutils literal notranslate"><span class="pre">3()</span></code>, and that is the explanation for this error message.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">day</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ts</span><span class="o">.</span><span class="n">day</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: &#39;int&#39; object is not callable
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another try is <code class="docutils literal notranslate"><span class="pre">day_of_week</span></code>, and that is correct, but it’s difficult to know in advance which day of the week corresponds to <code class="docutils literal notranslate"><span class="pre">0</span></code>.  Let’s keep looking.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">day_of_week</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">dayofweek</span></code> attribute (note that there are no underscores) returns the same integer <code class="docutils literal notranslate"><span class="pre">0</span></code>.  We are looking for something that returns the string <code class="docutils literal notranslate"><span class="pre">&quot;Monday&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">dayofweek</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>How about <code class="docutils literal notranslate"><span class="pre">day_name</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">day_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function Timestamp.day_name&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It looks like that didn’t work.  This weird output is very similar (but shorter) to the <code class="docutils literal notranslate"><span class="pre">df.head</span></code> output we saw up above.</p>
+<p>This output is a sign that we should be calling <code class="docutils literal notranslate"><span class="pre">day_name</span></code> as a method, not as an attribute.  The following works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Monday&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aside.  You might wonder why I call <code class="docutils literal notranslate"><span class="pre">day_name()</span></code> a method instead of a function.  In general, if a function is bound to a Python object, like how this <code class="docutils literal notranslate"><span class="pre">day_name</span></code> is bound to <code class="docutils literal notranslate"><span class="pre">ts</span></code>, then it is usually called a method.  As small evidence of that, notice in the documentation how both the word “function” and the word “method” are used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">day_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function day_name:
+
+day_name(...) method of pandas._libs.tslibs.timestamps.Timestamp instance
+    Return the day name of the Timestamp with specified locale.
+    
+    Parameters
+    ----------
+    locale : str, default None (English locale)
+        Locale determining the language in which to return the day name.
+    
+    Returns
+    -------
+    str
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s nice that we can get day of the week from a date.  If you had to implement that kind of functionality on its own, it would be very complicated.</p>
+<p>Let’s try it again.  Why doesn’t the following work?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;9/27/2022&quot;</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s2">&quot;9/27/2022&quot;</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;str&#39; object has no attribute &#39;day_name&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The reason the above call to <code class="docutils literal notranslate"><span class="pre">day_name()</span></code> did not work, is because strings do not have a <code class="docutils literal notranslate"><span class="pre">day_name</span></code> method.  (Why would they?  What should <code class="docutils literal notranslate"><span class="pre">&quot;Christopher&quot;.day_name()</span></code> return?)</p>
+<p>To use this <code class="docutils literal notranslate"><span class="pre">day_name</span></code> method, we have to first convert the string into a Timestamp.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">&quot;9/27/2022&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Tuesday&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-timestamp-methods-with-a-series">
+<h2>Using timestamp methods with a Series<a class="headerlink" href="#using-timestamp-methods-with-a-series" title="Permalink to this headline">#</a></h2>
+<p>Let’s return to our original question (which we already answered above using string methods) of how many transactions occurred on a Saturday.  Remember that the relevant column is the “TransDate” column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        Saturday, January 1, 2022
+1        Saturday, January 1, 2022
+2        Saturday, January 1, 2022
+3        Saturday, January 1, 2022
+4        Saturday, January 1, 2022
+                   ...            
+6440    Wednesday, August 31, 2022
+6441    Wednesday, August 31, 2022
+6442    Wednesday, August 31, 2022
+6443    Wednesday, August 31, 2022
+6444    Wednesday, August 31, 2022
+Name: TransDate, Length: 6445, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like we used <code class="docutils literal notranslate"><span class="pre">str</span></code> to access string methods on a pandas Series, here we use <code class="docutils literal notranslate"><span class="pre">dt</span></code> (which presumably stands for datetime) to access Timestamp methods on a pandas Series.  But we can’t use <code class="docutils literal notranslate"><span class="pre">df[&quot;TransDate&quot;].dt</span></code> directly.  The following mistake is basically the same as the <code class="docutils literal notranslate"><span class="pre">&quot;9/27/2022&quot;.day_name()</span></code> mistake above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">55</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">dir</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/generic.py:5461,</span> in <span class="ni">NDFrame.__getattr__</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5454</span> <span class="c1"># Note: obj.x will always call obj.__getattribute__(&#39;x&#39;) prior to</span>
+<span class="g g-Whitespace">   </span><span class="mi">5455</span> <span class="c1"># calling obj.__getattr__(&#39;x&#39;).</span>
+<span class="g g-Whitespace">   </span><span class="mi">5456</span> <span class="k">if</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">5457</span>     <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_names_set</span>
+<span class="g g-Whitespace">   </span><span class="mi">5458</span>     <span class="ow">or</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span>
+<span class="g g-Whitespace">   </span><span class="mi">5459</span>     <span class="ow">or</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
+<span class="g g-Whitespace">   </span><span class="mi">5460</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">5461</span>     <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5462</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">5463</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/accessor.py:180,</span> in <span class="ni">CachedAccessor.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="c1"># we&#39;re accessing the attribute of the class, i.e., Dataset.geo</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessor</span>
+<span class="ne">--&gt; </span><span class="mi">180</span> <span class="n">accessor_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessor</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="c1"># Replace the property with the accessor object. Inspired by:</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="c1"># https://www.pydanny.com/cached-property.html</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span> <span class="c1"># We need to use object.__setattr__ because we overwrite __setattr__ on</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span> <span class="c1"># NDFrame</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">accessor_obj</span><span class="p">)</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/indexes/accessors.py:494,</span> in <span class="ni">CombinedDatetimelikeProperties.__new__</span><span class="nt">(cls, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span> <span class="k">elif</span> <span class="n">is_period_dtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span>     <span class="k">return</span> <span class="n">PeriodProperties</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">orig</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">494</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Can only use .dt accessor with datetimelike values&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: Can only use .dt accessor with datetimelike values
+</pre></div>
+</div>
+</div>
+</div>
+<p>We first need to convert from strings to Timestamps using <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code>.  Notice how the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> changes.  (I’m not sure if there is a difference between the Timestamp objects we saw above and the type referred to below as <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>.  I think it is safe to think of them as the same.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      2022-01-01
+1      2022-01-01
+2      2022-01-01
+3      2022-01-01
+4      2022-01-01
+          ...    
+6440   2022-08-31
+6441   2022-08-31
+6442   2022-08-31
+6443   2022-08-31
+6444   2022-08-31
+Name: TransDate, Length: 6445, dtype: datetime64[ns]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can call the Python <code class="docutils literal notranslate"><span class="pre">dir</span></code> function, like I tried to do above.  Notice how similar these methods are to the Timestamp attributes and methods we saw in the previous section.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__annotations__&#39;,
+ &#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__frozen&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;_accessors&#39;,
+ &#39;_add_delegate_accessors&#39;,
+ &#39;_constructor&#39;,
+ &#39;_delegate_method&#39;,
+ &#39;_delegate_property_get&#39;,
+ &#39;_delegate_property_set&#39;,
+ &#39;_dir_additions&#39;,
+ &#39;_dir_deletions&#39;,
+ &#39;_freeze&#39;,
+ &#39;_get_values&#39;,
+ &#39;_hidden_attrs&#39;,
+ &#39;_parent&#39;,
+ &#39;_reset_cache&#39;,
+ &#39;ceil&#39;,
+ &#39;date&#39;,
+ &#39;day&#39;,
+ &#39;day_name&#39;,
+ &#39;day_of_week&#39;,
+ &#39;day_of_year&#39;,
+ &#39;dayofweek&#39;,
+ &#39;dayofyear&#39;,
+ &#39;days_in_month&#39;,
+ &#39;daysinmonth&#39;,
+ &#39;floor&#39;,
+ &#39;freq&#39;,
+ &#39;hour&#39;,
+ &#39;is_leap_year&#39;,
+ &#39;is_month_end&#39;,
+ &#39;is_month_start&#39;,
+ &#39;is_quarter_end&#39;,
+ &#39;is_quarter_start&#39;,
+ &#39;is_year_end&#39;,
+ &#39;is_year_start&#39;,
+ &#39;isocalendar&#39;,
+ &#39;microsecond&#39;,
+ &#39;minute&#39;,
+ &#39;month&#39;,
+ &#39;month_name&#39;,
+ &#39;nanosecond&#39;,
+ &#39;normalize&#39;,
+ &#39;quarter&#39;,
+ &#39;round&#39;,
+ &#39;second&#39;,
+ &#39;strftime&#39;,
+ &#39;time&#39;,
+ &#39;timetz&#39;,
+ &#39;to_period&#39;,
+ &#39;to_pydatetime&#39;,
+ &#39;tz&#39;,
+ &#39;tz_convert&#39;,
+ &#39;tz_localize&#39;,
+ &#39;week&#39;,
+ &#39;weekday&#39;,
+ &#39;weekofyear&#39;,
+ &#39;year&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In particular, using this <code class="docutils literal notranslate"><span class="pre">dt</span></code> accessor attribute, we can call the <code class="docutils literal notranslate"><span class="pre">day_name</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        Saturday
+1        Saturday
+2        Saturday
+3        Saturday
+4        Saturday
+          ...    
+6440    Wednesday
+6441    Wednesday
+6442    Wednesday
+6443    Wednesday
+6444    Wednesday
+Name: TransDate, Length: 6445, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s now see how often <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code> occurs.  Here is the same mistake we have made several times above.  We are missing the parentheses from <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;bound method IndexOpsMixin.value_counts of 0        Saturday
+1        Saturday
+2        Saturday
+3        Saturday
+4        Saturday
+          ...    
+6440    Wednesday
+6441    Wednesday
+6442    Wednesday
+6443    Wednesday
+6444    Wednesday
+Name: TransDate, Length: 6445, dtype: object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a correct call of <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>.  This returns a Series.  The index of this Series contains the days of the week, and the values of this Series indicate how often they occur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wednesday    1120
+Tuesday      1113
+Thursday     1106
+Monday       1023
+Friday       1016
+Saturday      684
+Sunday        383
+Name: TransDate, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>To access the value corresponding to the key <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code>, we can use indexing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s2">&quot;Saturday&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>684
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could also use the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> indexing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Saturday&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>684
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we’re willing to count to see what place <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code> occurs, we could also use the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> indexing.  This <code class="docutils literal notranslate"><span class="pre">iloc</span></code> approach is definitely the worst approach in this case, but it is useful to know if you want to get, for example, the top value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TransDate&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>684
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Week1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Worksheet1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Worksheet 1</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Week1-Wednesday.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 1 Wednesday</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Christopher Davis<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

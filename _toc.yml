@@ -1,0 +1,114 @@
+format: jb-book
+root: intro
+chapters:
+  - file: Week0/Week0-Intro
+    sections:
+    - file: Week0/Worksheet0
+    - file: Week0/Week0-Friday
+  - file: Week1/Week1-Intro
+    sections:
+    - file: Week1/Week1-Monday
+    - file: Week1/Worksheet1
+    - file: Week1/Week1-Tuesday
+    - file: Week1/Week1-Wednesday
+    - file: Week1/Worksheet2
+    - file: Week1/Week1-Videos
+    - file: Week1/Week1-Friday
+  - file: Week2/Week2-Intro
+    sections:
+    - file: Week2/Week2-Monday
+    - file: Week2/Week2-Wednesday
+    - file: Week2/Week2-Friday
+    - file: Week2/Worksheet3
+    - file: Week2/Worksheet4
+    - file: Week2/Week2-Videos
+  - file: Week3/Week3-Intro
+    sections:
+    - file: Week3/Week3-Monday
+    - file: Week3/Week3-Wednesday
+    - file: Week3/Week3-Friday
+    - file: Week3/Worksheet5
+    - file: Week3/Worksheet6
+    - file: Week3/Week3-Videos
+  - file: Week4/Week4-Intro
+    sections:
+    - file: Week4/Week4-Monday
+    - file: Week4/Week4-Wednesday
+    - file: Week4/Week4-Friday
+    - file: Week4/Worksheet7
+    - file: Week4/Worksheet8
+    - file: Week4/Week4-Videos
+  - file: Week5/Week5-Intro
+    sections:
+    - file: Week5/Week5-Monday
+    - file: Week5/Week5-Friday
+  - file: Week6/Week6-Intro
+    sections:
+    - file: Week6/Week6-Monday
+    - file: Week6/Week6-Wednesday
+    - file: Week6/Week6-Friday
+    - file: Week6/Worksheet9
+    - file: Week6/Worksheet10
+    - file: Week6/Week6-Videos
+  - file: Week7/Week7-Intro
+    sections:
+    - file: Week7/Week7-Monday
+    - file: Week7/Week7-Wednesday
+    - file: Week7/Worksheet11
+    - file: Week7/Worksheet12
+    - file: Week7/Week7-Videos
+  - file: Week8/Week8-Intro
+    sections:
+    - file: Week8/Week8-Videos
+    - file: Week8/Week8-Monday
+    - file: Week8/Week8-Wednesday
+    - file: Week8/Week8-Friday
+    - file: Week8/Worksheet13
+    - file: Week8/Worksheet14
+  - file: Week9/Week9-Intro
+    sections:
+    - file: Week9/Week9-Monday
+    - file: Week9/Week9-Wednesday
+    - file: Week9/Worksheet15
+    - file: Week9/Worksheet16
+    - file: Week9/Week9-Videos
+  - file: Week10/Week10-Intro
+    sections:
+    - file: Week10/Week10-Monday
+    - file: Week10/Week10-Wednesday
+    - file: Week10/Week10-Friday
+  - file: Proj/Proj-Intro
+    sections:
+    - file: Proj/CourseProject
+    - file: Proj/ExtraTopics
+  - file: Proj/StudentProjects
+    sections:
+    - file: Proj/StudentProjects/MariaAvalos
+    - file: Proj/StudentProjects/NicholasBogarin
+    - file: Proj/StudentProjects/MingyuChen
+    - file: Proj/StudentProjects/NuoChen
+    - file: Proj/StudentProjects/YuanGao
+    - file: Proj/StudentProjects/RyanHarner
+    - file: Proj/StudentProjects/AnerHuang
+    - file: Proj/StudentProjects/DerekJiang
+    - file: Proj/StudentProjects/EricJones
+    - file: Proj/StudentProjects/EdenKim
+    - file: Proj/StudentProjects/AryaKondur
+    - file: Proj/StudentProjects/MichelleKwan
+    - file: Proj/StudentProjects/SaraGraceLien
+    - file: Proj/StudentProjects/DanielLim
+    - file: Proj/StudentProjects/NatalieMartinez
+    - file: Proj/StudentProjects/AdityaKrishnanRadhakrishnan
+    - file: Proj/StudentProjects/CeceSun
+    - file: Proj/StudentProjects/KexinSun
+    - file: Proj/StudentProjects/NanakoTatewaki
+    - file: Proj/StudentProjects/LeanderVonSchoenfeld
+    - file: Proj/StudentProjects/EmilyWang
+    - file: Proj/StudentProjects/HaoyangWang
+    - file: Proj/StudentProjects/YifengXiong
+    - file: Proj/StudentProjects/KevinXu
+    - file: Proj/StudentProjects/MingyanXu
+    - file: Proj/StudentProjects/ShengkaiYang
+    - file: Proj/StudentProjects/HuangxiaoZhang
+    - file: Proj/StudentProjects/YihaoZhang
+

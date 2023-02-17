@@ -1,0 +1,104 @@
+import pandas as pd
+import altair as alt
+
+from sklearn.datasets import make_regression
+
+help(make_regression)
+
+make_regression(n_samples=4, n_features=2)
+
+X, y = make_regression(n_samples=50, n_features=1)
+
+X
+
+X.shape
+
+y
+
+y.shape
+
+pd.DataFrame({"col0": X, "col1": y})
+
+df = pd.DataFrame({"col0": X.reshape(-1), "col1": y})
+
+alt.Chart(df).mark_circle().encode(
+    x="col0",
+    y="col1"
+)
+
+def make_chart(X,y):
+    df = pd.DataFrame({"col0": X.reshape(-1), "col1": y})
+    chart = alt.Chart(df).mark_circle().encode(
+        x="col0",
+        y="col1"
+    )
+    return chart
+
+X, y = make_regression(n_samples=50, n_features=1, noise=10, bias=-14.5)
+make_chart(X,y)
+
+X, y = make_regression(n_samples=50, n_features=1, noise=10, bias=-14.5)
+make_chart(X,y)
+
+X, y = make_regression(n_samples=50, n_features=1, noise=10, bias=-14.5, random_state=1234)
+make_chart(X,y)
+
+X, y = make_regression(n_samples=50, n_features=1, noise=10, bias=-14.5, random_state=1234, coef=True)
+make_chart(X,y)
+
+X, y, m = make_regression(n_samples=50, n_features=1, noise=10, bias=-14.5, random_state=1234, coef=True)
+make_chart(X,y)
+
+m
+
+X, y, m = make_regression(n_samples=50, n_features=1, noise=10, bias=-14.5, random_state=1234, coef=True)
+make_chart(X,y)
+
+from sklearn.linear_model import LinearRegression
+
+reg = LinearRegression()
+
+type(reg)
+
+reg.coef_
+
+reg.intercept_
+
+reg.fit(X,y)
+
+reg.coef_
+
+reg.intercept_
+
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+ax.plot(X,y)
+
+fig, ax = plt.subplots()
+ax.plot(X,y, 'kx')
+
+fig, ax = plt.subplots()
+ax.scatter(X,y)
+
+plt.style.available
+
+plt.style.use('ggplot')
+
+fig, ax = plt.subplots()
+ax.scatter(X,y)
+
+import numpy as np
+
+Xtrue = np.array([-2,2]).reshape(-1,1)
+ytrue = reg.predict(Xtrue)
+
+ytrue
+
+fig, ax = plt.subplots()
+ax.scatter(X,y)
+ax.plot(Xtrue, ytrue, 'k')
+
+reg.predict(np.array([-2,2]))
+
+reg.predict(np.array([-2,2]).reshape(-1,1))

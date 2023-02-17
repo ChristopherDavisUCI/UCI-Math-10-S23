@@ -1,0 +1,55 @@
+# Originally duplicated from UW Visualization Curriculum
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: UC Irvine Math 10, Fall 2022
+author: Christopher Davis
+copyright: "2022"
+logo: images/digitsyellow.png
+
+# See https://jupyterbook.org/content/execute.html
+execute:
+  exclude_patterns:
+    - 'Week?/*.ipynb'
+    - 'Week??/*.ipynb'
+    - 'Proj/StudentProjects/*.ipynb'
+  # - 'Week2/*.ipynb'
+  #   - 'Week1/Homework1.ipynb'
+  #   - 'Week2/Quiz1-Practice.ipynb'
+  #   - 'Week6/Homework5.ipynb'
+  #   - 'Week7/Week7-Monday.ipynb'
+  #   - 'Week7/Week7-Wednesday.ipynb'
+  #   - 'Week8/Homework7.ipynb'
+  #   - 'Week8/Week8-Video-notebooks.ipynb'
+  execute_notebooks: 'cache'
+  allow_errors: true
+  timeout: 200
+
+
+#launch_buttons:
+#  colab_url: "https://colab.research.google.com"
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/ChristopherDavisUCI/UCI-Math-10-F22 # Online location of your book
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_repository_button: true
+  favicon : "images/favicon.ico"
+
+sphinx:
+  config:
+    html_js_files:
+    - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    html_extra_path:
+      - data
+      - extra
+      # - .github

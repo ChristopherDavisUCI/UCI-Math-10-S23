@@ -1,0 +1,78 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng()
+
+type(rng)
+
+rng.random(5)
+
+30*rng.random(5) - 20
+
+m,b = 30*rng.random(2) - 20
+
+x = np.arange(0, 10, 0.5)
+
+x
+
+y = m*x+b
+
+fig, ax = plt.subplots()
+ax.scatter(x, y)
+
+noise = rng.normal(loc=0, scale=10, size=y.shape)
+
+y2 = y+noise
+
+fig, ax = plt.subplots()
+ax.scatter(x, y2)
+
+y2[5] = 500
+
+fig, ax = plt.subplots()
+ax.scatter(x, y2)
+
+from sklearn.linear_model import LinearRegression
+
+reg = LinearRegression()
+
+x.shape
+
+X = x.reshape(-1,1)
+
+reg.fit(X, y2)
+
+ypred = reg.predict(X)
+
+fig, ax = plt.subplots()
+ax.scatter(x, y2)
+ax.plot(x, ypred, 'r')
+
+from sklearn.linear_model import SGDRegressor
+
+sgdreg = SGDRegressor(loss="epsilon_insensitive", epsilon=0)
+
+sgdreg.fit(X, y2)
+
+ypred2 = sgdreg.predict(X)
+
+fig, ax = plt.subplots()
+ax.scatter(x, y2)
+ax.plot(x, ypred, 'r')
+ax.plot(x, ypred2, 'k')
+
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+mean_squared_error(y2, ypred)
+
+mean_squared_error(y2, ypred2)
+
+mean_absolute_error(y2, ypred)
+
+mean_absolute_error(y2, ypred2)
+
+((y2-ypred)**2).mean()
+
+((y2-ypred)**2).sum()/len(y2)
+
+(abs(y2-ypred)).mean()
