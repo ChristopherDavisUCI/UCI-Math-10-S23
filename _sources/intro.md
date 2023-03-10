@@ -1,5 +1,7 @@
 # UC Irvine, Math 10, Spring 2023 
 
+Not much is here yet, but content will be added throughout the course.
+
 Use the Navigation menu on the left to find the course content. 
 
 **Introduction to Programming for Data Science**
