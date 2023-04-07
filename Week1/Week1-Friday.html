@@ -1,0 +1,1050 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 1 Friday &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week1/Week1-Friday';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Worksheet 1" href="Worksheet1.html" />
+    <link rel="prev" title="Week 1 Wednesday" href="Week1-Wednesday.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week1-Intro.html">Week 1</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ML-intro.html">Machine Learning</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Week1/Week1-Friday.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 1 Friday</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-example-of-boolean-indexing">More complex example of Boolean indexing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example-of-the-axis-keyword-argument">Another example of the <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-in-python">Functions in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-work-on-worksheets-1-2">Time to work on Worksheets 1-2</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-1-friday">
+<h1>Week 1 Friday<a class="headerlink" href="#week-1-friday" title="Permalink to this heading">#</a></h1>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>We’ll start on the library <code class="docutils literal notranslate"><span class="pre">pandas</span></code> next week.  Most important library of Math 10.</p></li>
+<li><p>Annotated versions of the Monday and Wednesday files are in the <a class="reference external" href="https://christopherdavisuci.github.io/UCI-Math-10-S23/Week1/Week1-Intro.html">course notes</a>.</p></li>
+<li><p>For now, I’m going to keep using Deepnote to distribute files, but I will lecture locally (not “in the cloud”) using Anaconda Navigator’s Jupyter notebooks from the lab computer.</p></li>
+<li><p>Worksheets 1 and 2 posted in Deepnote.  For Worksheet 1, to get full points, please work in a group (2-3 students total).  For Worksheet 2, it’s up to you if you work in a group or not.</p></li>
+<li><p>Yufei, one of our three LAs, is here to help.</p></li>
+<li><p>If you’re stuck on something and not able to ask in person, try asking on Ed Discussion (linked from Canvas).</p></li>
+<li><p>I have another class at 2pm across campus, so unfortunately I can basically never stay around to answer questions.</p></li>
+</ul>
+</section>
+<section id="more-complex-example-of-boolean-indexing">
+<h2>More complex example of Boolean indexing<a class="headerlink" href="#more-complex-example-of-boolean-indexing" title="Permalink to this heading">#</a></h2>
+<p>Define <code class="docutils literal notranslate"><span class="pre">arr</span></code> as follows.  We will then create the subarray of <code class="docutils literal notranslate"><span class="pre">arr</span></code> containing the rows which have at least two 2s using the following strategy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4, 0],
+       [2, 0, 1],
+       [2, 0, 2],
+       [4, 4, 2],
+       [2, 3, 4],
+       [4, 0, 3],
+       [3, 0, 2],
+       [4, 3, 1],
+       [1, 3, 0],
+       [2, 2, 2]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Make a 10x3 Boolean array indicating where <code class="docutils literal notranslate"><span class="pre">arr</span></code> is equal to 2.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False, False, False],
+       [ True, False, False],
+       [ True, False,  True],
+       [False, False,  True],
+       [ True, False, False],
+       [False, False, False],
+       [False, False,  True],
+       [False, False, False],
+       [False, False, False],
+       [ True,  True,  True]])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">sum</span></code> method with <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> to find how many 2s there are in each row.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cts</span> <span class="o">=</span> <span class="p">(</span><span class="n">arr</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 1, 1, 0, 1, 0, 0, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Use Boolean indexing to create the subarray of <code class="docutils literal notranslate"><span class="pre">arr2</span></code> containing only the rows which have at least two 2s.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boolean array</span>
+<span class="n">cts</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="c1"># cts &gt;= 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False,  True, False, False, False, False, False, False,
+        True])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we “keep” the rows corresponding to the <code class="docutils literal notranslate"><span class="pre">True</span></code> values, that is, we keep the rows that have at least two 2s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="n">cts</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 0, 2],
+       [2, 2, 2]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following means exactly the same thing, but it is a little harder to read because we’ve replaced <code class="docutils literal notranslate"><span class="pre">cts</span></code> with the definition of <code class="docutils literal notranslate"><span class="pre">cts</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[(</span><span class="n">arr</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 0, 2],
+       [2, 2, 2]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ve seen that we can use Boolean arrays to keep certain rows.  We can also use a list of indices.  Here we get the row at index <code class="docutils literal notranslate"><span class="pre">9</span></code> repeated four times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[[</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 2, 2],
+       [2, 2, 2],
+       [2, 2, 2],
+       [2, 2, 2]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s a reminder of what <code class="docutils literal notranslate"><span class="pre">arr</span></code> is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4, 0],
+       [2, 0, 1],
+       [2, 0, 2],
+       [4, 4, 2],
+       [2, 3, 4],
+       [4, 0, 3],
+       [3, 0, 2],
+       [4, 3, 1],
+       [1, 3, 0],
+       [2, 2, 2]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Why did we use the double square brackets above?  The outer square brackets are for indexing.  The inner square brackets are for a list.  Why do we need the list inside?  Here is what happens if we omit the inner square brackets.  The <code class="docutils literal notranslate"><span class="pre">8</span></code> gets us to the row at index <code class="docutils literal notranslate"><span class="pre">8</span></code>, and the <code class="docutils literal notranslate"><span class="pre">1</span></code> gets to the element at index <code class="docutils literal notranslate"><span class="pre">1</span></code> in that row.  (Remember that numbering in Python starts at 0.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>On the other hand, if we use a list on the inside for indexing, then we get the row at index <code class="docutils literal notranslate"><span class="pre">8</span></code> followed by the row at index <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[[</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 3, 0],
+       [2, 0, 1]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>There was a question about whether we can do the same sort of thing with columns.  Here is the shortest way I know; there could be an abbreviated way to do the same thing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4, 4, 4, 3],
+       [2, 0, 0, 0, 2],
+       [2, 0, 0, 0, 2],
+       [4, 4, 4, 4, 4],
+       [2, 3, 3, 3, 2],
+       [4, 0, 0, 0, 4],
+       [3, 0, 0, 0, 3],
+       [4, 3, 3, 3, 4],
+       [1, 3, 3, 3, 1],
+       [2, 2, 2, 2, 2]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a more basic example of Boolean indexing, because it’s a one-dimensional array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are keeping three of these values and discarding the rest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 5, 2])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="another-example-of-the-axis-keyword-argument">
+<h2>Another example of the <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument<a class="headerlink" href="#another-example-of-the-axis-keyword-argument" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>What is the result of evaluating the following?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arr.max()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arr.max(axis=0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arr.max(axis=1)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4, 0],
+       [2, 0, 1],
+       [2, 0, 2],
+       [4, 4, 2],
+       [2, 3, 4],
+       [4, 0, 3],
+       [3, 0, 2],
+       [4, 3, 1],
+       [1, 3, 0],
+       [2, 2, 2]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we use <code class="docutils literal notranslate"><span class="pre">max()</span></code> without any <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument, it returns the overall maximum in the array.  This <code class="docutils literal notranslate"><span class="pre">max</span></code> (like <code class="docutils literal notranslate"><span class="pre">sum</span></code> above) is an example of a method.  Methods are types of functions in Python, but they’re functions which are attached to an object.  This <code class="docutils literal notranslate"><span class="pre">max</span></code> method and the <code class="docutils literal notranslate"><span class="pre">sum</span></code> method above are attached to NumPy array objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># max method</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>For now, don’t worry about memorizing the difference between <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> and <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>, but you should recognize that one of them is getting the maximum of each column, and one of them is getting the maximum of each row.</p>
+<p>The strategy I use to remember, is that <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> gives permission to change the rows axis.  (Why does “rows” correspond to <code class="docutils literal notranslate"><span class="pre">axis=0</span></code>?  For example, when we say 10x3, the 10 refers to rows.)</p>
+<p>The following is saying that all three columns have a maximum of <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 4, 4], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following is length 10 because there are 10 rows.  The top row has a maximum of <code class="docutils literal notranslate"><span class="pre">4</span></code>, the next row has a maximum of <code class="docutils literal notranslate"><span class="pre">2</span></code>, and so on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 2, 2, 4, 4, 4, 3, 4, 3, 2], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is also a <code class="docutils literal notranslate"><span class="pre">min</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 2, 2, 0, 0, 1, 0, 2], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is also a <code class="docutils literal notranslate"><span class="pre">mean</span></code> method.  Here we are finding the <code class="docutils literal notranslate"><span class="pre">mean</span></code> of each row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.33333333, 1.        , 1.33333333, 3.33333333, 3.        ,
+       2.33333333, 1.66666667, 2.66666667, 1.33333333, 2.        ])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In how many rows of <code class="docutils literal notranslate"><span class="pre">arr</span></code> is the maximum entry in that row <code class="docutils literal notranslate"><span class="pre">2</span></code> or less?</p></li>
+</ul>
+<p>First we find the maximum in each row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rowmax</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">rowmax</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 2, 2, 4, 4, 4, 3, 4, 3, 2], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we create a Boolean array, indicating if the maximum is less than or equal to <code class="docutils literal notranslate"><span class="pre">2</span></code> or not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">rowmax</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False,  True,  True, False, False, False, False, False, False,
+        True])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we count.  (A general rule of thumb, if we’re counting, probably a <code class="docutils literal notranslate"><span class="pre">sum</span></code> will be used.  If we’re getting a subarray or sub-DataFrame, probably Boolean indexing will be used.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">rowmax</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the Boolean indexing version of what we just did.  The <code class="docutils literal notranslate"><span class="pre">3</span></code> on the previous line corresponds to this array having 3 rows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boolean indexing version</span>
+<span class="n">arr</span><span class="p">[</span><span class="n">rowmax</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 0, 1],
+       [2, 0, 2],
+       [2, 2, 2]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="functions-in-python">
+<h2>Functions in Python<a class="headerlink" href="#functions-in-python" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">getsub</span></code> which takes two inputs, a NumPy <code class="docutils literal notranslate"><span class="pre">arr</span></code> and an integer <code class="docutils literal notranslate"><span class="pre">n</span></code>, and as output returns the subarray of <code class="docutils literal notranslate"><span class="pre">arr</span></code> containing all rows with at least two entries equal to <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
+</ul>
+<p>Here is the syntax for writing a function with two input arguments.  Be sure you are using the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement to indicate what should be returned.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getsub</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">cts</span> <span class="o">=</span> <span class="p">(</span><span class="n">arr</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">subarr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">cts</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># Boolean indexing</span>
+    <span class="k">return</span> <span class="n">subarr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check this, but now with a much bigger array (100 rows) than what we were using above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4, 0],
+       [2, 0, 1],
+       [2, 0, 2],
+       [4, 4, 2],
+       [2, 3, 4],
+       [4, 0, 3],
+       [3, 0, 2],
+       [4, 3, 1],
+       [1, 3, 0],
+       [2, 2, 2],
+       [3, 2, 3],
+       [4, 0, 2],
+       [0, 3, 0],
+       [2, 1, 4],
+       [2, 4, 4],
+       [1, 2, 1],
+       [4, 4, 2],
+       [3, 4, 3],
+       [3, 2, 4],
+       [1, 3, 0],
+       [3, 3, 0],
+       [0, 4, 1],
+       [4, 3, 0],
+       [0, 0, 4],
+       [2, 0, 1],
+       [2, 4, 2],
+       [3, 1, 4],
+       [4, 2, 1],
+       [4, 2, 3],
+       [4, 2, 3],
+       [2, 1, 1],
+       [0, 0, 4],
+       [4, 2, 0],
+       [2, 1, 2],
+       [2, 0, 3],
+       [2, 4, 2],
+       [3, 2, 1],
+       [0, 2, 3],
+       [0, 0, 4],
+       [1, 3, 0],
+       [0, 3, 0],
+       [2, 4, 2],
+       [4, 0, 0],
+       [2, 2, 1],
+       [1, 1, 3],
+       [1, 3, 3],
+       [1, 3, 1],
+       [1, 0, 3],
+       [4, 2, 3],
+       [3, 1, 1],
+       [1, 4, 2],
+       [3, 4, 0],
+       [3, 2, 4],
+       [3, 3, 3],
+       [4, 2, 1],
+       [1, 4, 3],
+       [2, 3, 2],
+       [2, 1, 0],
+       [1, 3, 3],
+       [3, 1, 4],
+       [2, 4, 3],
+       [1, 0, 4],
+       [2, 3, 3],
+       [4, 3, 2],
+       [3, 4, 1],
+       [2, 1, 1],
+       [3, 4, 3],
+       [1, 1, 1],
+       [1, 0, 2],
+       [0, 3, 1],
+       [2, 1, 2],
+       [3, 2, 0],
+       [0, 4, 3],
+       [4, 2, 4],
+       [4, 3, 1],
+       [3, 3, 3],
+       [4, 4, 1],
+       [4, 4, 1],
+       [3, 4, 3],
+       [4, 0, 3],
+       [3, 3, 3],
+       [3, 0, 3],
+       [1, 4, 1],
+       [1, 0, 2],
+       [3, 1, 1],
+       [3, 2, 0],
+       [3, 2, 4],
+       [2, 4, 1],
+       [3, 2, 0],
+       [1, 2, 4],
+       [3, 1, 3],
+       [4, 0, 4],
+       [1, 1, 1],
+       [1, 0, 3],
+       [4, 1, 3],
+       [0, 3, 1],
+       [3, 0, 1],
+       [2, 2, 4],
+       [0, 2, 2],
+       [0, 1, 3]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>There aren’t any <code class="docutils literal notranslate"><span class="pre">5</span></code> values in this array, so that’s why the following returns an empty array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getsub</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([], shape=(0, 3), dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the sub-array containing all the rows which have at least two 4s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getsub</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4, 4, 2],
+       [2, 4, 4],
+       [4, 4, 2],
+       [4, 2, 4],
+       [4, 4, 1],
+       [4, 4, 1],
+       [4, 0, 4]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>(If there’s extra time.)</p>
+<ul class="simple">
+<li><p>Can you write the same function using a for loop?  (<strong>Warning</strong>.  This for-loop approach is definitely worse.  It is both less elegant and less efficient.  It’s just for practice with some different Python syntax.)</p></li>
+</ul>
+</section>
+<section id="time-to-work-on-worksheets-1-2">
+<h2>Time to work on Worksheets 1-2<a class="headerlink" href="#time-to-work-on-worksheets-1-2" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Yufei and I are here to help.</p></li>
+<li><p>I have another class at 2pm, so if you have questions, ask me now rather than after class!</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Week1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week1-Wednesday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 1 Wednesday</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Worksheet1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Worksheet 1</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-example-of-boolean-indexing">More complex example of Boolean indexing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example-of-the-axis-keyword-argument">Another example of the <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-in-python">Functions in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-work-on-worksheets-1-2">Time to work on Worksheets 1-2</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Worksheet 1 &#8212; UC Irvine Math 10, Spring 2023</title>
+    <title>Worksheet 2 &#8212; UC Irvine Math 10, Spring 2023</title>
   
   
   
@@ -62,12 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Week1/Worksheet1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week1/Worksheet2';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Worksheet 2" href="Worksheet2.html" />
-    <link rel="prev" title="Week 1 Friday" href="Week1-Friday.html" />
+    <link rel="next" title="Machine Learning" href="../ML-intro.html" />
+    <link rel="prev" title="Worksheet 1" href="Worksheet1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,8 +164,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Week1-Monday.html">Week 1 Monday</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Week1-Wednesday.html">Week 1 Wednesday</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Week1-Friday.html">Week 1 Friday</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Worksheet 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Worksheet2.html">Worksheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Worksheet 2</a></li>
 </ul>
 </li>
 </ul>
@@ -241,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Week1/Worksheet1.ipynb" target="_blank"
+      <li><a href="../_sources/Week1/Worksheet2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +323,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Worksheet 1</h1>
+    <h1>Worksheet 2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -333,11 +333,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-to-create-a-workspace-for-your-group">Instructions to create a workspace for your group</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#names">Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-warm-up">Python warm-up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-elements">Counting elements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-practice">Markdown practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-numpy-array-from-a-pickle-file">Loading a NumPy array from a pickle file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-boolean-indexing">Practice with Boolean indexing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-rows-satisfying-a-condition-using-numpy">Counting rows satisfying a condition using NumPy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
 </ul>
             </nav>
@@ -350,87 +348,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="worksheet-1">
-<h1>Worksheet 1<a class="headerlink" href="#worksheet-1" title="Permalink to this heading">#</a></h1>
-<p>For this worksheet only, to get full points, you must work in a group of 2-3 students.  Each student must submit the finished worksheet on Canvas.</p>
-<p>This worksheet is due Tuesday of Week 2, by 11:59pm.  (Worksheet 2 is due at the same time.)</p>
-<section id="instructions-to-create-a-workspace-for-your-group">
-<h2>Instructions to create a workspace for your group<a class="headerlink" href="#instructions-to-create-a-workspace-for-your-group" title="Permalink to this heading">#</a></h2>
-<p>One group member should create a workspace for the group using the following instructions.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="worksheet-2">
+<h1>Worksheet 2<a class="headerlink" href="#worksheet-2" title="Permalink to this heading">#</a></h1>
+<p>This worksheet is due Tuesday of Week 2, by 11:59pm.</p>
+<p>You are encouraged to work in a group of up to 3 total students (working alone is also okay).  Everyone should make a submission on Canvas, but it’s fine for all group members to submit the same thing.</p>
+<p>See Worksheet 1 for instructions on how to make a Education workspace (which will provide higher-priority access to Deepnote resources).</p>
+<section id="loading-a-numpy-array-from-a-pickle-file">
+<h2>Loading a NumPy array from a pickle file<a class="headerlink" href="#loading-a-numpy-array-from-a-pickle-file" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Click on the workspace name “Math 10 S23” at the top left, then click the “+” icon next to your name.</p></li>
-<li><p>Choose the “Free” plan if you are asked to choose a plan.</p></li>
-<li><p>Give your workspace a name, like “Worksheet 1 group”.  Select the option “For a class (I’m a student)”.</p></li>
-<li><p>Invite your groupmates, giving them “Editor” or “Admin” access.</p></li>
-<li><p>Click on “Settings &amp; members”, then “Upgrade”, then “Get free education plan”.</p></li>
-<li><p>If you click on the … next to this <code class="docutils literal notranslate"><span class="pre">Worksheet</span> <span class="pre">1</span></code> project, you should be able to duplicate it into your the new workspace you just created.  Once you have this duplicate copy, you can edit it.</p></li>
+<li><p>Import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> using the usual abbreviation <code class="docutils literal notranslate"><span class="pre">np</span></code>, and also import the Python <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module (no abbreviation).</p></li>
+<li><p>Notice that there is an attached file <code class="docutils literal notranslate"><span class="pre">wkst2-starter.pickle</span></code>.  Load the data from that file and store it in the variable <code class="docutils literal notranslate"><span class="pre">arr</span></code> using the following code.</p></li>
 </ul>
-</section>
-<section id="names">
-<h2>Names<a class="headerlink" href="#names" title="Permalink to this heading">#</a></h2>
-<p><strong>Names</strong>: (put the names of everyone in your group here in this markdown cell)</p>
-</section>
-<section id="python-warm-up">
-<h2>Python warm-up<a class="headerlink" href="#python-warm-up" title="Permalink to this heading">#</a></h2>
-<p>Here is a list of lists.  (You need to execute the following code cell every time you start this notebook.)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-    <span class="p">[</span><span class="mf">6.2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;wkst2-starter.pickle&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <ul class="simple">
-<li><p>Check the data type of <code class="docutils literal notranslate"><span class="pre">mylist</span></code>, using <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Check the length of <code class="docutils literal notranslate"><span class="pre">mylist</span></code> using <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>What is the zero-th element of the inside list at index 3.  (In Python, there is some ambiguity if I say the “third” element.  I will try to consistently start counting at zero, so in this case, I would say the “third inside list” is the list <code class="docutils literal notranslate"><span class="pre">[6.2,</span> <span class="pre">4]</span></code>.  The answer to this question should be <code class="docutils literal notranslate"><span class="pre">6.2</span></code>.)</p></li>
-</ul>
-<ul class="simple">
-<li><p>Create a new object named <code class="docutils literal notranslate"><span class="pre">myarray</span></code> by converting <code class="docutils literal notranslate"><span class="pre">mylist</span></code> into a NumPy array.  Use the <code class="docutils literal notranslate"><span class="pre">np.array</span></code> function to make this conversion.  You will need to import NumPy.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Display <code class="docutils literal notranslate"><span class="pre">myarray</span></code>.  (Just evaluate the name on its own line.)</p></li>
+<li><p>Check the type of this object using the function <code class="docutils literal notranslate"><span class="pre">type</span></code> and check its dimensions by computing the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute (no parentheses after <code class="docutils literal notranslate"><span class="pre">shape</span></code>).  The variable <code class="docutils literal notranslate"><span class="pre">arr</span></code> should represent an 8000 by 7 NumPy array.</p></li>
 </ul>
 </section>
-<section id="counting-elements">
-<h2>Counting elements<a class="headerlink" href="#counting-elements" title="Permalink to this heading">#</a></h2>
-<p>Don’t worry if this material is totally unfamiliar to you.  We will discuss it during class on either Monday or during discussion section on Tuesday.</p>
+<section id="practice-with-boolean-indexing">
+<h2>Practice with Boolean indexing<a class="headerlink" href="#practice-with-boolean-indexing" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>How many of the inside lists in <code class="docutils literal notranslate"><span class="pre">mylist</span></code> have last element equal to <code class="docutils literal notranslate"><span class="pre">4</span></code>?  Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Overall question: How many of the elements in the last column of myarray are equal to 4?  First, use <code class="docutils literal notranslate"><span class="pre">myarray[:,</span> <span class="pre">-1]</span></code> to access this last column.  (We’ll answer the overall question below.)</p></li>
-</ul>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"> <span class="pre">==</span> <span class="pre">4</span></code> to create a Boolean array with entries <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> corresponding to whether the elements in this column are <code class="docutils literal notranslate"><span class="pre">4</span></code> or not.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Count how many of the elements in the last column of <code class="docutils literal notranslate"><span class="pre">myarray</span></code> are equal to <code class="docutils literal notranslate"><span class="pre">4</span></code>by either using <code class="docutils literal notranslate"><span class="pre">.sum()</span></code> at the end (and adding parentheses) or by wrapping the last expression like <code class="docutils literal notranslate"><span class="pre">sum(???)</span></code>.</p></li>
+<li><p>Define the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> to be the column at index <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p></li>
+<li><p>Check that <code class="docutils literal notranslate"><span class="pre">x</span></code> is a length-8000 NumPy array.</p></li>
+<li><p>How many values in <code class="docutils literal notranslate"><span class="pre">x</span></code> are equal to <code class="docutils literal notranslate"><span class="pre">10</span></code>?</p></li>
+<li><p>Define <code class="docutils literal notranslate"><span class="pre">arrsub</span></code> to be the sub-array of <code class="docutils literal notranslate"><span class="pre">arr</span></code> containing all the rows for which the column at index <code class="docutils literal notranslate"><span class="pre">4</span></code> is equal to the integer <code class="docutils literal notranslate"><span class="pre">10</span></code>.  Use Boolean indexing with <code class="docutils literal notranslate"><span class="pre">arr</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>What is the shape of <code class="docutils literal notranslate"><span class="pre">arrsub</span></code>?  Use the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute again.  (It should be <code class="docutils literal notranslate"><span class="pre">7</span></code> columns, but how many rows?)</p></li>
+<li><p>Define a new variable, <code class="docutils literal notranslate"><span class="pre">a</span></code>, to be equal to the number of rows of <code class="docutils literal notranslate"><span class="pre">arrsub</span></code>.</p></li>
 </ul>
 </section>
-<section id="markdown-practice">
-<h2>Markdown practice<a class="headerlink" href="#markdown-practice" title="Permalink to this heading">#</a></h2>
+<section id="counting-rows-satisfying-a-condition-using-numpy">
+<h2>Counting rows satisfying a condition using NumPy<a class="headerlink" href="#counting-rows-satisfying-a-condition-using-numpy" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Make a markdown cell below this one.  Find a dataset on <a class="reference external" href="https://www.kaggle.com/">Kaggle</a> that you think looks interesting.  Provide a link to that dataset using this format: <code class="docutils literal notranslate"><span class="pre">[text</span> <span class="pre">to</span> <span class="pre">display](URL)</span></code>.  For example, the link to Kaggle I provided above was made using <code class="docutils literal notranslate"><span class="pre">[Kaggle](https://www.kaggle.com/)</span></code>.</p></li>
-<li><p>Write just one or two sentences about what you think is interesting about this dataset.</p></li>
+<li><p>How many rows in <code class="docutils literal notranslate"><span class="pre">arr</span></code> contain the number <code class="docutils literal notranslate"><span class="pre">40</span></code>?  You can use <code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">==</span> <span class="pre">40</span></code> to create a Boolean array.  From the resulting Boolean array, you can use the <code class="docutils literal notranslate"><span class="pre">sum</span></code> method, in particular, <code class="docutils literal notranslate"><span class="pre">.sum(axis=1)</span></code>, to count for each row, how many times <code class="docutils literal notranslate"><span class="pre">40</span></code> appears.  We want to find all the rows where <code class="docutils literal notranslate"><span class="pre">40</span></code> occurs at least once.  Once you have a length-8000 array of <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> values (with <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">40</span></code> occurs in the row and with <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise).  You want to count the number of times <code class="docutils literal notranslate"><span class="pre">True</span></code> occurs.  Save the result with the variable name <code class="docutils literal notranslate"><span class="pre">b</span></code>.  (Reality check: the answer should be between 500 and 700.)</p></li>
 </ul>
 </section>
 <section id="submission">
 <h2>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">Share</span></code> button at the top right, enable public sharing, and enable Comment privileges. Then submit the created link on Canvas.</p></li>
+<li><p>Store these answers, as well as the names of everyone in your group, as a Python dictionary</p></li>
 </ul>
-<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=146753b4-ccea-4a01-a728-254bd1ccca6a' target="_blank">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ansdict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">,</span> <span class="n">name3</span><span class="p">],</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="n">b</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&quot;names&quot;</span></code> value must be a list, with length the number of group members, and with entries the full names of your group members.  The names of your group members should be strings.  For example, <code class="docutils literal notranslate"><span class="pre">[&quot;Chris</span> <span class="pre">Davis&quot;,</span> <span class="pre">&quot;Jinghao</span> <span class="pre">Chen&quot;]</span></code>.</p>
+<ul class="simple">
+<li><p>Save the resulting dictionary in a pickle file using the following code.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;wkst2-ans.pickle&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">ansdict</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Submit this pickle file on Canvas.</p></li>
+</ul>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=a771ef45-5432-4f63-bd03-80619f40d8d3' target="_blank">
 <img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
 Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
 </section>
@@ -464,17 +437,17 @@ Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></s
                   
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Week1-Friday.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Worksheet1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Week 1 Friday</p>
+            <p class="prev-next-title">Worksheet 1</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Worksheet2.html" title="next page">
+    <a class='right-next' id="next-link" href="../ML-intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Worksheet 2</p>
+        <p class="prev-next-title">Machine Learning</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -493,11 +466,9 @@ Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-to-create-a-workspace-for-your-group">Instructions to create a workspace for your group</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#names">Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-warm-up">Python warm-up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-elements">Counting elements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-practice">Markdown practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-numpy-array-from-a-pickle-file">Loading a NumPy array from a pickle file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-boolean-indexing">Practice with Boolean indexing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-rows-satisfying-a-condition-using-numpy">Counting rows satisfying a condition using NumPy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
 </ul>
   </nav></div>
