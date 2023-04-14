@@ -1,0 +1,2668 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 2 Friday &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week2/Week2-Friday';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Worksheet 3" href="Worksheet3.html" />
+    <link rel="prev" title="Week 2 Wednesday" href="Week2-Wednesday.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week2-Intro.html">Week 2</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ML-intro.html">Machine Learning</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Week2/Week2-Friday.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 2 Friday</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worse-alternatives-to-the-material-from-wednesday">(Worse) alternatives to the material from Wednesday</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-what-are-the-integer-locations-of-the-pickup-zone-and-dropoff-zone-columns">Warm-up: What are the integer locations of the “pickup_zone” and “dropoff_zone” columns?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worse-approach-1-using-a-for-loop-and-iloc">Worse approach 1: Using a for loop and <code class="docutils literal notranslate"><span class="pre">iloc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worse-approach-2-using-a-for-loop-and-loc">Worse approach 2: Using a for loop and <code class="docutils literal notranslate"><span class="pre">loc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worse-approach-3-using-the-pandas-series-map-method">Worse approach 3: Using the pandas Series <code class="docutils literal notranslate"><span class="pre">map</span></code> method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-approach-i-know-using-the-str-accessor-and-boolean-indexing">Best approach I know: Using the <code class="docutils literal notranslate"><span class="pre">str</span></code> accessor and Boolean indexing</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-2-friday">
+<h1>Week 2 Friday<a class="headerlink" href="#week-2-friday" title="Permalink to this heading">#</a></h1>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>I’m in a different notebook.  Will upload this one later.</p></li>
+<li><p>In case you haven’t noticed, I’ve been posting annotated versions of these notebooks in the course notes.  Here is the one <a class="reference external" href="https://christopherdavisuci.github.io/UCI-Math-10-S23/Week2/Week2-Wednesday.html">from Wednesday</a>.</p></li>
+<li><p>Yufei (one of our three Learning Assistants) is here to help.</p></li>
+</ul>
+</section>
+<section id="worse-alternatives-to-the-material-from-wednesday">
+<h2>(Worse) alternatives to the material from Wednesday<a class="headerlink" href="#worse-alternatives-to-the-material-from-wednesday" title="Permalink to this heading">#</a></h2>
+<p>On Wednesday, we saw how to find all rows in the taxis dataset for which the pickup zone and the dropoff zone both contained the substring <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span></code>.  Let’s see some alternative ways to do that.  This will give practice with pandas indexing and general Python concepts (like for loops).  Then we’ll recap the “right” way to do this, using the <code class="docutils literal notranslate"><span class="pre">str</span></code> accessor and Boolean indexing in pandas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s a reminder of how the taxis dataset looks.  I’m first going to shuffle the rows, using the <code class="docutils literal notranslate"><span class="pre">sample</span></code> method.  If I specify <code class="docutils literal notranslate"><span class="pre">frac</span> <span class="pre">=</span> <span class="pre">0.1</span></code>, we will get 10% of the rows.  Because I am using <code class="docutils literal notranslate"><span class="pre">random_state=10</span></code>, if you also use <code class="docutils literal notranslate"><span class="pre">random_state=10</span></code>, you should get the same random rows as I get.  (This keyword argument <code class="docutils literal notranslate"><span class="pre">random_state</span></code> is like the <code class="docutils literal notranslate"><span class="pre">seed</span></code> argument in NumPy.)</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/taxis.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>890</th>
+      <td>2019-03-09 16:32:40</td>
+      <td>2019-03-09 16:49:32</td>
+      <td>2</td>
+      <td>2.70</td>
+      <td>13.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>16.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Midtown North</td>
+      <td>Kips Bay</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>5870</th>
+      <td>2019-03-26 11:04:06</td>
+      <td>2019-03-26 11:09:23</td>
+      <td>1</td>
+      <td>0.64</td>
+      <td>5.5</td>
+      <td>1.26</td>
+      <td>0.0</td>
+      <td>7.56</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Morningside Heights</td>
+      <td>Manhattanville</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>686</th>
+      <td>2019-03-27 15:02:00</td>
+      <td>2019-03-27 15:31:19</td>
+      <td>1</td>
+      <td>3.79</td>
+      <td>20.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>23.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>East Chelsea</td>
+      <td>Manhattan Valley</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>4937</th>
+      <td>2019-03-02 19:50:23</td>
+      <td>2019-03-02 20:04:19</td>
+      <td>2</td>
+      <td>1.60</td>
+      <td>10.0</td>
+      <td>2.75</td>
+      <td>0.0</td>
+      <td>16.55</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>TriBeCa/Civic Center</td>
+      <td>East Village</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>2659</th>
+      <td>2019-03-18 21:36:06</td>
+      <td>2019-03-18 21:48:31</td>
+      <td>1</td>
+      <td>1.10</td>
+      <td>8.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>11.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Midtown North</td>
+      <td>Midtown North</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The original DataFrame had 6433 rows, so here we check that we got only 10% of the rows (because of <code class="docutils literal notranslate"><span class="pre">frac=0.1</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(643, 14)
+</pre></div>
+</div>
+</div>
+</div>
+<p>But I actually want all of the rows, so I’ve just copy-pasted what I have above, but now using <code class="docutils literal notranslate"><span class="pre">frac=1</span></code>.  The only reason we’re doing this is so the row integer locations are different from the row index names.  For example the top three rows below have integer location 0, 1, 2, but they have index names 890, 5870, and 686.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/taxis.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>890</th>
+      <td>2019-03-09 16:32:40</td>
+      <td>2019-03-09 16:49:32</td>
+      <td>2</td>
+      <td>2.70</td>
+      <td>13.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>16.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Midtown North</td>
+      <td>Kips Bay</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>5870</th>
+      <td>2019-03-26 11:04:06</td>
+      <td>2019-03-26 11:09:23</td>
+      <td>1</td>
+      <td>0.64</td>
+      <td>5.5</td>
+      <td>1.26</td>
+      <td>0.0</td>
+      <td>7.56</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Morningside Heights</td>
+      <td>Manhattanville</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>686</th>
+      <td>2019-03-27 15:02:00</td>
+      <td>2019-03-27 15:31:19</td>
+      <td>1</td>
+      <td>3.79</td>
+      <td>20.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>23.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>East Chelsea</td>
+      <td>Manhattan Valley</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>4937</th>
+      <td>2019-03-02 19:50:23</td>
+      <td>2019-03-02 20:04:19</td>
+      <td>2</td>
+      <td>1.60</td>
+      <td>10.0</td>
+      <td>2.75</td>
+      <td>0.0</td>
+      <td>16.55</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>TriBeCa/Civic Center</td>
+      <td>East Village</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>2659</th>
+      <td>2019-03-18 21:36:06</td>
+      <td>2019-03-18 21:48:31</td>
+      <td>1</td>
+      <td>1.10</td>
+      <td>8.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>11.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Midtown North</td>
+      <td>Midtown North</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s check that we really are getting all 6433 rows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6433, 14)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="warm-up-what-are-the-integer-locations-of-the-pickup-zone-and-dropoff-zone-columns">
+<h3>Warm-up: What are the integer locations of the “pickup_zone” and “dropoff_zone” columns?<a class="headerlink" href="#warm-up-what-are-the-integer-locations-of-the-pickup-zone-and-dropoff-zone-columns" title="Permalink to this heading">#</a></h3>
+<p>On Wednesday, I counted to get the integer locations.  Here are some better approaches.</p>
+<p>Here are all the columns.  If you count, you should get that “pickup_zone” occurs in integer position 10, and that “dropoff_zone” occurs in integer position 11.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;pickup&#39;, &#39;dropoff&#39;, &#39;passengers&#39;, &#39;distance&#39;, &#39;fare&#39;, &#39;tip&#39;, &#39;tolls&#39;,
+       &#39;total&#39;, &#39;color&#39;, &#39;payment&#39;, &#39;pickup_zone&#39;, &#39;dropoff_zone&#39;,
+       &#39;pickup_borough&#39;, &#39;dropoff_borough&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Convert to a list and then use the <code class="docutils literal notranslate"><span class="pre">index</span></code> method.</p></li>
+</ul>
+<p>This was the first way that came to mind.  Lists in Python have an <code class="docutils literal notranslate"><span class="pre">index</span></code> method for exactly this purpose (getting the integer location of where an element occurs).  The object <code class="docutils literal notranslate"><span class="pre">df.columns</span></code> is not a list though, it is a pandas Index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.indexes.base.Index
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we convert it to a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;pickup&#39;,
+ &#39;dropoff&#39;,
+ &#39;passengers&#39;,
+ &#39;distance&#39;,
+ &#39;fare&#39;,
+ &#39;tip&#39;,
+ &#39;tolls&#39;,
+ &#39;total&#39;,
+ &#39;color&#39;,
+ &#39;payment&#39;,
+ &#39;pickup_zone&#39;,
+ &#39;dropoff_zone&#39;,
+ &#39;pickup_borough&#39;,
+ &#39;dropoff_borough&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we check that it is really a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now use the <code class="docutils literal notranslate"><span class="pre">index</span></code> method of a Python list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;pickup_zone&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Get a Boolean array and then use <code class="docutils literal notranslate"><span class="pre">np.nonzero</span></code> (don’t forget to import NumPy before calling <code class="docutils literal notranslate"><span class="pre">np.nonzero</span></code>.)</p></li>
+</ul>
+<p>Here is another approach, using the NumPy function <code class="docutils literal notranslate"><span class="pre">nonzero</span></code>.  We first make a Boolean array that is equal to <code class="docutils literal notranslate"><span class="pre">True</span></code> in precisely one position, where the column name is “pickup_zone”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s2">&quot;pickup_zone&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False, False, False, False, False, False,
+       False,  True, False, False, False])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even though that last thing is a NumPy array, we have not imported NumPy yet, so if we want to use NumPy functions ourselves, we need to import it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following reports that <code class="docutils literal notranslate"><span class="pre">10</span></code> is the slot where we have a <code class="docutils literal notranslate"><span class="pre">True</span></code>.  It is a little confusing with the parentheses (this is secretly a length 1 tuple).  The reason is that the <code class="docutils literal notranslate"><span class="pre">nonzero</span></code> function works exactly the same with two-dimensional NumPy arrays, and so a tuple is used in case there are extra dimensions.  (If the <code class="docutils literal notranslate"><span class="pre">True</span></code> were in row 10 and column 4, we would see something like <code class="docutils literal notranslate"><span class="pre">(array([10]),</span> <span class="pre">array([4]))</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s2">&quot;pickup_zone&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([10]),)
+</pre></div>
+</div>
+</div>
+</div>
+<p>An alternative, that has additional functionality, is to use <code class="docutils literal notranslate"><span class="pre">np.where</span></code>.  For our basic example, the output is exactly the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s2">&quot;pickup_zone&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([10]),)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is an example of the additional functionality.  We put the string <code class="docutils literal notranslate"><span class="pre">&quot;Chris&quot;</span></code> everywhere there was a <code class="docutils literal notranslate"><span class="pre">True</span></code> (just one slot), and we put the string <code class="docutils literal notranslate"><span class="pre">&quot;Davis&quot;</span></code> everywhere else.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s2">&quot;pickup_zone&quot;</span><span class="p">,</span> <span class="s2">&quot;Chris&quot;</span><span class="p">,</span> <span class="s2">&quot;Davis&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Davis&#39;, &#39;Davis&#39;, &#39;Davis&#39;, &#39;Davis&#39;, &#39;Davis&#39;, &#39;Davis&#39;, &#39;Davis&#39;,
+       &#39;Davis&#39;, &#39;Davis&#39;, &#39;Davis&#39;, &#39;Chris&#39;, &#39;Davis&#39;, &#39;Davis&#39;, &#39;Davis&#39;],
+      dtype=&#39;&lt;U5&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">get_loc</span></code> method of a pandas Index.  (Credit: Bing chat.)</p></li>
+</ul>
+<p>I didn’t know this option before this morning, but it is exactly what we want.  (I don’t quite see why it is called <code class="docutils literal notranslate"><span class="pre">get_loc</span></code> rather than <code class="docutils literal notranslate"><span class="pre">get_iloc</span></code>, it seems like we are getting the integer location.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="s2">&quot;pickup_zone&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">get_indexer</span></code> method of a pandas Index.  (Credit: Bing chat.)</p></li>
+</ul>
+<p>This approach has some extra functionality, because it can get both locations at the same time.  I don’t think any of the above approaches can do that, without some additional work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_indexer</span><span class="p">([</span><span class="s2">&quot;pickup_zone&quot;</span><span class="p">,</span> <span class="s2">&quot;dropoff_zone&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10, 11])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s another reminder of what the columns are.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;pickup&#39;, &#39;dropoff&#39;, &#39;passengers&#39;, &#39;distance&#39;, &#39;fare&#39;, &#39;tip&#39;, &#39;tolls&#39;,
+       &#39;total&#39;, &#39;color&#39;, &#39;payment&#39;, &#39;pickup_zone&#39;, &#39;dropoff_zone&#39;,
+       &#39;pickup_borough&#39;, &#39;dropoff_borough&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>And a reminder that <code class="docutils literal notranslate"><span class="pre">df.columns</span></code> is a pandas Index (this data type is not as essential to Math 10 as pandas DataFrames and pandas Series).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.indexes.base.Index
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the list version.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;pickup&#39;,
+ &#39;dropoff&#39;,
+ &#39;passengers&#39;,
+ &#39;distance&#39;,
+ &#39;fare&#39;,
+ &#39;tip&#39;,
+ &#39;tolls&#39;,
+ &#39;total&#39;,
+ &#39;color&#39;,
+ &#39;payment&#39;,
+ &#39;pickup_zone&#39;,
+ &#39;dropoff_zone&#39;,
+ &#39;pickup_borough&#39;,
+ &#39;dropoff_borough&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Which we saved with the name <code class="docutils literal notranslate"><span class="pre">mylist</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;pickup&#39;,
+ &#39;dropoff&#39;,
+ &#39;passengers&#39;,
+ &#39;distance&#39;,
+ &#39;fare&#39;,
+ &#39;tip&#39;,
+ &#39;tolls&#39;,
+ &#39;total&#39;,
+ &#39;color&#39;,
+ &#39;payment&#39;,
+ &#39;pickup_zone&#39;,
+ &#39;dropoff_zone&#39;,
+ &#39;pickup_borough&#39;,
+ &#39;dropoff_borough&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lists in Python can contain anything, including different data types in different positions.  In this case, all of the entries in the list are strings.  Here we check that the entry at index <code class="docutils literal notranslate"><span class="pre">8</span></code> is a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="worse-approach-1-using-a-for-loop-and-iloc">
+<h3>Worse approach 1: Using a for loop and <code class="docutils literal notranslate"><span class="pre">iloc</span></code><a class="headerlink" href="#worse-approach-1-using-a-for-loop-and-iloc" title="Permalink to this heading">#</a></h3>
+<p>On Wednesday, we used <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">contains</span></code> to find the sub-DataFrame containing the rows where both the “pickup_zone” and the “dropoff_zone” involved an airport.</p>
+<p>Here we’re going to go through the 6433 rows, one at a time.  We will do that by going through the integers from 0 (inclusive) to 6433 (exclusive) one at a time.  We can do that using <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(6433):</span></code>.  (In Matlab, we would do something like <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">1:6433</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6433
+</pre></div>
+</div>
+</div>
+</div>
+<p>The logic of the following is pretty good, but in practice it raises an error because some entries are missing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># problem from missing values</span>
+
+<span class="n">good_inds</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">11</span><span class="p">]):</span>
+        <span class="n">good_inds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">good_inds</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">11</span><span class="p">]):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="n">good_inds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: argument of type &#39;float&#39; is not iterable
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let me try to convince you that error is caused by missing values.  (It’s not obvious from the description of the error.)  One way to represent missing values in Python is to use <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> (which stands for “not a number”).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nan
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we try to check whether <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span> <span class="pre">in</span> <span class="pre">np.nan</span></code>, we indeed get the exact same error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="ne">TypeError</span>: argument of type &#39;float&#39; is not iterable
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many ways we could get around this (such as by dropping rows with missing values in these columns).  Here we will use a simple approach, of wrapping the whole problematic portion in a <code class="docutils literal notranslate"><span class="pre">try</span></code> block.  The <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">TypeError</span></code> portion is saying that even if a TypeError is raised, do not stop the execution of the code, instead just continue to the next step in the for loop.</p>
+<p>One side comment: in Python, it is almost never correct to use the code <code class="docutils literal notranslate"><span class="pre">range(len(...))</span></code>, there is almost always a more elegant way to iterate through the elements directly.</p>
+<p>Another side comment: We are using <code class="docutils literal notranslate"><span class="pre">and</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> in the following, because it is being used with <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> values directly, rather than with arrays or Series of <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">good_inds</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">11</span><span class="p">]):</span>
+            <span class="n">good_inds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+<span class="n">good_inds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[517, 642, 1117, 1239, 1461, 2032, 3576, 3971, 4970, 5417, 5773]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This <code class="docutils literal notranslate"><span class="pre">good_inds</span></code> list contains integer locations, so it should be used together with <code class="docutils literal notranslate"><span class="pre">iloc</span></code>.  We can get all of these rows by passing this list to <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, as in the following.  (For future reference, notice how the numbers appearing on the left side are not the same as 517, 642, etc.)</p>
+<p>Be sure to scroll to the right and convince yourself that this sub-DataFrame does indeed correspond to the rows where “Airport” appears in both the “pickup_zone” and the “dropoff_zone” columns.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">good_inds</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2387</th>
+      <td>2019-03-28 15:58:52</td>
+      <td>2019-03-28 15:59:25</td>
+      <td>1</td>
+      <td>1.80</td>
+      <td>69.06</td>
+      <td>20.80</td>
+      <td>0.00</td>
+      <td>90.16</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1080</th>
+      <td>2019-03-04 14:17:05</td>
+      <td>2019-03-04 14:17:13</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2019-03-21 17:21:44</td>
+      <td>2019-03-21 17:21:49</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>5364</th>
+      <td>2019-03-17 16:59:17</td>
+      <td>2019-03-17 18:04:08</td>
+      <td>2</td>
+      <td>36.70</td>
+      <td>150.00</td>
+      <td>0.00</td>
+      <td>24.02</td>
+      <td>174.82</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1929</th>
+      <td>2019-03-13 22:35:35</td>
+      <td>2019-03-13 22:35:49</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.80</td>
+      <td>yellow</td>
+      <td>NaN</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>3571</th>
+      <td>2019-03-22 16:47:41</td>
+      <td>2019-03-22 16:47:50</td>
+      <td>1</td>
+      <td>0.81</td>
+      <td>66.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>66.80</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1416</th>
+      <td>2019-03-09 13:16:32</td>
+      <td>2019-03-09 13:46:11</td>
+      <td>2</td>
+      <td>12.39</td>
+      <td>35.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>35.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>LaGuardia Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>4358</th>
+      <td>2019-03-06 18:24:00</td>
+      <td>2019-03-06 18:24:13</td>
+      <td>2</td>
+      <td>0.01</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1089</th>
+      <td>2019-03-10 01:43:32</td>
+      <td>2019-03-10 01:45:22</td>
+      <td>1</td>
+      <td>0.37</td>
+      <td>3.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>5095</th>
+      <td>2019-03-30 20:14:44</td>
+      <td>2019-03-30 21:01:28</td>
+      <td>3</td>
+      <td>18.91</td>
+      <td>52.00</td>
+      <td>8.78</td>
+      <td>5.76</td>
+      <td>67.34</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>770</th>
+      <td>2019-03-02 03:16:59</td>
+      <td>2019-03-02 03:17:06</td>
+      <td>0</td>
+      <td>9.40</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.80</td>
+      <td>yellow</td>
+      <td>NaN</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If we try to use this without the <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, pandas will try to find columns with these names (not integer positions), and we get an error.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">good_inds</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="n">good_inds</span><span class="p">]</span>
+
+<span class="nn">File ~/mambaforge/envs/math10s23/lib/python3.9/site-packages/pandas/core/frame.py:3813,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3811</span>     <span class="k">if</span> <span class="n">is_iterator</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3812</span>         <span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3813</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">_get_indexer_strict</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;columns&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">3815</span> <span class="c1"># take() does not accept boolean indexers</span>
+<span class="g g-Whitespace">   </span><span class="mi">3816</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">:</span>
+
+<span class="nn">File ~/mambaforge/envs/math10s23/lib/python3.9/site-packages/pandas/core/indexes/base.py:6070,</span> in <span class="ni">Index._get_indexer_strict</span><span class="nt">(self, key, axis_name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6067</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">6068</span>     <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">new_indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_non_unique</span><span class="p">(</span><span class="n">keyarr</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">6070</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_missing</span><span class="p">(</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis_name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6072</span> <span class="n">keyarr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6073</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">Index</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">6074</span>     <span class="c1"># GH 42790 - Preserve name from an Index</span>
+
+<span class="nn">File ~/mambaforge/envs/math10s23/lib/python3.9/site-packages/pandas/core/indexes/base.py:6130,</span> in <span class="ni">Index._raise_if_missing</span><span class="nt">(self, key, indexer, axis_name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6128</span>     <span class="k">if</span> <span class="n">use_interval_msg</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">6129</span>         <span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">6130</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;None of [</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">] are in the [</span><span class="si">{</span><span class="n">axis_name</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6132</span> <span class="n">not_found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ensure_index</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="n">missing_mask</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="g g-Whitespace">   </span><span class="mi">6133</span> <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">not_found</span><span class="si">}</span><span class="s2"> not in index&quot;</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &quot;None of [Int64Index([517, 642, 1117, 1239, 1461, 2032, 3576, 3971, 4970, 5417, 5773], dtype=&#39;int64&#39;)] are in the [columns]&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="worse-approach-2-using-a-for-loop-and-loc">
+<h3>Worse approach 2: Using a for loop and <code class="docutils literal notranslate"><span class="pre">loc</span></code><a class="headerlink" href="#worse-approach-2-using-a-for-loop-and-loc" title="Permalink to this heading">#</a></h3>
+<p>Before using this approach, we should make sure there aren’t any repetitions in the index.  In most natural examples, the elements in the index will be unique, but that’s not a requirement.</p>
+<p>The attribute <code class="docutils literal notranslate"><span class="pre">df.index</span></code> holds these numbers listed on the left-hand side.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([890, 5870, 686, 4937, 2659], dtype=&#39;int64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how those same numbers 890, 5870, etc appear on the left.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>890</th>
+      <td>2019-03-09 16:32:40</td>
+      <td>2019-03-09 16:49:32</td>
+      <td>2</td>
+      <td>2.70</td>
+      <td>13.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>16.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Midtown North</td>
+      <td>Kips Bay</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>5870</th>
+      <td>2019-03-26 11:04:06</td>
+      <td>2019-03-26 11:09:23</td>
+      <td>1</td>
+      <td>0.64</td>
+      <td>5.5</td>
+      <td>1.26</td>
+      <td>0.0</td>
+      <td>7.56</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Morningside Heights</td>
+      <td>Manhattanville</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>686</th>
+      <td>2019-03-27 15:02:00</td>
+      <td>2019-03-27 15:31:19</td>
+      <td>1</td>
+      <td>3.79</td>
+      <td>20.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>23.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>East Chelsea</td>
+      <td>Manhattan Valley</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>4937</th>
+      <td>2019-03-02 19:50:23</td>
+      <td>2019-03-02 20:04:19</td>
+      <td>2</td>
+      <td>1.60</td>
+      <td>10.0</td>
+      <td>2.75</td>
+      <td>0.0</td>
+      <td>16.55</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>TriBeCa/Civic Center</td>
+      <td>East Village</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>2659</th>
+      <td>2019-03-18 21:36:06</td>
+      <td>2019-03-18 21:48:31</td>
+      <td>1</td>
+      <td>1.10</td>
+      <td>8.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>11.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Midtown North</td>
+      <td>Midtown North</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here we make sure no two rows have the same name.  (I can never remember that this is an attribute rather than a method, and I definitely don’t expect you to remember it.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># checks if two rows have the same name</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">is_unique</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now adapt the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> code above.  There are a few changes to make.  We change the <code class="docutils literal notranslate"><span class="pre">range(len(df))</span></code> to <code class="docutils literal notranslate"><span class="pre">df.index</span></code>.  (This <code class="docutils literal notranslate"><span class="pre">df.index</span></code> is definitely more elegant.)  We also change from <code class="docutils literal notranslate"><span class="pre">iloc</span></code> to <code class="docutils literal notranslate"><span class="pre">loc</span></code>, because we are now iterating through the row names.  Lastly, because we are using <code class="docutils literal notranslate"><span class="pre">loc</span></code>, we need to change the integers <code class="docutils literal notranslate"><span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">11</span></code> to the column names “pickup_zone” and “dropoff_zone”.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">good_inds</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;pickup_zone&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;dropoff_zone&quot;</span><span class="p">]):</span>
+            <span class="n">good_inds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+<span class="n">good_inds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2387, 1080, 120, 5364, 1929, 3571, 1416, 4358, 1089, 5095, 770]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now get the same sub-DataFrame we found above (and that we found on Wednesday) using <code class="docutils literal notranslate"><span class="pre">df.loc</span></code> and this new list.  Notice how the integers in <code class="docutils literal notranslate"><span class="pre">good_inds</span></code> now do appear on the left side.  (That wasn’t the case above with <code class="docutils literal notranslate"><span class="pre">iloc</span></code>.)</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">good_inds</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2387</th>
+      <td>2019-03-28 15:58:52</td>
+      <td>2019-03-28 15:59:25</td>
+      <td>1</td>
+      <td>1.80</td>
+      <td>69.06</td>
+      <td>20.80</td>
+      <td>0.00</td>
+      <td>90.16</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1080</th>
+      <td>2019-03-04 14:17:05</td>
+      <td>2019-03-04 14:17:13</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2019-03-21 17:21:44</td>
+      <td>2019-03-21 17:21:49</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>5364</th>
+      <td>2019-03-17 16:59:17</td>
+      <td>2019-03-17 18:04:08</td>
+      <td>2</td>
+      <td>36.70</td>
+      <td>150.00</td>
+      <td>0.00</td>
+      <td>24.02</td>
+      <td>174.82</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1929</th>
+      <td>2019-03-13 22:35:35</td>
+      <td>2019-03-13 22:35:49</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.80</td>
+      <td>yellow</td>
+      <td>NaN</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>3571</th>
+      <td>2019-03-22 16:47:41</td>
+      <td>2019-03-22 16:47:50</td>
+      <td>1</td>
+      <td>0.81</td>
+      <td>66.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>66.80</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1416</th>
+      <td>2019-03-09 13:16:32</td>
+      <td>2019-03-09 13:46:11</td>
+      <td>2</td>
+      <td>12.39</td>
+      <td>35.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>35.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>LaGuardia Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>4358</th>
+      <td>2019-03-06 18:24:00</td>
+      <td>2019-03-06 18:24:13</td>
+      <td>2</td>
+      <td>0.01</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1089</th>
+      <td>2019-03-10 01:43:32</td>
+      <td>2019-03-10 01:45:22</td>
+      <td>1</td>
+      <td>0.37</td>
+      <td>3.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>5095</th>
+      <td>2019-03-30 20:14:44</td>
+      <td>2019-03-30 21:01:28</td>
+      <td>3</td>
+      <td>18.91</td>
+      <td>52.00</td>
+      <td>8.78</td>
+      <td>5.76</td>
+      <td>67.34</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>770</th>
+      <td>2019-03-02 03:16:59</td>
+      <td>2019-03-02 03:17:06</td>
+      <td>0</td>
+      <td>9.40</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.80</td>
+      <td>yellow</td>
+      <td>NaN</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="worse-approach-3-using-the-pandas-series-map-method">
+<h3>Worse approach 3: Using the pandas Series <code class="docutils literal notranslate"><span class="pre">map</span></code> method<a class="headerlink" href="#worse-approach-3-using-the-pandas-series-map-method" title="Permalink to this heading">#</a></h3>
+<p>We first define a small function to determine if the string <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span></code> appears as a substring (in some input <code class="docutils literal notranslate"><span class="pre">s</span></code>).  We will improve this function below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">has_airport</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a quick demonstration of how the function works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">has_airport</span><span class="p">(</span><span class="s2">&quot;Christopher&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is checking to see if <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span></code> occurs as a substring.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">has_airport</span><span class="p">(</span><span class="s2">&quot;abc Airport3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you get more experienced as a Python coder, you will be able to identify places to shorten definitions like for our <code class="docutils literal notranslate"><span class="pre">has_airport</span></code> function above.  Notice how the function is returning <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span> <span class="pre">in</span> <span class="pre">s</span></code> is True and is returning <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise, so we can simply return <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span> <span class="pre">in</span> <span class="pre">s</span></code> directly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">has_airport</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’re going to apply that function to every entry in the following Series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;pickup_zone&quot;</span><span class="p">]</span>
+<span class="n">ser1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>890                 Midtown North
+5870          Morningside Heights
+686                  East Chelsea
+4937         TriBeCa/Civic Center
+2659                Midtown North
+                  ...            
+1180        Upper East Side North
+3441    West Chelsea/Hudson Yards
+1344                     Gramercy
+4623          Lincoln Square West
+1289                 East Village
+Name: pickup_zone, Length: 6433, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>But unfortunately we get a similar error to before, due to missing values.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser1</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">has_airport</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">43</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ser1</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">has_airport</span><span class="p">)</span>
+
+<span class="nn">File ~/mambaforge/envs/math10s23/lib/python3.9/site-packages/pandas/core/series.py:4539,</span> in <span class="ni">Series.map</span><span class="nt">(self, arg, na_action)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4460</span> <span class="k">def</span> <span class="nf">map</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4461</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4462</span>     <span class="n">arg</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">|</span> <span class="n">Mapping</span> <span class="o">|</span> <span class="n">Series</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4463</span>     <span class="n">na_action</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;ignore&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4464</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4465</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4466</span><span class="sd">     Map values of Series according to an input mapping or function.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4467</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4537</span><span class="sd">     dtype: object</span>
+<span class="g g-Whitespace">   </span><span class="mi">4538</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4539</span>     <span class="n">new_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map_values</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="n">na_action</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4540</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor</span><span class="p">(</span><span class="n">new_values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4541</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;map&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4542</span>     <span class="p">)</span>
+
+<span class="nn">File ~/mambaforge/envs/math10s23/lib/python3.9/site-packages/pandas/core/base.py:890,</span> in <span class="ni">IndexOpsMixin._map_values</span><span class="nt">(self, mapper, na_action)</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span> <span class="c1"># mapper is a function</span>
+<span class="ne">--&gt; </span><span class="mi">890</span> <span class="n">new_values</span> <span class="o">=</span> <span class="n">map_f</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mapper</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span> <span class="k">return</span> <span class="n">new_values</span>
+
+<span class="nn">File ~/mambaforge/envs/math10s23/lib/python3.9/site-packages/pandas/_libs/lib.pyx:2924,</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">Cell In[41], line 2,</span> in <span class="ni">has_airport</span><span class="nt">(s)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">has_airport</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">s</span>
+
+<span class="ne">TypeError</span>: argument of type &#39;float&#39; is not iterable
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let me again try to convince you that the error is due to missing values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">has_airport</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">44</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">has_airport</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="nn">Cell In[41], line 2,</span> in <span class="ni">has_airport</span><span class="nt">(s)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">has_airport</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">s</span>
+
+<span class="ne">TypeError</span>: argument of type &#39;float&#39; is not iterable
+</pre></div>
+</div>
+</div>
+</div>
+<p>An oversight on my part is that I haven’t shown you the Python function <code class="docutils literal notranslate"><span class="pre">help</span></code> yet.  Here is an example of using it to learn more about the pandas Series method <code class="docutils literal notranslate"><span class="pre">map</span></code>.  Notice the <code class="docutils literal notranslate"><span class="pre">na_action</span></code> keyword argument, which is exactly what we need.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">ser1</span><span class="o">.</span><span class="n">map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method map in module pandas.core.series:
+
+map(arg: &#39;Callable | Mapping | Series&#39;, na_action: &quot;Literal[&#39;ignore&#39;] | None&quot; = None) -&gt; &#39;Series&#39; method of pandas.core.series.Series instance
+    Map values of Series according to an input mapping or function.
+    
+    Used for substituting each value in a Series with another value,
+    that may be derived from a function, a ``dict`` or
+    a :class:`Series`.
+    
+    Parameters
+    ----------
+    arg : function, collections.abc.Mapping subclass or Series
+        Mapping correspondence.
+    na_action : {None, &#39;ignore&#39;}, default None
+        If &#39;ignore&#39;, propagate NaN values, without passing them to the
+        mapping correspondence.
+    
+    Returns
+    -------
+    Series
+        Same index as caller.
+    
+    See Also
+    --------
+    Series.apply : For applying more complex functions on a Series.
+    DataFrame.apply : Apply a function row-/column-wise.
+    DataFrame.applymap : Apply a function elementwise on a whole DataFrame.
+    
+    Notes
+    -----
+    When ``arg`` is a dictionary, values in Series that are not in the
+    dictionary (as keys) are converted to ``NaN``. However, if the
+    dictionary is a ``dict`` subclass that defines ``__missing__`` (i.e.
+    provides a method for default values), then this default is used
+    rather than ``NaN``.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; s = pd.Series([&#39;cat&#39;, &#39;dog&#39;, np.nan, &#39;rabbit&#39;])
+    &gt;&gt;&gt; s
+    0      cat
+    1      dog
+    2      NaN
+    3   rabbit
+    dtype: object
+    
+    ``map`` accepts a ``dict`` or a ``Series``. Values that are not found
+    in the ``dict`` are converted to ``NaN``, unless the dict has a default
+    value (e.g. ``defaultdict``):
+    
+    &gt;&gt;&gt; s.map({&#39;cat&#39;: &#39;kitten&#39;, &#39;dog&#39;: &#39;puppy&#39;})
+    0   kitten
+    1    puppy
+    2      NaN
+    3      NaN
+    dtype: object
+    
+    It also accepts a function:
+    
+    &gt;&gt;&gt; s.map(&#39;I am a {}&#39;.format)
+    0       I am a cat
+    1       I am a dog
+    2       I am a nan
+    3    I am a rabbit
+    dtype: object
+    
+    To avoid applying the function to missing values (and keep them as
+    ``NaN``) ``na_action=&#39;ignore&#39;`` can be used:
+    
+    &gt;&gt;&gt; s.map(&#39;I am a {}&#39;.format, na_action=&#39;ignore&#39;)
+    0     I am a cat
+    1     I am a dog
+    2            NaN
+    3  I am a rabbit
+    dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>For now we only see <code class="docutils literal notranslate"><span class="pre">False</span></code> values, because none of the visible entries contain <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span></code> as a substring.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser1</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">has_airport</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>890     False
+5870    False
+686     False
+4937    False
+2659    False
+        ...  
+1180    False
+3441    False
+1344    False
+4623    False
+1289    False
+Name: pickup_zone, Length: 6433, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;dropoff_zone&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following should be the same sub-DataFrame we attained two different ways above.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">ser1</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">has_airport</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">ser2</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">has_airport</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2387</th>
+      <td>2019-03-28 15:58:52</td>
+      <td>2019-03-28 15:59:25</td>
+      <td>1</td>
+      <td>1.80</td>
+      <td>69.06</td>
+      <td>20.80</td>
+      <td>0.00</td>
+      <td>90.16</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1080</th>
+      <td>2019-03-04 14:17:05</td>
+      <td>2019-03-04 14:17:13</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2019-03-21 17:21:44</td>
+      <td>2019-03-21 17:21:49</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>5364</th>
+      <td>2019-03-17 16:59:17</td>
+      <td>2019-03-17 18:04:08</td>
+      <td>2</td>
+      <td>36.70</td>
+      <td>150.00</td>
+      <td>0.00</td>
+      <td>24.02</td>
+      <td>174.82</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1929</th>
+      <td>2019-03-13 22:35:35</td>
+      <td>2019-03-13 22:35:49</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.80</td>
+      <td>yellow</td>
+      <td>NaN</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>3571</th>
+      <td>2019-03-22 16:47:41</td>
+      <td>2019-03-22 16:47:50</td>
+      <td>1</td>
+      <td>0.81</td>
+      <td>66.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>66.80</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1416</th>
+      <td>2019-03-09 13:16:32</td>
+      <td>2019-03-09 13:46:11</td>
+      <td>2</td>
+      <td>12.39</td>
+      <td>35.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>35.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>LaGuardia Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>4358</th>
+      <td>2019-03-06 18:24:00</td>
+      <td>2019-03-06 18:24:13</td>
+      <td>2</td>
+      <td>0.01</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1089</th>
+      <td>2019-03-10 01:43:32</td>
+      <td>2019-03-10 01:45:22</td>
+      <td>1</td>
+      <td>0.37</td>
+      <td>3.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>5095</th>
+      <td>2019-03-30 20:14:44</td>
+      <td>2019-03-30 21:01:28</td>
+      <td>3</td>
+      <td>18.91</td>
+      <td>52.00</td>
+      <td>8.78</td>
+      <td>5.76</td>
+      <td>67.34</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>770</th>
+      <td>2019-03-02 03:16:59</td>
+      <td>2019-03-02 03:17:06</td>
+      <td>0</td>
+      <td>9.40</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.80</td>
+      <td>yellow</td>
+      <td>NaN</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="best-approach-i-know-using-the-str-accessor-and-boolean-indexing">
+<h3>Best approach I know: Using the <code class="docutils literal notranslate"><span class="pre">str</span></code> accessor and Boolean indexing<a class="headerlink" href="#best-approach-i-know-using-the-str-accessor-and-boolean-indexing" title="Permalink to this heading">#</a></h3>
+<p>This is review of what we did on Wednesday.  Here’s a reminder that <code class="docutils literal notranslate"><span class="pre">ser1</span></code> is the variable containing the “pickup_zone” column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>890                 Midtown North
+5870          Morningside Heights
+686                  East Chelsea
+4937         TriBeCa/Civic Center
+2659                Midtown North
+                  ...            
+1180        Upper East Side North
+3441    West Chelsea/Hudson Yards
+1344                     Gramercy
+4623          Lincoln Square West
+1289                 East Village
+Name: pickup_zone, Length: 6433, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of using <code class="docutils literal notranslate"><span class="pre">map</span></code> and our custom <code class="docutils literal notranslate"><span class="pre">has_airport</span></code> function, we use the <code class="docutils literal notranslate"><span class="pre">str</span></code> accessor, which gives us access to the <code class="docutils literal notranslate"><span class="pre">contains</span></code> method.  The big advantage here is that we didn’t have to define any special function ourselves.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser1</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Airport&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>890     False
+5870    False
+686     False
+4937    False
+2659    False
+        ...  
+1180    False
+3441    False
+1344    False
+4623    False
+1289    False
+Name: pickup_zone, Length: 6433, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the final way (and the best way I know) to get the sub-DataFrame containing the rows for which both the pickup and dropoff zones involved an airport.  We are using Boolean indexing to keep precisely those rows in <code class="docutils literal notranslate"><span class="pre">df</span></code>.  (The previous approach, with <code class="docutils literal notranslate"><span class="pre">map</span></code>, also used Boolean indexing.  The earlier approaches, with <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, used indexing but not Boolean indexing.)</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">ser1</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Airport&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">ser2</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Airport&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2387</th>
+      <td>2019-03-28 15:58:52</td>
+      <td>2019-03-28 15:59:25</td>
+      <td>1</td>
+      <td>1.80</td>
+      <td>69.06</td>
+      <td>20.80</td>
+      <td>0.00</td>
+      <td>90.16</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1080</th>
+      <td>2019-03-04 14:17:05</td>
+      <td>2019-03-04 14:17:13</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2019-03-21 17:21:44</td>
+      <td>2019-03-21 17:21:49</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>5364</th>
+      <td>2019-03-17 16:59:17</td>
+      <td>2019-03-17 18:04:08</td>
+      <td>2</td>
+      <td>36.70</td>
+      <td>150.00</td>
+      <td>0.00</td>
+      <td>24.02</td>
+      <td>174.82</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1929</th>
+      <td>2019-03-13 22:35:35</td>
+      <td>2019-03-13 22:35:49</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.80</td>
+      <td>yellow</td>
+      <td>NaN</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>3571</th>
+      <td>2019-03-22 16:47:41</td>
+      <td>2019-03-22 16:47:50</td>
+      <td>1</td>
+      <td>0.81</td>
+      <td>66.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>66.80</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1416</th>
+      <td>2019-03-09 13:16:32</td>
+      <td>2019-03-09 13:46:11</td>
+      <td>2</td>
+      <td>12.39</td>
+      <td>35.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>35.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>LaGuardia Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>4358</th>
+      <td>2019-03-06 18:24:00</td>
+      <td>2019-03-06 18:24:13</td>
+      <td>2</td>
+      <td>0.01</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>1089</th>
+      <td>2019-03-10 01:43:32</td>
+      <td>2019-03-10 01:45:22</td>
+      <td>1</td>
+      <td>0.37</td>
+      <td>3.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.80</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>5095</th>
+      <td>2019-03-30 20:14:44</td>
+      <td>2019-03-30 21:01:28</td>
+      <td>3</td>
+      <td>18.91</td>
+      <td>52.00</td>
+      <td>8.78</td>
+      <td>5.76</td>
+      <td>67.34</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+    <tr>
+      <th>770</th>
+      <td>2019-03-02 03:16:59</td>
+      <td>2019-03-02 03:17:06</td>
+      <td>0</td>
+      <td>9.40</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.80</td>
+      <td>yellow</td>
+      <td>NaN</td>
+      <td>JFK Airport</td>
+      <td>JFK Airport</td>
+      <td>Queens</td>
+      <td>Queens</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Week2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week2-Wednesday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 2 Wednesday</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Worksheet3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Worksheet 3</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worse-alternatives-to-the-material-from-wednesday">(Worse) alternatives to the material from Wednesday</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-what-are-the-integer-locations-of-the-pickup-zone-and-dropoff-zone-columns">Warm-up: What are the integer locations of the “pickup_zone” and “dropoff_zone” columns?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worse-approach-1-using-a-for-loop-and-iloc">Worse approach 1: Using a for loop and <code class="docutils literal notranslate"><span class="pre">iloc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worse-approach-2-using-a-for-loop-and-loc">Worse approach 2: Using a for loop and <code class="docutils literal notranslate"><span class="pre">loc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worse-approach-3-using-the-pandas-series-map-method">Worse approach 3: Using the pandas Series <code class="docutils literal notranslate"><span class="pre">map</span></code> method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-approach-i-know-using-the-str-accessor-and-boolean-indexing">Best approach I know: Using the <code class="docutils literal notranslate"><span class="pre">str</span></code> accessor and Boolean indexing</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
