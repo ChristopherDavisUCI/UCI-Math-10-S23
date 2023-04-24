@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Worksheet 5 &#8212; UC Irvine Math 10, Spring 2023</title>
+    <title>Worksheet 7 &#8212; UC Irvine Math 10, Spring 2023</title>
   
   
   
@@ -62,12 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Week3/Worksheet5';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week4/Worksheet7';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Worksheet 6" href="Worksheet6.html" />
-    <link rel="prev" title="Week 3 Friday" href="Week3-Friday.html" />
+    <link rel="next" title="Machine Learning" href="../ML-intro.html" />
+    <link rel="prev" title="Week 4 Monday" href="Week4-Monday.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,17 +176,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet4.html">Worksheet 4</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week3-Intro.html">Week 3</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Week3-Monday.html">Week 3 Monday</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Week3-Wednesday.html">Week 3 Wednesday</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Week3-Friday.html">Week 3 Friday</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Worksheet 5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Worksheet6.html">Worksheet 6</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet6.html">Worksheet 6</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Week4/Week4-Intro.html">Week 4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Monday.html">Week 4 Monday</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Week4/Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week4-Intro.html">Week 4</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Worksheet 7</a></li>
 </ul>
 </li>
 </ul>
@@ -262,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Week3/Worksheet5.ipynb" target="_blank"
+      <li><a href="../_sources/Week4/Worksheet7.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +344,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Worksheet 5</h1>
+    <h1>Worksheet 7</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,15 +354,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-without-data-visualization">Part 1 - Without data visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-visualizing-the-data-all-at-once">Part 2: Visualizing the data all at once</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-visualizing-the-13-groupings-individually">Part 3: Visualizing the 13 groupings individually</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-altair">Using Altair</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-seaborn">Using Seaborn</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-plotly-express">Using Plotly Express</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data">Preparing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-data">Plotting the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder">Reminder</a></li>
 </ul>
             </nav>
         </div>
@@ -374,89 +369,99 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="worksheet-5">
-<h1>Worksheet 5<a class="headerlink" href="#worksheet-5" title="Permalink to this heading">#</a></h1>
-<p>This worksheet is due Monday night of the following week.  You are encouraged to work in groups of up to 3 total students, but each student should submit their own file.  (It’s fine for everyone in the group to upload the same file.)</p>
-<p>These questions refer to the attached vending machines csv file, <code class="docutils literal notranslate"><span class="pre">data_groups.csv</span></code>.  This is a very nice (artificial) dataset for demonstrating the usefulness of data visualization.</p>
-<p>Put the full names of everyone in your group (even if you’re working alone) here.  (This makes grading easier.)</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="worksheet-7">
+<h1>Worksheet 7<a class="headerlink" href="#worksheet-7" title="Permalink to this heading">#</a></h1>
+<p>You are encouraged to work in groups of up to 3 total students, but each student should make their own submission on Canvas.  (It’s fine for everyone in the group to have the same upload.)</p>
+<section id="preparing-the-data">
+<h2>Preparing the data<a class="headerlink" href="#preparing-the-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Names</strong>:</p></li>
-</ul>
-<section id="part-1-without-data-visualization">
-<h2>Part 1 - Without data visualization<a class="headerlink" href="#part-1-without-data-visualization" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Load the data using pandas as a DataFrame stored as <code class="docutils literal notranslate"><span class="pre">df</span></code> and look at the first few rows.</p></li>
+<li><p>Import the attached Spotify dataset as <code class="docutils literal notranslate"><span class="pre">df</span></code> using the pandas function <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Look over the following code (and its output).  (You don’t need to write anything here, but for a quiz or midterm, you should be able to understand this kind of code.)</p></li>
+<li><p>Look at the first few rows in the DataFrame.  Which columns look like they <em>should</em> be numeric?</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">groups</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;grouping&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-
-<span class="k">for</span> <span class="n">gp</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
-    <span class="n">df_sub</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;grouping&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gp</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The group is&quot;</span><span class="p">,</span> <span class="n">gp</span><span class="p">)</span> <span class="c1"># if you know f-strings, those could be used instead</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean of x is&quot;</span><span class="p">,</span> <span class="n">df_sub</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> 
-            <span class="s2">&quot;The standard deviation of x is&quot;</span><span class="p">,</span> <span class="n">df_sub</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean of y is&quot;</span><span class="p">,</span> <span class="n">df_sub</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> 
-            <span class="s2">&quot;The standard deviation of y is&quot;</span><span class="p">,</span> <span class="n">df_sub</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-    <span class="nb">print</span><span class="p">()</span>
+<ul class="simple">
+<li><p>Evaluate <code class="docutils literal notranslate"><span class="pre">df.dtypes</span></code>, and notice that only a few of these columns are actually numeric.</p></li>
+</ul>
+<p>The problem is that missing values are specified in an unusual way in this dataset, and pandas does not recognize them as missing.</p>
+<ul class="simple">
+<li><p>Evaluate the function <code class="docutils literal notranslate"><span class="pre">pd.to_numeric</span></code> on the “Energy” column in <code class="docutils literal notranslate"><span class="pre">df</span></code>.  Look at the error message.  It is telling you what the problematic values are.</p></li>
+</ul>
+<p>(There is a better way to do this, using <code class="docutils literal notranslate"><span class="pre">df.replace</span></code>, but the approach suggested here gives some practice with <code class="docutils literal notranslate"><span class="pre">applymap</span></code>, with lambda functions, and with the Python operator <code class="docutils literal notranslate"><span class="pre">???</span> <span class="pre">if</span> <span class="pre">???</span> <span class="pre">else</span> <span class="pre">???</span></code>.)</p>
+<ul class="simple">
+<li><p>Using the following template, replace these problematic values with the Not a Number value defined in NumPy.  If the input <code class="docutils literal notranslate"><span class="pre">x</span></code> is not missing, it should be left unchanged.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>df2 = df.applymap(lambda x: ??? if x == ??? else ???)
 </pre></div>
 </div>
-</div>
-</div>
 <ul class="simple">
-<li><p>Here is another way to get the same <code class="docutils literal notranslate"><span class="pre">mean</span></code> information.  Look over this code and its output and the output above, and see how they’re related.  (Again, you don’t need to write anything for this part.)</p></li>
+<li><p>Define <code class="docutils literal notranslate"><span class="pre">first_col</span> <span class="pre">=</span> <span class="pre">&quot;Popularity&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">last_col</span> <span class="pre">=</span> <span class="pre">&quot;Valence&quot;</span></code>.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;grouping&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<ul class="simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">apply</span></code> and a suitable <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument, apply the <code class="docutils literal notranslate"><span class="pre">pd.to_numeric</span></code> function to each column from <code class="docutils literal notranslate"><span class="pre">first_col</span></code> to <code class="docutils literal notranslate"><span class="pre">last_col</span></code>.</p></li>
+</ul>
+<p>(Comment 0.  Use <code class="docutils literal notranslate"><span class="pre">df2.loc[???]</span> <span class="pre">=</span> <span class="pre">df2.loc[???].apply(???,</span> <span class="pre">axis=???)</span></code> so that the values in <code class="docutils literal notranslate"><span class="pre">df2</span></code> get changed.  Comment 1.  Slicing with <code class="docutils literal notranslate"><span class="pre">loc</span></code> is one of the few examples in Python where the right endpoint <em>is</em> included.  Comment 2.  Neither the column labels nor the row labels are getting changed in this case, so my explanation for whether to use <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> or <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> does not quite apply.  But imagine we were applying <code class="docutils literal notranslate"><span class="pre">sum</span></code> instead of <code class="docutils literal notranslate"><span class="pre">pd.to_numeric</span></code>, that would collapse the whole column down to a single number, and so the row labels would be changing.)</p>
+<ul class="simple">
+<li><p>Import the <code class="docutils literal notranslate"><span class="pre">is_numeric_dtype</span></code> and <code class="docutils literal notranslate"><span class="pre">is_string_dtype</span></code> functions from <code class="docutils literal notranslate"><span class="pre">pandas.api.types</span></code>.  (You can do these both on the same line, separating the function names with commas.)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Using list comprehension and the function <code class="docutils literal notranslate"><span class="pre">is_numeric_dtype</span></code>, make a list of all the column names in <code class="docutils literal notranslate"><span class="pre">df2</span></code> which have a numeric dtype now.  Name this list <code class="docutils literal notranslate"><span class="pre">num_list</span></code>.  (This list <code class="docutils literal notranslate"><span class="pre">num_list</span></code> should be a list of strings, not a list of pandas Series.)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Check your answer: <code class="docutils literal notranslate"><span class="pre">num_list</span></code> should have length <code class="docutils literal notranslate"><span class="pre">13</span></code> and the <code class="docutils literal notranslate"><span class="pre">type</span></code> of <code class="docutils literal notranslate"><span class="pre">num_list[3]</span></code> should be <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Drop the rows which contain missing values, using the code <code class="docutils literal notranslate"><span class="pre">df3</span> <span class="pre">=</span> <span class="pre">df2.dropna(axis=???)</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Check your answer.  The DataFrame <code class="docutils literal notranslate"><span class="pre">df3</span></code> should have <code class="docutils literal notranslate"><span class="pre">1545</span></code> rows and <code class="docutils literal notranslate"><span class="pre">23</span></code> columns.</p></li>
+</ul>
+</section>
+<section id="plotting-the-data">
+<h2>Plotting the data<a class="headerlink" href="#plotting-the-data" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">make_chart</span></code> which takes as input the name of a column <code class="docutils literal notranslate"><span class="pre">c</span></code> in <code class="docutils literal notranslate"><span class="pre">df3</span></code>, and as output returns an Altair scatter plot chart using <code class="docutils literal notranslate"><span class="pre">&quot;Energy&quot;</span></code> for the x-axis, using column <code class="docutils literal notranslate"><span class="pre">c</span></code> for the y-axis, and using <code class="docutils literal notranslate"><span class="pre">&quot;Danceability&quot;</span></code> for color.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Adjust the color scale to something more colorful in your definition of <code class="docutils literal notranslate"><span class="pre">make_chart</span></code>.  You can either use the old syntax <code class="docutils literal notranslate"><span class="pre">scale=alt.Scale(scheme=???)</span></code> or the new syntax <code class="docutils literal notranslate"><span class="pre">.scale(scheme=???)</span></code>, but if you want to use the new syntax, make sure you pip install the most recent version of Altair before importing Altair (you can always restart the notebook if you need to).  <a class="reference external" href="https://vega.github.io/vega/docs/schemes/">Options for color scheme</a></p></li>
+</ul>
+<ul class="simple">
+<li><p>Using list comprehension and the list <code class="docutils literal notranslate"><span class="pre">num_list</span></code> you made above, make a new list <code class="docutils literal notranslate"><span class="pre">chart_list</span></code> which contains <code class="docutils literal notranslate"><span class="pre">make_chart(c)</span></code> for every <code class="docutils literal notranslate"><span class="pre">c</span></code> in <code class="docutils literal notranslate"><span class="pre">num_list</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Use the following code to make a new Altair chart, which has all of the previous charts vertically concatenated together.</p></li>
+</ul>
+<p>(Comment.  This <code class="docutils literal notranslate"><span class="pre">*</span></code> before <code class="docutils literal notranslate"><span class="pre">chart_list</span></code> is performing what is called “list unpacking”.  Rather than giving <code class="docutils literal notranslate"><span class="pre">alt.vconcat</span></code> a single input value, a list, we are giving it 13 separate input values.  In other words, <code class="docutils literal notranslate"><span class="pre">alt.vconcat(*chart_list)</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">alt.vconcat(chart_list[0],</span> <span class="pre">chart_list[1],</span> <span class="pre">...,</span> <span class="pre">chart_list[12])</span></code>.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total_chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span><span class="o">*</span><span class="n">chart_list</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <ul class="simple">
-<li><p>How do you think you get the same standard deviation information using <code class="docutils literal notranslate"><span class="pre">groupby</span></code>?  Try it, and check that the information does match what we got using the for loop.</p></li>
+<li><p>Display this <code class="docutils literal notranslate"><span class="pre">vconcat</span></code> chart (just evaluate <code class="docutils literal notranslate"><span class="pre">total_chart</span></code> in its own cell) and make sure it looks reasonable.  You should see 13 distinct Altair charts, arranged vertically.</p></li>
 </ul>
+<p>Sample quiz or midterm questions.  (You don’t need to answer these, but they are good practice questions.)</p>
 <ul class="simple">
-<li><p>In a markdown cell, describe, what is the main takeaway from the above outputs, in terms of what they tell you about the dataset?  Feel free to make more computations if they are helpful.</p></li>
+<li><p>Why does one of the charts show just a diagonal line?</p></li>
+<li><p>Why do the colors in one of the charts look so much more regular than in the others?</p></li>
+<li><p>If you wanted to know which song was represented at the very top-left of the “Speechiness” chart, how would you find it?</p></li>
+<li><p>What is a major difference between the chart produced above and a facet chart?</p></li>
 </ul>
-</section>
-<section id="part-2-visualizing-the-data-all-at-once">
-<h2>Part 2: Visualizing the data all at once<a class="headerlink" href="#part-2-visualizing-the-data-all-at-once" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Using Altair, plot the data in <code class="docutils literal notranslate"><span class="pre">df</span></code> using a scatter plot (<code class="docutils literal notranslate"><span class="pre">mark_circle</span></code>).  Encode the “x” column in the x-axis, the “y” column in the y-axis, and the “grouping” in the color.  Use <code class="docutils literal notranslate"><span class="pre">:N</span></code> after specifying “grouping” to tell Altair that these groupings are categories, not quantitative values.</p></li>
-</ul>
-<p>(The resulting plot should look like a mess.)</p>
-</section>
-<section id="part-3-visualizing-the-13-groupings-individually">
-<h2>Part 3: Visualizing the 13 groupings individually<a class="headerlink" href="#part-3-visualizing-the-13-groupings-individually" title="Permalink to this heading">#</a></h2>
-<p>We will see that these 13 groups of data are fundamentally different by plotting them separately.  We don’t have to do this by hand.  Altair, Seaborn, and Plotly Express all have their own way to do this separate plotting automatically.</p>
-<section id="using-altair">
-<h3>Using Altair<a class="headerlink" href="#using-altair" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Make a facet chart in Altair by taking the same <code class="docutils literal notranslate"><span class="pre">Chart</span></code> definition as above, and including <code class="docutils literal notranslate"><span class="pre">row=&quot;grouping:N&quot;</span></code> within the encoding.  This tells Altair to put each grouping in its own row. <a class="reference external" href="https://altair-viz.github.io/user_guide/compound_charts.html#faceted-charts">Reference 1</a> (but don’t look at the first for loop example, scroll below that).  <a class="reference external" href="https://altair-viz.github.io/gallery/beckers_barley_wrapped_facet.html">Reference 2</a></p></li>
-</ul>
-</section>
-<section id="using-seaborn">
-<h3>Using Seaborn<a class="headerlink" href="#using-seaborn" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Make the same facet chart, but using Seaborn.  <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.FacetGrid.html">Reference 1</a> (Scroll down to the example… <code class="docutils literal notranslate"><span class="pre">tips</span></code> is the name of their DataFrame, so you should use <code class="docutils literal notranslate"><span class="pre">df</span></code> instead of <code class="docutils literal notranslate"><span class="pre">tips</span></code>.  It seems like the <code class="docutils literal notranslate"><span class="pre">hue</span></code> keyword argument should be used with <code class="docutils literal notranslate"><span class="pre">sns.FacetGrid</span></code>, while the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> arguments should be used with <code class="docutils literal notranslate"><span class="pre">map</span></code>).  <a class="reference external" href="https://seaborn.pydata.org/tutorial/axis_grids.html#conditional-small-multiples">Reference 2</a></p></li>
-</ul>
-</section>
-<section id="using-plotly-express">
-<h3>Using Plotly Express<a class="headerlink" href="#using-plotly-express" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Make the same facet chart using Plotly Express.  <a class="reference external" href="https://plotly.com/python/facet-plots/">Reference</a> (To get it to look similar to the Altair and Seaborn versions, I added the keyword argument <code class="docutils literal notranslate"><span class="pre">height=4000</span></code> to the <code class="docutils literal notranslate"><span class="pre">px.scatter</span></code> function.)</p></li>
-</ul>
-</section>
 </section>
 <section id="submission">
 <h2>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">Share</span></code> button at the top right, enable public sharing, and enable Comment privileges. Then submit the created link on Canvas.</p></li>
+<li><p>Save the chart as a json file using the following code and upload that json file to Canvas.</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;total_chart_file.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">total_chart</span><span class="o">.</span><span class="n">to_json</span><span class="p">())</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If you want to check that the json file is correct, open it locally on your computer (it is too big to open on Deepnote) and copy-paste the contents into the <a class="reference external" href="https://vega.github.io/editor/#/">Vega Editor</a> then click <code class="docutils literal notranslate"><span class="pre">Run</span></code> at the top.</p></li>
+</ul>
+</section>
+<section id="reminder">
+<h2>Reminder<a class="headerlink" href="#reminder" title="Permalink to this heading">#</a></h2>
+<p>Every group member needs to submit this on Canvas (even if you all submit the same file).</p>
 </section>
 </section>
 
@@ -473,7 +478,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Week3"
+            path: "./Week4"
         },
         predefinedOutput: true
     }
@@ -489,17 +494,17 @@ document.write(`
                   
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Week3-Friday.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Week4-Monday.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Week 3 Friday</p>
+            <p class="prev-next-title">Week 4 Monday</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Worksheet6.html" title="next page">
+    <a class='right-next' id="next-link" href="../ML-intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Worksheet 6</p>
+        <p class="prev-next-title">Machine Learning</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -518,15 +523,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-without-data-visualization">Part 1 - Without data visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-visualizing-the-data-all-at-once">Part 2: Visualizing the data all at once</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-visualizing-the-13-groupings-individually">Part 3: Visualizing the 13 groupings individually</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-altair">Using Altair</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-seaborn">Using Seaborn</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-plotly-express">Using Plotly Express</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data">Preparing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-data">Plotting the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder">Reminder</a></li>
 </ul>
   </nav></div>
 
