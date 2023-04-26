@@ -1,0 +1,2299 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 4 Wednesday &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week4/Week4-Wednesday';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Worksheet 7" href="Worksheet7.html" />
+    <link rel="prev" title="Week 4 Monday" href="Week4-Monday.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week2/Week2-Intro.html">Week 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Friday.html">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet6.html">Worksheet 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week4-Intro.html">Week 4</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Week 4 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet8.html">Worksheet 8</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ML-intro.html">Machine Learning</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Week4/Week4-Wednesday.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 4 Wednesday</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-today">Plan for today</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-dataframe-method-apply">Practice with the DataFrame method <code class="docutils literal notranslate"><span class="pre">apply</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-groupby-and-f-strings">Practice with <code class="docutils literal notranslate"><span class="pre">groupby</span></code> and f-strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-list-comprehension">Practice with list comprehension</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-4-wednesday">
+<h1>Week 4 Wednesday<a class="headerlink" href="#week-4-wednesday" title="Permalink to this heading">#</a></h1>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The midterm is Monday.  A sample midterm is posted on the <a class="reference external" href="https://canvas.eee.uci.edu/courses/53164/pages/week-5">Week 5</a> page on Canvas.  Solutions posted by Friday.</p></li>
+<li><p>Jinghao gave out notecards on Tuesday, can put handwritten notes on both sides for the midterm.  Let me know if you still need a notecard.</p></li>
+<li><p>The best way to study is to go over the worksheets, quizzes, and the sample midterm.  Next priority would be the <a class="reference external" href="https://christopherdavisuci.github.io/UCI-Math-10-S23/Week3/Week3-Monday.html">lecture notes</a>.</p></li>
+<li><p>I briefly mention lots of topics.  If you’re not sure if something could appear on the midterm, ask on Ed Discussion and I’ll answer there.</p></li>
+<li><p>Worksheet 8 is posted.  Both Worksheets 7-8 are due Monday night (the usual schedule).  Working on them will help you prepare for the midterm.</p></li>
+<li><p>I have office hours before class on Friday, 12-1pm, in the same classroom ALP 3610.</p></li>
+<li><p>Friday will have a slightly different structure from usual.  There will be time to work at the beginning (about 15 minutes) and then lecture for the last part of class.</p></li>
+</ul>
+</section>
+<section id="plan-for-today">
+<h2>Plan for today<a class="headerlink" href="#plan-for-today" title="Permalink to this heading">#</a></h2>
+<p>Today I would like to introduce the pandas DataFrame method <code class="docutils literal notranslate"><span class="pre">apply</span></code> (which is necessary for this week’s worksheets and is also good practice with <code class="docutils literal notranslate"><span class="pre">axis</span></code>) and continue discussing the Python topics from Monday (list comprehension, f-strings, and lambda functions).</p>
+</section>
+<section id="practice-with-the-dataframe-method-apply">
+<h2>Practice with the DataFrame method <code class="docutils literal notranslate"><span class="pre">apply</span></code><a class="headerlink" href="#practice-with-the-dataframe-method-apply" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Load the “taxis” dataset from Seaborn and drop rows with missing values.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;taxis&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>As a warm-up with <code class="docutils literal notranslate"><span class="pre">apply</span></code>, try applying the <code class="docutils literal notranslate"><span class="pre">len</span></code> function using first <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> and then <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>.  We’ll see more serious uses below and in the homework.</p></li>
+</ul>
+<p>Notice how the row labels have disappeared but the column labels are still here.  We have changed the row labels, which corresponds to <code class="docutils literal notranslate"><span class="pre">axis=0</span></code>.  The numbers <code class="docutils literal notranslate"><span class="pre">6341</span></code> correspond to the length of each of these columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pickup             6341
+dropoff            6341
+passengers         6341
+distance           6341
+fare               6341
+tip                6341
+tolls              6341
+total              6341
+color              6341
+payment            6341
+pickup_zone        6341
+dropoff_zone       6341
+pickup_borough     6341
+dropoff_borough    6341
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is an example of where the <code class="docutils literal notranslate"><span class="pre">6341</span></code> entry for <code class="docutils literal notranslate"><span class="pre">&quot;pickup&quot;</span></code> came from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pickup&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6341
+</pre></div>
+</div>
+</div>
+</div>
+<p>We were applying the <code class="docutils literal notranslate"><span class="pre">len</span></code> function to each of these columns.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-23 20:21:09</td>
+      <td>2019-03-23 20:27:24</td>
+      <td>1</td>
+      <td>1.60</td>
+      <td>7.0</td>
+      <td>2.15</td>
+      <td>0.0</td>
+      <td>12.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Lenox Hill West</td>
+      <td>UN/Turtle Bay South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-04 16:11:55</td>
+      <td>2019-03-04 16:19:00</td>
+      <td>1</td>
+      <td>0.79</td>
+      <td>5.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>9.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Upper West Side South</td>
+      <td>Upper West Side South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-03-27 17:53:01</td>
+      <td>2019-03-27 18:00:25</td>
+      <td>1</td>
+      <td>1.37</td>
+      <td>7.5</td>
+      <td>2.36</td>
+      <td>0.0</td>
+      <td>14.16</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Alphabet City</td>
+      <td>West Village</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-03-10 01:23:59</td>
+      <td>2019-03-10 01:49:51</td>
+      <td>1</td>
+      <td>7.70</td>
+      <td>27.0</td>
+      <td>6.15</td>
+      <td>0.0</td>
+      <td>36.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Hudson Sq</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-03-30 13:27:42</td>
+      <td>2019-03-30 13:37:14</td>
+      <td>3</td>
+      <td>2.16</td>
+      <td>9.0</td>
+      <td>1.10</td>
+      <td>0.0</td>
+      <td>13.40</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Midtown East</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6428</th>
+      <td>2019-03-31 09:51:53</td>
+      <td>2019-03-31 09:55:27</td>
+      <td>1</td>
+      <td>0.75</td>
+      <td>4.5</td>
+      <td>1.06</td>
+      <td>0.0</td>
+      <td>6.36</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>East Harlem North</td>
+      <td>Central Harlem North</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>6429</th>
+      <td>2019-03-31 17:38:00</td>
+      <td>2019-03-31 18:34:23</td>
+      <td>1</td>
+      <td>18.74</td>
+      <td>58.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>58.80</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Jamaica</td>
+      <td>East Concourse/Concourse Village</td>
+      <td>Queens</td>
+      <td>Bronx</td>
+    </tr>
+    <tr>
+      <th>6430</th>
+      <td>2019-03-23 22:55:18</td>
+      <td>2019-03-23 23:14:25</td>
+      <td>1</td>
+      <td>4.14</td>
+      <td>16.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>17.30</td>
+      <td>green</td>
+      <td>cash</td>
+      <td>Crown Heights North</td>
+      <td>Bushwick North</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+    </tr>
+    <tr>
+      <th>6431</th>
+      <td>2019-03-04 10:09:25</td>
+      <td>2019-03-04 10:14:29</td>
+      <td>1</td>
+      <td>1.12</td>
+      <td>6.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>6.80</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>East New York</td>
+      <td>East Flatbush/Remsen Village</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+    </tr>
+    <tr>
+      <th>6432</th>
+      <td>2019-03-13 19:31:22</td>
+      <td>2019-03-13 19:48:02</td>
+      <td>1</td>
+      <td>3.85</td>
+      <td>15.0</td>
+      <td>3.36</td>
+      <td>0.0</td>
+      <td>20.16</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Boerum Hill</td>
+      <td>Windsor Terrace</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+    </tr>
+  </tbody>
+</table>
+<p>6341 rows × 14 columns</p>
+</div></div></div>
+</div>
+<p>If we use <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> instead, then we are plugging in one row at a time.  Those rows all have length <code class="docutils literal notranslate"><span class="pre">14</span></code>, which is where the following values come from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       14
+1       14
+2       14
+3       14
+4       14
+        ..
+6428    14
+6429    14
+6430    14
+6431    14
+6432    14
+Length: 6341, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is an example where we see different values for different columns.  Here the input is a column, and the output is its <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pickup             datetime64[ns]
+dropoff            datetime64[ns]
+passengers                  int64
+distance                  float64
+fare                      float64
+tip                       float64
+tolls                     float64
+total                     float64
+color                      object
+payment                    object
+pickup_zone                object
+dropoff_zone               object
+pickup_borough             object
+dropoff_borough            object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare the above use of <code class="docutils literal notranslate"><span class="pre">apply</span></code> to <code class="docutils literal notranslate"><span class="pre">map</span></code>, which is used on a single pandas Series, rather than on a whole pandas DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;payment&quot;</span><span class="p">]</span>
+<span class="n">ser</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       credit card
+1              cash
+2       credit card
+3       credit card
+4       credit card
+           ...     
+6428    credit card
+6429    credit card
+6430           cash
+6431    credit card
+6432    credit card
+Name: payment, Length: 6341, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we are trying to add <code class="docutils literal notranslate"><span class="pre">5</span></code> to each entry, but we get an error because the entries are strings in <code class="docutils literal notranslate"><span class="pre">ser</span></code>.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ser</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/series.py:3909,</span> in <span class="ni">Series.map</span><span class="nt">(self, arg, na_action)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3834</span> <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Series&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3835</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3836</span><span class="sd">     Map values of Series according to input correspondence.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3837</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3907</span><span class="sd">     dtype: object</span>
+<span class="g g-Whitespace">   </span><span class="mi">3908</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">3909</span>     <span class="n">new_values</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_map_values</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="n">na_action</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3910</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor</span><span class="p">(</span><span class="n">new_values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3911</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;map&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3912</span>     <span class="p">)</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/base.py:937,</span> in <span class="ni">IndexOpsMixin._map_values</span><span class="nt">(self, mapper, na_action)</span>
+<span class="g g-Whitespace">    </span><span class="mi">934</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span> <span class="c1"># mapper is a function</span>
+<span class="ne">--&gt; </span><span class="mi">937</span> <span class="n">new_values</span> <span class="o">=</span> <span class="n">map_f</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mapper</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">939</span> <span class="k">return</span> <span class="n">new_values</span>
+
+<span class="nn">File pandas/_libs/lib.pyx:2467,</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">Cell In [10], line 1,</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(x)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ser</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we convert <code class="docutils literal notranslate"><span class="pre">5</span></code> to a string (we could also put it in quotation marks), then we don’t get an error.  Notice how the function here is a little simpler than what we used above, in the sense that the input to this lambda function is a string, whereas the inputs above were pandas Series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       credit card5
+1              cash5
+2       credit card5
+3       credit card5
+4       credit card5
+            ...     
+6428    credit card5
+6429    credit card5
+6430           cash5
+6431    credit card5
+6432    credit card5
+Name: payment, Length: 6341, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">has_airport</span></code> which takes as input a row from <code class="docutils literal notranslate"><span class="pre">df</span></code> (not a row label but an entire row) and as output returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the “pickup_zone” or “dropoff_zone” entry contains the substring “Airport”.</p></li>
+</ul>
+<p>Here is a more realistic application of <code class="docutils literal notranslate"><span class="pre">apply</span></code>.  We start with a function that takes as input a pandas Series (a row of the DataFrame).  In this case, the output is the Boolean value <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">has_airport</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;pickup_zone&quot;</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;dropoff_zone&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a typical input.  We get the row at integer location <code class="docutils literal notranslate"><span class="pre">30</span></code> from <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is what that particular row looks like.  It’s still a pandas Series, just like a column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pickup                   2019-03-01 02:55:55
+dropoff                  2019-03-01 02:57:59
+passengers                                 3
+distance                                0.74
+fare                                     4.0
+tip                                      0.0
+tolls                                    0.0
+total                                    7.8
+color                                 yellow
+payment                                 cash
+pickup_zone                     Clinton East
+dropoff_zone       West Chelsea/Hudson Yards
+pickup_borough                     Manhattan
+dropoff_borough                    Manhattan
+Name: 31, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that neither the “pickup_zone” value nor the “dropoff_zone” value contains <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span></code>, so that is why our function returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">has_airport</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is that “pickup_zone” value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">[</span><span class="s2">&quot;pickup_zone&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Clinton East&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could also use <code class="docutils literal notranslate"><span class="pre">loc</span></code>, but that is not as common with pandas Series.  (We can just use the square brackets directly.  Unlike with a pandas DataFrame, where using square brackets directly means something else.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;pickup_zone&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Clinton East&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a row where there is an <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span></code> substring.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">has_airport</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Make a new column <code class="docutils literal notranslate"><span class="pre">&quot;Airport0&quot;</span></code> which contains <code class="docutils literal notranslate"><span class="pre">True</span></code> if the “pickup_zone” or “dropoff_zone” contains the substring “Airport”, and otherwise contains <code class="docutils literal notranslate"><span class="pre">False</span></code>.  Use the <code class="docutils literal notranslate"><span class="pre">has_airport</span></code> function and <code class="docutils literal notranslate"><span class="pre">df.apply(???,</span> <span class="pre">axis=???)</span></code>.</p></li>
+</ul>
+<p>Because we are evaluating this to a row at a time, we are using <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Airport0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">has_airport</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Scroll to the right and notice how an “Airport0” column is now there.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+      <th>Airport0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-23 20:21:09</td>
+      <td>2019-03-23 20:27:24</td>
+      <td>1</td>
+      <td>1.60</td>
+      <td>7.0</td>
+      <td>2.15</td>
+      <td>0.0</td>
+      <td>12.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Lenox Hill West</td>
+      <td>UN/Turtle Bay South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-04 16:11:55</td>
+      <td>2019-03-04 16:19:00</td>
+      <td>1</td>
+      <td>0.79</td>
+      <td>5.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>9.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Upper West Side South</td>
+      <td>Upper West Side South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-03-27 17:53:01</td>
+      <td>2019-03-27 18:00:25</td>
+      <td>1</td>
+      <td>1.37</td>
+      <td>7.5</td>
+      <td>2.36</td>
+      <td>0.0</td>
+      <td>14.16</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Alphabet City</td>
+      <td>West Village</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-03-10 01:23:59</td>
+      <td>2019-03-10 01:49:51</td>
+      <td>1</td>
+      <td>7.70</td>
+      <td>27.0</td>
+      <td>6.15</td>
+      <td>0.0</td>
+      <td>36.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Hudson Sq</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-03-30 13:27:42</td>
+      <td>2019-03-30 13:37:14</td>
+      <td>3</td>
+      <td>2.16</td>
+      <td>9.0</td>
+      <td>1.10</td>
+      <td>0.0</td>
+      <td>13.40</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Midtown East</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6428</th>
+      <td>2019-03-31 09:51:53</td>
+      <td>2019-03-31 09:55:27</td>
+      <td>1</td>
+      <td>0.75</td>
+      <td>4.5</td>
+      <td>1.06</td>
+      <td>0.0</td>
+      <td>6.36</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>East Harlem North</td>
+      <td>Central Harlem North</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6429</th>
+      <td>2019-03-31 17:38:00</td>
+      <td>2019-03-31 18:34:23</td>
+      <td>1</td>
+      <td>18.74</td>
+      <td>58.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>58.80</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Jamaica</td>
+      <td>East Concourse/Concourse Village</td>
+      <td>Queens</td>
+      <td>Bronx</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6430</th>
+      <td>2019-03-23 22:55:18</td>
+      <td>2019-03-23 23:14:25</td>
+      <td>1</td>
+      <td>4.14</td>
+      <td>16.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>17.30</td>
+      <td>green</td>
+      <td>cash</td>
+      <td>Crown Heights North</td>
+      <td>Bushwick North</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6431</th>
+      <td>2019-03-04 10:09:25</td>
+      <td>2019-03-04 10:14:29</td>
+      <td>1</td>
+      <td>1.12</td>
+      <td>6.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>6.80</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>East New York</td>
+      <td>East Flatbush/Remsen Village</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6432</th>
+      <td>2019-03-13 19:31:22</td>
+      <td>2019-03-13 19:48:02</td>
+      <td>1</td>
+      <td>3.85</td>
+      <td>15.0</td>
+      <td>3.36</td>
+      <td>0.0</td>
+      <td>20.16</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Boerum Hill</td>
+      <td>Windsor Terrace</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>6341 rows × 15 columns</p>
+</div></div></div>
+</div>
+<p>If we try to apply using <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> in this case, we get an error, because the code included <code class="docutils literal notranslate"><span class="pre">row[&quot;pickup_zone&quot;]</span></code>, which doesn’t make sense for a column in this DataFrame.  (There is no row with label “pickup_zone”.)</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">has_airport</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/indexes/base.py:3081,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3080</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3081</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3082</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">File pandas/_libs/index.pyx:70,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/index.pyx:98,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/index_class_helper.pxi:89,</span> in <span class="ni">pandas._libs.index.Int64Engine._check_type</span><span class="nt">()</span>
+
+<span class="ne">KeyError</span>: &#39;pickup_zone&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">has_airport</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/frame.py:7768,</span> in <span class="ni">DataFrame.apply</span><span class="nt">(self, func, axis, raw, result_type, args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7757</span> <span class="kn">from</span> <span class="nn">pandas.core.apply</span> <span class="kn">import</span> <span class="n">frame_apply</span>
+<span class="g g-Whitespace">   </span><span class="mi">7759</span> <span class="n">op</span> <span class="o">=</span> <span class="n">frame_apply</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">7760</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7761</span>     <span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7766</span>     <span class="n">kwds</span><span class="o">=</span><span class="n">kwds</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7767</span> <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">7768</span> <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/apply.py:185,</span> in <span class="ni">FrameApply.get_result</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_raw</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">185</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_standard</span><span class="p">()</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/apply.py:276,</span> in <span class="ni">FrameApply.apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span> <span class="k">def</span> <span class="nf">apply_standard</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">276</span>     <span class="n">results</span><span class="p">,</span> <span class="n">res_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_series_generator</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="c1"># wrap results</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrap_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">res_index</span><span class="p">)</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/apply.py:290,</span> in <span class="ni">FrameApply.apply_series_generator</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span> <span class="k">with</span> <span class="n">option_context</span><span class="p">(</span><span class="s2">&quot;mode.chained_assignment&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">series_gen</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>         <span class="c1"># ignore SettingWithCopy here in case the user mutates</span>
+<span class="ne">--&gt; </span><span class="mi">290</span>         <span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ABCSeries</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>             <span class="c1"># If we have a view on v, we need to make a copy because</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>             <span class="c1">#  series_generator will swap out the underlying data</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>             <span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">Cell In [12], line 2,</span> in <span class="ni">has_airport</span><span class="nt">(row)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">has_airport</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+<span class="nn">----&gt; 2     return (&quot;Airport&quot;</span> in <span class="ni">row[&quot;pickup_zone&quot;]) or </span><span class="nt">(&quot;Airport&quot; in row[&quot;dropoff_zone&quot;])</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/series.py:853,</span> in <span class="ni">Series.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_values</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span> <span class="k">elif</span> <span class="n">key_is_scalar</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">853</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_value</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span> <span class="k">if</span> <span class="n">is_hashable</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>     <span class="c1"># Otherwise index.get_value will raise InvalidIndexError</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>         <span class="c1"># For labels that don&#39;t resolve as scalars like tuples and frozensets</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/series.py:961,</span> in <span class="ni">Series._get_value</span><span class="nt">(self, label, takeable)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_values</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">960</span> <span class="c1"># Similar to Index.get_value, but we do not fall back to positional</span>
+<span class="ne">--&gt; </span><span class="mi">961</span> <span class="n">loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">962</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">_get_values_for_loc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+
+<span class="nn">File /shared-libs/python3.9/py/lib/python3.9/site-packages/pandas/core/indexes/base.py:3083,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3081</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3082</span>     <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3083</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="g g-Whitespace">   </span><span class="mi">3085</span> <span class="k">if</span> <span class="n">tolerance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3086</span>     <span class="n">tolerance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_tolerance</span><span class="p">(</span><span class="n">tolerance</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+
+<span class="ne">KeyError</span>: &#39;pickup_zone&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Make a column <code class="docutils literal notranslate"><span class="pre">&quot;Airport1&quot;</span></code> with the same values, again using <code class="docutils literal notranslate"><span class="pre">apply</span></code>, but this time using a lambda function.</p></li>
+</ul>
+<p>The following is the exact same as above, just using an anonymous lambda function instead of our named <code class="docutils literal notranslate"><span class="pre">has_airport</span></code> function.  I’ve broken it up over multiple lines just to make it a little easier to read.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Airport1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;pickup_zone&quot;</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;Airport&quot;</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;dropoff_zone&quot;</span><span class="p">]),</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how we now have a new column on the far right.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+      <th>Airport0</th>
+      <th>Airport1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-23 20:21:09</td>
+      <td>2019-03-23 20:27:24</td>
+      <td>1</td>
+      <td>1.60</td>
+      <td>7.0</td>
+      <td>2.15</td>
+      <td>0.0</td>
+      <td>12.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Lenox Hill West</td>
+      <td>UN/Turtle Bay South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-04 16:11:55</td>
+      <td>2019-03-04 16:19:00</td>
+      <td>1</td>
+      <td>0.79</td>
+      <td>5.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>9.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Upper West Side South</td>
+      <td>Upper West Side South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-03-27 17:53:01</td>
+      <td>2019-03-27 18:00:25</td>
+      <td>1</td>
+      <td>1.37</td>
+      <td>7.5</td>
+      <td>2.36</td>
+      <td>0.0</td>
+      <td>14.16</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Alphabet City</td>
+      <td>West Village</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-03-10 01:23:59</td>
+      <td>2019-03-10 01:49:51</td>
+      <td>1</td>
+      <td>7.70</td>
+      <td>27.0</td>
+      <td>6.15</td>
+      <td>0.0</td>
+      <td>36.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Hudson Sq</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-03-30 13:27:42</td>
+      <td>2019-03-30 13:37:14</td>
+      <td>3</td>
+      <td>2.16</td>
+      <td>9.0</td>
+      <td>1.10</td>
+      <td>0.0</td>
+      <td>13.40</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Midtown East</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6428</th>
+      <td>2019-03-31 09:51:53</td>
+      <td>2019-03-31 09:55:27</td>
+      <td>1</td>
+      <td>0.75</td>
+      <td>4.5</td>
+      <td>1.06</td>
+      <td>0.0</td>
+      <td>6.36</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>East Harlem North</td>
+      <td>Central Harlem North</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6429</th>
+      <td>2019-03-31 17:38:00</td>
+      <td>2019-03-31 18:34:23</td>
+      <td>1</td>
+      <td>18.74</td>
+      <td>58.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>58.80</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Jamaica</td>
+      <td>East Concourse/Concourse Village</td>
+      <td>Queens</td>
+      <td>Bronx</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6430</th>
+      <td>2019-03-23 22:55:18</td>
+      <td>2019-03-23 23:14:25</td>
+      <td>1</td>
+      <td>4.14</td>
+      <td>16.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>17.30</td>
+      <td>green</td>
+      <td>cash</td>
+      <td>Crown Heights North</td>
+      <td>Bushwick North</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6431</th>
+      <td>2019-03-04 10:09:25</td>
+      <td>2019-03-04 10:14:29</td>
+      <td>1</td>
+      <td>1.12</td>
+      <td>6.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>6.80</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>East New York</td>
+      <td>East Flatbush/Remsen Village</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6432</th>
+      <td>2019-03-13 19:31:22</td>
+      <td>2019-03-13 19:48:02</td>
+      <td>1</td>
+      <td>3.85</td>
+      <td>15.0</td>
+      <td>3.36</td>
+      <td>0.0</td>
+      <td>20.16</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Boerum Hill</td>
+      <td>Windsor Terrace</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>6341 rows × 16 columns</p>
+</div></div></div>
+</div>
+<p>Here is a fancier but more confusing approach.</p>
+<ul class="simple">
+<li><p>Notice that <code class="docutils literal notranslate"><span class="pre">df[[&quot;pickup_zone&quot;,</span> <span class="pre">&quot;dropoff_zone&quot;]]</span></code> is a DataFrame containing just those two columns we’re interested in.  Use <code class="docutils literal notranslate"><span class="pre">apply</span></code> this time to apply a lambda function to the columns rather than the rows, then use <code class="docutils literal notranslate"><span class="pre">any</span></code>.  Name the result <code class="docutils literal notranslate"><span class="pre">&quot;Airport2&quot;</span></code>.</p></li>
+</ul>
+<p>We start off getting a two-column DataFrame, that only contains the two columns of interest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sub</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;pickup_zone&quot;</span><span class="p">,</span> <span class="s2">&quot;dropoff_zone&quot;</span><span class="p">]]</span>
+<span class="n">df_sub</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Lenox Hill West</td>
+      <td>UN/Turtle Bay South</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Upper West Side South</td>
+      <td>Upper West Side South</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Alphabet City</td>
+      <td>West Village</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Hudson Sq</td>
+      <td>Yorkville West</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Midtown East</td>
+      <td>Yorkville West</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6428</th>
+      <td>East Harlem North</td>
+      <td>Central Harlem North</td>
+    </tr>
+    <tr>
+      <th>6429</th>
+      <td>Jamaica</td>
+      <td>East Concourse/Concourse Village</td>
+    </tr>
+    <tr>
+      <th>6430</th>
+      <td>Crown Heights North</td>
+      <td>Bushwick North</td>
+    </tr>
+    <tr>
+      <th>6431</th>
+      <td>East New York</td>
+      <td>East Flatbush/Remsen Village</td>
+    </tr>
+    <tr>
+      <th>6432</th>
+      <td>Boerum Hill</td>
+      <td>Windsor Terrace</td>
+    </tr>
+  </tbody>
+</table>
+<p>6341 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>We now use <code class="docutils literal notranslate"><span class="pre">apply</span></code> again, but this time to the columns, not to the rows.  This approach is nicer in some ways, because there is less repetition.  Unlike in the code <code class="docutils literal notranslate"><span class="pre">(&quot;Airport&quot;</span> <span class="pre">in</span> <span class="pre">row[&quot;pickup_zone&quot;])</span> <span class="pre">or</span> <span class="pre">(&quot;Airport&quot;</span> <span class="pre">in</span> <span class="pre">row[&quot;dropoff_zone&quot;])</span></code>, where we had the same thing repeated almost entirely twice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sub</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">col</span><span class="p">:</span> <span class="n">col</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Airport&quot;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6428</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6429</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6430</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6431</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6432</th>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>6341 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>As an example of how <code class="docutils literal notranslate"><span class="pre">axis</span></code> works, if we apply <code class="docutils literal notranslate"><span class="pre">any(axis=0)</span></code>, we are checking if there are any <code class="docutils literal notranslate"><span class="pre">True</span></code> values in the columns.  This Series has length two, because there are two columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sub</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">col</span><span class="p">:</span> <span class="n">col</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Airport&quot;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pickup_zone     True
+dropoff_zone    True
+dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>But what we really want to do is apply <code class="docutils literal notranslate"><span class="pre">any(axis=1)</span></code>, to find out if any of the rows have a <code class="docutils literal notranslate"><span class="pre">True</span></code> in them.  This produces a much longer Series, and we store it in the “Airport2” column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Airport2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sub</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">col</span><span class="p">:</span> <span class="n">col</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Airport&quot;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how we now have yet another column on the far right of the DataFrame.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+      <th>Airport0</th>
+      <th>Airport1</th>
+      <th>Airport2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-23 20:21:09</td>
+      <td>2019-03-23 20:27:24</td>
+      <td>1</td>
+      <td>1.60</td>
+      <td>7.0</td>
+      <td>2.15</td>
+      <td>0.0</td>
+      <td>12.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Lenox Hill West</td>
+      <td>UN/Turtle Bay South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-04 16:11:55</td>
+      <td>2019-03-04 16:19:00</td>
+      <td>1</td>
+      <td>0.79</td>
+      <td>5.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>9.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Upper West Side South</td>
+      <td>Upper West Side South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-03-27 17:53:01</td>
+      <td>2019-03-27 18:00:25</td>
+      <td>1</td>
+      <td>1.37</td>
+      <td>7.5</td>
+      <td>2.36</td>
+      <td>0.0</td>
+      <td>14.16</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Alphabet City</td>
+      <td>West Village</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-03-10 01:23:59</td>
+      <td>2019-03-10 01:49:51</td>
+      <td>1</td>
+      <td>7.70</td>
+      <td>27.0</td>
+      <td>6.15</td>
+      <td>0.0</td>
+      <td>36.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Hudson Sq</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-03-30 13:27:42</td>
+      <td>2019-03-30 13:37:14</td>
+      <td>3</td>
+      <td>2.16</td>
+      <td>9.0</td>
+      <td>1.10</td>
+      <td>0.0</td>
+      <td>13.40</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Midtown East</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6428</th>
+      <td>2019-03-31 09:51:53</td>
+      <td>2019-03-31 09:55:27</td>
+      <td>1</td>
+      <td>0.75</td>
+      <td>4.5</td>
+      <td>1.06</td>
+      <td>0.0</td>
+      <td>6.36</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>East Harlem North</td>
+      <td>Central Harlem North</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6429</th>
+      <td>2019-03-31 17:38:00</td>
+      <td>2019-03-31 18:34:23</td>
+      <td>1</td>
+      <td>18.74</td>
+      <td>58.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>58.80</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Jamaica</td>
+      <td>East Concourse/Concourse Village</td>
+      <td>Queens</td>
+      <td>Bronx</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6430</th>
+      <td>2019-03-23 22:55:18</td>
+      <td>2019-03-23 23:14:25</td>
+      <td>1</td>
+      <td>4.14</td>
+      <td>16.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>17.30</td>
+      <td>green</td>
+      <td>cash</td>
+      <td>Crown Heights North</td>
+      <td>Bushwick North</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6431</th>
+      <td>2019-03-04 10:09:25</td>
+      <td>2019-03-04 10:14:29</td>
+      <td>1</td>
+      <td>1.12</td>
+      <td>6.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>6.80</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>East New York</td>
+      <td>East Flatbush/Remsen Village</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6432</th>
+      <td>2019-03-13 19:31:22</td>
+      <td>2019-03-13 19:48:02</td>
+      <td>1</td>
+      <td>3.85</td>
+      <td>15.0</td>
+      <td>3.36</td>
+      <td>0.0</td>
+      <td>20.16</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>Boerum Hill</td>
+      <td>Windsor Terrace</td>
+      <td>Brooklyn</td>
+      <td>Brooklyn</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>6341 rows × 17 columns</p>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Make a list <code class="docutils literal notranslate"><span class="pre">air_cols</span></code> containing the names of those three columns we just made.  Use list comprehension and the string <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method.</p></li>
+</ul>
+<p>Before we do that, here is an example of including an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement at the end of a list comprehension.  It indicates which values we will use in our list.  For example in the following, we are iterating over <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code> (remember that the right endpoint is typically not included in Python), but we are only using the values which are strictly greater than <code class="docutils literal notranslate"><span class="pre">2</span></code>.  So we are putting <code class="docutils literal notranslate"><span class="pre">3**2</span></code> and <code class="docutils literal notranslate"><span class="pre">4**2</span></code> into a list.  (Side comment: In Python, we do not use the caret symbol <code class="docutils literal notranslate"><span class="pre">^</span></code> for powers, instead we use <code class="docutils literal notranslate"><span class="pre">**</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is an example without the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.  This is just a complicated way to turn <code class="docutils literal notranslate"><span class="pre">df.columns</span></code> into a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;pickup&#39;,
+ &#39;dropoff&#39;,
+ &#39;passengers&#39;,
+ &#39;distance&#39;,
+ &#39;fare&#39;,
+ &#39;tip&#39;,
+ &#39;tolls&#39;,
+ &#39;total&#39;,
+ &#39;color&#39;,
+ &#39;payment&#39;,
+ &#39;pickup_zone&#39;,
+ &#39;dropoff_zone&#39;,
+ &#39;pickup_borough&#39;,
+ &#39;dropoff_borough&#39;,
+ &#39;Airport0&#39;,
+ &#39;Airport1&#39;,
+ &#39;Airport2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a warm-up.  This produces a length 1 list, because only one column name satisfies the condition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">&quot;Airport1&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Airport1&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally here is the list we want.  The <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method itself is not important for us.  The important thing for us is the logic that’s being used here.  We are making a list containing all the column names which start with the string <code class="docutils literal notranslate"><span class="pre">&quot;Airport&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Airport&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Airport0&#39;, &#39;Airport1&#39;, &#39;Airport2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is almost another way to make the list.  Notice how we have not done anything with <code class="docutils literal notranslate"><span class="pre">i</span></code> yet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Airport&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Airport&#39;, &#39;Airport&#39;, &#39;Airport&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we include <code class="docutils literal notranslate"><span class="pre">i</span></code>, thanks to f-strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Airport</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Airport0&#39;, &#39;Airport1&#39;, &#39;Airport2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>That is where we stopped on Wednesday.</p>
+<ul class="simple">
+<li><p>Check that the values in these three columns are the same.  One approach: compute <code class="docutils literal notranslate"><span class="pre">row.unique()</span></code> for every row in the DataFrame, and check that the length is always <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+</ul>
+</section>
+<section id="practice-with-groupby-and-f-strings">
+<h2>Practice with <code class="docutils literal notranslate"><span class="pre">groupby</span></code> and f-strings<a class="headerlink" href="#practice-with-groupby-and-f-strings" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Make a new column named “Day” in the DataFrame, containing the day of the pickup (as a string, like <code class="docutils literal notranslate"><span class="pre">&quot;Monday&quot;</span></code>).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Why didn’t we have to use <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code>?  Evaluate <code class="docutils literal notranslate"><span class="pre">df.dtypes</span></code> and <code class="docutils literal notranslate"><span class="pre">df.dtypes[&quot;pickup&quot;]</span></code> to see the reason.</p></li>
+</ul>
+<ul class="simple">
+<li><p>For each day of the week, what was the median tip for that day?  Put the results into a pandas Series using <code class="docutils literal notranslate"><span class="pre">groupby</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>For each day of the week, print out a string stating the median tip amount for that day.  Use <code class="docutils literal notranslate"><span class="pre">:.2f</span></code> in the string formatting part so that only two decimal places get printed.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">day_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;4-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">-2023&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="mi">31</span><span class="p">)]</span>
+<span class="n">day_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;, &#39;Saturday&#39;, &#39;Sunday&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-with-list-comprehension">
+<h2>Practice with list comprehension<a class="headerlink" href="#practice-with-list-comprehension" title="Permalink to this heading">#</a></h2>
+<p>(I doubt we’ll get this far.)</p>
+<ul class="simple">
+<li><p>Using list comprehension, make a list of all the row labels for which the “pickup_zone” or “dropoff_zone” column contains the substring “Airport”.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Compute the same thing using pandas techniques.</p></li>
+</ul>
+<ul class="simple">
+<li><p>What if we wanted the integer locations instead, rather than the labels?</p></li>
+</ul>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=f42346a9-38b7-480d-97d2-0aec2dde9f8a' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Week4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week4-Monday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 4 Monday</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Worksheet7.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Worksheet 7</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-today">Plan for today</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-dataframe-method-apply">Practice with the DataFrame method <code class="docutils literal notranslate"><span class="pre">apply</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-groupby-and-f-strings">Practice with <code class="docutils literal notranslate"><span class="pre">groupby</span></code> and f-strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-list-comprehension">Practice with list comprehension</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
