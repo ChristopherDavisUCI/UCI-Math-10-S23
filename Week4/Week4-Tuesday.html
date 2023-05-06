@@ -1,0 +1,1857 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 4 Tuesday &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week4/Week4-Tuesday';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 4 Wednesday" href="Week4-Wednesday.html" />
+    <link rel="prev" title="Week 4 Monday" href="Week4-Monday.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week2/Week2-Intro.html">Week 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Friday.html">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet6.html">Worksheet 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week4-Intro.html">Week 4</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Week 4 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Week4-Wednesday.html">Week 4 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Week4-Friday.html">Week 4 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet8.html">Worksheet 8</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week5/Week5-Intro.html">Week 5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Tuesday.html">Week 5 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Wednesday.html">Week 5 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Thursday.html">Week 5 Thursday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Friday.html">Week 5 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Worksheet9.html">Worksheet 9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Worksheet10.html">Worksheet 10</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Week4/Week4-Tuesday.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 4 Tuesday</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-function-examples">lambda function examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-list-comprehension">Practice with list comprehension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-axis">Practice with <code class="docutils literal notranslate"><span class="pre">axis</span></code></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-4-tuesday">
+<h1>Week 4 Tuesday<a class="headerlink" href="#week-4-tuesday" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;spotify_dataset.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>Highest Charting Position</th>
+      <th>Number of Times Charted</th>
+      <th>Week of Highest Charting</th>
+      <th>Song Name</th>
+      <th>Streams</th>
+      <th>Artist</th>
+      <th>Artist Followers</th>
+      <th>Song ID</th>
+      <th>Genre</th>
+      <th>...</th>
+      <th>Danceability</th>
+      <th>Energy</th>
+      <th>Loudness</th>
+      <th>Speechiness</th>
+      <th>Acousticness</th>
+      <th>Liveness</th>
+      <th>Tempo</th>
+      <th>Duration (ms)</th>
+      <th>Valence</th>
+      <th>Chord</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>Beggin'</td>
+      <td>48,633,449</td>
+      <td>Måneskin</td>
+      <td>3377762</td>
+      <td>3Wrjm47oTz2sjIgck11l5e</td>
+      <td>['indie rock italiano', 'italian pop']</td>
+      <td>...</td>
+      <td>0.714</td>
+      <td>0.8</td>
+      <td>-4.808</td>
+      <td>0.0504</td>
+      <td>0.127</td>
+      <td>0.359</td>
+      <td>134.002</td>
+      <td>211560</td>
+      <td>0.589</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>STAY (with Justin Bieber)</td>
+      <td>47,248,719</td>
+      <td>The Kid LAROI</td>
+      <td>2230022</td>
+      <td>5HCyWlXZPP0y6Gqq8TgA20</td>
+      <td>['australian hip hop']</td>
+      <td>...</td>
+      <td>0.591</td>
+      <td>0.764</td>
+      <td>-5.484</td>
+      <td>0.0483</td>
+      <td>0.0383</td>
+      <td>0.103</td>
+      <td>169.928</td>
+      <td>141806</td>
+      <td>0.478</td>
+      <td>C#/Db</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>2021-06-25--2021-07-02</td>
+      <td>good 4 u</td>
+      <td>40,162,559</td>
+      <td>Olivia Rodrigo</td>
+      <td>6266514</td>
+      <td>4ZtFanR9U6ndgddUvNcjcG</td>
+      <td>['pop']</td>
+      <td>...</td>
+      <td>0.563</td>
+      <td>0.664</td>
+      <td>-5.044</td>
+      <td>0.154</td>
+      <td>0.335</td>
+      <td>0.0849</td>
+      <td>166.928</td>
+      <td>178147</td>
+      <td>0.688</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2021-07-02--2021-07-09</td>
+      <td>Bad Habits</td>
+      <td>37,799,456</td>
+      <td>Ed Sheeran</td>
+      <td>83293380</td>
+      <td>6PQ88X9TkUIAUIZJHW2upE</td>
+      <td>['pop', 'uk pop']</td>
+      <td>...</td>
+      <td>0.808</td>
+      <td>0.897</td>
+      <td>-3.712</td>
+      <td>0.0348</td>
+      <td>0.0469</td>
+      <td>0.364</td>
+      <td>126.026</td>
+      <td>231041</td>
+      <td>0.591</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2021-07-23--2021-07-30</td>
+      <td>INDUSTRY BABY (feat. Jack Harlow)</td>
+      <td>33,948,454</td>
+      <td>Lil Nas X</td>
+      <td>5473565</td>
+      <td>27NovPIUIRrOZoCHxABJwK</td>
+      <td>['lgbtq+ hip hop', 'pop rap']</td>
+      <td>...</td>
+      <td>0.736</td>
+      <td>0.704</td>
+      <td>-7.409</td>
+      <td>0.0615</td>
+      <td>0.0203</td>
+      <td>0.0501</td>
+      <td>149.995</td>
+      <td>212000</td>
+      <td>0.894</td>
+      <td>D#/Eb</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+<section id="lambda-function-examples">
+<h2>lambda function examples<a class="headerlink" href="#lambda-function-examples" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In the “Week of Highest Charting” column values, get the first date, for example, if the value is <code class="docutils literal notranslate"><span class="pre">&quot;2021-07-23--2021-07-30&quot;</span></code>, you want to produce <code class="docutils literal notranslate"><span class="pre">&quot;2021-07-23&quot;</span></code>.  Put this in a new column called “Date”.  Use <code class="docutils literal notranslate"><span class="pre">map</span></code> and a lambda function.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;2021-07-23--2021-07-30&quot;</span>
+<span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;2021&#39;, &#39;07&#39;, &#39;23&#39;, &#39;&#39;, &#39;2021&#39;, &#39;07&#39;, &#39;30&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;2021-07-23&#39;, &#39;2021-07-30&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2021-07-23&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Week of Highest Charting&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       2021-07-23
+1       2021-07-23
+2       2021-06-25
+3       2021-07-02
+4       2021-07-23
+           ...    
+1551    2019-12-27
+1552    2019-12-27
+1553    2019-12-27
+1554    2019-12-27
+1555    2019-12-27
+Name: Date, Length: 1556, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Convert the “Date” column to a datetime data type using the pandas function <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Which song has the most genres listed?</p></li>
+</ul>
+<p>Notice: the “Genre” entries” are currently strings and not lists.  Use the <code class="docutils literal notranslate"><span class="pre">literal_eval</span></code> function from the <code class="docutils literal notranslate"><span class="pre">ast</span></code> module.  Some values don’t work, so only apply this to strings starting with <code class="docutils literal notranslate"><span class="pre">&quot;[&quot;</span></code>, and use not-a-number from NumPy for the other values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Genre&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;[&#39;indie rock italiano&#39;, &#39;italian pop&#39;]&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Genre&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;[&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Genre&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span> <span class="c1"># safer than `eval`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">literal_eval</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Genre&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;indie rock italiano&#39;, &#39;italian pop&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Genre&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">literal_eval</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function literal_eval in module ast:
+
+literal_eval(node_or_string)
+    Safely evaluate an expression node or a string containing a Python
+    expression.  The string or node provided may only consist of the following
+    Python literal structures: strings, bytes, numbers, tuples, lists, dicts,
+    sets, booleans, and None.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">literal_eval</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+
+  <span class="n">File</span> <span class="o">/</span><span class="n">shared</span><span class="o">-</span><span class="n">libs</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">py</span><span class="o">-</span><span class="n">core</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">IPython</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">interactiveshell</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">3378</span> <span class="ow">in</span> <span class="n">run_code</span>
+    <span class="n">exec</span><span class="p">(</span><span class="n">code_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_global_ns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_ns</span><span class="p">)</span>
+
+  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">literal_eval</span><span class="p">)</span>
+
+  <span class="n">File</span> <span class="o">/</span><span class="n">shared</span><span class="o">-</span><span class="n">libs</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">py</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">series</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">3909</span> <span class="ow">in</span> <span class="nb">map</span>
+    <span class="n">new_values</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_map_values</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="n">na_action</span><span class="p">)</span>
+
+  <span class="n">File</span> <span class="o">/</span><span class="n">shared</span><span class="o">-</span><span class="n">libs</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">py</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">base</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">937</span> <span class="ow">in</span> <span class="n">_map_values</span>
+    <span class="n">new_values</span> <span class="o">=</span> <span class="n">map_f</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mapper</span><span class="p">)</span>
+
+  <span class="n">File</span> <span class="n">pandas</span><span class="o">/</span><span class="n">_libs</span><span class="o">/</span><span class="n">lib</span><span class="o">.</span><span class="n">pyx</span><span class="p">:</span><span class="mi">2467</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">map_infer</span>
+
+  <span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">ast</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">62</span> <span class="ow">in</span> <span class="n">literal_eval</span>
+    <span class="n">node_or_string</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="n">node_or_string</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;eval&#39;</span><span class="p">)</span>
+
+  <span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">ast</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">50</span> <span class="ow">in</span> <span class="n">parse</span>
+    <span class="k">return</span> <span class="nb">compile</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span>
+
+  <span class="n">File</span> <span class="o">&lt;</span><span class="n">unknown</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span>
+    
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unexpected EOF while parsing
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">literal_eval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0                [indie rock italiano, italian pop]
+1                              [australian hip hop]
+2                                             [pop]
+3                                     [pop, uk pop]
+4                         [lgbtq+ hip hop, pop rap]
+                           ...                     
+1551                       [dance pop, pop, uk pop]
+1552           [sertanejo, sertanejo universitario]
+1553    [dance pop, electropop, pop, post-teen pop]
+1554                     [brega funk, funk carioca]
+1555                           [pop, post-teen pop]
+Name: Genre, Length: 1556, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre Length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0                  [&#39;indie rock italiano&#39;, &#39;italian pop&#39;]
+1                                  [&#39;australian hip hop&#39;]
+2                                                 [&#39;pop&#39;]
+3                                       [&#39;pop&#39;, &#39;uk pop&#39;]
+4                           [&#39;lgbtq+ hip hop&#39;, &#39;pop rap&#39;]
+                              ...                        
+1551                       [&#39;dance pop&#39;, &#39;pop&#39;, &#39;uk pop&#39;]
+1552             [&#39;sertanejo&#39;, &#39;sertanejo universitario&#39;]
+1553    [&#39;dance pop&#39;, &#39;electropop&#39;, &#39;pop&#39;, &#39;post-teen ...
+1554                       [&#39;brega funk&#39;, &#39;funk carioca&#39;]
+1555                             [&#39;pop&#39;, &#39;post-teen pop&#39;]
+Name: Genre, Length: 1556, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre Length&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       2.0
+1       1.0
+2       1.0
+3       2.0
+4       2.0
+       ... 
+1551    3.0
+1552    2.0
+1553    4.0
+1554    2.0
+1555    2.0
+Name: Genre Length, Length: 1556, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre Length&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">44</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index                                                                       45
+Highest Charting Position                                                    9
+Number of Times Charted                                                     39
+Week of Highest Charting                                2021-02-26--2021-03-05
+Song Name                                                         The Business
+Streams                                                             10,739,770
+Artist                                                                  Tiësto
+Artist Followers                                                       5785065
+Song ID                                                 6f3Slt0GbA2bPZlz0aIFXN
+Genre                        [&#39;big room&#39;, &#39;brostep&#39;, &#39;dance pop&#39;, &#39;dutch ed...
+Release Date                                                        2020-09-16
+Weeks Charted                2021-07-23--2021-07-30\n2021-07-16--2021-07-23...
+Popularity                                                                  90
+Danceability                                                             0.798
+Energy                                                                    0.62
+Loudness                                                                -7.079
+Speechiness                                                              0.232
+Acousticness                                                             0.414
+Liveness                                                                 0.112
+Tempo                                                                  120.031
+Duration (ms)                                                           164000
+Valence                                                                  0.235
+Chord                                                                    G#/Ab
+Date                                                       2021-02-26 00:00:00
+Genre Lengths                                                             11.0
+Genre Length                                                              11.0
+Name: 44, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">44</span><span class="p">][</span><span class="s2">&quot;Genre&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;[&#39;big room&#39;, &#39;brostep&#39;, &#39;dance pop&#39;, &#39;dutch edm&#39;, &#39;edm&#39;, &#39;electro house&#39;, &#39;house&#39;, &#39;pop dance&#39;, &#39;slap house&#39;, &#39;trance&#39;, &#39;tropical house&#39;]&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">44</span><span class="p">][</span><span class="s2">&quot;Genre Lengths&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-with-list-comprehension">
+<h2>Practice with list comprehension<a class="headerlink" href="#practice-with-list-comprehension" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Using list comprehension, make a list of all the row labels for which the “Date” value is in April.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check: no repeated labels</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">is_unique</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># approach 1</span>
+<span class="n">date_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">ind</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">month</span> <span class="o">==</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">date_list</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[13, 17, 29, 30, 36]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># approach 2</span>
+<span class="n">date_list2</span> <span class="o">=</span> <span class="p">[</span><span class="n">ind</span> <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">mnth</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">mnth</span> <span class="o">==</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">date_list2</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[13, 17, 29, 30, 36]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># non-list comprehension approach</span>
+<span class="n">date_index</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span> <span class="o">==</span> <span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+<span class="n">date_index</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([13, 17, 29, 30, 36], dtype=&#39;int64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>What are all the genres occuring in the “Genre” column?  Remove duplicates by using set comprehension instead of list comprehension (just replace the square brackets with curly brackets).  You will have to remove missing values.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre Lists&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">literal_eval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">genre_series</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre Lists&quot;</span><span class="p">][</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Genre Lists&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">genre</span> <span class="k">for</span> <span class="n">genre_list</span> <span class="ow">in</span> <span class="n">genre_series</span> <span class="k">for</span> <span class="n">genre</span> <span class="ow">in</span> <span class="n">genre_list</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a cappella&#39;,
+ &#39;acoustic pop&#39;,
+ &#39;adult standards&#39;,
+ &#39;afrofuturism&#39;,
+ &#39;afroswing&#39;,
+ &#39;albanian hip hop&#39;,
+ &#39;album rock&#39;,
+ &#39;alt z&#39;,
+ &#39;alternative metal&#39;,
+ &#39;alternative pop rock&#39;,
+ &#39;alternative r&amp;b&#39;,
+ &#39;american folk revival&#39;,
+ &#39;argentine hip hop&#39;,
+ &#39;art pop&#39;,
+ &#39;art rock&#39;,
+ &#39;atl hip hop&#39;,
+ &#39;atl trap&#39;,
+ &#39;aussietronica&#39;,
+ &#39;australian dance&#39;,
+ &#39;australian hip hop&#39;,
+ &#39;australian pop&#39;,
+ &#39;australian psych&#39;,
+ &#39;australian rock&#39;,
+ &#39;banda&#39;,
+ &#39;basshall&#39;,
+ &#39;beatlesque&#39;,
+ &#39;bedroom pop&#39;,
+ &#39;bedroom soul&#39;,
+ &#39;belgian hip hop&#39;,
+ &#39;big room&#39;,
+ &#39;boston hip hop&#39;,
+ &#39;boy band&#39;,
+ &#39;brazilian hip hop&#39;,
+ &#39;brega funk&#39;,
+ &#39;brill building pop&#39;,
+ &#39;british soul&#39;,
+ &#39;britpop&#39;,
+ &#39;brooklyn drill&#39;,
+ &#39;brostep&#39;,
+ &#39;bubblegrunge&#39;,
+ &#39;cali rap&#39;,
+ &#39;canadian contemporary r&amp;b&#39;,
+ &#39;canadian hip hop&#39;,
+ &#39;canadian latin&#39;,
+ &#39;canadian pop&#39;,
+ &#39;canadian trap&#39;,
+ &#39;celtic&#39;,
+ &#39;celtic punk&#39;,
+ &#39;celtic rock&#39;,
+ &#39;champeta&#39;,
+ &#39;chicago drill&#39;,
+ &#39;chicago indie&#39;,
+ &#39;chicago rap&#39;,
+ &#39;chicago soul&#39;,
+ &#39;chill r&amp;b&#39;,
+ &#39;christlicher rap&#39;,
+ &#39;classic rock&#39;,
+ &#39;classic soul&#39;,
+ &#39;classic uk pop&#39;,
+ &#39;colombian pop&#39;,
+ &#39;comic&#39;,
+ &#39;conscious hip hop&#39;,
+ &#39;contemporary country&#39;,
+ &#39;corrido&#39;,
+ &#39;country&#39;,
+ &#39;country road&#39;,
+ &#39;country rock&#39;,
+ &#39;cubaton&#39;,
+ &#39;cumbia pop&#39;,
+ &#39;dance pop&#39;,
+ &#39;dance rock&#39;,
+ &#39;deep euro house&#39;,
+ &#39;deep german hip hop&#39;,
+ &#39;deep house&#39;,
+ &#39;deep underground hip hop&#39;,
+ &#39;dembow&#39;,
+ &#39;detroit hip hop&#39;,
+ &#39;dfw rap&#39;,
+ &#39;disco&#39;,
+ &#39;dmv rap&#39;,
+ &#39;dominican pop&#39;,
+ &#39;dream smp&#39;,
+ &#39;dreamo&#39;,
+ &#39;drill&#39;,
+ &#39;dutch edm&#39;,
+ &#39;dutch pop&#39;,
+ &#39;east coast hip hop&#39;,
+ &#39;easy listening&#39;,
+ &#39;eau claire indie&#39;,
+ &#39;edm&#39;,
+ &#39;electro house&#39;,
+ &#39;electro latino&#39;,
+ &#39;electronic trap&#39;,
+ &#39;electropop&#39;,
+ &#39;emo rap&#39;,
+ &#39;escape room&#39;,
+ &#39;etherpop&#39;,
+ &#39;eurodance&#39;,
+ &#39;europop&#39;,
+ &#39;eurovision&#39;,
+ &#39;florida rap&#39;,
+ &#39;folk punk&#39;,
+ &#39;folk rock&#39;,
+ &#39;folk-pop&#39;,
+ &#39;folktronica&#39;,
+ &#39;forro&#39;,
+ &#39;francoton&#39;,
+ &#39;frauenrap&#39;,
+ &#39;french hip hop&#39;,
+ &#39;funk&#39;,
+ &#39;funk 150 bpm&#39;,
+ &#39;funk bh&#39;,
+ &#39;funk carioca&#39;,
+ &#39;funk ostentacao&#39;,
+ &#39;funk paulista&#39;,
+ &#39;funk pop&#39;,
+ &#39;gangster rap&#39;,
+ &#39;garage rock&#39;,
+ &#39;gauze pop&#39;,
+ &#39;german alternative rap&#39;,
+ &#39;german cloud rap&#39;,
+ &#39;german dance&#39;,
+ &#39;german drill&#39;,
+ &#39;german hip hop&#39;,
+ &#39;german pop&#39;,
+ &#39;german techno&#39;,
+ &#39;german trance&#39;,
+ &#39;german trap&#39;,
+ &#39;german underground rap&#39;,
+ &#39;girl group&#39;,
+ &#39;glam rock&#39;,
+ &#39;grime&#39;,
+ &#39;grunge&#39;,
+ &#39;hamburg hip hop&#39;,
+ &#39;hard rock&#39;,
+ &#39;hardcore hip hop&#39;,
+ &#39;heartland rock&#39;,
+ &#39;hip hop&#39;,
+ &#39;hip pop&#39;,
+ &#39;hollywood&#39;,
+ &#39;house&#39;,
+ &#39;houston rap&#39;,
+ &#39;icelandic pop&#39;,
+ &#39;indie cafe pop&#39;,
+ &#39;indie pop&#39;,
+ &#39;indie pop rap&#39;,
+ &#39;indie poptimism&#39;,
+ &#39;indie r&amp;b&#39;,
+ &#39;indie rock italiano&#39;,
+ &#39;indie rockism&#39;,
+ &#39;indie surf&#39;,
+ &#39;indietronica&#39;,
+ &#39;indonesian pop&#39;,
+ &#39;irish folk&#39;,
+ &#39;irish singer-songwriter&#39;,
+ &#39;italian adult pop&#39;,
+ &#39;italian hip hop&#39;,
+ &#39;italian indie pop&#39;,
+ &#39;italian pop&#39;,
+ &#39;italian pop rock&#39;,
+ &#39;jawaiian&#39;,
+ &#39;jazz funk&#39;,
+ &#39;jazz pop&#39;,
+ &#39;k-pop&#39;,
+ &#39;k-pop boy group&#39;,
+ &#39;k-pop girl group&#39;,
+ &#39;k-rap&#39;,
+ &#39;kentucky hip hop&#39;,
+ &#39;latin&#39;,
+ &#39;latin hip hop&#39;,
+ &#39;latin pop&#39;,
+ &#39;latin viral pop&#39;,
+ &#39;lgbtq+ hip hop&#39;,
+ &#39;london rap&#39;,
+ &#39;lounge&#39;,
+ &#39;madchester&#39;,
+ &#39;mariachi&#39;,
+ &#39;melanesian pop&#39;,
+ &#39;mellow gold&#39;,
+ &#39;melodic metalcore&#39;,
+ &#39;melodic rap&#39;,
+ &#39;meme rap&#39;,
+ &#39;memphis hip hop&#39;,
+ &#39;metalcore&#39;,
+ &#39;metropopolis&#39;,
+ &#39;mexican hip hop&#39;,
+ &#39;miami hip hop&#39;,
+ &#39;minnesota hip hop&#39;,
+ &#39;modern alternative rock&#39;,
+ &#39;modern country rock&#39;,
+ &#39;modern indie pop&#39;,
+ &#39;modern rock&#39;,
+ &#39;moombahton&#39;,
+ &#39;motown&#39;,
+ &#39;musical advocacy&#39;,
+ &#39;neo mellow&#39;,
+ &#39;neo soul&#39;,
+ &#39;neo-psychedelic&#39;,
+ &#39;new french touch&#39;,
+ &#39;new orleans rap&#39;,
+ &#39;new romantic&#39;,
+ &#39;new wave&#39;,
+ &#39;new wave pop&#39;,
+ &#39;norteno&#39;,
+ &#39;north carolina hip hop&#39;,
+ &#39;norwegian pop&#39;,
+ &#39;nouvelle chanson francaise&#39;,
+ &#39;nu metal&#39;,
+ &#39;nuevo regional mexicano&#39;,
+ &#39;nyc pop&#39;,
+ &#39;nyc rap&#39;,
+ &#39;nz pop&#39;,
+ &#39;oakland hip hop&#39;,
+ &#39;ohio hip hop&#39;,
+ &#39;old school rap francais&#39;,
+ &#39;oulu metal&#39;,
+ &#39;pacific islands pop&#39;,
+ &#39;pagode baiano&#39;,
+ &#39;panamanian pop&#39;,
+ &#39;permanent wave&#39;,
+ &#39;perreo&#39;,
+ &#39;philly rap&#39;,
+ &#39;piano rock&#39;,
+ &#39;piseiro&#39;,
+ &#39;pittsburgh rap&#39;,
+ &#39;plugg&#39;,
+ &#39;png pop&#39;,
+ &#39;pop&#39;,
+ &#39;pop argentino&#39;,
+ &#39;pop dance&#39;,
+ &#39;pop edm&#39;,
+ &#39;pop house&#39;,
+ &#39;pop nacional&#39;,
+ &#39;pop r&amp;b&#39;,
+ &#39;pop rap&#39;,
+ &#39;pop reggaeton&#39;,
+ &#39;pop rock&#39;,
+ &#39;pop soul&#39;,
+ &#39;pop urbaine&#39;,
+ &#39;pop venezolano&#39;,
+ &#39;post-grunge&#39;,
+ &#39;post-teen pop&#39;,
+ &#39;progressive electro house&#39;,
+ &#39;progressive house&#39;,
+ &#39;puerto rican pop&#39;,
+ &#39;punk&#39;,
+ &#39;queens hip hop&#39;,
+ &#39;quiet storm&#39;,
+ &#39;r&amp;b&#39;,
+ &#39;r&amp;b brasileiro&#39;,
+ &#39;r&amp;b en espanol&#39;,
+ &#39;ranchera&#39;,
+ &#39;rap&#39;,
+ &#39;rap belge&#39;,
+ &#39;rap cearense&#39;,
+ &#39;rap conciencia&#39;,
+ &#39;rap conscient&#39;,
+ &#39;rap dominicano&#39;,
+ &#39;rap francais&#39;,
+ &#39;rap latina&#39;,
+ &#39;rap marseille&#39;,
+ &#39;rap metal&#39;,
+ &#39;rave funk&#39;,
+ &#39;reggaeton&#39;,
+ &#39;reggaeton colombiano&#39;,
+ &#39;reggaeton flow&#39;,
+ &#39;regional mexican&#39;,
+ &#39;rhode island rap&#39;,
+ &#39;rock&#39;,
+ &#39;rock-and-roll&#39;,
+ &#39;rockabilly&#39;,
+ &#39;sad rap&#39;,
+ &#39;scandipop&#39;,
+ &#39;seattle hip hop&#39;,
+ &#39;sertanejo&#39;,
+ &#39;sertanejo pop&#39;,
+ &#39;sertanejo universitario&#39;,
+ &#39;sheffield indie&#39;,
+ &#39;shiver pop&#39;,
+ &#39;show tunes&#39;,
+ &#39;singer-songwriter&#39;,
+ &#39;slap house&#39;,
+ &#39;social media pop&#39;,
+ &#39;soft rock&#39;,
+ &#39;soul&#39;,
+ &#39;soundtrack&#39;,
+ &#39;south african house&#39;,
+ &#39;southern hip hop&#39;,
+ &#39;southern soul&#39;,
+ &#39;sudanese pop&#39;,
+ &#39;sunnlensk tonlist&#39;,
+ &#39;surf punk&#39;,
+ &#39;swedish pop&#39;,
+ &#39;swing&#39;,
+ &#39;synthpop&#39;,
+ &#39;talent show&#39;,
+ &#39;tekk&#39;,
+ &#39;tennessee hip hop&#39;,
+ &#39;torch song&#39;,
+ &#39;toronto rap&#39;,
+ &#39;trance&#39;,
+ &#39;trancecore&#39;,
+ &#39;trap&#39;,
+ &#39;trap argentino&#39;,
+ &#39;trap boricua&#39;,
+ &#39;trap brasileiro&#39;,
+ &#39;trap chileno&#39;,
+ &#39;trap italiana&#39;,
+ &#39;trap latino&#39;,
+ &#39;trap queen&#39;,
+ &#39;trap soul&#39;,
+ &#39;trap triste&#39;,
+ &#39;tropical house&#39;,
+ &#39;turkish trap&#39;,
+ &#39;uk alternative hip hop&#39;,
+ &#39;uk alternative pop&#39;,
+ &#39;uk dance&#39;,
+ &#39;uk funky&#39;,
+ &#39;uk hip hop&#39;,
+ &#39;uk metalcore&#39;,
+ &#39;uk pop&#39;,
+ &#39;underground hip hop&#39;,
+ &#39;urban contemporary&#39;,
+ &#39;urbano espanol&#39;,
+ &#39;vancouver indie&#39;,
+ &#39;vapor trap&#39;,
+ &#39;vegas indie&#39;,
+ &#39;venezuelan hip hop&#39;,
+ &#39;viral pop&#39;,
+ &#39;viral rap&#39;,
+ &#39;vocal jazz&#39;,
+ &#39;weirdcore&#39;,
+ &#39;west coast rap&#39;,
+ &#39;yacht rock&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-with-axis">
+<h2>Practice with <code class="docutils literal notranslate"><span class="pre">axis</span></code><a class="headerlink" href="#practice-with-axis" title="Permalink to this heading">#</a></h2>
+<p>Reminder:</p>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument indicates which <code class="docutils literal notranslate"><span class="pre">axis</span></code> labels are (potentially) changing. If the row labels could change, then we use <code class="docutils literal notranslate"><span class="pre">axis=0</span></code>. If the column labels could change, then we use <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">]})</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+<span class="n">df1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>-11</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Can you predict what the following will do?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df1.sum(axis=0)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    10
+B     9
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df1.min(axis=1)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     2
+1     3
+2   -11
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.concat([df1,</span> <span class="pre">df2],</span> <span class="pre">axis=0)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>-11</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>-1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.concat([df1,</span> <span class="pre">df2],</span> <span class="pre">axis=1)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>7</td>
+      <td>-1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>13</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>-11</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Define <code class="docutils literal notranslate"><span class="pre">df3</span> <span class="pre">=</span> <span class="pre">pd.concat([df1,</span> <span class="pre">df2],</span> <span class="pre">axis=0)</span></code>.  What are the following?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df3.apply(lambda</span> <span class="pre">ser:</span> <span class="pre">ser.idxmin(),</span> <span class="pre">axis=0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df3.apply(lambda</span> <span class="pre">ser:</span> <span class="pre">ser.argmin(),</span> <span class="pre">axis=0)</span></code>
+(I was surprised that <code class="docutils literal notranslate"><span class="pre">df3.argmin(axis=0)</span></code> didn’t work as an abbreviation for this last one.)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>-11</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>-1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ser</span><span class="p">:</span> <span class="n">ser</span><span class="o">.</span><span class="n">idxmin</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    0
+B    2
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ser</span><span class="p">:</span> <span class="n">ser</span><span class="o">.</span><span class="n">argmin</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    3
+B    2
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">idxmin</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    0
+B    2
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>7</td>
+      <td>-1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>13</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>-11</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Week4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week4-Monday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 4 Monday</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Week4-Wednesday.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 4 Wednesday</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-function-examples">lambda function examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-list-comprehension">Practice with list comprehension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-axis">Practice with <code class="docutils literal notranslate"><span class="pre">axis</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
