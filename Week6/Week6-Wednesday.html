@@ -1,0 +1,2867 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 6 Wednesday &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week6/Week6-Wednesday';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Worksheet 11" href="Worksheet11.html" />
+    <link rel="prev" title="Week 6 Monday" href="Week6-Monday.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week2/Week2-Intro.html">Week 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Friday.html">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet6.html">Worksheet 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week4/Week4-Intro.html">Week 4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Tuesday.html">Week 4 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Wednesday.html">Week 4 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Friday.html">Week 4 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Worksheet8.html">Worksheet 8</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week5/Week5-Intro.html">Week 5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Tuesday.html">Week 5 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Wednesday.html">Week 5 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Thursday.html">Week 5 Thursday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Friday.html">Week 5 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Worksheet9.html">Worksheet 9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Worksheet10.html">Worksheet 10</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week6-Intro.html">Week 6</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Week6-Monday.html">Week 6 Monday</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Week 6 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet11.html">Worksheet 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet12.html">Worksheet 12</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Week6/Week6-Wednesday.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 6 Wednesday</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-polynomial-regression">More on polynomial regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-random-data">Generating random data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression-using-polynomialfeatures">Polynomial regression using <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pipeline-to-combine-multiple-steps">Using <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> to combine multiple steps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-time">Extra time</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-6-wednesday">
+<h1>Week 6 Wednesday<a class="headerlink" href="#week-6-wednesday" title="Permalink to this heading">#</a></h1>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Midterm scores were high (mean 86%!) so there won’t be any curving.</p></li>
+<li><p>Friday office hours are cancelled this week, will have office hours on Monday before lecture instead.</p></li>
+<li><p>Guest lecture by Prof. Peijie Zhou on Friday.  Professor Zhou will introduce our first example of a machine learning algorithm for <strong>classification</strong>: logistic regression.  (Confusing: even though “regression” is in the name, logistic regression is not an algorithm for regression, it’s an algorithm for classification.)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-on-polynomial-regression">
+<h2>More on polynomial regression<a class="headerlink" href="#more-on-polynomial-regression" title="Permalink to this heading">#</a></h2>
+<p>Let’s go more slowly through the material from the end of class on Monday.</p>
+<section id="generating-random-data">
+<h3>Generating random data<a class="headerlink" href="#generating-random-data" title="Permalink to this heading">#</a></h3>
+<p>Here we make some data that follows a random polynomial.  Can we use scikit-learn to estimate the underlying polynomial?</p>
+<p>Here are some comments about the code:</p>
+<ul class="simple">
+<li><p>It’s written so that if you change <code class="docutils literal notranslate"><span class="pre">deg</span></code> to another integer, the rest should work the same.</p></li>
+<li><p>The “y_true” column values follow a degree 3 polynomial exactly.</p></li>
+<li><p>The “y” column values are obtained by adding random noise to the “y_true” values.</p></li>
+<li><p>We use two different <code class="docutils literal notranslate"><span class="pre">size</span></code> keyword arguments, one for getting the coefficients, and one for getting a different random value for each row in the DataFrame.</p></li>
+<li><p>It’s better to use normally distributed random values, rather than uniformly distributed values in [0,1], so that the data points are not all within a band of width 1 from the true polynomial.</p></li>
+<li><p>In general in Python, if you find yourself writing <code class="docutils literal notranslate"><span class="pre">range(len(???))</span></code>, you’re probably not writing your code in a “Pythonic” way.  We will see an elegant way to replace <code class="docutils literal notranslate"><span class="pre">range(len(???))</span></code> below.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deg</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">27</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">deg</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;y_true&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)):</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y_true&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">**</span><span class="n">i</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y_true&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-5  1 -3 -2]
+</pre></div>
+</div>
+</div>
+</div>
+<p>At the end of that process, here is how <code class="docutils literal notranslate"><span class="pre">df</span></code> looks.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y_true</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-3.000000e+00</td>
+      <td>19.000</td>
+      <td>23.824406</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-2.900000e+00</td>
+      <td>15.648</td>
+      <td>10.237108</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-2.800000e+00</td>
+      <td>12.584</td>
+      <td>16.919087</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-2.700000e+00</td>
+      <td>9.796</td>
+      <td>8.955196</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-2.600000e+00</td>
+      <td>7.272</td>
+      <td>6.323695</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-2.500000e+00</td>
+      <td>5.000</td>
+      <td>10.602832</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-2.400000e+00</td>
+      <td>2.968</td>
+      <td>0.784105</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-2.300000e+00</td>
+      <td>1.164</td>
+      <td>-5.234227</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-2.200000e+00</td>
+      <td>-0.424</td>
+      <td>-2.771499</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-2.100000e+00</td>
+      <td>-1.808</td>
+      <td>-7.792136</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-2.000000e+00</td>
+      <td>-3.000</td>
+      <td>-12.199286</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-1.900000e+00</td>
+      <td>-4.012</td>
+      <td>-4.739785</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-1.800000e+00</td>
+      <td>-4.856</td>
+      <td>-2.864605</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-1.700000e+00</td>
+      <td>-5.544</td>
+      <td>-16.354306</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-1.600000e+00</td>
+      <td>-6.088</td>
+      <td>-6.015613</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>-1.500000e+00</td>
+      <td>-6.500</td>
+      <td>-5.224009</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-1.400000e+00</td>
+      <td>-6.792</td>
+      <td>-5.926045</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>-1.300000e+00</td>
+      <td>-6.976</td>
+      <td>-13.326468</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>-1.200000e+00</td>
+      <td>-7.064</td>
+      <td>-8.618807</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>-1.100000e+00</td>
+      <td>-7.068</td>
+      <td>-7.999078</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>-1.000000e+00</td>
+      <td>-7.000</td>
+      <td>-4.835120</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>-9.000000e-01</td>
+      <td>-6.872</td>
+      <td>-13.308757</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>-8.000000e-01</td>
+      <td>-6.696</td>
+      <td>-4.778936</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>-7.000000e-01</td>
+      <td>-6.484</td>
+      <td>-1.524600</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>-6.000000e-01</td>
+      <td>-6.248</td>
+      <td>-17.686227</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-5.000000e-01</td>
+      <td>-6.000</td>
+      <td>-4.880304</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>-4.000000e-01</td>
+      <td>-5.752</td>
+      <td>-13.385067</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>-3.000000e-01</td>
+      <td>-5.516</td>
+      <td>-6.368335</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>-2.000000e-01</td>
+      <td>-5.304</td>
+      <td>-8.704742</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>-1.000000e-01</td>
+      <td>-5.128</td>
+      <td>1.240175</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>2.664535e-15</td>
+      <td>-5.000</td>
+      <td>-4.714457</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1.000000e-01</td>
+      <td>-4.932</td>
+      <td>-0.955557</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>2.000000e-01</td>
+      <td>-4.936</td>
+      <td>-10.169895</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>3.000000e-01</td>
+      <td>-5.024</td>
+      <td>-2.721364</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>4.000000e-01</td>
+      <td>-5.208</td>
+      <td>1.903864</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>5.000000e-01</td>
+      <td>-5.500</td>
+      <td>-9.036285</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>6.000000e-01</td>
+      <td>-5.912</td>
+      <td>-2.582631</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>7.000000e-01</td>
+      <td>-6.456</td>
+      <td>-4.049151</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>8.000000e-01</td>
+      <td>-7.144</td>
+      <td>-7.467370</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>9.000000e-01</td>
+      <td>-7.988</td>
+      <td>-14.245467</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1.000000e+00</td>
+      <td>-9.000</td>
+      <td>-7.584490</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>1.100000e+00</td>
+      <td>-10.192</td>
+      <td>-11.543440</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>1.200000e+00</td>
+      <td>-11.576</td>
+      <td>-8.565901</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>1.300000e+00</td>
+      <td>-13.164</td>
+      <td>-9.269588</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>1.400000e+00</td>
+      <td>-14.968</td>
+      <td>-7.295300</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>1.500000e+00</td>
+      <td>-17.000</td>
+      <td>-21.182783</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>1.600000e+00</td>
+      <td>-19.272</td>
+      <td>-14.946791</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>1.700000e+00</td>
+      <td>-21.796</td>
+      <td>-18.291899</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>1.800000e+00</td>
+      <td>-24.584</td>
+      <td>-24.206884</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>1.900000e+00</td>
+      <td>-27.648</td>
+      <td>-24.589037</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Aside: If you are using <code class="docutils literal notranslate"><span class="pre">range(len(???))</span></code> in Python, there is almost always a more elegant way to accomplish the same thing.</p>
+<ul class="simple">
+<li><p>Rewrite the code above using <code class="docutils literal notranslate"><span class="pre">enumerate(m)</span></code> instead of <code class="docutils literal notranslate"><span class="pre">range(len(m))</span></code>.</p></li>
+</ul>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">m</span></code> holds the four randomly chosen coefficients for our true polynomial.  Why couldn’t we use just <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">c</span> <span class="pre">in</span> <span class="pre">m:</span></code> above?  Because we needed to know both the value in <code class="docutils literal notranslate"><span class="pre">m</span></code> and its index.  For example, we needed to know that <code class="docutils literal notranslate"><span class="pre">-3</span></code> corresponded to the <code class="docutils literal notranslate"><span class="pre">x**2</span></code> column (<code class="docutils literal notranslate"><span class="pre">m[2]</span></code> is <code class="docutils literal notranslate"><span class="pre">-3</span></code>).</p>
+<p>This is such a common pattern in Python, that a function is provided to help accomplish this, called <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.  When we iterate through <code class="docutils literal notranslate"><span class="pre">enumerate(m)</span></code>, pairs of elements are returned: the index, and the value.  For example in our case <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">[-5,</span>&#160; <span class="pre">1,</span> <span class="pre">-3,</span> <span class="pre">-2]</span></code>, and so the initial pair returned will be <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">-5)</span></code>, the next pair will be <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1)</span></code>, the next pair will be <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">-3)</span></code>, and the last pair will be <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">-2)</span></code>.  We assign the values in these pairs to <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code>, respectively.</p>
+<p>If this <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> is confusing, don’t focus too much on it, it’s a Python topic, not a Data Science or Machine Learning topic, but I wanted to show it because it leads to more elegant code in this case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deg</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">27</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">deg</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;y_true&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y_true&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">c</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">**</span><span class="n">i</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y_true&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-5  1 -3 -2]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we check that the resulting DataFrame looks the same.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y_true</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-3.000000e+00</td>
+      <td>19.000</td>
+      <td>23.824406</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-2.900000e+00</td>
+      <td>15.648</td>
+      <td>10.237108</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-2.800000e+00</td>
+      <td>12.584</td>
+      <td>16.919087</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-2.700000e+00</td>
+      <td>9.796</td>
+      <td>8.955196</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-2.600000e+00</td>
+      <td>7.272</td>
+      <td>6.323695</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-2.500000e+00</td>
+      <td>5.000</td>
+      <td>10.602832</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-2.400000e+00</td>
+      <td>2.968</td>
+      <td>0.784105</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-2.300000e+00</td>
+      <td>1.164</td>
+      <td>-5.234227</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-2.200000e+00</td>
+      <td>-0.424</td>
+      <td>-2.771499</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-2.100000e+00</td>
+      <td>-1.808</td>
+      <td>-7.792136</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-2.000000e+00</td>
+      <td>-3.000</td>
+      <td>-12.199286</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-1.900000e+00</td>
+      <td>-4.012</td>
+      <td>-4.739785</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-1.800000e+00</td>
+      <td>-4.856</td>
+      <td>-2.864605</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-1.700000e+00</td>
+      <td>-5.544</td>
+      <td>-16.354306</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-1.600000e+00</td>
+      <td>-6.088</td>
+      <td>-6.015613</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>-1.500000e+00</td>
+      <td>-6.500</td>
+      <td>-5.224009</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-1.400000e+00</td>
+      <td>-6.792</td>
+      <td>-5.926045</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>-1.300000e+00</td>
+      <td>-6.976</td>
+      <td>-13.326468</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>-1.200000e+00</td>
+      <td>-7.064</td>
+      <td>-8.618807</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>-1.100000e+00</td>
+      <td>-7.068</td>
+      <td>-7.999078</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>-1.000000e+00</td>
+      <td>-7.000</td>
+      <td>-4.835120</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>-9.000000e-01</td>
+      <td>-6.872</td>
+      <td>-13.308757</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>-8.000000e-01</td>
+      <td>-6.696</td>
+      <td>-4.778936</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>-7.000000e-01</td>
+      <td>-6.484</td>
+      <td>-1.524600</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>-6.000000e-01</td>
+      <td>-6.248</td>
+      <td>-17.686227</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-5.000000e-01</td>
+      <td>-6.000</td>
+      <td>-4.880304</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>-4.000000e-01</td>
+      <td>-5.752</td>
+      <td>-13.385067</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>-3.000000e-01</td>
+      <td>-5.516</td>
+      <td>-6.368335</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>-2.000000e-01</td>
+      <td>-5.304</td>
+      <td>-8.704742</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>-1.000000e-01</td>
+      <td>-5.128</td>
+      <td>1.240175</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>2.664535e-15</td>
+      <td>-5.000</td>
+      <td>-4.714457</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1.000000e-01</td>
+      <td>-4.932</td>
+      <td>-0.955557</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>2.000000e-01</td>
+      <td>-4.936</td>
+      <td>-10.169895</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>3.000000e-01</td>
+      <td>-5.024</td>
+      <td>-2.721364</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>4.000000e-01</td>
+      <td>-5.208</td>
+      <td>1.903864</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>5.000000e-01</td>
+      <td>-5.500</td>
+      <td>-9.036285</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>6.000000e-01</td>
+      <td>-5.912</td>
+      <td>-2.582631</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>7.000000e-01</td>
+      <td>-6.456</td>
+      <td>-4.049151</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>8.000000e-01</td>
+      <td>-7.144</td>
+      <td>-7.467370</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>9.000000e-01</td>
+      <td>-7.988</td>
+      <td>-14.245467</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1.000000e+00</td>
+      <td>-9.000</td>
+      <td>-7.584490</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>1.100000e+00</td>
+      <td>-10.192</td>
+      <td>-11.543440</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>1.200000e+00</td>
+      <td>-11.576</td>
+      <td>-8.565901</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>1.300000e+00</td>
+      <td>-13.164</td>
+      <td>-9.269588</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>1.400000e+00</td>
+      <td>-14.968</td>
+      <td>-7.295300</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>1.500000e+00</td>
+      <td>-17.000</td>
+      <td>-21.182783</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>1.600000e+00</td>
+      <td>-19.272</td>
+      <td>-14.946791</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>1.700000e+00</td>
+      <td>-21.796</td>
+      <td>-18.291899</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>1.800000e+00</td>
+      <td>-24.584</td>
+      <td>-24.206884</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>1.900000e+00</td>
+      <td>-27.648</td>
+      <td>-24.589037</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Here is what the data looks like.</p></li>
+</ul>
+<p>Based on the values in <code class="docutils literal notranslate"><span class="pre">m</span></code> above, we know these points are approximately following the curve <span class="math notranslate nohighlight">\(y = -2x^3 - 3x^2 + x - 5\)</span>.  For example, because the leading coefficient is negative, we know the outputs should be getting more negative as <code class="docutils literal notranslate"><span class="pre">x</span></code> increases, which seems to match what we see in the plotted data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span>
+<span class="p">)</span>
+
+<span class="n">c1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-7f12f02275fe455b9ce9a7bc0db1bb46"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-7f12f02275fe455b9ce9a7bc0db1bb46") {
+      outputDiv = document.getElementById("altair-viz-7f12f02275fe455b9ce9a7bc0db1bb46");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-dae704ec33fdd0f59cc04c6673678175"}, "mark": "circle", "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-dae704ec33fdd0f59cc04c6673678175": [{"x": -3.0, "y_true": 19.0, "y": 23.824405650704584}, {"x": -2.9, "y_true": 15.647999999999996, "y": 10.237108055098796}, {"x": -2.8, "y_true": 12.583999999999993, "y": 16.91908679057319}, {"x": -2.6999999999999997, "y_true": 9.795999999999992, "y": 8.955196204317206}, {"x": -2.5999999999999996, "y_true": 7.271999999999991, "y": 6.323695104370164}, {"x": -2.4999999999999996, "y_true": 4.999999999999989, "y": 10.602832278036008}, {"x": -2.3999999999999995, "y_true": 2.967999999999993, "y": 0.7841046813223418}, {"x": -2.2999999999999994, "y_true": 1.1639999999999908, "y": -5.234226812329393}, {"x": -2.1999999999999993, "y_true": -0.4240000000000137, "y": -2.7714988713165125}, {"x": -2.099999999999999, "y_true": -1.808000000000014, "y": -7.792135811821553}, {"x": -1.9999999999999991, "y_true": -3.0000000000000107, "y": -12.199285711986715}, {"x": -1.899999999999999, "y_true": -4.012000000000011, "y": -4.739784849269134}, {"x": -1.799999999999999, "y_true": -4.856000000000009, "y": -2.864605133958004}, {"x": -1.6999999999999988, "y_true": -5.544000000000008, "y": -16.3543063737946}, {"x": -1.5999999999999988, "y_true": -6.088000000000006, "y": -6.015613468222883}, {"x": -1.4999999999999987, "y_true": -6.5000000000000036, "y": -5.224009421444809}, {"x": -1.3999999999999986, "y_true": -6.792000000000003, "y": -5.926044796345713}, {"x": -1.2999999999999985, "y_true": -6.976000000000002, "y": -13.326467602050318}, {"x": -1.1999999999999984, "y_true": -7.064000000000001, "y": -8.618806640209073}, {"x": -1.0999999999999983, "y_true": -7.067999999999998, "y": -7.999078323585601}, {"x": -0.9999999999999982, "y_true": -6.999999999999998, "y": -4.835119581575062}, {"x": -0.8999999999999981, "y_true": -6.871999999999996, "y": -13.308756625035866}, {"x": -0.799999999999998, "y_true": -6.695999999999996, "y": -4.778936156426603}, {"x": -0.699999999999998, "y_true": -6.4839999999999955, "y": -1.524599833485449}, {"x": -0.5999999999999979, "y_true": -6.247999999999995, "y": -17.68622693729956}, {"x": -0.4999999999999978, "y_true": -5.999999999999995, "y": -4.880304361628128}, {"x": -0.3999999999999977, "y_true": -5.7519999999999945, "y": -13.38506705601617}, {"x": -0.2999999999999976, "y_true": -5.515999999999995, "y": -6.368334641163491}, {"x": -0.1999999999999975, "y_true": -5.303999999999996, "y": -8.704741835733941}, {"x": -0.09999999999999742, "y_true": -5.127999999999997, "y": 1.2401753336845394}, {"x": 2.6645352591003757e-15, "y_true": -4.999999999999997, "y": -4.71445657964094}, {"x": 0.10000000000000275, "y_true": -4.931999999999999, "y": -0.9555565402837516}, {"x": 0.20000000000000284, "y_true": -4.936000000000002, "y": -10.16989462767013}, {"x": 0.30000000000000293, "y_true": -5.024000000000004, "y": -2.7213636464572986}, {"x": 0.400000000000003, "y_true": -5.208000000000007, "y": 1.90386367809573}, {"x": 0.5000000000000031, "y_true": -5.50000000000001, "y": -9.036284597169002}, {"x": 0.6000000000000032, "y_true": -5.912000000000015, "y": -2.5826311606487367}, {"x": 0.7000000000000033, "y_true": -6.456000000000021, "y": -4.049151482825412}, {"x": 0.8000000000000034, "y_true": -7.144000000000027, "y": -7.467369873682661}, {"x": 0.9000000000000035, "y_true": -7.988000000000032, "y": -14.245467115049165}, {"x": 1.0000000000000036, "y_true": -9.000000000000039, "y": -7.58449011919938}, {"x": 1.1000000000000032, "y_true": -10.192000000000041, "y": -11.5434400342294}, {"x": 1.2000000000000037, "y_true": -11.576000000000054, "y": -8.565901471871978}, {"x": 1.3000000000000043, "y_true": -13.164000000000073, "y": -9.269587854684678}, {"x": 1.400000000000004, "y_true": -14.968000000000075, "y": -7.295299533414727}, {"x": 1.5000000000000036, "y_true": -17.000000000000078, "y": -21.18278332190194}, {"x": 1.600000000000004, "y_true": -19.272000000000098, "y": -14.946790703056552}, {"x": 1.7000000000000046, "y_true": -21.796000000000124, "y": -18.291898867126424}, {"x": 1.8000000000000043, "y_true": -24.584000000000124, "y": -24.2068839018185}, {"x": 1.900000000000004, "y_true": -27.648000000000124, "y": -24.589036941447688}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</section>
+<section id="polynomial-regression-using-polynomialfeatures">
+<h3>Polynomial regression using <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code><a class="headerlink" href="#polynomial-regression-using-polynomialfeatures" title="Permalink to this heading">#</a></h3>
+<p>We saw how to perform polynomial regression “by hand” last week.  The process is much easier if we take advantage of some additional functionality in scikit-learn.</p>
+<ul class="simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code>, make a new pandas DataFrame <code class="docutils literal notranslate"><span class="pre">df_pow</span></code> containing <code class="docutils literal notranslate"><span class="pre">df[&quot;x&quot;]**i</span></code> for <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3</span></code>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">include_bias</span></code> keyword argument so we do not get a column for <span class="math notranslate nohighlight">\(x^0\)</span>.  (I forgot to do this on Monday.)</p></li>
+</ul>
+<p>Here we import <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we instantiate it.  Think of this step the same as you think about <code class="docutils literal notranslate"><span class="pre">LinearRegression()</span></code> or <code class="docutils literal notranslate"><span class="pre">np.random.default_rng()</span></code>.  We need to pass a <code class="docutils literal notranslate"><span class="pre">degree</span></code> argument to the constructor, so that scikit-learn knows how many powers we want.  (I guess it would have been more robust to use <code class="docutils literal notranslate"><span class="pre">degree=deg</span></code> here.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we fit this PolynomialFeatures object to the data.  Notice how we do not pass <code class="docutils literal notranslate"><span class="pre">df[&quot;y&quot;]</span></code> to this function.  That is because there are no “true” outputs in this step (this is just a preprocessing step).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>PolynomialFeatures(degree=3)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">PolynomialFeatures</label><div class="sk-toggleable__content"><pre>PolynomialFeatures(degree=3)</pre></div></div></div></div></div></div></div>
+</div>
+<p>We now call <code class="docutils literal notranslate"><span class="pre">poly.transform</span></code> instead of <code class="docutils literal notranslate"><span class="pre">poly.predict</span></code>, because we are not “predicting” anything.  We convert the resulting NumPy array into a pandas DataFrame and round all the entries to the nearest decimal place.</p>
+<p>Aside: this rounding could also be done using <code class="docutils literal notranslate"><span class="pre">applymap</span></code> and a lambda function.  This is a natural place to use <code class="docutils literal notranslate"><span class="pre">applymap</span></code> (as opposed to <code class="docutils literal notranslate"><span class="pre">apply</span></code> or <code class="docutils literal notranslate"><span class="pre">map</span></code>), because we are doing the same thing to every element in a pandas DataFrame.</p>
+<p>Notice how these values correspond to powers of the “x” column, including the zero-th power (all 1s).</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># .round(1) is same as .applymap(lambda z: round(z,1))</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">poly</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">]]))</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>-3.0</td>
+      <td>9.0</td>
+      <td>-27.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>-2.9</td>
+      <td>8.4</td>
+      <td>-24.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>-2.8</td>
+      <td>7.8</td>
+      <td>-22.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>-2.7</td>
+      <td>7.3</td>
+      <td>-19.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>-2.6</td>
+      <td>6.8</td>
+      <td>-17.6</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>-2.5</td>
+      <td>6.2</td>
+      <td>-15.6</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.0</td>
+      <td>-2.4</td>
+      <td>5.8</td>
+      <td>-13.8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>-2.3</td>
+      <td>5.3</td>
+      <td>-12.2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.0</td>
+      <td>-2.2</td>
+      <td>4.8</td>
+      <td>-10.6</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.0</td>
+      <td>-2.1</td>
+      <td>4.4</td>
+      <td>-9.3</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1.0</td>
+      <td>-2.0</td>
+      <td>4.0</td>
+      <td>-8.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>-1.9</td>
+      <td>3.6</td>
+      <td>-6.9</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.0</td>
+      <td>-1.8</td>
+      <td>3.2</td>
+      <td>-5.8</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1.0</td>
+      <td>-1.7</td>
+      <td>2.9</td>
+      <td>-4.9</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1.0</td>
+      <td>-1.6</td>
+      <td>2.6</td>
+      <td>-4.1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1.0</td>
+      <td>-1.5</td>
+      <td>2.2</td>
+      <td>-3.4</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1.0</td>
+      <td>-1.4</td>
+      <td>2.0</td>
+      <td>-2.7</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1.0</td>
+      <td>-1.3</td>
+      <td>1.7</td>
+      <td>-2.2</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1.0</td>
+      <td>-1.2</td>
+      <td>1.4</td>
+      <td>-1.7</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1.0</td>
+      <td>-1.1</td>
+      <td>1.2</td>
+      <td>-1.3</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1.0</td>
+      <td>-1.0</td>
+      <td>1.0</td>
+      <td>-1.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1.0</td>
+      <td>-0.9</td>
+      <td>0.8</td>
+      <td>-0.7</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1.0</td>
+      <td>-0.8</td>
+      <td>0.6</td>
+      <td>-0.5</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1.0</td>
+      <td>-0.7</td>
+      <td>0.5</td>
+      <td>-0.3</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1.0</td>
+      <td>-0.6</td>
+      <td>0.4</td>
+      <td>-0.2</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1.0</td>
+      <td>-0.5</td>
+      <td>0.2</td>
+      <td>-0.1</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1.0</td>
+      <td>-0.4</td>
+      <td>0.2</td>
+      <td>-0.1</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1.0</td>
+      <td>-0.3</td>
+      <td>0.1</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1.0</td>
+      <td>-0.2</td>
+      <td>0.0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1.0</td>
+      <td>-0.1</td>
+      <td>0.0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1.0</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>1.0</td>
+      <td>0.2</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>1.0</td>
+      <td>0.3</td>
+      <td>0.1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>1.0</td>
+      <td>0.4</td>
+      <td>0.2</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>0.3</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>1.0</td>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>1.0</td>
+      <td>0.7</td>
+      <td>0.5</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>1.0</td>
+      <td>0.8</td>
+      <td>0.6</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>1.0</td>
+      <td>0.9</td>
+      <td>0.8</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>1.0</td>
+      <td>1.1</td>
+      <td>1.2</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>1.0</td>
+      <td>1.2</td>
+      <td>1.4</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>1.0</td>
+      <td>1.3</td>
+      <td>1.7</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>1.0</td>
+      <td>1.4</td>
+      <td>2.0</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>1.0</td>
+      <td>1.5</td>
+      <td>2.3</td>
+      <td>3.4</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>1.0</td>
+      <td>1.6</td>
+      <td>2.6</td>
+      <td>4.1</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>1.0</td>
+      <td>1.7</td>
+      <td>2.9</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>1.0</td>
+      <td>1.8</td>
+      <td>3.2</td>
+      <td>5.8</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>1.0</td>
+      <td>1.9</td>
+      <td>3.6</td>
+      <td>6.9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s get rid of the column of all <code class="docutils literal notranslate"><span class="pre">1</span></code> values.  We do this by setting <code class="docutils literal notranslate"><span class="pre">include_bias=False</span></code> when we instantiate the PolynomialFeatures object.  That’s the only substantive change between the following and the above code, but we’ll combine the steps in a different way here, just to see an alternative approach.  (I think this approach is probably the easier one to understand.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can perform both the <code class="docutils literal notranslate"><span class="pre">fit</span></code> and the <code class="docutils literal notranslate"><span class="pre">transform</span></code> steps in the same step using <code class="docutils literal notranslate"><span class="pre">fit_transform</span></code>.  This “do both at once” possibility is available for some data types in scikit-learn but not all, and I don’t know exactly what the pattern is.  (For example, there is no <code class="docutils literal notranslate"><span class="pre">fit_predict</span></code> method of a <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> object, I’m not sure why not.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are the first three rows.  Notice how there is no column of all values equal to 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ -3.   ,   9.   , -27.   ],
+       [ -2.9  ,   8.41 , -24.389],
+       [ -2.8  ,   7.84 , -21.952]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we convert <code class="docutils literal notranslate"><span class="pre">arr</span></code> into a pandas DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pow</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It seems to be working as expected.  The column names (notice that pandas defaults to integer column labels) are not helpful at the moment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pow</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-3.0</td>
+      <td>9.00</td>
+      <td>-27.000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-2.9</td>
+      <td>8.41</td>
+      <td>-24.389</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-2.8</td>
+      <td>7.84</td>
+      <td>-21.952</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Name the columns using the <code class="docutils literal notranslate"><span class="pre">get_feature_names_out</span></code> method of the <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code> object.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pow</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code> class will also record appropriate column labels.  Here we got them from the <code class="docutils literal notranslate"><span class="pre">get_feature_names_out</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pow</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>x^2</th>
+      <th>x^3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-3.0</td>
+      <td>9.00</td>
+      <td>-27.000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-2.9</td>
+      <td>8.41</td>
+      <td>-24.389</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-2.8</td>
+      <td>7.84</td>
+      <td>-21.952</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Concatenate the “y” and “y_true” columns from <code class="docutils literal notranslate"><span class="pre">df</span></code> onto the end of <code class="docutils literal notranslate"><span class="pre">df_pow</span></code> using <code class="docutils literal notranslate"><span class="pre">pd.concat((???,</span> <span class="pre">???),</span> <span class="pre">axis=???)</span></code>.  Name the result <code class="docutils literal notranslate"><span class="pre">df_both</span></code>.</p></li>
+</ul>
+<p>I believe this is our first time concatenating pandas DataFrames in Math 10 (meaning, we put two or more DataFrames side-by-side or on top of each other).</p>
+<p>Notice how we use <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>, because the column labels are changing but the row labels are staying the same.</p>
+<p>Aside: I believe we would get an error if we used <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> (at least it would not work as expected), because these DataFrames <code class="docutils literal notranslate"><span class="pre">df_pow</span></code> and <code class="docutils literal notranslate"><span class="pre">df[[&quot;y&quot;,</span> <span class="pre">&quot;y_true&quot;]]</span></code> do not have the same columns, so it doesn’t really make sense to stack them on top of each other.  (The other possibility I can imagine is that the result would have many missing values.)</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_both</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">df_pow</span><span class="p">,</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;y_true&quot;</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_both</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>x^2</th>
+      <th>x^3</th>
+      <th>y</th>
+      <th>y_true</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-3.000000e+00</td>
+      <td>9.000000e+00</td>
+      <td>-2.700000e+01</td>
+      <td>23.824406</td>
+      <td>19.000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-2.900000e+00</td>
+      <td>8.410000e+00</td>
+      <td>-2.438900e+01</td>
+      <td>10.237108</td>
+      <td>15.648</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-2.800000e+00</td>
+      <td>7.840000e+00</td>
+      <td>-2.195200e+01</td>
+      <td>16.919087</td>
+      <td>12.584</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-2.700000e+00</td>
+      <td>7.290000e+00</td>
+      <td>-1.968300e+01</td>
+      <td>8.955196</td>
+      <td>9.796</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-2.600000e+00</td>
+      <td>6.760000e+00</td>
+      <td>-1.757600e+01</td>
+      <td>6.323695</td>
+      <td>7.272</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-2.500000e+00</td>
+      <td>6.250000e+00</td>
+      <td>-1.562500e+01</td>
+      <td>10.602832</td>
+      <td>5.000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-2.400000e+00</td>
+      <td>5.760000e+00</td>
+      <td>-1.382400e+01</td>
+      <td>0.784105</td>
+      <td>2.968</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-2.300000e+00</td>
+      <td>5.290000e+00</td>
+      <td>-1.216700e+01</td>
+      <td>-5.234227</td>
+      <td>1.164</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-2.200000e+00</td>
+      <td>4.840000e+00</td>
+      <td>-1.064800e+01</td>
+      <td>-2.771499</td>
+      <td>-0.424</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-2.100000e+00</td>
+      <td>4.410000e+00</td>
+      <td>-9.261000e+00</td>
+      <td>-7.792136</td>
+      <td>-1.808</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-2.000000e+00</td>
+      <td>4.000000e+00</td>
+      <td>-8.000000e+00</td>
+      <td>-12.199286</td>
+      <td>-3.000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-1.900000e+00</td>
+      <td>3.610000e+00</td>
+      <td>-6.859000e+00</td>
+      <td>-4.739785</td>
+      <td>-4.012</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-1.800000e+00</td>
+      <td>3.240000e+00</td>
+      <td>-5.832000e+00</td>
+      <td>-2.864605</td>
+      <td>-4.856</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-1.700000e+00</td>
+      <td>2.890000e+00</td>
+      <td>-4.913000e+00</td>
+      <td>-16.354306</td>
+      <td>-5.544</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-1.600000e+00</td>
+      <td>2.560000e+00</td>
+      <td>-4.096000e+00</td>
+      <td>-6.015613</td>
+      <td>-6.088</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>-1.500000e+00</td>
+      <td>2.250000e+00</td>
+      <td>-3.375000e+00</td>
+      <td>-5.224009</td>
+      <td>-6.500</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-1.400000e+00</td>
+      <td>1.960000e+00</td>
+      <td>-2.744000e+00</td>
+      <td>-5.926045</td>
+      <td>-6.792</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>-1.300000e+00</td>
+      <td>1.690000e+00</td>
+      <td>-2.197000e+00</td>
+      <td>-13.326468</td>
+      <td>-6.976</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>-1.200000e+00</td>
+      <td>1.440000e+00</td>
+      <td>-1.728000e+00</td>
+      <td>-8.618807</td>
+      <td>-7.064</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>-1.100000e+00</td>
+      <td>1.210000e+00</td>
+      <td>-1.331000e+00</td>
+      <td>-7.999078</td>
+      <td>-7.068</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>-1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>-1.000000e+00</td>
+      <td>-4.835120</td>
+      <td>-7.000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>-9.000000e-01</td>
+      <td>8.100000e-01</td>
+      <td>-7.290000e-01</td>
+      <td>-13.308757</td>
+      <td>-6.872</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>-8.000000e-01</td>
+      <td>6.400000e-01</td>
+      <td>-5.120000e-01</td>
+      <td>-4.778936</td>
+      <td>-6.696</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>-7.000000e-01</td>
+      <td>4.900000e-01</td>
+      <td>-3.430000e-01</td>
+      <td>-1.524600</td>
+      <td>-6.484</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>-6.000000e-01</td>
+      <td>3.600000e-01</td>
+      <td>-2.160000e-01</td>
+      <td>-17.686227</td>
+      <td>-6.248</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-5.000000e-01</td>
+      <td>2.500000e-01</td>
+      <td>-1.250000e-01</td>
+      <td>-4.880304</td>
+      <td>-6.000</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>-4.000000e-01</td>
+      <td>1.600000e-01</td>
+      <td>-6.400000e-02</td>
+      <td>-13.385067</td>
+      <td>-5.752</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>-3.000000e-01</td>
+      <td>9.000000e-02</td>
+      <td>-2.700000e-02</td>
+      <td>-6.368335</td>
+      <td>-5.516</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>-2.000000e-01</td>
+      <td>4.000000e-02</td>
+      <td>-8.000000e-03</td>
+      <td>-8.704742</td>
+      <td>-5.304</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>-1.000000e-01</td>
+      <td>1.000000e-02</td>
+      <td>-1.000000e-03</td>
+      <td>1.240175</td>
+      <td>-5.128</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>2.664535e-15</td>
+      <td>7.099748e-30</td>
+      <td>1.891753e-44</td>
+      <td>-4.714457</td>
+      <td>-5.000</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1.000000e-01</td>
+      <td>1.000000e-02</td>
+      <td>1.000000e-03</td>
+      <td>-0.955557</td>
+      <td>-4.932</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>2.000000e-01</td>
+      <td>4.000000e-02</td>
+      <td>8.000000e-03</td>
+      <td>-10.169895</td>
+      <td>-4.936</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>3.000000e-01</td>
+      <td>9.000000e-02</td>
+      <td>2.700000e-02</td>
+      <td>-2.721364</td>
+      <td>-5.024</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>4.000000e-01</td>
+      <td>1.600000e-01</td>
+      <td>6.400000e-02</td>
+      <td>1.903864</td>
+      <td>-5.208</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>5.000000e-01</td>
+      <td>2.500000e-01</td>
+      <td>1.250000e-01</td>
+      <td>-9.036285</td>
+      <td>-5.500</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>6.000000e-01</td>
+      <td>3.600000e-01</td>
+      <td>2.160000e-01</td>
+      <td>-2.582631</td>
+      <td>-5.912</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>7.000000e-01</td>
+      <td>4.900000e-01</td>
+      <td>3.430000e-01</td>
+      <td>-4.049151</td>
+      <td>-6.456</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>8.000000e-01</td>
+      <td>6.400000e-01</td>
+      <td>5.120000e-01</td>
+      <td>-7.467370</td>
+      <td>-7.144</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>9.000000e-01</td>
+      <td>8.100000e-01</td>
+      <td>7.290000e-01</td>
+      <td>-14.245467</td>
+      <td>-7.988</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>-7.584490</td>
+      <td>-9.000</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>1.100000e+00</td>
+      <td>1.210000e+00</td>
+      <td>1.331000e+00</td>
+      <td>-11.543440</td>
+      <td>-10.192</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>1.200000e+00</td>
+      <td>1.440000e+00</td>
+      <td>1.728000e+00</td>
+      <td>-8.565901</td>
+      <td>-11.576</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>1.300000e+00</td>
+      <td>1.690000e+00</td>
+      <td>2.197000e+00</td>
+      <td>-9.269588</td>
+      <td>-13.164</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>1.400000e+00</td>
+      <td>1.960000e+00</td>
+      <td>2.744000e+00</td>
+      <td>-7.295300</td>
+      <td>-14.968</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>1.500000e+00</td>
+      <td>2.250000e+00</td>
+      <td>3.375000e+00</td>
+      <td>-21.182783</td>
+      <td>-17.000</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>1.600000e+00</td>
+      <td>2.560000e+00</td>
+      <td>4.096000e+00</td>
+      <td>-14.946791</td>
+      <td>-19.272</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>1.700000e+00</td>
+      <td>2.890000e+00</td>
+      <td>4.913000e+00</td>
+      <td>-18.291899</td>
+      <td>-21.796</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>1.800000e+00</td>
+      <td>3.240000e+00</td>
+      <td>5.832000e+00</td>
+      <td>-24.206884</td>
+      <td>-24.584</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>1.900000e+00</td>
+      <td>3.610000e+00</td>
+      <td>6.859000e+00</td>
+      <td>-24.589037</td>
+      <td>-27.648</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Find the “best” coefficient values for modeling <span class="math notranslate nohighlight">\(y \approx c_3 x^3 + c_2 x^2 + c_1 x + c_0\)</span>.</p></li>
+</ul>
+<p>We’ll go faster through this part, because it is the same process we’ve been using throughout the linear regression part of Math 10.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_both</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x^2&quot;</span><span class="p">,</span> <span class="s2">&quot;x^3&quot;</span><span class="p">]],</span> <span class="n">df_both</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-2 {color: black;background-color: white;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.33524206, -3.03442169, -2.32952623])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.263954801170672
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>How do these values compare to the true coefficient values?</p></li>
+</ul>
+<p>The true values follow the polynomial <span class="math notranslate nohighlight">\(y = -2x^3 - 3x^2 + x - 5\)</span>.  In our case, we have found approximately <span class="math notranslate nohighlight">\(-2.3 x^3 - 3x^2 + 3.3 x - 5.26\)</span>.  These two sequences of coefficients are remarkably similar.</p>
+<p>Here I just looked at the coefficients and checked what terms they corresponded to.  For example, I saw that <code class="docutils literal notranslate"><span class="pre">3.3</span></code> (approximately) was the initial coefficient, and that one corresponded to the “x” column.  We could make this more robust (also finding a way to not have to type <code class="docutils literal notranslate"><span class="pre">[&quot;x&quot;,</span> <span class="pre">&quot;x^2&quot;,</span> <span class="pre">&quot;x^3&quot;]</span></code>), but we didn’t bother, because we will see a more efficient way to do all of these steps below, using <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>.</p>
+</section>
+<section id="using-pipeline-to-combine-multiple-steps">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> to combine multiple steps<a class="headerlink" href="#using-pipeline-to-combine-multiple-steps" title="Permalink to this heading">#</a></h3>
+<p>The above process is a little awkward.  We can achieve the same thing much more efficiently by using another data type defined by scikit-learn, <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>.  (The tradeoff is that it is less explicit what is happening.)</p>
+<ul class="simple">
+<li><p>Import the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> class from <code class="docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Make an instance of this <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> class.  Pass to the constructor a list of length-2 tuples, where each tuple provides a name for the step (as a string) and the constructor (like <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures(???)</span></code>).</p></li>
+</ul>
+<p>The following is not correct, but understanding what we’re doing here will help you understand the correct approach.  Here we are trying to pass a list of steps for scikit-learn to follow: first use <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code> to transform the data, then use <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code>.  We are passing the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> constructor a length-2 list containing these steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wrong</span>
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">LinearRegression</span><span class="p">()]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The correct approach is very similar (the spacing in the following is to make the result more readable, but you can use essentially any spacing you want inside parentheses in Python).  We are still passing a length-2 list containing the steps, but each element in this length-2 list is itself a length-2 tuple, that specifies the step, but also a name to give the step.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Right</span>
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;poly&quot;</span><span class="p">,</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span> 
+        <span class="p">(</span><span class="s2">&quot;reg&quot;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Fit this object to the data.</p></li>
+</ul>
+<p>This is where we really benefit from Pipeline.  The following call of <code class="docutils literal notranslate"><span class="pre">pipe.fit</span></code> first fits and transforms the data using <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code>, and then fits that transformed data using <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">]],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-4 {color: black;background-color: white;}#sk-container-id-4 pre{padding: 0;}#sk-container-id-4 div.sk-toggleable {background-color: white;}#sk-container-id-4 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-4 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-4 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-4 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-4 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-4 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-4 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-4 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-4 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-4 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-4 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-4 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-4 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-4 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-4 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-4 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-4 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-4 div.sk-item {position: relative;z-index: 1;}#sk-container-id-4 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-4 div.sk-item::before, #sk-container-id-4 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-4 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-4 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-4 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-4 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-4 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-4 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-4 div.sk-label-container {text-align: center;}#sk-container-id-4 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-4 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-4" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;poly&#x27;, PolynomialFeatures(degree=3, include_bias=False)),
+                (&#x27;reg&#x27;, LinearRegression())])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label sk-toggleable__label-arrow">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[(&#x27;poly&#x27;, PolynomialFeatures(degree=3, include_bias=False)),
+                (&#x27;reg&#x27;, LinearRegression())])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label sk-toggleable__label-arrow">PolynomialFeatures</label><div class="sk-toggleable__content"><pre>PolynomialFeatures(degree=3, include_bias=False)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" ><label for="sk-estimator-id-6" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div></div></div>
+</div>
+<ul class="simple">
+<li><p>Do the coefficients match what we found above?  Use the <code class="docutils literal notranslate"><span class="pre">named_steps</span></code> attribute, or just use the name directly.</p></li>
+</ul>
+<p>You might try calling <code class="docutils literal notranslate"><span class="pre">pipe.coef_</span></code>, but we get an error message.  It’s not the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> object itself that has the fit coefficients, but the <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> object within it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pipe</span><span class="o">.</span><span class="n">coef_</span>
+
+<span class="ne">AttributeError</span>: &#39;Pipeline&#39; object has no attribute &#39;coef_&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can access that <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> object by using indexing with the name <code class="docutils literal notranslate"><span class="pre">&quot;reg&quot;</span></code> we assigned to it when we instantiated <code class="docutils literal notranslate"><span class="pre">pipe</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="p">[</span><span class="s2">&quot;reg&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-5 {color: black;background-color: white;}#sk-container-id-5 pre{padding: 0;}#sk-container-id-5 div.sk-toggleable {background-color: white;}#sk-container-id-5 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-5 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-5 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-5 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-5 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-5 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-5 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-5 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-5 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-5 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-5 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-5 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-5 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-5 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-5 div.sk-item {position: relative;z-index: 1;}#sk-container-id-5 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-5 div.sk-item::before, #sk-container-id-5 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-5 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-5 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-5 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-5 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-5 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-5 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-5 div.sk-label-container {text-align: center;}#sk-container-id-5 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-5 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-5" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" checked><label for="sk-estimator-id-7" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div>
+</div>
+<p>Notice that this is indeed a <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">pipe</span><span class="p">[</span><span class="s2">&quot;reg&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sklearn.linear_model._base.LinearRegression
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same works for the <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code> object, again, we need to use the name <code class="docutils literal notranslate"><span class="pre">&quot;poly&quot;</span></code> we assigned above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">pipe</span><span class="p">[</span><span class="s2">&quot;poly&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sklearn.preprocessing._polynomial.PolynomialFeatures
+</pre></div>
+</div>
+</div>
+</div>
+<p>This information is also recorded in a Python dictionary stored in the <code class="docutils literal notranslate"><span class="pre">named_steps</span></code> attribute of our <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="o">.</span><span class="n">named_steps</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;poly&#39;: PolynomialFeatures(degree=3, include_bias=False),
+ &#39;reg&#39;: LinearRegression()}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The point of all that is, now that we know how to access the <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> object, we can get its <code class="docutils literal notranslate"><span class="pre">coef_</span></code> attribute just like usual when performing linear regression.  (Remember that this attribute only exists after we call <code class="docutils literal notranslate"><span class="pre">fit</span></code>.)</p>
+<p>Notice that these are the exact same values as what we found above.  It’s worth looking over both procedures and noticing how much shorter this procedure using <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> is.</p>
+<p>Also I want to emphasize that these aren’t just approximately the same, but they are exactly the same values (at least up to maybe some numerical precision issues).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="p">[</span><span class="s2">&quot;reg&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.33524206, -3.03442169, -2.32952623])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Call the predict method, and add the resulting values to a new column in <code class="docutils literal notranslate"><span class="pre">df</span></code> named “pred”.</p></li>
+</ul>
+<p>The following simple code is evaluating our “best fit” degree three polynomial <span class="math notranslate nohighlight">\(-2.3 x^3 - 3x^2 + 3.3 x - 5.26\)</span> for every value of in the “x” column.  Notice how we don’t need to explicitly type <code class="docutils literal notranslate"><span class="pre">&quot;x^2&quot;</span></code> or anything like that, the polynomial part of this polynomial regression is happening “under the hood”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Plot the resulting predictions using a red line.  Name the chart <code class="docutils literal notranslate"><span class="pre">c2</span></code>.</p></li>
+</ul>
+<p>What’s wrong with the following?  We are using the “y” values (which were plotted in the scatter plot high above).  Notice how these points do not lie perfectly on a cubic polynomial (it goes up and down far too many times), that is because of the random noise we added.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wrong</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-9c8d6880b3af46a0959912614f16da22"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-9c8d6880b3af46a0959912614f16da22") {
+      outputDiv = document.getElementById("altair-viz-9c8d6880b3af46a0959912614f16da22");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-ccbf1185dae428a433a7e5c5a6c44e59"}, "mark": {"type": "line", "color": "red"}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ccbf1185dae428a433a7e5c5a6c44e59": [{"x": -3.0, "y_true": 19.0, "y": 23.824405650704584, "pred": 20.31773192269804}, {"x": -2.9, "y_true": 15.647999999999996, "y": 10.237108055098796, "pred": 16.3591719494184}, {"x": -2.8, "y_true": 12.583999999999993, "y": 16.91908679057319, "pred": 12.745261105607195}, {"x": -2.6999999999999997, "y_true": 9.795999999999992, "y": 8.955196204317206, "pred": 9.46202223391364}, {"x": -2.5999999999999996, "y_true": 7.271999999999991, "y": 6.323695104370164, "pred": 6.495478176986933}, {"x": -2.4999999999999996, "y_true": 4.999999999999989, "y": 10.602832278036008, "pred": 3.8316517774762664}, {"x": -2.3999999999999995, "y_true": 2.967999999999993, "y": 0.7841046813223418, "pred": 1.4565658780308421}, {"x": -2.2999999999999994, "y_true": 1.1639999999999908, "y": -5.234226812329393, "pred": -0.6437566787001376}, {"x": -2.1999999999999993, "y_true": -0.4240000000000137, "y": -2.7714988713165125, "pred": -2.4832930500674815}, {"x": -2.099999999999999, "y_true": -1.808000000000014, "y": -7.792135811821553, "pred": -4.076020393421988}, {"x": -1.9999999999999991, "y_true": -3.0000000000000107, "y": -12.199285711986715, "pred": -5.435915866114457}, {"x": -1.899999999999999, "y_true": -4.012000000000011, "y": -4.739784849269134, "pred": -6.576956625495692}, {"x": -1.799999999999999, "y_true": -4.856000000000009, "y": -2.864605133958004, "pred": -7.513119828916496}, {"x": -1.6999999999999988, "y_true": -5.544000000000008, "y": -16.3543063737946, "pred": -8.258382633727667}, {"x": -1.5999999999999988, "y_true": -6.088000000000006, "y": -6.015613468222883, "pred": -8.82672219728001}, {"x": -1.4999999999999987, "y_true": -6.5000000000000036, "y": -5.224009421444809, "pred": -9.232115676924321}, {"x": -1.3999999999999986, "y_true": -6.792000000000003, "y": -5.926044796345713, "pred": -9.48854023001141}, {"x": -1.2999999999999985, "y_true": -6.976000000000002, "y": -13.326467602050318, "pred": -9.60997301389207}, {"x": -1.1999999999999984, "y_true": -7.064000000000001, "y": -8.618806640209073, "pred": -9.610391185917106}, {"x": -1.0999999999999983, "y_true": -7.067999999999998, "y": -7.999078323585601, "pred": -9.503771903437322}, {"x": -0.9999999999999982, "y_true": -6.999999999999998, "y": -4.835119581575062, "pred": -9.304092323803516}, {"x": -0.8999999999999981, "y_true": -6.871999999999996, "y": -13.308756625035866, "pred": -9.02532960436649}, {"x": -0.799999999999998, "y_true": -6.695999999999996, "y": -4.778936156426603, "pred": -8.681460902477049}, {"x": -0.699999999999998, "y_true": -6.4839999999999955, "y": -1.524599833485449, "pred": -8.28646337548599}, {"x": -0.5999999999999979, "y_true": -6.247999999999995, "y": -17.68622693729956, "pred": -7.854314180744115}, {"x": -0.4999999999999978, "y_true": -5.999999999999995, "y": -4.880304361628128, "pred": -7.398990475602229}, {"x": -0.3999999999999977, "y_true": -5.7519999999999945, "y": -13.38506705601617, "pred": -6.9344694174111305}, {"x": -0.2999999999999976, "y_true": -5.515999999999995, "y": -6.368334641163491, "pred": -6.474728163521622}, {"x": -0.1999999999999975, "y_true": -5.303999999999996, "y": -8.704741835733941, "pred": -6.033743871284505}, {"x": -0.09999999999999742, "y_true": -5.127999999999997, "y": 1.2401753336845394, "pred": -5.6254936980505805}, {"x": 2.6645352591003757e-15, "y_true": -4.999999999999997, "y": -4.71445657964094, "pred": -5.263954801170651}, {"x": 0.10000000000000275, "y_true": -4.931999999999999, "y": -0.9555565402837516, "pred": -4.963104337995516}, {"x": 0.20000000000000284, "y_true": -4.936000000000002, "y": -10.16989462767013, "pred": -4.73691946587598}, {"x": 0.30000000000000293, "y_true": -5.024000000000004, "y": -2.7213636464572986, "pred": -4.5993773421628426}, {"x": 0.400000000000003, "y_true": -5.208000000000007, "y": 1.90386367809573, "pred": -4.564455124206906}, {"x": 0.5000000000000031, "y_true": -5.50000000000001, "y": -9.036284597169002, "pred": -4.646129969358971}, {"x": 0.6000000000000032, "y_true": -5.912000000000015, "y": -2.5826311606487367, "pred": -4.85837903496984}, {"x": 0.7000000000000033, "y_true": -6.456000000000021, "y": -4.049151482825412, "pred": -5.215179478390313}, {"x": 0.8000000000000034, "y_true": -7.144000000000027, "y": -7.467369873682661, "pred": -5.730508456971194}, {"x": 0.9000000000000035, "y_true": -7.988000000000032, "y": -14.245467115049165, "pred": -6.418343128063282}, {"x": 1.0000000000000036, "y_true": -9.000000000000039, "y": -7.58449011919938, "pred": -7.29266064901738}, {"x": 1.1000000000000032, "y_true": -10.192000000000041, "y": -11.5434400342294, "pred": -8.367438177184283}, {"x": 1.2000000000000037, "y_true": -11.576000000000054, "y": -8.565901471871978, "pred": -9.656652869914812}, {"x": 1.3000000000000043, "y_true": -13.164000000000073, "y": -9.269587854684678, "pred": -11.174281884559754}, {"x": 1.400000000000004, "y_true": -14.968000000000075, "y": -7.295299533414727, "pred": -12.934302378469898}, {"x": 1.5000000000000036, "y_true": -17.000000000000078, "y": -21.18278332190194, "pred": -14.950691508996059}, {"x": 1.600000000000004, "y_true": -19.272000000000098, "y": -14.946790703056552, "pred": -17.237426433489055}, {"x": 1.7000000000000046, "y_true": -21.796000000000124, "y": -18.291898867126424, "pred": -19.808484309299676}, {"x": 1.8000000000000043, "y_true": -24.584000000000124, "y": -24.2068839018185, "pred": -22.677842293778692}, {"x": 1.900000000000004, "y_true": -27.648000000000124, "y": -24.589036941447688, "pred": -25.85947754427693}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>This one does lie perfectly on a cubic polynomial, more specifically, that cubic polynomial is approximately <span class="math notranslate nohighlight">\(-2.3 x^3 - 3x^2 + 3.3 x - 5.26\)</span>.  This is our cubic polynomial of “best fit” (meaning the Mean Squared Error between the data and this polynomial is minimized).  For the given data, using Mean Squared Error, this polynomial fits the data “better” than the true underlying polynomial <span class="math notranslate nohighlight">\(-2x^3 - 3x^2 + x - 5\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;pred&quot;</span>
+<span class="p">)</span>
+
+<span class="n">c2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-5cfda2e147ee4057a23fa5239d73d821"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-5cfda2e147ee4057a23fa5239d73d821") {
+      outputDiv = document.getElementById("altair-viz-5cfda2e147ee4057a23fa5239d73d821");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-ccbf1185dae428a433a7e5c5a6c44e59"}, "mark": {"type": "line", "color": "red"}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "pred", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ccbf1185dae428a433a7e5c5a6c44e59": [{"x": -3.0, "y_true": 19.0, "y": 23.824405650704584, "pred": 20.31773192269804}, {"x": -2.9, "y_true": 15.647999999999996, "y": 10.237108055098796, "pred": 16.3591719494184}, {"x": -2.8, "y_true": 12.583999999999993, "y": 16.91908679057319, "pred": 12.745261105607195}, {"x": -2.6999999999999997, "y_true": 9.795999999999992, "y": 8.955196204317206, "pred": 9.46202223391364}, {"x": -2.5999999999999996, "y_true": 7.271999999999991, "y": 6.323695104370164, "pred": 6.495478176986933}, {"x": -2.4999999999999996, "y_true": 4.999999999999989, "y": 10.602832278036008, "pred": 3.8316517774762664}, {"x": -2.3999999999999995, "y_true": 2.967999999999993, "y": 0.7841046813223418, "pred": 1.4565658780308421}, {"x": -2.2999999999999994, "y_true": 1.1639999999999908, "y": -5.234226812329393, "pred": -0.6437566787001376}, {"x": -2.1999999999999993, "y_true": -0.4240000000000137, "y": -2.7714988713165125, "pred": -2.4832930500674815}, {"x": -2.099999999999999, "y_true": -1.808000000000014, "y": -7.792135811821553, "pred": -4.076020393421988}, {"x": -1.9999999999999991, "y_true": -3.0000000000000107, "y": -12.199285711986715, "pred": -5.435915866114457}, {"x": -1.899999999999999, "y_true": -4.012000000000011, "y": -4.739784849269134, "pred": -6.576956625495692}, {"x": -1.799999999999999, "y_true": -4.856000000000009, "y": -2.864605133958004, "pred": -7.513119828916496}, {"x": -1.6999999999999988, "y_true": -5.544000000000008, "y": -16.3543063737946, "pred": -8.258382633727667}, {"x": -1.5999999999999988, "y_true": -6.088000000000006, "y": -6.015613468222883, "pred": -8.82672219728001}, {"x": -1.4999999999999987, "y_true": -6.5000000000000036, "y": -5.224009421444809, "pred": -9.232115676924321}, {"x": -1.3999999999999986, "y_true": -6.792000000000003, "y": -5.926044796345713, "pred": -9.48854023001141}, {"x": -1.2999999999999985, "y_true": -6.976000000000002, "y": -13.326467602050318, "pred": -9.60997301389207}, {"x": -1.1999999999999984, "y_true": -7.064000000000001, "y": -8.618806640209073, "pred": -9.610391185917106}, {"x": -1.0999999999999983, "y_true": -7.067999999999998, "y": -7.999078323585601, "pred": -9.503771903437322}, {"x": -0.9999999999999982, "y_true": -6.999999999999998, "y": -4.835119581575062, "pred": -9.304092323803516}, {"x": -0.8999999999999981, "y_true": -6.871999999999996, "y": -13.308756625035866, "pred": -9.02532960436649}, {"x": -0.799999999999998, "y_true": -6.695999999999996, "y": -4.778936156426603, "pred": -8.681460902477049}, {"x": -0.699999999999998, "y_true": -6.4839999999999955, "y": -1.524599833485449, "pred": -8.28646337548599}, {"x": -0.5999999999999979, "y_true": -6.247999999999995, "y": -17.68622693729956, "pred": -7.854314180744115}, {"x": -0.4999999999999978, "y_true": -5.999999999999995, "y": -4.880304361628128, "pred": -7.398990475602229}, {"x": -0.3999999999999977, "y_true": -5.7519999999999945, "y": -13.38506705601617, "pred": -6.9344694174111305}, {"x": -0.2999999999999976, "y_true": -5.515999999999995, "y": -6.368334641163491, "pred": -6.474728163521622}, {"x": -0.1999999999999975, "y_true": -5.303999999999996, "y": -8.704741835733941, "pred": -6.033743871284505}, {"x": -0.09999999999999742, "y_true": -5.127999999999997, "y": 1.2401753336845394, "pred": -5.6254936980505805}, {"x": 2.6645352591003757e-15, "y_true": -4.999999999999997, "y": -4.71445657964094, "pred": -5.263954801170651}, {"x": 0.10000000000000275, "y_true": -4.931999999999999, "y": -0.9555565402837516, "pred": -4.963104337995516}, {"x": 0.20000000000000284, "y_true": -4.936000000000002, "y": -10.16989462767013, "pred": -4.73691946587598}, {"x": 0.30000000000000293, "y_true": -5.024000000000004, "y": -2.7213636464572986, "pred": -4.5993773421628426}, {"x": 0.400000000000003, "y_true": -5.208000000000007, "y": 1.90386367809573, "pred": -4.564455124206906}, {"x": 0.5000000000000031, "y_true": -5.50000000000001, "y": -9.036284597169002, "pred": -4.646129969358971}, {"x": 0.6000000000000032, "y_true": -5.912000000000015, "y": -2.5826311606487367, "pred": -4.85837903496984}, {"x": 0.7000000000000033, "y_true": -6.456000000000021, "y": -4.049151482825412, "pred": -5.215179478390313}, {"x": 0.8000000000000034, "y_true": -7.144000000000027, "y": -7.467369873682661, "pred": -5.730508456971194}, {"x": 0.9000000000000035, "y_true": -7.988000000000032, "y": -14.245467115049165, "pred": -6.418343128063282}, {"x": 1.0000000000000036, "y_true": -9.000000000000039, "y": -7.58449011919938, "pred": -7.29266064901738}, {"x": 1.1000000000000032, "y_true": -10.192000000000041, "y": -11.5434400342294, "pred": -8.367438177184283}, {"x": 1.2000000000000037, "y_true": -11.576000000000054, "y": -8.565901471871978, "pred": -9.656652869914812}, {"x": 1.3000000000000043, "y_true": -13.164000000000073, "y": -9.269587854684678, "pred": -11.174281884559754}, {"x": 1.400000000000004, "y_true": -14.968000000000075, "y": -7.295299533414727, "pred": -12.934302378469898}, {"x": 1.5000000000000036, "y_true": -17.000000000000078, "y": -21.18278332190194, "pred": -14.950691508996059}, {"x": 1.600000000000004, "y_true": -19.272000000000098, "y": -14.946790703056552, "pred": -17.237426433489055}, {"x": 1.7000000000000046, "y_true": -21.796000000000124, "y": -18.291898867126424, "pred": -19.808484309299676}, {"x": 1.8000000000000043, "y_true": -24.584000000000124, "y": -24.2068839018185, "pred": -22.677842293778692}, {"x": 1.900000000000004, "y_true": -27.648000000000124, "y": -24.589036941447688, "pred": -25.85947754427693}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<ul class="simple">
+<li><p>Plot the true values using a dashed black line, using <code class="docutils literal notranslate"><span class="pre">strokeDash=[10,5]</span></code> as an argument to <code class="docutils literal notranslate"><span class="pre">mark_line</span></code>.  Name the chart <code class="docutils literal notranslate"><span class="pre">c3</span></code>.</p></li>
+</ul>
+<p>Don’t focus too much on the <code class="docutils literal notranslate"><span class="pre">strokeDash=[10,5]</span></code> part, I just wanted to show you an example of an option that exists.  Here the dashes are made with 10 black pixels followed by a gap of 5 pixels.</p>
+<p>This curve represents the true underlying polynomial that we used to generate the data (before adding the random noise to it).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c3</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">strokeDash</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y_true&quot;</span>
+<span class="p">)</span>
+
+<span class="n">c3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-a5f83b603ca7473ea590ad351c37428b"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-a5f83b603ca7473ea590ad351c37428b") {
+      outputDiv = document.getElementById("altair-viz-a5f83b603ca7473ea590ad351c37428b");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-ccbf1185dae428a433a7e5c5a6c44e59"}, "mark": {"type": "line", "color": "black", "strokeDash": [10, 5]}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y_true", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ccbf1185dae428a433a7e5c5a6c44e59": [{"x": -3.0, "y_true": 19.0, "y": 23.824405650704584, "pred": 20.31773192269804}, {"x": -2.9, "y_true": 15.647999999999996, "y": 10.237108055098796, "pred": 16.3591719494184}, {"x": -2.8, "y_true": 12.583999999999993, "y": 16.91908679057319, "pred": 12.745261105607195}, {"x": -2.6999999999999997, "y_true": 9.795999999999992, "y": 8.955196204317206, "pred": 9.46202223391364}, {"x": -2.5999999999999996, "y_true": 7.271999999999991, "y": 6.323695104370164, "pred": 6.495478176986933}, {"x": -2.4999999999999996, "y_true": 4.999999999999989, "y": 10.602832278036008, "pred": 3.8316517774762664}, {"x": -2.3999999999999995, "y_true": 2.967999999999993, "y": 0.7841046813223418, "pred": 1.4565658780308421}, {"x": -2.2999999999999994, "y_true": 1.1639999999999908, "y": -5.234226812329393, "pred": -0.6437566787001376}, {"x": -2.1999999999999993, "y_true": -0.4240000000000137, "y": -2.7714988713165125, "pred": -2.4832930500674815}, {"x": -2.099999999999999, "y_true": -1.808000000000014, "y": -7.792135811821553, "pred": -4.076020393421988}, {"x": -1.9999999999999991, "y_true": -3.0000000000000107, "y": -12.199285711986715, "pred": -5.435915866114457}, {"x": -1.899999999999999, "y_true": -4.012000000000011, "y": -4.739784849269134, "pred": -6.576956625495692}, {"x": -1.799999999999999, "y_true": -4.856000000000009, "y": -2.864605133958004, "pred": -7.513119828916496}, {"x": -1.6999999999999988, "y_true": -5.544000000000008, "y": -16.3543063737946, "pred": -8.258382633727667}, {"x": -1.5999999999999988, "y_true": -6.088000000000006, "y": -6.015613468222883, "pred": -8.82672219728001}, {"x": -1.4999999999999987, "y_true": -6.5000000000000036, "y": -5.224009421444809, "pred": -9.232115676924321}, {"x": -1.3999999999999986, "y_true": -6.792000000000003, "y": -5.926044796345713, "pred": -9.48854023001141}, {"x": -1.2999999999999985, "y_true": -6.976000000000002, "y": -13.326467602050318, "pred": -9.60997301389207}, {"x": -1.1999999999999984, "y_true": -7.064000000000001, "y": -8.618806640209073, "pred": -9.610391185917106}, {"x": -1.0999999999999983, "y_true": -7.067999999999998, "y": -7.999078323585601, "pred": -9.503771903437322}, {"x": -0.9999999999999982, "y_true": -6.999999999999998, "y": -4.835119581575062, "pred": -9.304092323803516}, {"x": -0.8999999999999981, "y_true": -6.871999999999996, "y": -13.308756625035866, "pred": -9.02532960436649}, {"x": -0.799999999999998, "y_true": -6.695999999999996, "y": -4.778936156426603, "pred": -8.681460902477049}, {"x": -0.699999999999998, "y_true": -6.4839999999999955, "y": -1.524599833485449, "pred": -8.28646337548599}, {"x": -0.5999999999999979, "y_true": -6.247999999999995, "y": -17.68622693729956, "pred": -7.854314180744115}, {"x": -0.4999999999999978, "y_true": -5.999999999999995, "y": -4.880304361628128, "pred": -7.398990475602229}, {"x": -0.3999999999999977, "y_true": -5.7519999999999945, "y": -13.38506705601617, "pred": -6.9344694174111305}, {"x": -0.2999999999999976, "y_true": -5.515999999999995, "y": -6.368334641163491, "pred": -6.474728163521622}, {"x": -0.1999999999999975, "y_true": -5.303999999999996, "y": -8.704741835733941, "pred": -6.033743871284505}, {"x": -0.09999999999999742, "y_true": -5.127999999999997, "y": 1.2401753336845394, "pred": -5.6254936980505805}, {"x": 2.6645352591003757e-15, "y_true": -4.999999999999997, "y": -4.71445657964094, "pred": -5.263954801170651}, {"x": 0.10000000000000275, "y_true": -4.931999999999999, "y": -0.9555565402837516, "pred": -4.963104337995516}, {"x": 0.20000000000000284, "y_true": -4.936000000000002, "y": -10.16989462767013, "pred": -4.73691946587598}, {"x": 0.30000000000000293, "y_true": -5.024000000000004, "y": -2.7213636464572986, "pred": -4.5993773421628426}, {"x": 0.400000000000003, "y_true": -5.208000000000007, "y": 1.90386367809573, "pred": -4.564455124206906}, {"x": 0.5000000000000031, "y_true": -5.50000000000001, "y": -9.036284597169002, "pred": -4.646129969358971}, {"x": 0.6000000000000032, "y_true": -5.912000000000015, "y": -2.5826311606487367, "pred": -4.85837903496984}, {"x": 0.7000000000000033, "y_true": -6.456000000000021, "y": -4.049151482825412, "pred": -5.215179478390313}, {"x": 0.8000000000000034, "y_true": -7.144000000000027, "y": -7.467369873682661, "pred": -5.730508456971194}, {"x": 0.9000000000000035, "y_true": -7.988000000000032, "y": -14.245467115049165, "pred": -6.418343128063282}, {"x": 1.0000000000000036, "y_true": -9.000000000000039, "y": -7.58449011919938, "pred": -7.29266064901738}, {"x": 1.1000000000000032, "y_true": -10.192000000000041, "y": -11.5434400342294, "pred": -8.367438177184283}, {"x": 1.2000000000000037, "y_true": -11.576000000000054, "y": -8.565901471871978, "pred": -9.656652869914812}, {"x": 1.3000000000000043, "y_true": -13.164000000000073, "y": -9.269587854684678, "pred": -11.174281884559754}, {"x": 1.400000000000004, "y_true": -14.968000000000075, "y": -7.295299533414727, "pred": -12.934302378469898}, {"x": 1.5000000000000036, "y_true": -17.000000000000078, "y": -21.18278332190194, "pred": -14.950691508996059}, {"x": 1.600000000000004, "y_true": -19.272000000000098, "y": -14.946790703056552, "pred": -17.237426433489055}, {"x": 1.7000000000000046, "y_true": -21.796000000000124, "y": -18.291898867126424, "pred": -19.808484309299676}, {"x": 1.8000000000000043, "y_true": -24.584000000000124, "y": -24.2068839018185, "pred": -22.677842293778692}, {"x": 1.900000000000004, "y_true": -27.648000000000124, "y": -24.589036941447688, "pred": -25.85947754427693}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<ul class="simple">
+<li><p>Layer these plots on top of the above scatter plot <code class="docutils literal notranslate"><span class="pre">c1</span></code>.</p></li>
+</ul>
+<p>Notice how similar our two polynomial curves are.  If we had used more data points or less standard deviation for our random noise, we would expect the curves to be even closer to each other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">+</span><span class="n">c2</span><span class="o">+</span><span class="n">c3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-e07419a874cf444b8ddbaf6c9e92cd5c"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-e07419a874cf444b8ddbaf6c9e92cd5c") {
+      outputDiv = document.getElementById("altair-viz-e07419a874cf444b8ddbaf6c9e92cd5c");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "circle", "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}, {"mark": {"type": "line", "color": "red"}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "pred", "type": "quantitative"}}}, {"mark": {"type": "line", "color": "black", "strokeDash": [10, 5]}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y_true", "type": "quantitative"}}}], "data": {"name": "data-ccbf1185dae428a433a7e5c5a6c44e59"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ccbf1185dae428a433a7e5c5a6c44e59": [{"x": -3.0, "y_true": 19.0, "y": 23.824405650704584, "pred": 20.31773192269804}, {"x": -2.9, "y_true": 15.647999999999996, "y": 10.237108055098796, "pred": 16.3591719494184}, {"x": -2.8, "y_true": 12.583999999999993, "y": 16.91908679057319, "pred": 12.745261105607195}, {"x": -2.6999999999999997, "y_true": 9.795999999999992, "y": 8.955196204317206, "pred": 9.46202223391364}, {"x": -2.5999999999999996, "y_true": 7.271999999999991, "y": 6.323695104370164, "pred": 6.495478176986933}, {"x": -2.4999999999999996, "y_true": 4.999999999999989, "y": 10.602832278036008, "pred": 3.8316517774762664}, {"x": -2.3999999999999995, "y_true": 2.967999999999993, "y": 0.7841046813223418, "pred": 1.4565658780308421}, {"x": -2.2999999999999994, "y_true": 1.1639999999999908, "y": -5.234226812329393, "pred": -0.6437566787001376}, {"x": -2.1999999999999993, "y_true": -0.4240000000000137, "y": -2.7714988713165125, "pred": -2.4832930500674815}, {"x": -2.099999999999999, "y_true": -1.808000000000014, "y": -7.792135811821553, "pred": -4.076020393421988}, {"x": -1.9999999999999991, "y_true": -3.0000000000000107, "y": -12.199285711986715, "pred": -5.435915866114457}, {"x": -1.899999999999999, "y_true": -4.012000000000011, "y": -4.739784849269134, "pred": -6.576956625495692}, {"x": -1.799999999999999, "y_true": -4.856000000000009, "y": -2.864605133958004, "pred": -7.513119828916496}, {"x": -1.6999999999999988, "y_true": -5.544000000000008, "y": -16.3543063737946, "pred": -8.258382633727667}, {"x": -1.5999999999999988, "y_true": -6.088000000000006, "y": -6.015613468222883, "pred": -8.82672219728001}, {"x": -1.4999999999999987, "y_true": -6.5000000000000036, "y": -5.224009421444809, "pred": -9.232115676924321}, {"x": -1.3999999999999986, "y_true": -6.792000000000003, "y": -5.926044796345713, "pred": -9.48854023001141}, {"x": -1.2999999999999985, "y_true": -6.976000000000002, "y": -13.326467602050318, "pred": -9.60997301389207}, {"x": -1.1999999999999984, "y_true": -7.064000000000001, "y": -8.618806640209073, "pred": -9.610391185917106}, {"x": -1.0999999999999983, "y_true": -7.067999999999998, "y": -7.999078323585601, "pred": -9.503771903437322}, {"x": -0.9999999999999982, "y_true": -6.999999999999998, "y": -4.835119581575062, "pred": -9.304092323803516}, {"x": -0.8999999999999981, "y_true": -6.871999999999996, "y": -13.308756625035866, "pred": -9.02532960436649}, {"x": -0.799999999999998, "y_true": -6.695999999999996, "y": -4.778936156426603, "pred": -8.681460902477049}, {"x": -0.699999999999998, "y_true": -6.4839999999999955, "y": -1.524599833485449, "pred": -8.28646337548599}, {"x": -0.5999999999999979, "y_true": -6.247999999999995, "y": -17.68622693729956, "pred": -7.854314180744115}, {"x": -0.4999999999999978, "y_true": -5.999999999999995, "y": -4.880304361628128, "pred": -7.398990475602229}, {"x": -0.3999999999999977, "y_true": -5.7519999999999945, "y": -13.38506705601617, "pred": -6.9344694174111305}, {"x": -0.2999999999999976, "y_true": -5.515999999999995, "y": -6.368334641163491, "pred": -6.474728163521622}, {"x": -0.1999999999999975, "y_true": -5.303999999999996, "y": -8.704741835733941, "pred": -6.033743871284505}, {"x": -0.09999999999999742, "y_true": -5.127999999999997, "y": 1.2401753336845394, "pred": -5.6254936980505805}, {"x": 2.6645352591003757e-15, "y_true": -4.999999999999997, "y": -4.71445657964094, "pred": -5.263954801170651}, {"x": 0.10000000000000275, "y_true": -4.931999999999999, "y": -0.9555565402837516, "pred": -4.963104337995516}, {"x": 0.20000000000000284, "y_true": -4.936000000000002, "y": -10.16989462767013, "pred": -4.73691946587598}, {"x": 0.30000000000000293, "y_true": -5.024000000000004, "y": -2.7213636464572986, "pred": -4.5993773421628426}, {"x": 0.400000000000003, "y_true": -5.208000000000007, "y": 1.90386367809573, "pred": -4.564455124206906}, {"x": 0.5000000000000031, "y_true": -5.50000000000001, "y": -9.036284597169002, "pred": -4.646129969358971}, {"x": 0.6000000000000032, "y_true": -5.912000000000015, "y": -2.5826311606487367, "pred": -4.85837903496984}, {"x": 0.7000000000000033, "y_true": -6.456000000000021, "y": -4.049151482825412, "pred": -5.215179478390313}, {"x": 0.8000000000000034, "y_true": -7.144000000000027, "y": -7.467369873682661, "pred": -5.730508456971194}, {"x": 0.9000000000000035, "y_true": -7.988000000000032, "y": -14.245467115049165, "pred": -6.418343128063282}, {"x": 1.0000000000000036, "y_true": -9.000000000000039, "y": -7.58449011919938, "pred": -7.29266064901738}, {"x": 1.1000000000000032, "y_true": -10.192000000000041, "y": -11.5434400342294, "pred": -8.367438177184283}, {"x": 1.2000000000000037, "y_true": -11.576000000000054, "y": -8.565901471871978, "pred": -9.656652869914812}, {"x": 1.3000000000000043, "y_true": -13.164000000000073, "y": -9.269587854684678, "pred": -11.174281884559754}, {"x": 1.400000000000004, "y_true": -14.968000000000075, "y": -7.295299533414727, "pred": -12.934302378469898}, {"x": 1.5000000000000036, "y_true": -17.000000000000078, "y": -21.18278332190194, "pred": -14.950691508996059}, {"x": 1.600000000000004, "y_true": -19.272000000000098, "y": -14.946790703056552, "pred": -17.237426433489055}, {"x": 1.7000000000000046, "y_true": -21.796000000000124, "y": -18.291898867126424, "pred": -19.808484309299676}, {"x": 1.8000000000000043, "y_true": -24.584000000000124, "y": -24.2068839018185, "pred": -22.677842293778692}, {"x": 1.900000000000004, "y_true": -27.648000000000124, "y": -24.589036941447688, "pred": -25.85947754427693}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</section>
+</section>
+<section id="extra-time">
+<h2>Extra time<a class="headerlink" href="#extra-time" title="Permalink to this heading">#</a></h2>
+<p>I doubt there will be extra time, but if there is, we will introduce <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Week6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week6-Monday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 6 Monday</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Worksheet11.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Worksheet 11</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-polynomial-regression">More on polynomial regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-random-data">Generating random data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression-using-polynomialfeatures">Polynomial regression using <code class="docutils literal notranslate"><span class="pre">PolynomialFeatures</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pipeline-to-combine-multiple-steps">Using <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> to combine multiple steps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-time">Extra time</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
