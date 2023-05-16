@@ -1,0 +1,1536 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 7 Monday &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week7/Week7-Monday';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Worksheet 13" href="Worksheet13.html" />
+    <link rel="prev" title="Week 7" href="Week7-Intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week2/Week2-Intro.html">Week 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Friday.html">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet6.html">Worksheet 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week4/Week4-Intro.html">Week 4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Tuesday.html">Week 4 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Wednesday.html">Week 4 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Friday.html">Week 4 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Worksheet8.html">Worksheet 8</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week5/Week5-Intro.html">Week 5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Tuesday.html">Week 5 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Wednesday.html">Week 5 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Thursday.html">Week 5 Thursday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Friday.html">Week 5 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Worksheet9.html">Worksheet 9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Worksheet10.html">Worksheet 10</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week6/Week6-Intro.html">Week 6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Week6-Monday.html">Week 6 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Week6-Wednesday.html">Week 6 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Week6-Friday.html">Week 6 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Worksheet11.html">Worksheet 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Worksheet12.html">Worksheet 12</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week7-Intro.html">Week 7</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Week 7 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Worksheet13.html">Worksheet 13</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Week7/Week7-Monday.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 7 Monday</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-if-a-penguin-is-in-the-chinstrap-species">Predicting if a penguin is in the Chinstrap species</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-7-monday">
+<h1>Week 7 Monday<a class="headerlink" href="#week-7-monday" title="Permalink to this heading">#</a></h1>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In-class quiz tomorrow.  Based on Worksheets due tonight.</p></li>
+<li><p>Worksheet 13 is posted, on Logistic Regression (the topic of Prof. Zhou’s lecture on Friday and the lectures this week).</p></li>
+<li><p>Not expected to know from Friday: gradient descent for finding the coefficients beta, Matplotlib.</p></li>
+<li><p>Next week’s quiz will be based on Worksheets 13 and 14 and this week’s lectures.  (We will review the most relevant parts of Prof. Zhou’s lecture.)</p></li>
+<li><p>Plan for today: Approximately 15 minutes of lecture, then 10-15 minutes to work (Maya and Hanson are here to answer questions), then more lecture.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="predicting-if-a-penguin-is-in-the-chinstrap-species">
+<h2>Predicting if a penguin is in the Chinstrap species<a class="headerlink" href="#predicting-if-a-penguin-is-in-the-chinstrap-species" title="Permalink to this heading">#</a></h2>
+<p>Today we will use Logistic Regression with the flipper length and bill length columns in the penguins dataset to predict if a penguin is in the Chinstrap species.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are the columns we’re going to use.  I didn’t want to keep typing these repeatedly, so I stored them as a length two list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flipper_length_mm&quot;</span><span class="p">,</span> <span class="s2">&quot;bill_length_mm&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is what the true data looks like.  I chose two input variables because we can visualize this easily.  With three or more input variables, I wouldn’t be able to draw a chart like the following showing all the information.</p>
+<p>When you look at the following, you should be thinking that we will be inputting the flipper length and the bill length, and outputting a prediction for whether a penguin belongs to the Chinstrap species.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;species&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-f9c913a87e3e4f58b53c0a85555d45b4"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-f9c913a87e3e4f58b53c0a85555d45b4") {
+      outputDiv = document.getElementById("altair-viz-f9c913a87e3e4f58b53c0a85555d45b4");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-a0ec2e5925707c5dba9da2c1e24eff5a"}, "mark": "circle", "encoding": {"color": {"field": "species", "type": "nominal"}, "x": {"field": "flipper_length_mm", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "bill_length_mm", "scale": {"zero": false}, "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-a0ec2e5925707c5dba9da2c1e24eff5a": [{"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181.0, "body_mass_g": 3750.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.5, "bill_depth_mm": 17.4, "flipper_length_mm": 186.0, "body_mass_g": 3800.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.3, "bill_depth_mm": 18.0, "flipper_length_mm": 195.0, "body_mass_g": 3250.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 19.3, "flipper_length_mm": 193.0, "body_mass_g": 3450.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.3, "bill_depth_mm": 20.6, "flipper_length_mm": 190.0, "body_mass_g": 3650.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.9, "bill_depth_mm": 17.8, "flipper_length_mm": 181.0, "body_mass_g": 3625.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.2, "bill_depth_mm": 19.6, "flipper_length_mm": 195.0, "body_mass_g": 4675.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.1, "bill_depth_mm": 17.6, "flipper_length_mm": 182.0, "body_mass_g": 3200.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.6, "bill_depth_mm": 21.2, "flipper_length_mm": 191.0, "body_mass_g": 3800.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.6, "bill_depth_mm": 21.1, "flipper_length_mm": 198.0, "body_mass_g": 4400.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.6, "bill_depth_mm": 17.8, "flipper_length_mm": 185.0, "body_mass_g": 3700.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.7, "bill_depth_mm": 19.0, "flipper_length_mm": 195.0, "body_mass_g": 3450.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.5, "bill_depth_mm": 20.7, "flipper_length_mm": 197.0, "body_mass_g": 4500.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.4, "bill_depth_mm": 18.4, "flipper_length_mm": 184.0, "body_mass_g": 3325.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 46.0, "bill_depth_mm": 21.5, "flipper_length_mm": 194.0, "body_mass_g": 4200.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.8, "bill_depth_mm": 18.3, "flipper_length_mm": 174.0, "body_mass_g": 3400.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.7, "bill_depth_mm": 18.7, "flipper_length_mm": 180.0, "body_mass_g": 3600.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.9, "bill_depth_mm": 19.2, "flipper_length_mm": 189.0, "body_mass_g": 3800.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.2, "bill_depth_mm": 18.1, "flipper_length_mm": 185.0, "body_mass_g": 3950.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.8, "bill_depth_mm": 17.2, "flipper_length_mm": 180.0, "body_mass_g": 3800.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.3, "bill_depth_mm": 18.9, "flipper_length_mm": 187.0, "body_mass_g": 3800.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.6, "bill_depth_mm": 18.6, "flipper_length_mm": 183.0, "body_mass_g": 3550.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.5, "bill_depth_mm": 17.9, "flipper_length_mm": 187.0, "body_mass_g": 3200.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.9, "bill_depth_mm": 18.6, "flipper_length_mm": 172.0, "body_mass_g": 3150.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.5, "bill_depth_mm": 18.9, "flipper_length_mm": 180.0, "body_mass_g": 3950.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.5, "bill_depth_mm": 16.7, "flipper_length_mm": 178.0, "body_mass_g": 3250.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.2, "bill_depth_mm": 18.1, "flipper_length_mm": 178.0, "body_mass_g": 3900.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.5, "bill_depth_mm": 17.8, "flipper_length_mm": 188.0, "body_mass_g": 3300.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.9, "bill_depth_mm": 18.9, "flipper_length_mm": 184.0, "body_mass_g": 3900.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.4, "bill_depth_mm": 17.0, "flipper_length_mm": 195.0, "body_mass_g": 3325.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 21.1, "flipper_length_mm": 196.0, "body_mass_g": 4150.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.8, "bill_depth_mm": 20.0, "flipper_length_mm": 190.0, "body_mass_g": 3950.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 42.2, "bill_depth_mm": 18.5, "flipper_length_mm": 180.0, "body_mass_g": 3550.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.6, "bill_depth_mm": 19.3, "flipper_length_mm": 181.0, "body_mass_g": 3300.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.8, "bill_depth_mm": 19.1, "flipper_length_mm": 184.0, "body_mass_g": 4650.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.5, "bill_depth_mm": 18.0, "flipper_length_mm": 182.0, "body_mass_g": 3150.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.8, "bill_depth_mm": 18.4, "flipper_length_mm": 195.0, "body_mass_g": 3900.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 18.5, "flipper_length_mm": 186.0, "body_mass_g": 3100.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 44.1, "bill_depth_mm": 19.7, "flipper_length_mm": 196.0, "body_mass_g": 4400.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.0, "bill_depth_mm": 16.9, "flipper_length_mm": 185.0, "body_mass_g": 3000.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.6, "bill_depth_mm": 18.8, "flipper_length_mm": 190.0, "body_mass_g": 4600.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.1, "bill_depth_mm": 19.0, "flipper_length_mm": 182.0, "body_mass_g": 3425.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3450.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 42.3, "bill_depth_mm": 21.2, "flipper_length_mm": 191.0, "body_mass_g": 4150.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.6, "bill_depth_mm": 17.7, "flipper_length_mm": 186.0, "body_mass_g": 3500.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.1, "bill_depth_mm": 18.9, "flipper_length_mm": 188.0, "body_mass_g": 4300.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.0, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3450.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 42.0, "bill_depth_mm": 19.5, "flipper_length_mm": 200.0, "body_mass_g": 4050.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 34.5, "bill_depth_mm": 18.1, "flipper_length_mm": 187.0, "body_mass_g": 2900.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.4, "bill_depth_mm": 18.6, "flipper_length_mm": 191.0, "body_mass_g": 3700.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.0, "bill_depth_mm": 17.5, "flipper_length_mm": 186.0, "body_mass_g": 3550.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 40.6, "bill_depth_mm": 18.8, "flipper_length_mm": 193.0, "body_mass_g": 3800.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 36.5, "bill_depth_mm": 16.6, "flipper_length_mm": 181.0, "body_mass_g": 2850.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.6, "bill_depth_mm": 19.1, "flipper_length_mm": 194.0, "body_mass_g": 3750.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.7, "bill_depth_mm": 16.9, "flipper_length_mm": 185.0, "body_mass_g": 3150.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.3, "bill_depth_mm": 21.1, "flipper_length_mm": 195.0, "body_mass_g": 4400.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.6, "bill_depth_mm": 17.0, "flipper_length_mm": 185.0, "body_mass_g": 3600.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.1, "bill_depth_mm": 18.2, "flipper_length_mm": 192.0, "body_mass_g": 4050.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 36.4, "bill_depth_mm": 17.1, "flipper_length_mm": 184.0, "body_mass_g": 2850.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.6, "bill_depth_mm": 18.0, "flipper_length_mm": 192.0, "body_mass_g": 3950.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.5, "bill_depth_mm": 16.2, "flipper_length_mm": 195.0, "body_mass_g": 3350.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.1, "bill_depth_mm": 19.1, "flipper_length_mm": 188.0, "body_mass_g": 4100.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.9, "bill_depth_mm": 16.6, "flipper_length_mm": 190.0, "body_mass_g": 3050.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.8, "bill_depth_mm": 19.4, "flipper_length_mm": 198.0, "body_mass_g": 4450.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 33.5, "bill_depth_mm": 19.0, "flipper_length_mm": 190.0, "body_mass_g": 3600.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.7, "bill_depth_mm": 18.4, "flipper_length_mm": 190.0, "body_mass_g": 3900.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.6, "bill_depth_mm": 17.2, "flipper_length_mm": 196.0, "body_mass_g": 3550.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 45.8, "bill_depth_mm": 18.9, "flipper_length_mm": 197.0, "body_mass_g": 4150.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.5, "bill_depth_mm": 17.5, "flipper_length_mm": 190.0, "body_mass_g": 3700.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.8, "bill_depth_mm": 18.5, "flipper_length_mm": 195.0, "body_mass_g": 4250.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.9, "bill_depth_mm": 16.8, "flipper_length_mm": 191.0, "body_mass_g": 3700.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.2, "bill_depth_mm": 19.4, "flipper_length_mm": 184.0, "body_mass_g": 3900.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.2, "bill_depth_mm": 16.1, "flipper_length_mm": 187.0, "body_mass_g": 3550.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.1, "bill_depth_mm": 19.1, "flipper_length_mm": 195.0, "body_mass_g": 4000.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 34.6, "bill_depth_mm": 17.2, "flipper_length_mm": 189.0, "body_mass_g": 3200.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 42.9, "bill_depth_mm": 17.6, "flipper_length_mm": 196.0, "body_mass_g": 4700.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 18.8, "flipper_length_mm": 187.0, "body_mass_g": 3800.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.1, "bill_depth_mm": 19.4, "flipper_length_mm": 193.0, "body_mass_g": 4200.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.3, "bill_depth_mm": 17.8, "flipper_length_mm": 191.0, "body_mass_g": 3350.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.3, "bill_depth_mm": 20.3, "flipper_length_mm": 194.0, "body_mass_g": 3550.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.3, "bill_depth_mm": 19.5, "flipper_length_mm": 190.0, "body_mass_g": 3800.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.9, "bill_depth_mm": 18.6, "flipper_length_mm": 189.0, "body_mass_g": 3500.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.3, "bill_depth_mm": 19.2, "flipper_length_mm": 189.0, "body_mass_g": 3950.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.9, "bill_depth_mm": 18.8, "flipper_length_mm": 190.0, "body_mass_g": 3600.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 35.7, "bill_depth_mm": 18.0, "flipper_length_mm": 202.0, "body_mass_g": 3550.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.1, "bill_depth_mm": 18.1, "flipper_length_mm": 205.0, "body_mass_g": 4300.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 34.0, "bill_depth_mm": 17.1, "flipper_length_mm": 185.0, "body_mass_g": 3400.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.6, "bill_depth_mm": 18.1, "flipper_length_mm": 186.0, "body_mass_g": 4450.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.2, "bill_depth_mm": 17.3, "flipper_length_mm": 187.0, "body_mass_g": 3300.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.8, "bill_depth_mm": 18.9, "flipper_length_mm": 208.0, "body_mass_g": 4300.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.1, "bill_depth_mm": 18.6, "flipper_length_mm": 190.0, "body_mass_g": 3700.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.3, "bill_depth_mm": 18.5, "flipper_length_mm": 196.0, "body_mass_g": 4350.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 33.1, "bill_depth_mm": 16.1, "flipper_length_mm": 178.0, "body_mass_g": 2900.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 43.2, "bill_depth_mm": 18.5, "flipper_length_mm": 192.0, "body_mass_g": 4100.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 35.0, "bill_depth_mm": 17.9, "flipper_length_mm": 192.0, "body_mass_g": 3725.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 41.0, "bill_depth_mm": 20.0, "flipper_length_mm": 203.0, "body_mass_g": 4725.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.7, "bill_depth_mm": 16.0, "flipper_length_mm": 183.0, "body_mass_g": 3075.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.8, "bill_depth_mm": 20.0, "flipper_length_mm": 190.0, "body_mass_g": 4250.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 37.9, "bill_depth_mm": 18.6, "flipper_length_mm": 193.0, "body_mass_g": 2925.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.7, "bill_depth_mm": 18.9, "flipper_length_mm": 184.0, "body_mass_g": 3550.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.6, "bill_depth_mm": 17.2, "flipper_length_mm": 199.0, "body_mass_g": 3750.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.2, "bill_depth_mm": 20.0, "flipper_length_mm": 190.0, "body_mass_g": 3900.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 17.0, "flipper_length_mm": 181.0, "body_mass_g": 3175.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 43.2, "bill_depth_mm": 19.0, "flipper_length_mm": 197.0, "body_mass_g": 4775.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 16.5, "flipper_length_mm": 198.0, "body_mass_g": 3825.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 45.6, "bill_depth_mm": 20.3, "flipper_length_mm": 191.0, "body_mass_g": 4600.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.7, "bill_depth_mm": 17.7, "flipper_length_mm": 193.0, "body_mass_g": 3200.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 42.2, "bill_depth_mm": 19.5, "flipper_length_mm": 197.0, "body_mass_g": 4275.0, "sex": "Male"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 39.6, "bill_depth_mm": 20.7, "flipper_length_mm": 191.0, "body_mass_g": 3900.0, "sex": "Female"}, {"species": "Adelie", "island": "Biscoe", "bill_length_mm": 42.7, "bill_depth_mm": 18.3, "flipper_length_mm": 196.0, "body_mass_g": 4075.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.6, "bill_depth_mm": 17.0, "flipper_length_mm": 188.0, "body_mass_g": 2900.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.3, "bill_depth_mm": 20.5, "flipper_length_mm": 199.0, "body_mass_g": 3775.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.7, "bill_depth_mm": 17.0, "flipper_length_mm": 189.0, "body_mass_g": 3350.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.1, "bill_depth_mm": 18.6, "flipper_length_mm": 189.0, "body_mass_g": 3325.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 36.2, "bill_depth_mm": 17.2, "flipper_length_mm": 187.0, "body_mass_g": 3150.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 37.7, "bill_depth_mm": 19.8, "flipper_length_mm": 198.0, "body_mass_g": 3500.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.2, "bill_depth_mm": 17.0, "flipper_length_mm": 176.0, "body_mass_g": 3450.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.4, "bill_depth_mm": 18.5, "flipper_length_mm": 202.0, "body_mass_g": 3875.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 35.2, "bill_depth_mm": 15.9, "flipper_length_mm": 186.0, "body_mass_g": 3050.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 40.6, "bill_depth_mm": 19.0, "flipper_length_mm": 199.0, "body_mass_g": 4000.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.8, "bill_depth_mm": 17.6, "flipper_length_mm": 191.0, "body_mass_g": 3275.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 41.5, "bill_depth_mm": 18.3, "flipper_length_mm": 195.0, "body_mass_g": 4300.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 39.0, "bill_depth_mm": 17.1, "flipper_length_mm": 191.0, "body_mass_g": 3050.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 44.1, "bill_depth_mm": 18.0, "flipper_length_mm": 210.0, "body_mass_g": 4000.0, "sex": "Male"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 38.5, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3325.0, "sex": "Female"}, {"species": "Adelie", "island": "Torgersen", "bill_length_mm": 43.1, "bill_depth_mm": 19.2, "flipper_length_mm": 197.0, "body_mass_g": 3500.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.8, "bill_depth_mm": 18.5, "flipper_length_mm": 193.0, "body_mass_g": 3500.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.5, "bill_depth_mm": 18.5, "flipper_length_mm": 199.0, "body_mass_g": 4475.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 38.1, "bill_depth_mm": 17.6, "flipper_length_mm": 187.0, "body_mass_g": 3425.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.1, "bill_depth_mm": 17.5, "flipper_length_mm": 190.0, "body_mass_g": 3900.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 35.6, "bill_depth_mm": 17.5, "flipper_length_mm": 191.0, "body_mass_g": 3175.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.2, "bill_depth_mm": 20.1, "flipper_length_mm": 200.0, "body_mass_g": 3975.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.0, "bill_depth_mm": 16.5, "flipper_length_mm": 185.0, "body_mass_g": 3400.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.7, "bill_depth_mm": 17.9, "flipper_length_mm": 193.0, "body_mass_g": 4250.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.2, "bill_depth_mm": 17.1, "flipper_length_mm": 193.0, "body_mass_g": 3400.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.6, "bill_depth_mm": 17.2, "flipper_length_mm": 187.0, "body_mass_g": 3475.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 32.1, "bill_depth_mm": 15.5, "flipper_length_mm": 188.0, "body_mass_g": 3050.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 40.7, "bill_depth_mm": 17.0, "flipper_length_mm": 190.0, "body_mass_g": 3725.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.3, "bill_depth_mm": 16.8, "flipper_length_mm": 192.0, "body_mass_g": 3000.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.0, "bill_depth_mm": 18.7, "flipper_length_mm": 185.0, "body_mass_g": 3650.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 18.6, "flipper_length_mm": 190.0, "body_mass_g": 4250.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.6, "bill_depth_mm": 18.4, "flipper_length_mm": 184.0, "body_mass_g": 3475.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.8, "flipper_length_mm": 195.0, "body_mass_g": 3450.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 37.8, "bill_depth_mm": 18.1, "flipper_length_mm": 193.0, "body_mass_g": 3750.0, "sex": "Male"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.1, "flipper_length_mm": 187.0, "body_mass_g": 3700.0, "sex": "Female"}, {"species": "Adelie", "island": "Dream", "bill_length_mm": 41.5, "bill_depth_mm": 18.5, "flipper_length_mm": 201.0, "body_mass_g": 4000.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.5, "bill_depth_mm": 17.9, "flipper_length_mm": 192.0, "body_mass_g": 3500.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.0, "bill_depth_mm": 19.5, "flipper_length_mm": 196.0, "body_mass_g": 3900.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.3, "bill_depth_mm": 19.2, "flipper_length_mm": 193.0, "body_mass_g": 3650.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.4, "bill_depth_mm": 18.7, "flipper_length_mm": 188.0, "body_mass_g": 3525.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.7, "bill_depth_mm": 19.8, "flipper_length_mm": 197.0, "body_mass_g": 3725.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.2, "bill_depth_mm": 17.8, "flipper_length_mm": 198.0, "body_mass_g": 3950.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.1, "bill_depth_mm": 18.2, "flipper_length_mm": 178.0, "body_mass_g": 3250.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.3, "bill_depth_mm": 18.2, "flipper_length_mm": 197.0, "body_mass_g": 3750.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.0, "bill_depth_mm": 18.9, "flipper_length_mm": 195.0, "body_mass_g": 4150.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.3, "bill_depth_mm": 19.9, "flipper_length_mm": 198.0, "body_mass_g": 3700.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.6, "bill_depth_mm": 17.8, "flipper_length_mm": 193.0, "body_mass_g": 3800.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.7, "bill_depth_mm": 20.3, "flipper_length_mm": 194.0, "body_mass_g": 3775.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 47.0, "bill_depth_mm": 17.3, "flipper_length_mm": 185.0, "body_mass_g": 3700.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.0, "bill_depth_mm": 18.1, "flipper_length_mm": 201.0, "body_mass_g": 4050.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.9, "bill_depth_mm": 17.1, "flipper_length_mm": 190.0, "body_mass_g": 3575.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.5, "bill_depth_mm": 19.6, "flipper_length_mm": 201.0, "body_mass_g": 4050.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.3, "bill_depth_mm": 20.0, "flipper_length_mm": 197.0, "body_mass_g": 3300.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 58.0, "bill_depth_mm": 17.8, "flipper_length_mm": 181.0, "body_mass_g": 3700.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.4, "bill_depth_mm": 18.6, "flipper_length_mm": 190.0, "body_mass_g": 3450.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.2, "bill_depth_mm": 18.2, "flipper_length_mm": 195.0, "body_mass_g": 4400.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 42.4, "bill_depth_mm": 17.3, "flipper_length_mm": 181.0, "body_mass_g": 3600.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 48.5, "bill_depth_mm": 17.5, "flipper_length_mm": 191.0, "body_mass_g": 3400.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 43.2, "bill_depth_mm": 16.6, "flipper_length_mm": 187.0, "body_mass_g": 2900.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.6, "bill_depth_mm": 19.4, "flipper_length_mm": 193.0, "body_mass_g": 3800.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.7, "bill_depth_mm": 17.9, "flipper_length_mm": 195.0, "body_mass_g": 3300.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.0, "bill_depth_mm": 19.0, "flipper_length_mm": 197.0, "body_mass_g": 4150.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.5, "bill_depth_mm": 18.4, "flipper_length_mm": 200.0, "body_mass_g": 3400.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.5, "bill_depth_mm": 19.0, "flipper_length_mm": 200.0, "body_mass_g": 3800.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.4, "bill_depth_mm": 17.8, "flipper_length_mm": 191.0, "body_mass_g": 3700.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.8, "bill_depth_mm": 20.0, "flipper_length_mm": 205.0, "body_mass_g": 4550.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 40.9, "bill_depth_mm": 16.6, "flipper_length_mm": 187.0, "body_mass_g": 3200.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 54.2, "bill_depth_mm": 20.8, "flipper_length_mm": 201.0, "body_mass_g": 4300.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 42.5, "bill_depth_mm": 16.7, "flipper_length_mm": 187.0, "body_mass_g": 3350.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.0, "bill_depth_mm": 18.8, "flipper_length_mm": 203.0, "body_mass_g": 4100.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.7, "bill_depth_mm": 18.6, "flipper_length_mm": 195.0, "body_mass_g": 3600.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 47.5, "bill_depth_mm": 16.8, "flipper_length_mm": 199.0, "body_mass_g": 3900.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 47.6, "bill_depth_mm": 18.3, "flipper_length_mm": 195.0, "body_mass_g": 3850.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.0, "bill_depth_mm": 20.7, "flipper_length_mm": 210.0, "body_mass_g": 4800.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.9, "bill_depth_mm": 16.6, "flipper_length_mm": 192.0, "body_mass_g": 2700.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 53.5, "bill_depth_mm": 19.9, "flipper_length_mm": 205.0, "body_mass_g": 4500.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.0, "bill_depth_mm": 19.5, "flipper_length_mm": 210.0, "body_mass_g": 3950.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.2, "bill_depth_mm": 17.5, "flipper_length_mm": 187.0, "body_mass_g": 3650.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.9, "bill_depth_mm": 19.1, "flipper_length_mm": 196.0, "body_mass_g": 3550.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.5, "bill_depth_mm": 17.0, "flipper_length_mm": 196.0, "body_mass_g": 3500.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.9, "bill_depth_mm": 17.9, "flipper_length_mm": 196.0, "body_mass_g": 3675.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.8, "bill_depth_mm": 18.5, "flipper_length_mm": 201.0, "body_mass_g": 4450.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.1, "bill_depth_mm": 17.9, "flipper_length_mm": 190.0, "body_mass_g": 3400.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.0, "bill_depth_mm": 19.6, "flipper_length_mm": 212.0, "body_mass_g": 4300.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.5, "bill_depth_mm": 18.7, "flipper_length_mm": 187.0, "body_mass_g": 3250.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.8, "bill_depth_mm": 17.3, "flipper_length_mm": 198.0, "body_mass_g": 3675.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 48.1, "bill_depth_mm": 16.4, "flipper_length_mm": 199.0, "body_mass_g": 3325.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.4, "bill_depth_mm": 19.0, "flipper_length_mm": 201.0, "body_mass_g": 3950.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.7, "bill_depth_mm": 17.3, "flipper_length_mm": 193.0, "body_mass_g": 3600.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.7, "bill_depth_mm": 19.7, "flipper_length_mm": 203.0, "body_mass_g": 4050.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 42.5, "bill_depth_mm": 17.3, "flipper_length_mm": 187.0, "body_mass_g": 3350.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 52.2, "bill_depth_mm": 18.8, "flipper_length_mm": 197.0, "body_mass_g": 3450.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.2, "bill_depth_mm": 16.6, "flipper_length_mm": 191.0, "body_mass_g": 3250.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.3, "bill_depth_mm": 19.9, "flipper_length_mm": 203.0, "body_mass_g": 4050.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.2, "bill_depth_mm": 18.8, "flipper_length_mm": 202.0, "body_mass_g": 3800.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.6, "bill_depth_mm": 19.4, "flipper_length_mm": 194.0, "body_mass_g": 3525.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 51.9, "bill_depth_mm": 19.5, "flipper_length_mm": 206.0, "body_mass_g": 3950.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 46.8, "bill_depth_mm": 16.5, "flipper_length_mm": 189.0, "body_mass_g": 3650.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 45.7, "bill_depth_mm": 17.0, "flipper_length_mm": 195.0, "body_mass_g": 3650.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 55.8, "bill_depth_mm": 19.8, "flipper_length_mm": 207.0, "body_mass_g": 4000.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 43.5, "bill_depth_mm": 18.1, "flipper_length_mm": 202.0, "body_mass_g": 3400.0, "sex": "Female"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 49.6, "bill_depth_mm": 18.2, "flipper_length_mm": 193.0, "body_mass_g": 3775.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.8, "bill_depth_mm": 19.0, "flipper_length_mm": 210.0, "body_mass_g": 4100.0, "sex": "Male"}, {"species": "Chinstrap", "island": "Dream", "bill_length_mm": 50.2, "bill_depth_mm": 18.7, "flipper_length_mm": 198.0, "body_mass_g": 3775.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 13.2, "flipper_length_mm": 211.0, "body_mass_g": 4500.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 16.3, "flipper_length_mm": 230.0, "body_mass_g": 5700.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.7, "bill_depth_mm": 14.1, "flipper_length_mm": 210.0, "body_mass_g": 4450.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 15.2, "flipper_length_mm": 218.0, "body_mass_g": 5700.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.6, "bill_depth_mm": 14.5, "flipper_length_mm": 215.0, "body_mass_g": 5400.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 13.5, "flipper_length_mm": 210.0, "body_mass_g": 4550.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.4, "bill_depth_mm": 14.6, "flipper_length_mm": 211.0, "body_mass_g": 4800.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.7, "bill_depth_mm": 15.3, "flipper_length_mm": 219.0, "body_mass_g": 5200.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 13.4, "flipper_length_mm": 209.0, "body_mass_g": 4400.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.8, "bill_depth_mm": 15.4, "flipper_length_mm": 215.0, "body_mass_g": 5150.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 40.9, "bill_depth_mm": 13.7, "flipper_length_mm": 214.0, "body_mass_g": 4650.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.0, "bill_depth_mm": 16.1, "flipper_length_mm": 216.0, "body_mass_g": 5550.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 13.7, "flipper_length_mm": 214.0, "body_mass_g": 4650.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.4, "bill_depth_mm": 14.6, "flipper_length_mm": 213.0, "body_mass_g": 5850.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.8, "bill_depth_mm": 14.6, "flipper_length_mm": 210.0, "body_mass_g": 4200.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.3, "bill_depth_mm": 15.7, "flipper_length_mm": 217.0, "body_mass_g": 5850.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.0, "bill_depth_mm": 13.5, "flipper_length_mm": 210.0, "body_mass_g": 4150.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.2, "bill_depth_mm": 15.2, "flipper_length_mm": 221.0, "body_mass_g": 6300.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.5, "flipper_length_mm": 209.0, "body_mass_g": 4800.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.7, "bill_depth_mm": 15.1, "flipper_length_mm": 222.0, "body_mass_g": 5350.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.2, "bill_depth_mm": 14.3, "flipper_length_mm": 218.0, "body_mass_g": 5700.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.1, "bill_depth_mm": 14.5, "flipper_length_mm": 215.0, "body_mass_g": 5000.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.5, "flipper_length_mm": 213.0, "body_mass_g": 4400.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.3, "bill_depth_mm": 15.8, "flipper_length_mm": 215.0, "body_mass_g": 5050.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.9, "bill_depth_mm": 13.1, "flipper_length_mm": 215.0, "body_mass_g": 5000.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 15.1, "flipper_length_mm": 215.0, "body_mass_g": 5100.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.8, "bill_depth_mm": 15.0, "flipper_length_mm": 215.0, "body_mass_g": 5650.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.2, "bill_depth_mm": 14.3, "flipper_length_mm": 210.0, "body_mass_g": 4600.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 15.3, "flipper_length_mm": 220.0, "body_mass_g": 5550.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.3, "bill_depth_mm": 15.3, "flipper_length_mm": 222.0, "body_mass_g": 5250.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.8, "bill_depth_mm": 14.2, "flipper_length_mm": 209.0, "body_mass_g": 4700.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.1, "bill_depth_mm": 14.5, "flipper_length_mm": 207.0, "body_mass_g": 5050.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 59.6, "bill_depth_mm": 17.0, "flipper_length_mm": 230.0, "body_mass_g": 6050.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.8, "flipper_length_mm": 220.0, "body_mass_g": 5150.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.4, "bill_depth_mm": 16.3, "flipper_length_mm": 220.0, "body_mass_g": 5400.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.6, "bill_depth_mm": 13.7, "flipper_length_mm": 213.0, "body_mass_g": 4950.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.4, "bill_depth_mm": 17.3, "flipper_length_mm": 219.0, "body_mass_g": 5250.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.0, "bill_depth_mm": 13.6, "flipper_length_mm": 208.0, "body_mass_g": 4350.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.7, "bill_depth_mm": 15.7, "flipper_length_mm": 208.0, "body_mass_g": 5350.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 42.7, "bill_depth_mm": 13.7, "flipper_length_mm": 208.0, "body_mass_g": 3950.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.6, "bill_depth_mm": 16.0, "flipper_length_mm": 225.0, "body_mass_g": 5700.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.3, "bill_depth_mm": 13.7, "flipper_length_mm": 210.0, "body_mass_g": 4300.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.6, "bill_depth_mm": 15.0, "flipper_length_mm": 216.0, "body_mass_g": 4750.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.5, "bill_depth_mm": 15.9, "flipper_length_mm": 222.0, "body_mass_g": 5550.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.6, "bill_depth_mm": 13.9, "flipper_length_mm": 217.0, "body_mass_g": 4900.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 13.9, "flipper_length_mm": 210.0, "body_mass_g": 4200.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.5, "bill_depth_mm": 15.9, "flipper_length_mm": 225.0, "body_mass_g": 5400.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.9, "bill_depth_mm": 13.3, "flipper_length_mm": 213.0, "body_mass_g": 5100.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 15.8, "flipper_length_mm": 215.0, "body_mass_g": 5300.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.6, "bill_depth_mm": 14.2, "flipper_length_mm": 210.0, "body_mass_g": 4850.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.5, "bill_depth_mm": 14.1, "flipper_length_mm": 220.0, "body_mass_g": 5300.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.1, "bill_depth_mm": 14.4, "flipper_length_mm": 210.0, "body_mass_g": 4400.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.1, "bill_depth_mm": 15.0, "flipper_length_mm": 225.0, "body_mass_g": 5000.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.4, "flipper_length_mm": 217.0, "body_mass_g": 4900.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.0, "bill_depth_mm": 15.4, "flipper_length_mm": 220.0, "body_mass_g": 5050.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.8, "bill_depth_mm": 13.9, "flipper_length_mm": 208.0, "body_mass_g": 4300.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 15.0, "flipper_length_mm": 220.0, "body_mass_g": 5000.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.2, "bill_depth_mm": 14.5, "flipper_length_mm": 208.0, "body_mass_g": 4450.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.4, "bill_depth_mm": 15.3, "flipper_length_mm": 224.0, "body_mass_g": 5550.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.3, "bill_depth_mm": 13.8, "flipper_length_mm": 208.0, "body_mass_g": 4200.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.9, "flipper_length_mm": 221.0, "body_mass_g": 5300.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.7, "bill_depth_mm": 13.9, "flipper_length_mm": 214.0, "body_mass_g": 4400.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 54.3, "bill_depth_mm": 15.7, "flipper_length_mm": 231.0, "body_mass_g": 5650.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.8, "bill_depth_mm": 14.2, "flipper_length_mm": 219.0, "body_mass_g": 4700.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.8, "bill_depth_mm": 16.8, "flipper_length_mm": 230.0, "body_mass_g": 5700.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.5, "bill_depth_mm": 16.2, "flipper_length_mm": 229.0, "body_mass_g": 5800.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.5, "bill_depth_mm": 14.2, "flipper_length_mm": 220.0, "body_mass_g": 4700.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.7, "bill_depth_mm": 15.0, "flipper_length_mm": 223.0, "body_mass_g": 5550.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.7, "bill_depth_mm": 15.0, "flipper_length_mm": 216.0, "body_mass_g": 4750.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.4, "bill_depth_mm": 15.6, "flipper_length_mm": 221.0, "body_mass_g": 5000.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.2, "bill_depth_mm": 15.6, "flipper_length_mm": 221.0, "body_mass_g": 5100.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.8, "flipper_length_mm": 217.0, "body_mass_g": 5200.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.4, "bill_depth_mm": 15.0, "flipper_length_mm": 216.0, "body_mass_g": 4700.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.6, "bill_depth_mm": 16.0, "flipper_length_mm": 230.0, "body_mass_g": 5800.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.5, "bill_depth_mm": 14.2, "flipper_length_mm": 209.0, "body_mass_g": 4600.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.1, "bill_depth_mm": 16.3, "flipper_length_mm": 220.0, "body_mass_g": 6000.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 13.8, "flipper_length_mm": 215.0, "body_mass_g": 4750.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 16.4, "flipper_length_mm": 223.0, "body_mass_g": 5950.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.5, "flipper_length_mm": 212.0, "body_mass_g": 4625.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 52.5, "bill_depth_mm": 15.6, "flipper_length_mm": 221.0, "body_mass_g": 5450.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.4, "bill_depth_mm": 14.6, "flipper_length_mm": 212.0, "body_mass_g": 4725.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.0, "bill_depth_mm": 15.9, "flipper_length_mm": 224.0, "body_mass_g": 5350.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.9, "bill_depth_mm": 13.8, "flipper_length_mm": 212.0, "body_mass_g": 4750.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.8, "bill_depth_mm": 17.3, "flipper_length_mm": 228.0, "body_mass_g": 5600.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.4, "bill_depth_mm": 14.4, "flipper_length_mm": 218.0, "body_mass_g": 4600.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.3, "bill_depth_mm": 14.2, "flipper_length_mm": 218.0, "body_mass_g": 5300.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.5, "bill_depth_mm": 14.0, "flipper_length_mm": 212.0, "body_mass_g": 4875.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 52.1, "bill_depth_mm": 17.0, "flipper_length_mm": 230.0, "body_mass_g": 5550.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.5, "bill_depth_mm": 15.0, "flipper_length_mm": 218.0, "body_mass_g": 4950.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 52.2, "bill_depth_mm": 17.1, "flipper_length_mm": 228.0, "body_mass_g": 5400.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.5, "bill_depth_mm": 14.5, "flipper_length_mm": 212.0, "body_mass_g": 4750.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.5, "bill_depth_mm": 16.1, "flipper_length_mm": 224.0, "body_mass_g": 5650.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 44.5, "bill_depth_mm": 14.7, "flipper_length_mm": 214.0, "body_mass_g": 4850.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.8, "bill_depth_mm": 15.7, "flipper_length_mm": 226.0, "body_mass_g": 5200.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.4, "bill_depth_mm": 15.8, "flipper_length_mm": 216.0, "body_mass_g": 4925.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.9, "bill_depth_mm": 14.6, "flipper_length_mm": 222.0, "body_mass_g": 4875.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.4, "bill_depth_mm": 14.4, "flipper_length_mm": 203.0, "body_mass_g": 4625.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.1, "bill_depth_mm": 16.5, "flipper_length_mm": 225.0, "body_mass_g": 5250.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.5, "bill_depth_mm": 15.0, "flipper_length_mm": 219.0, "body_mass_g": 4850.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 55.9, "bill_depth_mm": 17.0, "flipper_length_mm": 228.0, "body_mass_g": 5600.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.2, "bill_depth_mm": 15.5, "flipper_length_mm": 215.0, "body_mass_g": 4975.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 15.0, "flipper_length_mm": 228.0, "body_mass_g": 5500.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.8, "bill_depth_mm": 16.1, "flipper_length_mm": 215.0, "body_mass_g": 5500.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 41.7, "bill_depth_mm": 14.7, "flipper_length_mm": 210.0, "body_mass_g": 4700.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 53.4, "bill_depth_mm": 15.8, "flipper_length_mm": 219.0, "body_mass_g": 5500.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 14.0, "flipper_length_mm": 208.0, "body_mass_g": 4575.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.1, "bill_depth_mm": 15.1, "flipper_length_mm": 209.0, "body_mass_g": 5500.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.5, "bill_depth_mm": 15.2, "flipper_length_mm": 216.0, "body_mass_g": 5000.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.8, "bill_depth_mm": 15.9, "flipper_length_mm": 229.0, "body_mass_g": 5950.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 43.5, "bill_depth_mm": 15.2, "flipper_length_mm": 213.0, "body_mass_g": 4650.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 51.5, "bill_depth_mm": 16.3, "flipper_length_mm": 230.0, "body_mass_g": 5500.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.2, "bill_depth_mm": 14.1, "flipper_length_mm": 217.0, "body_mass_g": 4375.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 55.1, "bill_depth_mm": 16.0, "flipper_length_mm": 230.0, "body_mass_g": 5850.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 48.8, "bill_depth_mm": 16.2, "flipper_length_mm": 222.0, "body_mass_g": 6000.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 47.2, "bill_depth_mm": 13.7, "flipper_length_mm": 214.0, "body_mass_g": 4925.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 46.8, "bill_depth_mm": 14.3, "flipper_length_mm": 215.0, "body_mass_g": 4850.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 50.4, "bill_depth_mm": 15.7, "flipper_length_mm": 222.0, "body_mass_g": 5750.0, "sex": "Male"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 45.2, "bill_depth_mm": 14.8, "flipper_length_mm": 212.0, "body_mass_g": 5200.0, "sex": "Female"}, {"species": "Gentoo", "island": "Biscoe", "bill_length_mm": 49.9, "bill_depth_mm": 16.1, "flipper_length_mm": 213.0, "body_mass_g": 5400.0, "sex": "Male"}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>The procedure is basically the same as for Linear Regression.</p>
+<p>First we import.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we instantiate.  The convention is to name this object <code class="docutils literal notranslate"><span class="pre">clf</span></code>, for “classifier”, since we will be performing classification, not regression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clf instead of reg because it&#39;s for classification</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are the values we will be predicting.  Logistic regression is easiest to understand (especially the formula is easiest to understand) when we are predicting a binary variable (meaning a variable with only two options).  We will see later an example of predicting the “species” variable itself, which in this case has three options.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;isChinstrap&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Chinstrap&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how there is a new Boolean column named “isChinstrap” which indicates whether or not it is a Chinstrap penguin.  I’m using <code class="docutils literal notranslate"><span class="pre">sample</span></code> here rather than <code class="docutils literal notranslate"><span class="pre">head</span></code> because the penguins at the beginning of the dataset are all the same species.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>isChinstrap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>65</th>
+      <td>Adelie</td>
+      <td>Biscoe</td>
+      <td>41.6</td>
+      <td>18.0</td>
+      <td>192.0</td>
+      <td>3950.0</td>
+      <td>Male</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>43.8</td>
+      <td>13.9</td>
+      <td>208.0</td>
+      <td>4300.0</td>
+      <td>Female</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>49.7</td>
+      <td>18.6</td>
+      <td>195.0</td>
+      <td>3600.0</td>
+      <td>Male</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>50.1</td>
+      <td>17.9</td>
+      <td>190.0</td>
+      <td>3400.0</td>
+      <td>Female</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>293</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>46.5</td>
+      <td>14.8</td>
+      <td>217.0</td>
+      <td>5200.0</td>
+      <td>Female</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>54.2</td>
+      <td>20.8</td>
+      <td>201.0</td>
+      <td>4300.0</td>
+      <td>Male</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Adelie</td>
+      <td>Dream</td>
+      <td>33.1</td>
+      <td>16.1</td>
+      <td>178.0</td>
+      <td>2900.0</td>
+      <td>Female</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>46.2</td>
+      <td>17.5</td>
+      <td>187.0</td>
+      <td>3650.0</td>
+      <td>Female</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Adelie</td>
+      <td>Dream</td>
+      <td>40.8</td>
+      <td>18.9</td>
+      <td>208.0</td>
+      <td>4300.0</td>
+      <td>Male</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>45.5</td>
+      <td>17.0</td>
+      <td>196.0</td>
+      <td>3500.0</td>
+      <td>Female</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We now do the <code class="docutils literal notranslate"><span class="pre">fit</span></code> step.  Notice how we are using two input features and we are using our new Boolean “isChinstrap” column for the target.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isChinstrap&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a sense of what the output looks like.  It seems pretty accurate, because also in the real dataset, the Chinstrap penguins are all in the same part of the dataset.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False,  True, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False,  True, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False,  True, False, False,
+       False, False, False, False, False, False, False, False,  True,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False,  True,  True,  True,  True,  True, False,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True, False,  True, False,  True,
+        True,  True,  True,  True,  True,  True, False,  True,  True,
+       False,  True,  True,  True, False,  True,  True,  True,  True,
+        True,  True, False,  True,  True,  True,  True,  True,  True,
+        True,  True,  True, False,  True,  True,  True, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False,  True, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False,  True, False, False, False, False,
+       False, False, False,  True, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are putting exactly those values above into a new column named “pred”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we can compare the actual values of “isChinstrap” to the values of “pred”.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>isChinstrap</th>
+      <th>pred</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>65</th>
+      <td>Adelie</td>
+      <td>Biscoe</td>
+      <td>41.6</td>
+      <td>18.0</td>
+      <td>192.0</td>
+      <td>3950.0</td>
+      <td>Male</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>43.8</td>
+      <td>13.9</td>
+      <td>208.0</td>
+      <td>4300.0</td>
+      <td>Female</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>49.7</td>
+      <td>18.6</td>
+      <td>195.0</td>
+      <td>3600.0</td>
+      <td>Male</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>50.1</td>
+      <td>17.9</td>
+      <td>190.0</td>
+      <td>3400.0</td>
+      <td>Female</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>293</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>46.5</td>
+      <td>14.8</td>
+      <td>217.0</td>
+      <td>5200.0</td>
+      <td>Female</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>54.2</td>
+      <td>20.8</td>
+      <td>201.0</td>
+      <td>4300.0</td>
+      <td>Male</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Adelie</td>
+      <td>Dream</td>
+      <td>33.1</td>
+      <td>16.1</td>
+      <td>178.0</td>
+      <td>2900.0</td>
+      <td>Female</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>46.2</td>
+      <td>17.5</td>
+      <td>187.0</td>
+      <td>3650.0</td>
+      <td>Female</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Adelie</td>
+      <td>Dream</td>
+      <td>40.8</td>
+      <td>18.9</td>
+      <td>208.0</td>
+      <td>4300.0</td>
+      <td>Male</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>45.5</td>
+      <td>17.0</td>
+      <td>196.0</td>
+      <td>3500.0</td>
+      <td>Female</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s see overall how accurate our predictions are.  We first make a Boolean Series indicating whether the prediction was correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isChinstrap&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      True
+1      True
+2      True
+4      True
+5      True
+       ... 
+338    True
+340    True
+341    True
+342    True
+343    True
+Length: 333, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>A simple way to find the proportion of correct predictions is to call the <code class="docutils literal notranslate"><span class="pre">mean</span></code> method of the above Boolean Series.  (Remember that <code class="docutils literal notranslate"><span class="pre">True</span></code> is treated as <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> is treated as <code class="docutils literal notranslate"><span class="pre">0</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isChinstrap&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.954954954954955
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is also a way to use <code class="docutils literal notranslate"><span class="pre">clf</span></code> directly to find the proportion of correct predictions, by calling its <code class="docutils literal notranslate"><span class="pre">score</span></code> method.  We pass as inputs to <code class="docutils literal notranslate"><span class="pre">score</span></code> the input features along with the desired outputs.  Notice that we get the same number as above.  (Reminder: the reason both regression and classification are considered to be supervised machine learning is because we imagine some “supervisor” has given us the desired outputs for at least some of the data.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isChinstrap&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.954954954954955
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s see a systematic way to find all the rows of <code class="docutils literal notranslate"><span class="pre">df</span></code> where the prediction is incorrect.  We start with a Boolean Series which has <code class="docutils literal notranslate"><span class="pre">True</span></code> for the rows where the prediction is incorrect.  (Another way to create this same pandas Series would be to use <code class="docutils literal notranslate"><span class="pre">~df[&quot;pred&quot;]</span> <span class="pre">==</span> <span class="pre">df[&quot;isChinstrap&quot;]</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isChinstrap&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      False
+1      False
+2      False
+4      False
+5      False
+       ...  
+338    False
+340    False
+341    False
+342    False
+343    False
+Length: 333, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use Boolean indexing like usual.  The following is the sub-DataFrame containing all the rows where the prediction is wrong.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isChinstrap&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>isChinstrap</th>
+      <th>pred</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>19</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>46.0</td>
+      <td>21.5</td>
+      <td>194.0</td>
+      <td>4200.0</td>
+      <td>Male</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Adelie</td>
+      <td>Dream</td>
+      <td>42.2</td>
+      <td>18.5</td>
+      <td>180.0</td>
+      <td>3550.0</td>
+      <td>Female</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>Adelie</td>
+      <td>Biscoe</td>
+      <td>45.6</td>
+      <td>20.3</td>
+      <td>191.0</td>
+      <td>4600.0</td>
+      <td>Male</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>40.2</td>
+      <td>17.0</td>
+      <td>176.0</td>
+      <td>3450.0</td>
+      <td>Female</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>45.2</td>
+      <td>17.8</td>
+      <td>198.0</td>
+      <td>3950.0</td>
+      <td>Female</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>40.9</td>
+      <td>16.6</td>
+      <td>187.0</td>
+      <td>3200.0</td>
+      <td>Female</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>42.5</td>
+      <td>16.7</td>
+      <td>187.0</td>
+      <td>3350.0</td>
+      <td>Female</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>49.0</td>
+      <td>19.5</td>
+      <td>210.0</td>
+      <td>3950.0</td>
+      <td>Male</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>45.5</td>
+      <td>17.0</td>
+      <td>196.0</td>
+      <td>3500.0</td>
+      <td>Female</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>49.0</td>
+      <td>19.6</td>
+      <td>212.0</td>
+      <td>4300.0</td>
+      <td>Male</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>42.5</td>
+      <td>17.3</td>
+      <td>187.0</td>
+      <td>3350.0</td>
+      <td>Female</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>216</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>43.5</td>
+      <td>18.1</td>
+      <td>202.0</td>
+      <td>3400.0</td>
+      <td>Female</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>59.6</td>
+      <td>17.0</td>
+      <td>230.0</td>
+      <td>6050.0</td>
+      <td>Male</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>48.4</td>
+      <td>14.4</td>
+      <td>203.0</td>
+      <td>4625.0</td>
+      <td>Female</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>327</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>53.4</td>
+      <td>15.8</td>
+      <td>219.0</td>
+      <td>5500.0</td>
+      <td>Male</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>There are 15 rows above.  If we want to know what proportion of predictions are incorrect, then we can divide by the length of the DataFrame.  The following should be <span class="math notranslate nohighlight">\(1-x\)</span> where <span class="math notranslate nohighlight">\(x\)</span> is the score value we computed above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># proportion wrong</span>
+<span class="mi">15</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.04504504504504504
+</pre></div>
+</div>
+</div>
+</div>
+<p>If all we care about are the row labels where the prediction is wrong, we can use Boolean indexing on <code class="docutils literal notranslate"><span class="pre">df.index</span></code>.  This will give us the row labels where the prediction is wrong.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isChinstrap&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([19, 37, 111, 122, 157, 182, 184, 192, 195, 199, 206, 216, 253, 318,
+            327],
+           dtype=&#39;int64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at just three inputs, two of which have the correct output, but the input from the row with label <code class="docutils literal notranslate"><span class="pre">19</span></code> does not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">cols</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>flipper_length_mm</th>
+      <th>bill_length_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>18</th>
+      <td>184.0</td>
+      <td>34.4</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>194.0</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>174.0</td>
+      <td>37.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here are the predicted outputs.  Remember that the middle of these is wrong (so all three should be False, meaning none of these three are the Chinstrap species).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">cols</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False,  True, False])
+</pre></div>
+</div>
+</div>
+</div>
+<p>A great feature of logistic regression is that it indicates not just a predicted output, but also a confidence.  We can get these confidences by using the <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> method of the fit <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> object.</p>
+<p>Here are the corresponding probabilities for the three inputs above.</p>
+<p>You should interpret the following as saying our logistic regression model is 99.977% confident in its <code class="docutils literal notranslate"><span class="pre">False</span></code> prediction for the row with label <code class="docutils literal notranslate"><span class="pre">18</span></code>, but is only 67% confident in its prediction for the row with label <code class="docutils literal notranslate"><span class="pre">19</span></code>.  This is good, because it was correct for the row with label <code class="docutils literal notranslate"><span class="pre">18</span></code> but was incorrect for the row with label <code class="docutils literal notranslate"><span class="pre">19</span></code>.</p>
+<p>We will explain two cells below how we know which number is for <code class="docutils literal notranslate"><span class="pre">False</span></code> and which number is for <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predicted probabilities</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">cols</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9.99771697e-01, 2.28303114e-04],
+       [3.29559670e-01, 6.70440330e-01],
+       [7.71818762e-01, 2.28181238e-01]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The column at index <code class="docutils literal notranslate"><span class="pre">0</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">False</span></code> predictions and the column at index <code class="docutils literal notranslate"><span class="pre">1</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">True</span></code> predictions.  I don’t think there is any way to know that in advance, but we can check it using the <code class="docutils literal notranslate"><span class="pre">classes_</span></code> attribute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">classes_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False,  True])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The whole point of logistic regression is to find parameters for estimating probabilities.  That is also the difficult part (it happens when we call <code class="docutils literal notranslate"><span class="pre">fit</span></code>).</p>
+<p>In our specific case, we have two input variables, so we need to find two coefficients and one intercept (or bias), so three parameters total.</p>
+<p>Here are the coefficients.  They are in the same order as the variables in <code class="docutils literal notranslate"><span class="pre">cols</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.34802208,  1.08405225]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the intercept.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">intercept_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([18.36005773])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a reminder of which input feature came first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;flipper_length_mm&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let <span class="math notranslate nohighlight">\(x_1\)</span> denote the flipper length and let <span class="math notranslate nohighlight">\(x_2\)</span> denote the bill length.  We are plugging approximately <span class="math notranslate nohighlight">\(18.36 + -0.35 \cdot x_1 + 1.08 \cdot x_2\)</span> into the logistic function <span class="math notranslate nohighlight">\(1/(1 + e^{-x})\)</span>.  The result will be a probability estimate for the penguin being a Chinstrap penguin.</p>
+<p>Let’s see this formula in action for the row with label <code class="docutils literal notranslate"><span class="pre">19</span></code> where we know our classifier makes a mistake.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flipper_length_mm    194.0
+bill_length_mm        46.0
+Name: 19, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we plug in the values above, we get the following.  Here we use <code class="docutils literal notranslate"><span class="pre">np.exp(x)</span></code> to compute <span class="math notranslate nohighlight">\(e^x\)</span>.</p>
+<p>I was surprised that this is not <code class="docutils literal notranslate"><span class="pre">0.67</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I expected 0.67, will fix this on Wednesday</span>
+<span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mf">18.36</span><span class="o">+-</span><span class="mf">0.35</span><span class="o">*</span><span class="mi">194</span><span class="o">+</span><span class="mf">1.08</span><span class="o">*</span><span class="mi">46</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5349429451582182
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Added after class</strong>: My mistake was that I rounded too much.  (I found it very difficult to catch this mistake.)  Let’s try with one more decimal place and see that we really do get <code class="docutils literal notranslate"><span class="pre">0.67</span></code>, as when we called <code class="docutils literal notranslate"><span class="pre">clf.predict_proba</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mf">18.36</span><span class="o">+-</span><span class="mf">0.348</span><span class="o">*</span><span class="mi">194</span><span class="o">+</span><span class="mf">1.084</span><span class="o">*</span><span class="mi">46</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.670842935992734
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Week7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week7-Intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 7</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Worksheet13.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Worksheet 13</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-if-a-penguin-is-in-the-chinstrap-species">Predicting if a penguin is in the Chinstrap species</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Worksheet 13 &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week7/Worksheet13';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 7 Monday" href="Week7-Monday.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week2/Week2-Intro.html">Week 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Week2-Friday.html">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week2/Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week3/Worksheet6.html">Worksheet 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week4/Week4-Intro.html">Week 4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Tuesday.html">Week 4 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Wednesday.html">Week 4 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Week4-Friday.html">Week 4 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week4/Worksheet8.html">Worksheet 8</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week5/Week5-Intro.html">Week 5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Tuesday.html">Week 5 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Wednesday.html">Week 5 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Thursday.html">Week 5 Thursday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Week5-Friday.html">Week 5 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Worksheet9.html">Worksheet 9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week5/Worksheet10.html">Worksheet 10</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week6/Week6-Intro.html">Week 6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Week6-Monday.html">Week 6 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Week6-Wednesday.html">Week 6 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Week6-Friday.html">Week 6 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Worksheet11.html">Worksheet 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week6/Worksheet12.html">Worksheet 12</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week7-Intro.html">Week 7</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Week7-Monday.html">Week 7 Monday</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Worksheet 13</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Week7/Worksheet13.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Worksheet 13</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-use-linear-regression">Why not use linear regression?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-logistic-regression">Using logistic regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-the-accuracy">Assessing the accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilities">Probabilities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="worksheet-13">
+<h1>Worksheet 13<a class="headerlink" href="#worksheet-13" title="Permalink to this heading">#</a></h1>
+<p>You are encouraged to work in groups of up to 3 total students, but each student should make their own submission on Canvas.  (It’s fine for everyone in the group to have the same upload.)</p>
+<p>Put the <strong>full names</strong> of everyone in your group (even if you’re working alone) here.  (This makes grading easier.)</p>
+<ul class="simple">
+<li><p><strong>Names</strong>:</p></li>
+</ul>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Our goal in this worksheet is to predict whether the species of a penguin is Adelie using its bill length as our only input feature.</p>
+<ul class="simple">
+<li><p>Import the <em>penguins</em> dataset from Seaborn, drop the rows in which the “bill_length_mm” column contains missing data, and save the resulting it in the variable name <code class="docutils literal notranslate"><span class="pre">df</span></code>.  (Hint.  I don’t see a way to do this using <code class="docutils literal notranslate"><span class="pre">dropna</span></code>.  I recommend using Boolean indexing together with the <code class="docutils literal notranslate"><span class="pre">isna</span></code> method and negation <code class="docutils literal notranslate"><span class="pre">~</span></code> or else with the <code class="docutils literal notranslate"><span class="pre">notna</span></code> method.  Call the <code class="docutils literal notranslate"><span class="pre">copy</span></code> method when you perform the Boolean indexing, to prevent warnings below.)</p></li>
+<li><p>Check your answer.  The DataFrame should have <code class="docutils literal notranslate"><span class="pre">342</span></code> rows.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Add a new column to <code class="docutils literal notranslate"><span class="pre">df</span></code> called “isAdelie_bool” which contains <code class="docutils literal notranslate"><span class="pre">True</span></code> if the species is “Adelie” and which contains <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Add a new column to <code class="docutils literal notranslate"><span class="pre">df</span></code> called “isAdelie” which contains <code class="docutils literal notranslate"><span class="pre">1</span></code> if the species is “Adelie” and which contains <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise.  (Suggestion.  Call the <code class="docutils literal notranslate"><span class="pre">astype</span></code> method on the “isAdelie_bool” column and specify that the values should be converted to integers.)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Using Altair, draw a scatter plot encoding the “bill_length_mm” column in the x-axis channel and encoding “isAdelie” in the y-axis channel.  Store the resulting chart with the variable name <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p></li>
+</ul>
+</section>
+<section id="why-not-use-linear-regression">
+<h2>Why not use linear regression?<a class="headerlink" href="#why-not-use-linear-regression" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fit a <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> object to this data, using “bill_length_mm” as the only input feature, and using “isAdelie” as the target.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Add a column “pred_lin” to the DataFrame containing the predicted outputs from this linear regression model (the inputs should still be the “bill_length_mm” column).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Make a new Altair chart <code class="docutils literal notranslate"><span class="pre">c2</span></code>, this time a line chart, using “bill_length_mm” for the x-axis channel and using “pred_lin” for the y-axis channel.  Draw the line in the color “red”.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Display <code class="docutils literal notranslate"><span class="pre">c2</span></code> layered on top of <code class="docutils literal notranslate"><span class="pre">c</span></code> from above.</p></li>
+</ul>
+</section>
+<section id="using-logistic-regression">
+<h2>Using logistic regression<a class="headerlink" href="#using-logistic-regression" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fit a <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> object to this same data.  (Don’t name the object <code class="docutils literal notranslate"><span class="pre">reg</span></code>.  Name it <code class="docutils literal notranslate"><span class="pre">clf</span></code> instead, for “classifier”.)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Add a new column to <code class="docutils literal notranslate"><span class="pre">df</span></code> named “pred_log” which contains the predictions corresponding to <code class="docutils literal notranslate"><span class="pre">clf</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Make a new Altair chart <code class="docutils literal notranslate"><span class="pre">c3</span></code>, this time back to being a scatter plot, using “bill_length_mm” for the x-axis channel and using “pred_log” for the y-axis channel.  Draw the points in the color “red”.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Display <code class="docutils literal notranslate"><span class="pre">c3</span></code> layered on top of <code class="docutils literal notranslate"><span class="pre">c</span></code> from above.</p></li>
+</ul>
+</section>
+<section id="assessing-the-accuracy">
+<h2>Assessing the accuracy<a class="headerlink" href="#assessing-the-accuracy" title="Permalink to this heading">#</a></h2>
+<p>What proportion of these predicted values are correct?  We will check this two different ways.</p>
+<ul class="simple">
+<li><p>What proportion (as a float between 0 and 1) of the values predicted by logistic regression are correct?  You should not use <code class="docutils literal notranslate"><span class="pre">clf</span></code> to answer this question, just compare the “isAdelie” column to the “pred_log” column.</p></li>
+</ul>
+<p><strong>Caution</strong>.  If you find yourself using a for-loop or list comprehension or anything like that, you should look for a more succinct approach.  Make a Boolean Series and call the <code class="docutils literal notranslate"><span class="pre">mean</span></code> method.</p>
+<ul class="simple">
+<li><p>Now call the <code class="docutils literal notranslate"><span class="pre">score</span></code> method of <code class="docutils literal notranslate"><span class="pre">clf</span></code>, and input the input features along with the true outputs.  You should get the same number as above (up to maybe some small numerical precision issues).</p></li>
+</ul>
+</section>
+<section id="probabilities">
+<h2>Probabilities<a class="headerlink" href="#probabilities" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Call the <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> method of <code class="docutils literal notranslate"><span class="pre">clf</span></code>, using the same input features as above.  This will report the predicted probabilities.  Name the result <code class="docutils literal notranslate"><span class="pre">arr</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>What is the type of the output of <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>?  What is the shape of the output?</p></li>
+</ul>
+<ul class="simple">
+<li><p>What is the row at index <code class="docutils literal notranslate"><span class="pre">8</span></code> of <code class="docutils literal notranslate"><span class="pre">arr</span></code>?</p></li>
+</ul>
+<ul class="simple">
+<li><p>This means our model predicts there is about a 26% chance the penguin is something, and about a 74% chance it is not.  But which number corresponds to which?  Use the <code class="docutils literal notranslate"><span class="pre">classes_</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">clf</span></code> to decide which is which.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Can you calculate one of these values explicitly using the sigmoid function <span class="math notranslate nohighlight">\(1/(1+e^{-x})\)</span>?  You will need to use the fit coefficient and intercept from <code class="docutils literal notranslate"><span class="pre">clf</span></code> along with the input value corresponding to the row and integer location <code class="docutils literal notranslate"><span class="pre">8</span></code> in <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extract the column of <code class="docutils literal notranslate"><span class="pre">arr</span></code> corresponding to the probability that the penguin is an Adelie species.  Store this in a new column of <code class="docutils literal notranslate"><span class="pre">df</span></code> named “pred_proba”.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Make a new Altair line chart <code class="docutils literal notranslate"><span class="pre">c4</span></code>, using the color red, and with “bill_length_mm” for the x-axis and with “pred_proba” for the y-axis.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Layer this chart on top of <code class="docutils literal notranslate"><span class="pre">c</span></code> from above.</p></li>
+</ul>
+<ul class="simple">
+<li><p>If you wanted to locate the penguin from the row at integer location <code class="docutils literal notranslate"><span class="pre">8</span></code> in the above plot, how would you try to do that?  Briefly answer in a markdown cell (not in a Python comment).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Briefly explain in your own words, in terms of the above plots, why does logistic regression seem more natural to use for this task than linear regression?  (Your answer should make reference to something about how these charts look.  Using 1-2 sentences is enough.)</p></li>
+</ul>
+</section>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Reminder: everyone needs to make a submission on Canvas.</p></li>
+<li><p>Reminder: include everyone’s full name at the top, after <strong>Names</strong>.</p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">Share</span></code> button at the top right, enable public sharing, and enable Comment privileges. Then submit the created link on Canvas.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Week7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Week7-Monday.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 7 Monday</p>
+        </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-use-linear-regression">Why not use linear regression?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-logistic-regression">Using logistic regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-the-accuracy">Assessing the accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilities">Probabilities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
