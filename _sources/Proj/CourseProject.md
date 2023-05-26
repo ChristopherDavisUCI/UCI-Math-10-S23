@@ -5,7 +5,7 @@ For the final project, you will share a Deepnote project analyzing a dataset of 
 
 ## Logistics
 The following are requirements to receive a passing score on the course project.
-* Due date: Wednesday, June 14th 2022, 11:59pm California time.
+* Due date: Wednesday, June 14th 2023, 11:59pm California time.
 * This is an individual project (not a group project).
 * Use the *Project Template* available in the *Project* category on Deepnote.
 * Using the Share button at the top right on Deepnote, enable public sharing, and enable Comment privileges. Then submit the created link on Canvas.
