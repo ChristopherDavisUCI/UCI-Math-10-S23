@@ -1,0 +1,1526 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>MonkeyType: A Typing Analysis &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Proj/StudentProjects/DanielLee';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Predicting League of Legends Winners" href="KyleLemler.html" />
+    <link rel="prev" title="Decision Tree Regressor Analysis on Insurance Charges: The Impact of Age, BMI, and Smoking Status" href="XifanJiang.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week2/Week2-Intro.html">Week 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Friday.html">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Worksheet6.html">Worksheet 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week4/Week4-Intro.html">Week 4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Tuesday.html">Week 4 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Wednesday.html">Week 4 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Friday.html">Week 4 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Worksheet8.html">Worksheet 8</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week5/Week5-Intro.html">Week 5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Tuesday.html">Week 5 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Wednesday.html">Week 5 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Thursday.html">Week 5 Thursday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Friday.html">Week 5 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Worksheet9.html">Worksheet 9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Worksheet10.html">Worksheet 10</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week6/Week6-Intro.html">Week 6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Monday.html">Week 6 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Wednesday.html">Week 6 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Friday.html">Week 6 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Worksheet11.html">Worksheet 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Worksheet12.html">Worksheet 12</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week7/Week7-Intro.html">Week 7</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Monday.html">Week 7 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Wednesday.html">Week 7 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Friday.html">Week 7 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Worksheet13.html">Worksheet 13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Worksheet14.html">Worksheet 14</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week8/Week8-Intro.html">Week 8</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Monday.html">Week 8 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Wednesday.html">Week 8 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Friday.html">Week 8 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Worksheet15.html">Worksheet 15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Worksheet16.html">Worksheet 16</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week9/Week9-Intro.html">Week 9</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Week9-Wednesday.html">Week 9 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Worksheet17.html">Worksheet 17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Worksheet18.html">Worksheet 18</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week10/Week10-Intro.html">Week 10</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Monday.html">Week 10 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Wednesday.html">Week 10 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Friday.html">Week 10 Friday</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CourseProject.html">Project Instructions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ExtraTopics.html">Possible extra topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../StudentProjects.html">Student Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SethAbuhamdeh.html">Countries and Air Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RachelBronder.html">Subject of Subjectivity: The Global Happiness Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="JacobBustamante.html">Dollar Bill Validity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RuizheCheng.html">Analysis and predictions based on data from Premier League</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HaohongChenxie.html">Analysis the factors related to Publishers on Video Games</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="AminEghbalian.html">Analysis of Stroke Occurance Based on Health Factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShuchengFei.html">Analysis of the Medical Cost Personal Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LukeGalang.html">Overwatch 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DianaGonzalez.html">Brazil Forest Fires Prediction and Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdrianGuerra.html">Energy Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnjunHou.html">Data science occupation prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XifanJiang.html">Decision Tree Regressor Analysis on Insurance Charges: The Impact of Age, BMI, and Smoking Status</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">MonkeyType: A Typing Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KyleLemler.html">Predicting League of Legends Winners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AndrewLittle.html">Predicting Outcomes of Hockey Games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LoulouVivianMahfouz.html">💄 Makeup Foundation Shades Analysis 💅🏻</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PamelaMartinez.html">Making Predictions of Underwater Ocean Temperature Using Historical Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PaulaMendez-Lagunas.html">Wine Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AndreNgo.html">Predicting Match/Map Outcomes in LAN versus Online Play Using Player Statistics in Professional Counter-Strike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QiQin.html">Students Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FelipeRios.html">Predicting Forza Horizon Car Classes and Ratings</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="AlejandroSalmeron.html">Predicting Star NBA Players</a></li>
+<li class="toctree-l2"><a class="reference internal" href="JoshuaSunga.html">NBA Position Prediction Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NicoleVuong.html">Exploring Recidivism in Iowa</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="ZheyuWu.html">Analyzing Winning factors on Premier League</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MingyangYi.html">Men’s volleyball performances prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KaijieZhang.html">Prediction and Analysis of Crabs’ Age and Sex Base on Physical Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ChenzhangZhao.html">Premier league season 2022-23 match data analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShuoyuZhu.html">Car Price Prediction</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Proj/StudentProjects/DanielLee.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MonkeyType: A Typing Analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-data">Understanding the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-wpm">Plotting WPM</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-for-wpm">Linear Regression for WPM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-with-onehotencoder-for-wpm">Linear Regression with <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> for WPM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression-for-ispb">Logistic Regression for <code class="docutils literal notranslate"><span class="pre">isPb</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-classifier-for-mode">Decision Tree Classifier for <code class="docutils literal notranslate"><span class="pre">mode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-curve">Error Curve</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="monkeytype-a-typing-analysis">
+<h1>MonkeyType: A Typing Analysis<a class="headerlink" href="#monkeytype-a-typing-analysis" title="Permalink to this heading">#</a></h1>
+<p>Author: Daniel Lee</p>
+<p>Course Project, UC Irvine, Math 10, S23</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>The dataset I will analyze is a self-created typing dataset. Using the online typing practice/test platform <a class="reference external" href="https://monkeytype.com/">MonkeyType</a>, I created a dataset of my test runs with varying parameters. I’m able to set one of three main modes: <code class="docutils literal notranslate"><span class="pre">time</span></code> (typing random words within a time limit), <code class="docutils literal notranslate"><span class="pre">quote</span></code> (typing a random quote from a song, book, etc.), and <code class="docutils literal notranslate"><span class="pre">words</span></code> (typing a given number of random words). For <code class="docutils literal notranslate"><span class="pre">time</span></code> and <code class="docutils literal notranslate"><span class="pre">word</span></code>, I can also choose the length of the test (15, 30, 60 seconds and 10, 25, 50 words respectively). Tests with the highest WPM (words per minute) in their respective modes are labeled as a PB (Personal Bests).</p>
+<p>In this project, I will analyze the WPM, Consistency, Accuracy, Test Duration, and Mode and their relationship with each other. In addition, I will predict <code class="docutils literal notranslate"><span class="pre">wpm</span></code>, <code class="docutils literal notranslate"><span class="pre">isPb</span></code> (is Personal Best), and <code class="docutils literal notranslate"><span class="pre">mode</span></code> with various machine learning models and assess the accuracy of my model.</p>
+</section>
+<section id="understanding-the-data">
+<h2>Understanding the Data<a class="headerlink" href="#understanding-the-data" title="Permalink to this heading">#</a></h2>
+<p>Importing the necessary modules:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">plot_tree</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">log_loss</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Loading the data:
+(The columns of the raw data were merged together, so I separated them.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pre</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;monkeytype.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dropping unnecessary columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df_pre</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;_id&quot;</span><span class="p">,</span> <span class="s2">&quot;rawWpm&quot;</span><span class="p">,</span> <span class="s2">&quot;mode2&quot;</span><span class="p">,</span> <span class="s2">&quot;charStats&quot;</span><span class="p">,</span> <span class="s2">&quot;quoteLength&quot;</span><span class="p">,</span> <span class="s2">&quot;restartCount&quot;</span><span class="p">,</span> <span class="s2">&quot;afkDuration&quot;</span><span class="p">,</span> <span class="s2">&quot;incompleteTestSeconds&quot;</span><span class="p">,</span> <span class="s2">&quot;punctuation&quot;</span><span class="p">,</span> <span class="s2">&quot;numbers&quot;</span><span class="p">,</span> <span class="s2">&quot;language&quot;</span><span class="p">,</span> <span class="s2">&quot;funbox&quot;</span><span class="p">,</span> <span class="s2">&quot;difficulty&quot;</span><span class="p">,</span> <span class="s2">&quot;lazyMode&quot;</span><span class="p">,</span> <span class="s2">&quot;blindMode&quot;</span><span class="p">,</span> <span class="s2">&quot;bailedOut&quot;</span><span class="p">,</span> <span class="s2">&quot;tags&quot;</span><span class="p">,</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cleaning the <code class="docutils literal notranslate"><span class="pre">isPb</span></code> column:
+I filled the <code class="docutils literal notranslate"><span class="pre">nan</span></code> values with <code class="docutils literal notranslate"><span class="pre">0</span></code> and changed all entries as type <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;isPb&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;isPb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isPb&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is what our dataframe looks like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>isPb</th>
+      <th>wpm</th>
+      <th>acc</th>
+      <th>consistency</th>
+      <th>mode</th>
+      <th>testDuration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>124.00</td>
+      <td>97.48</td>
+      <td>86.75</td>
+      <td>time</td>
+      <td>15.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>128.80</td>
+      <td>100.00</td>
+      <td>84.24</td>
+      <td>time</td>
+      <td>15.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>128.00</td>
+      <td>98.77</td>
+      <td>83.71</td>
+      <td>time</td>
+      <td>15.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>118.58</td>
+      <td>98.05</td>
+      <td>85.03</td>
+      <td>time</td>
+      <td>60.01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>113.58</td>
+      <td>96.97</td>
+      <td>77.44</td>
+      <td>time</td>
+      <td>60.01</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>0</td>
+      <td>103.17</td>
+      <td>98.11</td>
+      <td>79.31</td>
+      <td>time</td>
+      <td>30.01</td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>1</td>
+      <td>106.40</td>
+      <td>100.00</td>
+      <td>80.25</td>
+      <td>time</td>
+      <td>30.00</td>
+    </tr>
+    <tr>
+      <th>261</th>
+      <td>1</td>
+      <td>105.56</td>
+      <td>98.88</td>
+      <td>78.81</td>
+      <td>time</td>
+      <td>30.01</td>
+    </tr>
+    <tr>
+      <th>262</th>
+      <td>1</td>
+      <td>100.37</td>
+      <td>95.45</td>
+      <td>73.69</td>
+      <td>time</td>
+      <td>30.01</td>
+    </tr>
+    <tr>
+      <th>263</th>
+      <td>0</td>
+      <td>112.78</td>
+      <td>98.89</td>
+      <td>86.14</td>
+      <td>quote</td>
+      <td>18.94</td>
+    </tr>
+  </tbody>
+</table>
+<p>264 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>Some basic statistics to understand the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quote    116
+time      86
+words     62
+Name: mode, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The mode I used the most often was <code class="docutils literal notranslate"><span class="pre">quote</span></code> with 116 tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;mode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>isPb</th>
+      <th>wpm</th>
+      <th>acc</th>
+      <th>consistency</th>
+      <th>testDuration</th>
+    </tr>
+    <tr>
+      <th>mode</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>quote</th>
+      <td>0.000000</td>
+      <td>106.044655</td>
+      <td>96.696379</td>
+      <td>73.795259</td>
+      <td>19.746379</td>
+    </tr>
+    <tr>
+      <th>time</th>
+      <td>0.197674</td>
+      <td>116.088953</td>
+      <td>97.797791</td>
+      <td>81.675465</td>
+      <td>30.878256</td>
+    </tr>
+    <tr>
+      <th>words</th>
+      <td>0.193548</td>
+      <td>127.178548</td>
+      <td>98.290645</td>
+      <td>78.816129</td>
+      <td>14.543226</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;mode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>isPb</th>
+      <th>wpm</th>
+      <th>acc</th>
+      <th>consistency</th>
+      <th>testDuration</th>
+    </tr>
+    <tr>
+      <th>mode</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>quote</th>
+      <td>0</td>
+      <td>104.750</td>
+      <td>97.14</td>
+      <td>73.480</td>
+      <td>18.54</td>
+    </tr>
+    <tr>
+      <th>time</th>
+      <td>0</td>
+      <td>115.960</td>
+      <td>98.06</td>
+      <td>81.415</td>
+      <td>30.01</td>
+    </tr>
+    <tr>
+      <th>words</th>
+      <td>0</td>
+      <td>125.535</td>
+      <td>99.05</td>
+      <td>78.215</td>
+      <td>12.52</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In general, the <code class="docutils literal notranslate"><span class="pre">words</span></code> mode has the highest WPM and Accuracy, while the <code class="docutils literal notranslate"><span class="pre">time</span></code> mode has the highest Consistency and Test Duration.</p>
+<section id="plotting-wpm">
+<h3>Plotting WPM<a class="headerlink" href="#plotting-wpm" title="Permalink to this heading">#</a></h3>
+<p>Here, I plotted Accuracy, Consistency, and Test Duration against WPM individually to understand their relationships.</p>
+<p>The following code was implemented from <a class="reference external" href="https://www.bing.com/search?form=MY02AA&amp;OCID=MY02AA&amp;pl=launch&amp;q=Bing+AI&amp;showconv=1">Bing Chat</a>. It uses list comprehension to create a list of charts and concatenates the charts horizontally.
+<em>Documentation of <a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.HConcatChart.html">altair.hconcat</a></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;acc&quot;</span><span class="p">,</span> <span class="s2">&quot;consistency&quot;</span><span class="p">,</span> <span class="s2">&quot;testDuration&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">charts</span> <span class="o">=</span> <span class="p">[</span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">feature</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;wpm&quot;</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;mode&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">feature</span><span class="si">}</span><span class="s2"> vs wpm&quot;</span>
+<span class="p">)</span> <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">]</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">hconcat</span><span class="p">(</span><span class="o">*</span><span class="n">charts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-1eeb5b47b2024eb38a57464976a6a50f"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-1eeb5b47b2024eb38a57464976a6a50f") {
+      outputDiv = document.getElementById("altair-viz-1eeb5b47b2024eb38a57464976a6a50f");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "hconcat": [{"mark": "circle", "encoding": {"color": {"field": "mode", "type": "nominal"}, "x": {"field": "acc", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "wpm", "type": "quantitative"}}, "height": 400, "title": "acc vs wpm", "width": 400}, {"mark": "circle", "encoding": {"color": {"field": "mode", "type": "nominal"}, "x": {"field": "consistency", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "wpm", "type": "quantitative"}}, "height": 400, "title": "consistency vs wpm", "width": 400}, {"mark": "circle", "encoding": {"color": {"field": "mode", "type": "nominal"}, "x": {"field": "testDuration", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "wpm", "type": "quantitative"}}, "height": 400, "title": "testDuration vs wpm", "width": 400}], "data": {"name": "data-4ad22098ffa100f3f8d9634a33e2dbcf"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-4ad22098ffa100f3f8d9634a33e2dbcf": [{"isPb": 0, "wpm": 124.0, "acc": 97.48, "consistency": 86.75, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 128.8, "acc": 100.0, "consistency": 84.24, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 128.0, "acc": 98.77, "consistency": 83.71, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 118.58, "acc": 98.05, "consistency": 85.03, "mode": "time", "testDuration": 60.01}, {"isPb": 0, "wpm": 113.58, "acc": 96.97, "consistency": 77.44, "mode": "time", "testDuration": 60.01}, {"isPb": 0, "wpm": 103.0, "acc": 93.75, "consistency": 74.98, "mode": "time", "testDuration": 60.0}, {"isPb": 0, "wpm": 106.18, "acc": 94.89, "consistency": 76.3, "mode": "time", "testDuration": 60.01}, {"isPb": 0, "wpm": 103.0, "acc": 94.1, "consistency": 71.84, "mode": "time", "testDuration": 60.0}, {"isPb": 0, "wpm": 107.6, "acc": 92.93, "consistency": 75.91, "mode": "time", "testDuration": 60.0}, {"isPb": 0, "wpm": 109.6, "acc": 95.37, "consistency": 79.15, "mode": "time", "testDuration": 60.0}, {"isPb": 0, "wpm": 111.0, "acc": 97.55, "consistency": 74.7, "mode": "time", "testDuration": 60.0}, {"isPb": 0, "wpm": 109.98, "acc": 96.35, "consistency": 75.48, "mode": "time", "testDuration": 60.01}, {"isPb": 0, "wpm": 120.8, "acc": 98.09, "consistency": 84.06, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 124.72, "acc": 97.5, "consistency": 77.12, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 129.64, "acc": 97.58, "consistency": 92.19, "mode": "words", "testDuration": 10.83}, {"isPb": 0, "wpm": 115.09, "acc": 96.27, "consistency": 70.53, "mode": "words", "testDuration": 13.45}, {"isPb": 0, "wpm": 120.0, "acc": 99.23, "consistency": 83.23, "mode": "words", "testDuration": 12.8}, {"isPb": 0, "wpm": 124.68, "acc": 99.22, "consistency": 74.55, "mode": "words", "testDuration": 12.32}, {"isPb": 0, "wpm": 111.52, "acc": 95.57, "consistency": 77.56, "mode": "words", "testDuration": 27.44}, {"isPb": 0, "wpm": 118.85, "acc": 96.7, "consistency": 78.24, "mode": "words", "testDuration": 26.15}, {"isPb": 0, "wpm": 114.86, "acc": 97.34, "consistency": 79.06, "mode": "words", "testDuration": 26.64}, {"isPb": 0, "wpm": 114.92, "acc": 97.16, "consistency": 77.4, "mode": "words", "testDuration": 28.61}, {"isPb": 0, "wpm": 111.69, "acc": 94.33, "consistency": 83.32, "mode": "words", "testDuration": 28.58}, {"isPb": 1, "wpm": 134.11, "acc": 99.6, "consistency": 81.89, "mode": "words", "testDuration": 22.37}, {"isPb": 0, "wpm": 116.93, "acc": 98.79, "consistency": 75.88, "mode": "words", "testDuration": 25.04}, {"isPb": 0, "wpm": 124.82, "acc": 100.0, "consistency": 84.02, "mode": "words", "testDuration": 12.69}, {"isPb": 0, "wpm": 100.08, "acc": 91.87, "consistency": 67.76, "mode": "words", "testDuration": 13.07}, {"isPb": 0, "wpm": 131.15, "acc": 95.42, "consistency": 87.54, "mode": "words", "testDuration": 10.98}, {"isPb": 0, "wpm": 134.08, "acc": 99.18, "consistency": 79.65, "mode": "words", "testDuration": 10.74}, {"isPb": 0, "wpm": 119.01, "acc": 97.78, "consistency": 74.12, "mode": "words", "testDuration": 13.31}, {"isPb": 0, "wpm": 119.03, "acc": 97.71, "consistency": 83.28, "mode": "words", "testDuration": 12.4}, {"isPb": 0, "wpm": 125.08, "acc": 97.06, "consistency": 74.4, "mode": "words", "testDuration": 12.28}, {"isPb": 0, "wpm": 116.86, "acc": 96.09, "consistency": 75.16, "mode": "words", "testDuration": 12.63}, {"isPb": 0, "wpm": 113.49, "acc": 94.78, "consistency": 75.33, "mode": "words", "testDuration": 26.01}, {"isPb": 0, "wpm": 123.09, "acc": 96.92, "consistency": 76.29, "mode": "words", "testDuration": 24.08}, {"isPb": 0, "wpm": 121.92, "acc": 94.23, "consistency": 74.77, "mode": "words", "testDuration": 23.13}, {"isPb": 1, "wpm": 146.72, "acc": 100.0, "consistency": 83.84, "mode": "words", "testDuration": 11.45}, {"isPb": 0, "wpm": 140.46, "acc": 100.0, "consistency": 96.46, "mode": "words", "testDuration": 3.93}, {"isPb": 0, "wpm": 125.85, "acc": 98.08, "consistency": 77.0, "mode": "words", "testDuration": 24.41}, {"isPb": 0, "wpm": 121.47, "acc": 97.38, "consistency": 82.38, "mode": "words", "testDuration": 25.39}, {"isPb": 0, "wpm": 122.8, "acc": 98.71, "consistency": 82.66, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 128.71, "acc": 98.2, "consistency": 89.19, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 111.42, "acc": 94.55, "consistency": 67.89, "mode": "quote", "testDuration": 27.68}, {"isPb": 0, "wpm": 123.05, "acc": 96.4, "consistency": 86.67, "mode": "quote", "testDuration": 9.85}, {"isPb": 0, "wpm": 109.23, "acc": 97.59, "consistency": 78.68, "mode": "quote", "testDuration": 30.76}, {"isPb": 0, "wpm": 100.9, "acc": 95.45, "consistency": 72.87, "mode": "quote", "testDuration": 22.12}, {"isPb": 0, "wpm": 124.72, "acc": 97.5, "consistency": 80.14, "mode": "time", "testDuration": 15.01}, {"isPb": 1, "wpm": 163.77, "acc": 100.0, "consistency": 53.71, "mode": "words", "testDuration": 4.03}, {"isPb": 0, "wpm": 144.39, "acc": 100.0, "consistency": 92.64, "mode": "words", "testDuration": 3.74}, {"isPb": 0, "wpm": 116.82, "acc": 97.63, "consistency": 75.5, "mode": "quote", "testDuration": 29.07}, {"isPb": 0, "wpm": 101.89, "acc": 97.37, "consistency": 71.48, "mode": "quote", "testDuration": 17.43}, {"isPb": 0, "wpm": 99.54, "acc": 96.08, "consistency": 80.43, "mode": "quote", "testDuration": 34.6}, {"isPb": 0, "wpm": 100.14, "acc": 95.65, "consistency": 71.26, "mode": "quote", "testDuration": 21.09}, {"isPb": 0, "wpm": 109.21, "acc": 97.05, "consistency": 75.12, "mode": "quote", "testDuration": 28.68}, {"isPb": 0, "wpm": 112.12, "acc": 97.61, "consistency": 78.54, "mode": "quote", "testDuration": 21.62}, {"isPb": 0, "wpm": 102.61, "acc": 95.45, "consistency": 73.89, "mode": "quote", "testDuration": 13.8}, {"isPb": 0, "wpm": 108.56, "acc": 94.07, "consistency": 68.71, "mode": "quote", "testDuration": 12.27}, {"isPb": 0, "wpm": 97.45, "acc": 93.58, "consistency": 61.41, "mode": "quote", "testDuration": 12.56}, {"isPb": 0, "wpm": 111.06, "acc": 98.48, "consistency": 70.8, "mode": "quote", "testDuration": 21.07}, {"isPb": 0, "wpm": 114.51, "acc": 96.57, "consistency": 80.82, "mode": "quote", "testDuration": 17.5}, {"isPb": 0, "wpm": 96.45, "acc": 94.62, "consistency": 71.98, "mode": "quote", "testDuration": 25.63}, {"isPb": 0, "wpm": 100.91, "acc": 95.9, "consistency": 69.79, "mode": "quote", "testDuration": 32.82}, {"isPb": 0, "wpm": 124.9, "acc": 98.17, "consistency": 76.65, "mode": "quote", "testDuration": 10.28}, {"isPb": 0, "wpm": 124.47, "acc": 98.1, "consistency": 84.2, "mode": "quote", "testDuration": 9.93}, {"isPb": 0, "wpm": 115.01, "acc": 97.74, "consistency": 79.24, "mode": "words", "testDuration": 26.71}, {"isPb": 0, "wpm": 117.12, "acc": 96.84, "consistency": 77.28, "mode": "words", "testDuration": 25.0}, {"isPb": 0, "wpm": 121.27, "acc": 98.17, "consistency": 84.32, "mode": "words", "testDuration": 25.43}, {"isPb": 0, "wpm": 126.21, "acc": 98.51, "consistency": 81.97, "mode": "words", "testDuration": 24.72}, {"isPb": 0, "wpm": 129.29, "acc": 99.2, "consistency": 87.93, "mode": "words", "testDuration": 22.74}, {"isPb": 0, "wpm": 124.01, "acc": 98.23, "consistency": 76.5, "mode": "words", "testDuration": 26.32}, {"isPb": 0, "wpm": 125.26, "acc": 98.92, "consistency": 78.19, "mode": "words", "testDuration": 26.25}, {"isPb": 0, "wpm": 118.78, "acc": 97.39, "consistency": 79.93, "mode": "time", "testDuration": 60.01}, {"isPb": 1, "wpm": 119.58, "acc": 98.68, "consistency": 80.64, "mode": "time", "testDuration": 60.01}, {"isPb": 0, "wpm": 113.16, "acc": 96.31, "consistency": 82.1, "mode": "time", "testDuration": 60.02}, {"isPb": 0, "wpm": 113.0, "acc": 97.27, "consistency": 78.07, "mode": "time", "testDuration": 60.0}, {"isPb": 0, "wpm": 109.38, "acc": 96.17, "consistency": 81.9, "mode": "time", "testDuration": 60.01}, {"isPb": 0, "wpm": 111.98, "acc": 97.41, "consistency": 75.4, "mode": "time", "testDuration": 60.01}, {"isPb": 1, "wpm": 115.78, "acc": 95.27, "consistency": 77.67, "mode": "time", "testDuration": 60.01}, {"isPb": 0, "wpm": 116.55, "acc": 98.52, "consistency": 84.54, "mode": "words", "testDuration": 26.77}, {"isPb": 1, "wpm": 131.45, "acc": 99.27, "consistency": 86.57, "mode": "words", "testDuration": 24.74}, {"isPb": 1, "wpm": 144.09, "acc": 100.0, "consistency": 74.37, "mode": "words", "testDuration": 10.16}, {"isPb": 0, "wpm": 125.56, "acc": 99.05, "consistency": 85.82, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 122.0, "acc": 98.71, "consistency": 79.61, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 110.78, "acc": 97.28, "consistency": 72.44, "mode": "quote", "testDuration": 30.44}, {"isPb": 0, "wpm": 131.68, "acc": 97.56, "consistency": 84.36, "mode": "words", "testDuration": 10.48}, {"isPb": 0, "wpm": 117.75, "acc": 93.2, "consistency": 74.11, "mode": "words", "testDuration": 13.35}, {"isPb": 0, "wpm": 129.48, "acc": 99.28, "consistency": 85.14, "mode": "words", "testDuration": 12.79}, {"isPb": 0, "wpm": 126.36, "acc": 98.46, "consistency": 83.3, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 121.16, "acc": 97.13, "consistency": 81.09, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 110.19, "acc": 94.81, "consistency": 71.78, "mode": "quote", "testDuration": 13.94}, {"isPb": 0, "wpm": 108.38, "acc": 93.28, "consistency": 67.7, "mode": "quote", "testDuration": 12.29}, {"isPb": 0, "wpm": 108.86, "acc": 95.71, "consistency": 76.94, "mode": "quote", "testDuration": 24.14}, {"isPb": 0, "wpm": 114.76, "acc": 96.67, "consistency": 78.24, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 99.38, "acc": 94.55, "consistency": 77.74, "mode": "quote", "testDuration": 22.46}, {"isPb": 1, "wpm": 135.2, "acc": 100.0, "consistency": 90.03, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 115.2, "acc": 98.63, "consistency": 85.73, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 124.72, "acc": 98.11, "consistency": 84.67, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 123.2, "acc": 98.72, "consistency": 86.04, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 115.92, "acc": 94.94, "consistency": 78.39, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 124.72, "acc": 100.0, "consistency": 85.61, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 130.4, "acc": 96.51, "consistency": 85.81, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 121.52, "acc": 98.7, "consistency": 83.52, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 119.92, "acc": 97.47, "consistency": 83.79, "mode": "time", "testDuration": 15.01}, {"isPb": 1, "wpm": 130.76, "acc": 99.7, "consistency": 88.59, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 127.91, "acc": 99.38, "consistency": 88.48, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 111.2, "acc": 95.95, "consistency": 83.5, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 119.92, "acc": 96.82, "consistency": 80.62, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 87.96, "acc": 90.58, "consistency": 73.09, "mode": "quote", "testDuration": 16.78}, {"isPb": 0, "wpm": 103.85, "acc": 96.14, "consistency": 71.92, "mode": "quote", "testDuration": 33.28}, {"isPb": 0, "wpm": 110.55, "acc": 97.76, "consistency": 70.97, "mode": "quote", "testDuration": 14.22}, {"isPb": 0, "wpm": 120.8, "acc": 98.06, "consistency": 82.1, "mode": "time", "testDuration": 15.0}, {"isPb": 1, "wpm": 133.6, "acc": 98.27, "consistency": 90.57, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 124.72, "acc": 100.0, "consistency": 79.53, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 115.56, "acc": 97.64, "consistency": 80.64, "mode": "time", "testDuration": 30.01}, {"isPb": 1, "wpm": 122.8, "acc": 99.03, "consistency": 80.11, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 119.83, "acc": 97.96, "consistency": 75.51, "mode": "quote", "testDuration": 14.42}, {"isPb": 0, "wpm": 117.61, "acc": 99.14, "consistency": 74.32, "mode": "quote", "testDuration": 23.57}, {"isPb": 0, "wpm": 104.43, "acc": 97.16, "consistency": 72.03, "mode": "quote", "testDuration": 19.42}, {"isPb": 0, "wpm": 98.54, "acc": 93.68, "consistency": 72.56, "mode": "quote", "testDuration": 19.85}, {"isPb": 0, "wpm": 113.04, "acc": 97.7, "consistency": 74.34, "mode": "quote", "testDuration": 17.94}, {"isPb": 0, "wpm": 99.87, "acc": 95.07, "consistency": 63.72, "mode": "quote", "testDuration": 15.86}, {"isPb": 0, "wpm": 116.0, "acc": 97.02, "consistency": 77.8, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 119.16, "acc": 98.06, "consistency": 78.71, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 116.36, "acc": 98.31, "consistency": 83.5, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 111.56, "acc": 97.89, "consistency": 84.93, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 105.56, "acc": 96.36, "consistency": 78.53, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 105.16, "acc": 94.64, "consistency": 74.9, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 111.56, "acc": 95.29, "consistency": 86.87, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 103.6, "acc": 97.39, "consistency": 73.23, "mode": "quote", "testDuration": 30.0}, {"isPb": 0, "wpm": 109.44, "acc": 98.07, "consistency": 72.2, "mode": "quote", "testDuration": 22.04}, {"isPb": 0, "wpm": 100.85, "acc": 96.89, "consistency": 60.93, "mode": "quote", "testDuration": 22.25}, {"isPb": 0, "wpm": 120.6, "acc": 97.99, "consistency": 73.63, "mode": "quote", "testDuration": 14.03}, {"isPb": 0, "wpm": 118.75, "acc": 99.21, "consistency": 74.9, "mode": "quote", "testDuration": 12.53}, {"isPb": 0, "wpm": 105.59, "acc": 95.45, "consistency": 64.51, "mode": "quote", "testDuration": 14.32}, {"isPb": 0, "wpm": 108.65, "acc": 97.01, "consistency": 71.53, "mode": "quote", "testDuration": 17.45}, {"isPb": 0, "wpm": 149.67, "acc": 100.0, "consistency": 73.88, "mode": "words", "testDuration": 4.49}, {"isPb": 0, "wpm": 112.89, "acc": 98.04, "consistency": 76.74, "mode": "quote", "testDuration": 21.26}, {"isPb": 0, "wpm": 100.24, "acc": 95.11, "consistency": 73.98, "mode": "quote", "testDuration": 25.38}, {"isPb": 0, "wpm": 101.83, "acc": 95.13, "consistency": 62.02, "mode": "quote", "testDuration": 25.1}, {"isPb": 0, "wpm": 116.63, "acc": 98.37, "consistency": 82.11, "mode": "quote", "testDuration": 12.45}, {"isPb": 0, "wpm": 105.07, "acc": 96.84, "consistency": 71.44, "mode": "quote", "testDuration": 17.36}, {"isPb": 0, "wpm": 109.58, "acc": 96.26, "consistency": 64.71, "mode": "quote", "testDuration": 11.06}, {"isPb": 0, "wpm": 100.67, "acc": 97.18, "consistency": 77.44, "mode": "quote", "testDuration": 23.96}, {"isPb": 0, "wpm": 91.6, "acc": 94.5, "consistency": 73.65, "mode": "quote", "testDuration": 37.6}, {"isPb": 0, "wpm": 111.07, "acc": 99.12, "consistency": 73.93, "mode": "quote", "testDuration": 12.1}, {"isPb": 0, "wpm": 111.21, "acc": 98.94, "consistency": 69.66, "mode": "quote", "testDuration": 20.07}, {"isPb": 0, "wpm": 104.22, "acc": 96.28, "consistency": 75.17, "mode": "quote", "testDuration": 23.72}, {"isPb": 0, "wpm": 113.96, "acc": 98.65, "consistency": 69.87, "mode": "quote", "testDuration": 23.06}, {"isPb": 0, "wpm": 108.55, "acc": 96.32, "consistency": 74.6, "mode": "quote", "testDuration": 20.23}, {"isPb": 0, "wpm": 101.53, "acc": 94.92, "consistency": 78.06, "mode": "quote", "testDuration": 21.63}, {"isPb": 0, "wpm": 97.39, "acc": 92.81, "consistency": 65.1, "mode": "quote", "testDuration": 17.25}, {"isPb": 0, "wpm": 112.92, "acc": 97.35, "consistency": 78.33, "mode": "quote", "testDuration": 11.69}, {"isPb": 0, "wpm": 116.4, "acc": 98.98, "consistency": 84.55, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 115.2, "acc": 99.17, "consistency": 86.0, "mode": "quote", "testDuration": 12.5}, {"isPb": 0, "wpm": 100.62, "acc": 97.14, "consistency": 74.39, "mode": "quote", "testDuration": 11.33}, {"isPb": 0, "wpm": 99.16, "acc": 94.85, "consistency": 72.1, "mode": "quote", "testDuration": 15.49}, {"isPb": 0, "wpm": 104.02, "acc": 97.54, "consistency": 87.31, "mode": "quote", "testDuration": 12.92}, {"isPb": 0, "wpm": 108.79, "acc": 98.48, "consistency": 75.61, "mode": "quote", "testDuration": 21.4}, {"isPb": 0, "wpm": 115.96, "acc": 98.31, "consistency": 84.9, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 113.2, "acc": 97.59, "consistency": 80.68, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 112.36, "acc": 97.24, "consistency": 79.95, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 115.96, "acc": 97.68, "consistency": 82.24, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 101.47, "acc": 98.05, "consistency": 71.09, "mode": "quote", "testDuration": 17.74}, {"isPb": 0, "wpm": 102.53, "acc": 96.6, "consistency": 68.34, "mode": "quote", "testDuration": 16.62}, {"isPb": 0, "wpm": 94.5, "acc": 95.9, "consistency": 79.09, "mode": "quote", "testDuration": 35.43}, {"isPb": 0, "wpm": 100.58, "acc": 96.67, "consistency": 77.47, "mode": "quote", "testDuration": 34.48}, {"isPb": 0, "wpm": 100.35, "acc": 97.31, "consistency": 67.13, "mode": "quote", "testDuration": 25.71}, {"isPb": 0, "wpm": 119.8, "acc": 100.0, "consistency": 80.3, "mode": "quote", "testDuration": 11.82}, {"isPb": 0, "wpm": 113.07, "acc": 99.28, "consistency": 81.22, "mode": "quote", "testDuration": 14.54}, {"isPb": 0, "wpm": 103.44, "acc": 97.77, "consistency": 77.93, "mode": "quote", "testDuration": 30.51}, {"isPb": 0, "wpm": 101.59, "acc": 97.71, "consistency": 78.57, "mode": "quote", "testDuration": 30.24}, {"isPb": 0, "wpm": 118.11, "acc": 98.88, "consistency": 78.13, "mode": "quote", "testDuration": 17.78}, {"isPb": 0, "wpm": 102.52, "acc": 98.15, "consistency": 59.58, "mode": "quote", "testDuration": 12.29}, {"isPb": 0, "wpm": 98.24, "acc": 95.2, "consistency": 73.26, "mode": "quote", "testDuration": 26.63}, {"isPb": 0, "wpm": 101.03, "acc": 94.24, "consistency": 73.01, "mode": "quote", "testDuration": 21.38}, {"isPb": 0, "wpm": 112.93, "acc": 99.19, "consistency": 69.27, "mode": "quote", "testDuration": 13.07}, {"isPb": 0, "wpm": 106.7, "acc": 97.42, "consistency": 78.72, "mode": "quote", "testDuration": 16.87}, {"isPb": 0, "wpm": 92.06, "acc": 92.63, "consistency": 71.0, "mode": "quote", "testDuration": 22.55}, {"isPb": 0, "wpm": 99.63, "acc": 97.62, "consistency": 63.9, "mode": "quote", "testDuration": 24.09}, {"isPb": 0, "wpm": 102.09, "acc": 97.14, "consistency": 80.0, "mode": "quote", "testDuration": 11.99}, {"isPb": 0, "wpm": 113.17, "acc": 95.28, "consistency": 82.71, "mode": "quote", "testDuration": 12.83}, {"isPb": 0, "wpm": 99.53, "acc": 96.34, "consistency": 72.88, "mode": "quote", "testDuration": 30.02}, {"isPb": 0, "wpm": 111.53, "acc": 97.63, "consistency": 73.16, "mode": "quote", "testDuration": 17.43}, {"isPb": 0, "wpm": 115.07, "acc": 97.54, "consistency": 73.72, "mode": "quote", "testDuration": 12.41}, {"isPb": 0, "wpm": 118.39, "acc": 97.35, "consistency": 80.63, "mode": "quote", "testDuration": 22.3}, {"isPb": 0, "wpm": 117.53, "acc": 96.62, "consistency": 77.36, "mode": "quote", "testDuration": 20.42}, {"isPb": 0, "wpm": 119.94, "acc": 97.98, "consistency": 71.45, "mode": "quote", "testDuration": 19.21}, {"isPb": 0, "wpm": 100.0, "acc": 96.59, "consistency": 73.37, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 121.6, "acc": 99.67, "consistency": 87.28, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 130.66, "acc": 100.0, "consistency": 79.46, "mode": "words", "testDuration": 11.48}, {"isPb": 0, "wpm": 129.04, "acc": 100.0, "consistency": 93.95, "mode": "words", "testDuration": 11.81}, {"isPb": 0, "wpm": 128.91, "acc": 100.0, "consistency": 78.14, "mode": "words", "testDuration": 11.45}, {"isPb": 0, "wpm": 86.21, "acc": 93.83, "consistency": 73.42, "mode": "quote", "testDuration": 29.51}, {"isPb": 0, "wpm": 101.02, "acc": 96.1, "consistency": 72.67, "mode": "quote", "testDuration": 17.58}, {"isPb": 0, "wpm": 87.29, "acc": 92.11, "consistency": 72.98, "mode": "quote", "testDuration": 23.92}, {"isPb": 0, "wpm": 109.79, "acc": 98.37, "consistency": 74.21, "mode": "quote", "testDuration": 26.34}, {"isPb": 0, "wpm": 103.8, "acc": 97.65, "consistency": 72.29, "mode": "quote", "testDuration": 19.19}, {"isPb": 0, "wpm": 116.0, "acc": 96.67, "consistency": 81.74, "mode": "time", "testDuration": 15.0}, {"isPb": 0, "wpm": 93.34, "acc": 93.33, "consistency": 64.01, "mode": "quote", "testDuration": 25.07}, {"isPb": 0, "wpm": 91.3, "acc": 94.37, "consistency": 65.97, "mode": "quote", "testDuration": 17.35}, {"isPb": 0, "wpm": 98.51, "acc": 96.76, "consistency": 64.4, "mode": "quote", "testDuration": 21.44}, {"isPb": 0, "wpm": 92.98, "acc": 94.44, "consistency": 71.65, "mode": "quote", "testDuration": 15.1}, {"isPb": 0, "wpm": 89.45, "acc": 90.18, "consistency": 67.96, "mode": "quote", "testDuration": 13.55}, {"isPb": 0, "wpm": 109.23, "acc": 97.37, "consistency": 74.13, "mode": "quote", "testDuration": 16.26}, {"isPb": 0, "wpm": 123.46, "acc": 100.0, "consistency": 78.04, "mode": "quote", "testDuration": 10.4}, {"isPb": 0, "wpm": 123.77, "acc": 99.23, "consistency": 82.03, "mode": "words", "testDuration": 12.41}, {"isPb": 1, "wpm": 133.11, "acc": 100.0, "consistency": 72.72, "mode": "words", "testDuration": 12.08}, {"isPb": 0, "wpm": 151.55, "acc": 100.0, "consistency": 93.23, "mode": "words", "testDuration": 3.88}, {"isPb": 0, "wpm": 137.54, "acc": 100.0, "consistency": 70.85, "mode": "words", "testDuration": 3.49}, {"isPb": 1, "wpm": 153.49, "acc": 100.0, "consistency": 64.57, "mode": "words", "testDuration": 4.3}, {"isPb": 0, "wpm": 137.53, "acc": 100.0, "consistency": 75.67, "mode": "words", "testDuration": 4.45}, {"isPb": 1, "wpm": 144.92, "acc": 100.0, "consistency": 88.1, "mode": "words", "testDuration": 4.72}, {"isPb": 0, "wpm": 126.4, "acc": 100.0, "consistency": 89.11, "mode": "time", "testDuration": 15.0}, {"isPb": 1, "wpm": 128.8, "acc": 100.0, "consistency": 88.99, "mode": "time", "testDuration": 15.0}, {"isPb": 1, "wpm": 122.76, "acc": 100.0, "consistency": 88.25, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 116.4, "acc": 97.99, "consistency": 80.73, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 112.31, "acc": 99.11, "consistency": 84.03, "mode": "quote", "testDuration": 11.86}, {"isPb": 0, "wpm": 87.85, "acc": 92.95, "consistency": 73.54, "mode": "quote", "testDuration": 19.67}, {"isPb": 0, "wpm": 96.58, "acc": 96.05, "consistency": 70.76, "mode": "quote", "testDuration": 18.14}, {"isPb": 0, "wpm": 98.08, "acc": 97.33, "consistency": 72.28, "mode": "quote", "testDuration": 31.2}, {"isPb": 0, "wpm": 101.75, "acc": 96.23, "consistency": 52.97, "mode": "quote", "testDuration": 12.03}, {"isPb": 0, "wpm": 98.99, "acc": 94.47, "consistency": 70.76, "mode": "quote", "testDuration": 22.67}, {"isPb": 0, "wpm": 109.28, "acc": 96.95, "consistency": 73.65, "mode": "quote", "testDuration": 17.35}, {"isPb": 0, "wpm": 103.41, "acc": 95.65, "consistency": 78.55, "mode": "quote", "testDuration": 14.97}, {"isPb": 0, "wpm": 112.79, "acc": 99.49, "consistency": 78.15, "mode": "quote", "testDuration": 20.96}, {"isPb": 0, "wpm": 92.28, "acc": 97.33, "consistency": 71.26, "mode": "quote", "testDuration": 32.9}, {"isPb": 0, "wpm": 109.69, "acc": 99.01, "consistency": 79.33, "mode": "quote", "testDuration": 32.82}, {"isPb": 0, "wpm": 119.29, "acc": 100.0, "consistency": 71.82, "mode": "quote", "testDuration": 10.16}, {"isPb": 0, "wpm": 111.56, "acc": 97.89, "consistency": 83.98, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 111.96, "acc": 98.59, "consistency": 83.03, "mode": "time", "testDuration": 30.01}, {"isPb": 1, "wpm": 118.76, "acc": 99.33, "consistency": 86.92, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 113.16, "acc": 100.0, "consistency": 80.32, "mode": "time", "testDuration": 30.01}, {"isPb": 1, "wpm": 113.96, "acc": 98.96, "consistency": 80.49, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 111.96, "acc": 99.29, "consistency": 82.71, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 112.98, "acc": 100.0, "consistency": 86.67, "mode": "quote", "testDuration": 11.79}, {"isPb": 1, "wpm": 113.56, "acc": 99.3, "consistency": 82.71, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 116.43, "acc": 100.0, "consistency": 88.23, "mode": "quote", "testDuration": 11.75}, {"isPb": 0, "wpm": 116.0, "acc": 100.0, "consistency": 81.37, "mode": "quote", "testDuration": 11.69}, {"isPb": 0, "wpm": 98.37, "acc": 95.08, "consistency": 74.69, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 103.6, "acc": 97.37, "consistency": 77.68, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 103.57, "acc": 98.13, "consistency": 77.44, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 105.6, "acc": 98.15, "consistency": 78.72, "mode": "time", "testDuration": 30.0}, {"isPb": 1, "wpm": 106.76, "acc": 98.89, "consistency": 82.32, "mode": "time", "testDuration": 30.01}, {"isPb": 1, "wpm": 122.4, "acc": 100.0, "consistency": 89.14, "mode": "time", "testDuration": 15.0}, {"isPb": 1, "wpm": 120.72, "acc": 100.0, "consistency": 89.45, "mode": "time", "testDuration": 15.01}, {"isPb": 0, "wpm": 114.69, "acc": 96.8, "consistency": 77.83, "mode": "words", "testDuration": 12.66}, {"isPb": 1, "wpm": 122.0, "acc": 100.0, "consistency": 73.3, "mode": "words", "testDuration": 13.18}, {"isPb": 0, "wpm": 128.38, "acc": 100.0, "consistency": 83.67, "mode": "words", "testDuration": 4.58}, {"isPb": 0, "wpm": 125.81, "acc": 98.11, "consistency": 87.2, "mode": "words", "testDuration": 4.96}, {"isPb": 0, "wpm": 134.67, "acc": 100.0, "consistency": 86.88, "mode": "words", "testDuration": 4.99}, {"isPb": 0, "wpm": 130.61, "acc": 100.0, "consistency": 70.84, "mode": "words", "testDuration": 4.41}, {"isPb": 1, "wpm": 136.51, "acc": 100.0, "consistency": 89.86, "mode": "words", "testDuration": 3.78}, {"isPb": 0, "wpm": 119.08, "acc": 100.0, "consistency": 61.94, "mode": "words", "testDuration": 5.24}, {"isPb": 1, "wpm": 127.41, "acc": 100.0, "consistency": 54.96, "mode": "words", "testDuration": 4.05}, {"isPb": 1, "wpm": 112.99, "acc": 96.15, "consistency": 60.8, "mode": "words", "testDuration": 5.31}, {"isPb": 0, "wpm": 104.22, "acc": 99.09, "consistency": 75.2, "mode": "quote", "testDuration": 12.55}, {"isPb": 0, "wpm": 91.15, "acc": 95.07, "consistency": 68.99, "mode": "quote", "testDuration": 17.51}, {"isPb": 0, "wpm": 102.77, "acc": 97.76, "consistency": 79.99, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 103.6, "acc": 98.48, "consistency": 75.21, "mode": "time", "testDuration": 30.0}, {"isPb": 0, "wpm": 103.17, "acc": 98.11, "consistency": 79.31, "mode": "time", "testDuration": 30.01}, {"isPb": 1, "wpm": 106.4, "acc": 100.0, "consistency": 80.25, "mode": "time", "testDuration": 30.0}, {"isPb": 1, "wpm": 105.56, "acc": 98.88, "consistency": 78.81, "mode": "time", "testDuration": 30.01}, {"isPb": 1, "wpm": 100.37, "acc": 95.45, "consistency": 73.69, "mode": "time", "testDuration": 30.01}, {"isPb": 0, "wpm": 112.78, "acc": 98.89, "consistency": 86.14, "mode": "quote", "testDuration": 18.94}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<ul class="simple">
+<li><p>There appears to be a positive correlation between Accuracy and WPM. It makes sense that I type faster when I type more accurately. Test runs of the same mode are somewhat clustered together, notably the <code class="docutils literal notranslate"><span class="pre">words</span></code> mode mostly having a 100% Accuracy.</p></li>
+<li><p>There appears to be a positive correlation between Consistency and WPM for the <code class="docutils literal notranslate"><span class="pre">quote</span></code> and <code class="docutils literal notranslate"><span class="pre">time</span></code> modes, but no correlation for the <code class="docutils literal notranslate"><span class="pre">words</span></code> mode. It makes sense that I generally type better when my speed is more consistent. The clustering of the data is also more apparent.</p></li>
+<li><p>There appears to be a negative correlation between Test Duration and WPM. It makes sense that the longer the test, the slower I type. The datapoints for the <code class="docutils literal notranslate"><span class="pre">time</span></code> mode create perfect vertical lines because they have a fixed time duration (15, 30, and 60 seconds). Similarly, the <code class="docutils literal notranslate"><span class="pre">words</span></code> mode create a similar pattern to a lesser extent because the number of words of each test is fixed (10, 25, and 50 words). The <code class="docutils literal notranslate"><span class="pre">quote</span></code> mode has varying lengths, so the test duration is not constant.</p></li>
+</ul>
+</section>
+</section>
+<section id="linear-regression-for-wpm">
+<h2>Linear Regression for WPM<a class="headerlink" href="#linear-regression-for-wpm" title="Permalink to this heading">#</a></h2>
+<p>In this section, I will use linear regression to investigate the relationship between my input features (Accuracy, Consistency, and Test Duration) and the WPM.</p>
+<p>Fitting the data to a linear regressor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;wpm&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finding the coefficients of each input feature:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>acc             3.350638
+consistency     0.412861
+testDuration   -0.212493
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>As predicted by the plots, Accuracy and Consistency have a positive coefficient, while Test Duration has a negative coefficient.</p></li>
+<li><p>Accuracy seems to be the strongest predictor of WPM among my input features with the highest absolute value of 3.35.</p></li>
+</ul>
+<p>Assessing the accuracy of my model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;wpm&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5358595755222455
+</pre></div>
+</div>
+</div>
+</div>
+<p>This linear regression yields a 54 percent accuracy. It is certainly better than random guessing, but the performance is admittedly poor.</p>
+</section>
+<section id="linear-regression-with-onehotencoder-for-wpm">
+<h2>Linear Regression with <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> for WPM<a class="headerlink" href="#linear-regression-with-onehotencoder-for-wpm" title="Permalink to this heading">#</a></h2>
+<p>In this section, I will add the input features <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">isPb</span></code> to <code class="docutils literal notranslate"><span class="pre">cols</span></code> in hopes for a better result when predicting <code class="docutils literal notranslate"><span class="pre">wpm</span></code>. My features are now both quantitative and discrete, so I will use a <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> within a <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>. To transform the data separately, I will also use <code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code>.
+<em>Documentation of <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html">OneHotEncoder</a> and <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html">ColumnTransformer</a></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;isPb&quot;</span><span class="p">,</span> <span class="s2">&quot;acc&quot;</span><span class="p">,</span> <span class="s2">&quot;consistency&quot;</span><span class="p">,</span> <span class="s2">&quot;testDuration&quot;</span><span class="p">,</span> <span class="s2">&quot;mode&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fitting the data to a linear regressor within a Pipeline:
+(I used the <code class="docutils literal notranslate"><span class="pre">passthrough</span></code> argument to only onehotencode <code class="docutils literal notranslate"><span class="pre">isPb</span></code> and <code class="docutils literal notranslate"><span class="pre">mode</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;prep&#39;</span><span class="p">,</span> <span class="n">ColumnTransformer</span><span class="p">([</span>
+        <span class="p">(</span><span class="s1">&#39;enc&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(),</span> <span class="p">[</span><span class="s1">&#39;isPb&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">]),</span>
+        <span class="p">(</span><span class="s1">&#39;passthrough&#39;</span><span class="p">,</span> <span class="s1">&#39;passthrough&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">,</span> <span class="s1">&#39;consistency&#39;</span><span class="p">,</span> <span class="s1">&#39;testDuration&#39;</span><span class="p">])</span>
+    <span class="p">])),</span>
+    <span class="p">(</span><span class="s1">&#39;reg&#39;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())</span>
+<span class="p">])</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;wpm&#39;</span><span class="p">]</span>
+
+<span class="n">pipe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipeline(steps=[(&#39;prep&#39;,
+                 ColumnTransformer(transformers=[(&#39;enc&#39;, OneHotEncoder(),
+                                                  [&#39;isPb&#39;, &#39;mode&#39;]),
+                                                 (&#39;passthrough&#39;, &#39;passthrough&#39;,
+                                                  [&#39;acc&#39;, &#39;consistency&#39;,
+                                                   &#39;testDuration&#39;])])),
+                (&#39;reg&#39;, LinearRegression())])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finding the coefficients of each input feature:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pipe</span><span class="p">[</span><span class="s2">&quot;reg&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">pipe</span><span class="p">[</span><span class="s2">&quot;prep&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>enc__isPb_0                 -1.436988
+enc__isPb_1                  1.436988
+enc__mode_quote             -7.164197
+enc__mode_time               0.039749
+enc__mode_words              7.124447
+passthrough__acc             2.558937
+passthrough__consistency     0.224498
+passthrough__testDuration   -0.207988
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>It makes sense that <code class="docutils literal notranslate"><span class="pre">enc__isPb_1</span></code> has a positive coefficient because PBs should generally have higher WPMs than non-PBs.</p></li>
+<li><p>In the beginning, we saw that the <code class="docutils literal notranslate"><span class="pre">words</span></code> mode generally had the highest WPM while the <code class="docutils literal notranslate"><span class="pre">quote</span></code> mode had the lowest. Therefore, it makes sense that the coefficient of <code class="docutils literal notranslate"><span class="pre">enc__mode_quote</span></code> is negative while that of <code class="docutils literal notranslate"><span class="pre">enc__mode_words</span></code> is positive.</p></li>
+<li><p>The last three passthrough features (Accuracy, Consistency, and Test Duration) have similar coefficients as the previous linear regression. The coefficients of Accuracy and Consistency is still positive while that of Test Duration is negative.</p></li>
+<li><p>The strongest predictor of WPM is now <code class="docutils literal notranslate"><span class="pre">enc__mode_words</span></code>, which makes sense because <code class="docutils literal notranslate"><span class="pre">words</span></code> is my best performing mode. The previous strongest predictor <code class="docutils literal notranslate"><span class="pre">acc</span></code> follows in second.</p></li>
+</ul>
+<p>Assessing the accuracy of my model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;wpm&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7212414541507111
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is a noticeable improvement in the accuracy of the model, from 53 percent to 72 percent. Adding the features <code class="docutils literal notranslate"><span class="pre">isPb</span></code> and <code class="docutils literal notranslate"><span class="pre">mode</span></code> proved to be beneficial.</p>
+</section>
+<section id="logistic-regression-for-ispb">
+<h2>Logistic Regression for <code class="docutils literal notranslate"><span class="pre">isPb</span></code><a class="headerlink" href="#logistic-regression-for-ispb" title="Permalink to this heading">#</a></h2>
+<p>In this section, I will use logistic regression to predict whether a test run was a Personal Best.</p>
+<p>Removing <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">isPb</span></code> and adding <code class="docutils literal notranslate"><span class="pre">wpm</span></code> to my input features:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;acc&quot;</span><span class="p">,</span> <span class="s2">&quot;consistency&quot;</span><span class="p">,</span> <span class="s2">&quot;testDuration&quot;</span><span class="p">,</span> <span class="s2">&quot;wpm&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fitting the data to a logistic regression classifier:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isPb&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finding the coefficients of each input feature:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">clf</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>acc             0.955827
+consistency    -0.030114
+testDuration    0.068597
+wpm             0.067818
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Accuracy is again the strongest predictor of whether a test run will be a personal best.</p></li>
+<li><p>Interestingly, Consistency has a negative coefficient while Test Duration has a positive one (the opposite of what we’d assume). This could be because the number of personal bests is quite small compared to the entire dataset (only 11 percent of all tests are PBs). The small magnitude of the coefficients for Consistency and Test Duration likely suggest that there is no meaningful correlation between the two features and <code class="docutils literal notranslate"><span class="pre">isPb</span></code>.</p></li>
+<li><p>A particularly surprising result was the small coefficient of WPM. Since Personal Bests are determined by having the highest WPM in a given mode, I expected WPM to have a stronger impact on <code class="docutils literal notranslate"><span class="pre">isPb</span></code>.</p></li>
+</ul>
+<p>Assessing the accuracy of my model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;isPb&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9090909090909091
+</pre></div>
+</div>
+</div>
+</div>
+<p>The logistic regression classifer has a decent 91% accuracy.</p>
+</section>
+<section id="decision-tree-classifier-for-mode">
+<h2>Decision Tree Classifier for <code class="docutils literal notranslate"><span class="pre">mode</span></code><a class="headerlink" href="#decision-tree-classifier-for-mode" title="Permalink to this heading">#</a></h2>
+<p>In this section, I will use a decision tree to predict the <code class="docutils literal notranslate"><span class="pre">mode</span></code> of a test run. I will also use <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> with a test size of <code class="docutils literal notranslate"><span class="pre">0.2</span></code> to check if my model is underfitting or overfitting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fitting the data to a decision tree with <code class="docutils literal notranslate"><span class="pre">max_leaf_nodes</span></code> of <code class="docutils literal notranslate"><span class="pre">10</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_leaf_nodes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_leaf_nodes=10)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Displaying the decision tree:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plot_tree</span><span class="p">(</span>
+    <span class="n">tree</span><span class="p">,</span> 
+    <span class="n">feature_names</span><span class="o">=</span><span class="n">tree</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">,</span> 
+    <span class="n">class_names</span><span class="o">=</span><span class="n">tree</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d1d7c1ea370d476b20ff17f8836b731d8f0253b7da0618311e09eabeff40e4ff.png" src="../../_images/d1d7c1ea370d476b20ff17f8836b731d8f0253b7da0618311e09eabeff40e4ff.png" />
+</div>
+</div>
+<p>Finding the feature importances:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">tree</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>acc             0.000000
+consistency     0.000000
+testDuration    0.642597
+wpm             0.357403
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The decision tree does not use Accuracy and Consistency at all. This implies that there is no meaningful correlation between Accuracy &amp; Consistency and Mode.</p></li>
+<li><p>The Test Duration is the strongest predictor of the Mode with a feature importance of 0.64. This makes sense since each mode has a very distinct Test Duration (see the <code class="docutils literal notranslate"><span class="pre">testDuration</span> <span class="pre">vs</span> <span class="pre">wpm</span></code> plot).</p></li>
+</ul>
+<p>Assessing the accuracy of my model for my training and testing datasets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9289099526066351
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8867924528301887
+</pre></div>
+</div>
+</div>
+</div>
+<p>The decision tree classifier has a reasonably good accuracy of 93 percent and 89 percent. Although the score for the test data is around 4 percentage points lower than that of the train data, the difference is not too significant. The model is likely not overfitting and there’s no need for a Random Forest Classifier.</p>
+<section id="error-curve">
+<h3>Error Curve<a class="headerlink" href="#error-curve" title="Permalink to this heading">#</a></h3>
+<p>Here, I will plot the error curves of my train and test data. First, I will define my error as <code class="docutils literal notranslate"><span class="pre">1-tree.score(X,y)</span></code>.</p>
+<p>Creating an empty dataframe with three columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_err1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;leaves&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;set&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Filling the dataframe:
+(I let my number of max leaf nodes vary from 2 to 40.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">41</span><span class="p">):</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_leaf_nodes</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">df_err1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df_err1</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">tree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="s2">&quot;train&quot;</span><span class="p">]</span>
+    <span class="n">df_err1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df_err1</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">tree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">),</span> <span class="s2">&quot;test&quot;</span><span class="p">]</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plotting the relationship between <code class="docutils literal notranslate"><span class="pre">leaves</span></code> and <code class="docutils literal notranslate"><span class="pre">error</span></code> with <code class="docutils literal notranslate"><span class="pre">set</span></code> as the color to get two lines for the test and train datasets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_err1</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;leaves&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;set&quot;</span><span class="p">,</span>
+    <span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;leaves&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-8681b09d79a9494d99fe0307d8aa9c98"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-8681b09d79a9494d99fe0307d8aa9c98") {
+      outputDiv = document.getElementById("altair-viz-8681b09d79a9494d99fe0307d8aa9c98");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-2b5e0f5e847421c14026fda3bcb2db36"}, "mark": "line", "encoding": {"color": {"field": "set", "type": "nominal"}, "tooltip": [{"field": "leaves", "type": "quantitative"}, {"field": "error", "type": "quantitative"}], "x": {"field": "leaves", "type": "quantitative"}, "y": {"field": "error", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-2b5e0f5e847421c14026fda3bcb2db36": [{"leaves": 2, "error": 0.3744075829383886, "set": "train"}, {"leaves": 2, "error": 0.6226415094339622, "set": "test"}, {"leaves": 3, "error": 0.2654028436018957, "set": "train"}, {"leaves": 3, "error": 0.5471698113207547, "set": "test"}, {"leaves": 4, "error": 0.24644549763033174, "set": "train"}, {"leaves": 4, "error": 0.30188679245283023, "set": "test"}, {"leaves": 5, "error": 0.2417061611374408, "set": "train"}, {"leaves": 5, "error": 0.18867924528301883, "set": "test"}, {"leaves": 6, "error": 0.1563981042654028, "set": "train"}, {"leaves": 6, "error": 0.16981132075471694, "set": "test"}, {"leaves": 7, "error": 0.1563981042654028, "set": "train"}, {"leaves": 7, "error": 0.16981132075471694, "set": "test"}, {"leaves": 8, "error": 0.12322274881516593, "set": "train"}, {"leaves": 8, "error": 0.15094339622641506, "set": "test"}, {"leaves": 9, "error": 0.09478672985781988, "set": "train"}, {"leaves": 9, "error": 0.2264150943396226, "set": "test"}, {"leaves": 10, "error": 0.07109004739336489, "set": "train"}, {"leaves": 10, "error": 0.1132075471698113, "set": "test"}, {"leaves": 11, "error": 0.056872037914691975, "set": "train"}, {"leaves": 11, "error": 0.1132075471698113, "set": "test"}, {"leaves": 12, "error": 0.04739336492891, "set": "train"}, {"leaves": 12, "error": 0.1132075471698113, "set": "test"}, {"leaves": 13, "error": 0.042654028436018954, "set": "train"}, {"leaves": 13, "error": 0.1132075471698113, "set": "test"}, {"leaves": 14, "error": 0.03791469194312791, "set": "train"}, {"leaves": 14, "error": 0.1132075471698113, "set": "test"}, {"leaves": 15, "error": 0.033175355450236976, "set": "train"}, {"leaves": 15, "error": 0.07547169811320753, "set": "test"}, {"leaves": 16, "error": 0.028436018957345932, "set": "train"}, {"leaves": 16, "error": 0.07547169811320753, "set": "test"}, {"leaves": 17, "error": 0.023696682464455, "set": "train"}, {"leaves": 17, "error": 0.07547169811320753, "set": "test"}, {"leaves": 18, "error": 0.023696682464455, "set": "train"}, {"leaves": 18, "error": 0.07547169811320753, "set": "test"}, {"leaves": 19, "error": 0.014218009478673022, "set": "train"}, {"leaves": 19, "error": 0.07547169811320753, "set": "test"}, {"leaves": 20, "error": 0.014218009478673022, "set": "train"}, {"leaves": 20, "error": 0.07547169811320753, "set": "test"}, {"leaves": 21, "error": 0.009478672985781977, "set": "train"}, {"leaves": 21, "error": 0.05660377358490565, "set": "test"}, {"leaves": 22, "error": 0.009478672985781977, "set": "train"}, {"leaves": 22, "error": 0.09433962264150941, "set": "test"}, {"leaves": 23, "error": 0.004739336492891044, "set": "train"}, {"leaves": 23, "error": 0.07547169811320753, "set": "test"}, {"leaves": 24, "error": 0.004739336492891044, "set": "train"}, {"leaves": 24, "error": 0.05660377358490565, "set": "test"}, {"leaves": 25, "error": 0.0, "set": "train"}, {"leaves": 25, "error": 0.05660377358490565, "set": "test"}, {"leaves": 26, "error": 0.0, "set": "train"}, {"leaves": 26, "error": 0.05660377358490565, "set": "test"}, {"leaves": 27, "error": 0.0, "set": "train"}, {"leaves": 27, "error": 0.05660377358490565, "set": "test"}, {"leaves": 28, "error": 0.0, "set": "train"}, {"leaves": 28, "error": 0.05660377358490565, "set": "test"}, {"leaves": 29, "error": 0.0, "set": "train"}, {"leaves": 29, "error": 0.09433962264150941, "set": "test"}, {"leaves": 30, "error": 0.0, "set": "train"}, {"leaves": 30, "error": 0.05660377358490565, "set": "test"}, {"leaves": 31, "error": 0.0, "set": "train"}, {"leaves": 31, "error": 0.05660377358490565, "set": "test"}, {"leaves": 32, "error": 0.0, "set": "train"}, {"leaves": 32, "error": 0.07547169811320753, "set": "test"}, {"leaves": 33, "error": 0.0, "set": "train"}, {"leaves": 33, "error": 0.07547169811320753, "set": "test"}, {"leaves": 34, "error": 0.0, "set": "train"}, {"leaves": 34, "error": 0.037735849056603765, "set": "test"}, {"leaves": 35, "error": 0.0, "set": "train"}, {"leaves": 35, "error": 0.07547169811320753, "set": "test"}, {"leaves": 36, "error": 0.0, "set": "train"}, {"leaves": 36, "error": 0.037735849056603765, "set": "test"}, {"leaves": 37, "error": 0.0, "set": "train"}, {"leaves": 37, "error": 0.09433962264150941, "set": "test"}, {"leaves": 38, "error": 0.0, "set": "train"}, {"leaves": 38, "error": 0.05660377358490565, "set": "test"}, {"leaves": 39, "error": 0.0, "set": "train"}, {"leaves": 39, "error": 0.05660377358490565, "set": "test"}, {"leaves": 40, "error": 0.0, "set": "train"}, {"leaves": 40, "error": 0.037735849056603765, "set": "test"}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>The train curve seems to follow a typical training error curve shape. The test curve on the other hand does not really resemble a U-shape, which is not unusual for real-life data. Both curves seem to have more or less the same error after 25 leaves.</p>
+<p>Next, I will repeat the same process but with my error as <code class="docutils literal notranslate"><span class="pre">log_loss(y,tree.predict_proba(X))</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_err2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;leaves&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;set&quot;</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">41</span><span class="p">):</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_leaf_nodes</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">df_err2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df_err2</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">log_loss</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_train</span><span class="p">)),</span> <span class="s2">&quot;train&quot;</span><span class="p">]</span>
+    <span class="n">df_err2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df_err2</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">log_loss</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)),</span> <span class="s2">&quot;test&quot;</span><span class="p">]</span>  
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_err2</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;leaves&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;set&quot;</span><span class="p">,</span>
+    <span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;leaves&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-34b18a56c99845e5b9509eb8ae09f04a"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-34b18a56c99845e5b9509eb8ae09f04a") {
+      outputDiv = document.getElementById("altair-viz-34b18a56c99845e5b9509eb8ae09f04a");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-28d7a94d2d39b65e3818ec1f0ac92336"}, "mark": "line", "encoding": {"color": {"field": "set", "type": "nominal"}, "tooltip": [{"field": "leaves", "type": "quantitative"}, {"field": "error", "type": "quantitative"}], "x": {"field": "leaves", "type": "quantitative"}, "y": {"field": "error", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-28d7a94d2d39b65e3818ec1f0ac92336": [{"leaves": 2, "error": 0.813677700929547, "set": "train"}, {"leaves": 2, "error": 1.1033574989079136, "set": "test"}, {"leaves": 3, "error": 0.6801508297398243, "set": "train"}, {"leaves": 3, "error": 1.0647252592473364, "set": "test"}, {"leaves": 4, "error": 0.5790133099405449, "set": "train"}, {"leaves": 4, "error": 0.6919704642714859, "set": "test"}, {"leaves": 5, "error": 0.5009476595364026, "set": "train"}, {"leaves": 5, "error": 0.5940555950334063, "set": "test"}, {"leaves": 6, "error": 0.3764684244001737, "set": "train"}, {"leaves": 6, "error": 0.46645115474177123, "set": "test"}, {"leaves": 7, "error": 0.3311949681789956, "set": "train"}, {"leaves": 7, "error": 0.4351874165020496, "set": "test"}, {"leaves": 8, "error": 0.2956043595988337, "set": "train"}, {"leaves": 8, "error": 0.4325565437349666, "set": "test"}, {"leaves": 9, "error": 0.26839102717203106, "set": "train"}, {"leaves": 9, "error": 0.42477476994766145, "set": "test"}, {"leaves": 10, "error": 0.2212944300493586, "set": "train"}, {"leaves": 10, "error": 0.2789579443303615, "set": "test"}, {"leaves": 11, "error": 0.19503458979229693, "set": "train"}, {"leaves": 11, "error": 0.32027538633266006, "set": "test"}, {"leaves": 12, "error": 0.16373441810078224, "set": "train"}, {"leaves": 12, "error": 0.30705681633456816, "set": "test"}, {"leaves": 13, "error": 0.14742147119711435, "set": "train"}, {"leaves": 13, "error": 0.8954295705841224, "set": "test"}, {"leaves": 14, "error": 0.13163106540867933, "set": "train"}, {"leaves": 14, "error": 0.8992790570705146, "set": "test"}, {"leaves": 15, "error": 0.11938457012053921, "set": "train"}, {"leaves": 15, "error": 0.8235317062364911, "set": "test"}, {"leaves": 16, "error": 0.10081751342844736, "set": "train"}, {"leaves": 16, "error": 1.4186311438680752, "set": "test"}, {"leaves": 17, "error": 0.09315912790873393, "set": "train"}, {"leaves": 17, "error": 1.4217507096244444, "set": "test"}, {"leaves": 18, "error": 0.08563472271145066, "set": "train"}, {"leaves": 18, "error": 1.4170929723049814, "set": "test"}, {"leaves": 19, "error": 0.06753479375520006, "set": "train"}, {"leaves": 19, "error": 2.0327388947583067, "set": "test"}, {"leaves": 20, "error": 0.05809591537255839, "set": "train"}, {"leaves": 20, "error": 1.3970175951690014, "set": "test"}, {"leaves": 21, "error": 0.04904595089443311, "set": "train"}, {"leaves": 21, "error": 1.3893673101103565, "set": "test"}, {"leaves": 22, "error": 0.034921169368243125, "set": "train"}, {"leaves": 22, "error": 1.3331881773849568, "set": "test"}, {"leaves": 23, "error": 0.02426078747973493, "set": "train"}, {"leaves": 23, "error": 1.9583999040438058, "set": "test"}, {"leaves": 24, "error": 0.010660381888510309, "set": "train"}, {"leaves": 24, "error": 3.2583751315953484, "set": "test"}, {"leaves": 25, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 25, "error": 2.6067001052762793, "set": "test"}, {"leaves": 26, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 26, "error": 2.6067001052762797, "set": "test"}, {"leaves": 27, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 27, "error": 2.6067001052762793, "set": "test"}, {"leaves": 28, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 28, "error": 1.9550250789572101, "set": "test"}, {"leaves": 29, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 29, "error": 3.2583751315953484, "set": "test"}, {"leaves": 30, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 30, "error": 1.9550250789572101, "set": "test"}, {"leaves": 31, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 31, "error": 1.3033500526381405, "set": "test"}, {"leaves": 32, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 32, "error": 1.9550250789572101, "set": "test"}, {"leaves": 33, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 33, "error": 1.9550250789572101, "set": "test"}, {"leaves": 34, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 34, "error": 3.2583751315953484, "set": "test"}, {"leaves": 35, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 35, "error": 2.6067001052762797, "set": "test"}, {"leaves": 36, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 36, "error": 2.6067001052762793, "set": "test"}, {"leaves": 37, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 37, "error": 2.6067001052762797, "set": "test"}, {"leaves": 38, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 38, "error": 2.6067001052762797, "set": "test"}, {"leaves": 39, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 39, "error": 1.9550250789572101, "set": "test"}, {"leaves": 40, "error": 2.1094237467878e-15, "set": "train"}, {"leaves": 40, "error": 2.6067001052762797, "set": "test"}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>The training error curve looks very similar, but the test error curve wildly fluctuates. There is clearly no advantage of using <code class="docutils literal notranslate"><span class="pre">log_loss</span></code> for my dataset.</p>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Using linear regression to model WPM with Accuracy, Consistency, and Test Duration performed poorly (54% accuracy), but adding the features <code class="docutils literal notranslate"><span class="pre">isPb</span></code> and <code class="docutils literal notranslate"><span class="pre">mode</span></code> noticeably improved the model’s accuracy (72% accuracy). Also, Accuracy and the mode being <code class="docutils literal notranslate"><span class="pre">words</span></code> were the strongest predictors of WPM.</p></li>
+<li><p>Using logistic regression to predict <code class="docutils literal notranslate"><span class="pre">isPb</span></code> with Accuracy, Consistency, Test Duration, and WPM performed quite well (91% accuracy). The strongest predictor of <code class="docutils literal notranslate"><span class="pre">isPb</span></code> was again Accuracy.</p></li>
+<li><p>Using a decision tree classifier to predict the <code class="docutils literal notranslate"><span class="pre">mode</span></code> with Accuracy, Consistency, Test Duration, and WPM performed decently (93% and 89% accuracy for train and test data respectively). The small difference in the performance between the train and test data suggests that the model is not overfitting. The strongest predictor of <code class="docutils literal notranslate"><span class="pre">mode</span></code> was the Test Duration.</p></li>
+</ol>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>Source of Dataset: <a class="reference external" href="https://monkeytype.com/">MonkeyType</a> and Myself
+External References: <a class="reference external" href="https://www.bing.com/search?form=MY02AA&amp;OCID=MY02AA&amp;pl=launch&amp;q=Bing+AI&amp;showconv=1">Bing Chat</a>, <a class="reference external" href="https://altair-viz.github.io/user_guide/generated/toplevel/altair.HConcatChart.html">altair.hconcat</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html">OneHotEncoder</a>, and <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html">ColumnTransformer</a></p>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=3d55b611-3ab1-43f1-9a99-f081fe2c116b' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Proj/StudentProjects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="XifanJiang.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Decision Tree Regressor Analysis on Insurance Charges: The Impact of Age, BMI, and Smoking Status</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="KyleLemler.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Predicting League of Legends Winners</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-data">Understanding the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-wpm">Plotting WPM</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-for-wpm">Linear Regression for WPM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-with-onehotencoder-for-wpm">Linear Regression with <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> for WPM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression-for-ispb">Logistic Regression for <code class="docutils literal notranslate"><span class="pre">isPb</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-classifier-for-mode">Decision Tree Classifier for <code class="docutils literal notranslate"><span class="pre">mode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-curve">Error Curve</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

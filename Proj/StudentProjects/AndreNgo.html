@@ -1,0 +1,1463 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Predicting Match/Map Outcomes in LAN versus Online Play Using Player Statistics in Professional Counter-Strike &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Proj/StudentProjects/AndreNgo';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Students Performance" href="QiQin.html" />
+    <link rel="prev" title="Wine Quality" href="PaulaMendez-Lagunas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week2/Week2-Intro.html">Week 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Friday.html">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Worksheet6.html">Worksheet 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week4/Week4-Intro.html">Week 4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Tuesday.html">Week 4 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Wednesday.html">Week 4 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Friday.html">Week 4 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Worksheet8.html">Worksheet 8</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week5/Week5-Intro.html">Week 5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Tuesday.html">Week 5 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Wednesday.html">Week 5 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Thursday.html">Week 5 Thursday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Friday.html">Week 5 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Worksheet9.html">Worksheet 9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Worksheet10.html">Worksheet 10</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week6/Week6-Intro.html">Week 6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Monday.html">Week 6 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Wednesday.html">Week 6 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Friday.html">Week 6 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Worksheet11.html">Worksheet 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Worksheet12.html">Worksheet 12</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week7/Week7-Intro.html">Week 7</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Monday.html">Week 7 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Wednesday.html">Week 7 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Friday.html">Week 7 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Worksheet13.html">Worksheet 13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Worksheet14.html">Worksheet 14</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week8/Week8-Intro.html">Week 8</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Monday.html">Week 8 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Wednesday.html">Week 8 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Friday.html">Week 8 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Worksheet15.html">Worksheet 15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Worksheet16.html">Worksheet 16</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week9/Week9-Intro.html">Week 9</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Week9-Wednesday.html">Week 9 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Worksheet17.html">Worksheet 17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Worksheet18.html">Worksheet 18</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week10/Week10-Intro.html">Week 10</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Monday.html">Week 10 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Wednesday.html">Week 10 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Friday.html">Week 10 Friday</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CourseProject.html">Project Instructions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ExtraTopics.html">Possible extra topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../StudentProjects.html">Student Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SethAbuhamdeh.html">Countries and Air Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RachelBronder.html">Subject of Subjectivity: The Global Happiness Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="JacobBustamante.html">Dollar Bill Validity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RuizheCheng.html">Analysis and predictions based on data from Premier League</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HaohongChenxie.html">Analysis the factors related to Publishers on Video Games</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="AminEghbalian.html">Analysis of Stroke Occurance Based on Health Factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShuchengFei.html">Analysis of the Medical Cost Personal Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LukeGalang.html">Overwatch 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DianaGonzalez.html">Brazil Forest Fires Prediction and Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdrianGuerra.html">Energy Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnjunHou.html">Data science occupation prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XifanJiang.html">Decision Tree Regressor Analysis on Insurance Charges: The Impact of Age, BMI, and Smoking Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DanielLee.html">MonkeyType: A Typing Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KyleLemler.html">Predicting League of Legends Winners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AndrewLittle.html">Predicting Outcomes of Hockey Games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LoulouVivianMahfouz.html">💄 Makeup Foundation Shades Analysis 💅🏻</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PamelaMartinez.html">Making Predictions of Underwater Ocean Temperature Using Historical Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PaulaMendez-Lagunas.html">Wine Quality</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Predicting Match/Map Outcomes in LAN versus Online Play Using Player Statistics in Professional Counter-Strike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QiQin.html">Students Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FelipeRios.html">Predicting Forza Horizon Car Classes and Ratings</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="AlejandroSalmeron.html">Predicting Star NBA Players</a></li>
+<li class="toctree-l2"><a class="reference internal" href="JoshuaSunga.html">NBA Position Prediction Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NicoleVuong.html">Exploring Recidivism in Iowa</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="ZheyuWu.html">Analyzing Winning factors on Premier League</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MingyangYi.html">Men’s volleyball performances prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KaijieZhang.html">Prediction and Analysis of Crabs’ Age and Sex Base on Physical Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ChenzhangZhao.html">Premier league season 2022-23 match data analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShuoyuZhu.html">Car Price Prediction</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Proj/StudentProjects/AndreNgo.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Predicting Match/Map Outcomes in LAN versus Online Play Using Player Statistics in Professional Counter-Strike</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataset">The Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-and-splitting-the-dataset-by-lan-versus-online">Cleaning and Splitting the Dataset by LAN versus Online</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#online-events">Online Events</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#international-lans-and-majors">International LANs and Majors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#winrate-correlation">Winrate Correlation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-winrate-using-statistics-of-the-whole-team">Correlation of Winrate Using Statistics of the Whole Team</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-map-vs-series-winrate">Aside: Map vs Series Winrate</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-winrate-using-only-awper-statistics">Correlation of Winrate Using Only AWPer Statistics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#winrate-prediction">Winrate Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-for-awpers">Machine Learning for AWPers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-for-the-rest-of-the-team">Machine Learning for the Rest of the Team</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-findings">Summary/Findings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#awpers-vs-the-rest-of-the-team">AWPers vs The Rest of the Team</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maps-vs-series">Maps vs Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lan-vs-online">LAN vs Online</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="predicting-match-map-outcomes-in-lan-versus-online-play-using-player-statistics-in-professional-counter-strike">
+<h1>Predicting Match/Map Outcomes in LAN versus Online Play Using Player Statistics in Professional Counter-Strike<a class="headerlink" href="#predicting-match-map-outcomes-in-lan-versus-online-play-using-player-statistics-in-professional-counter-strike" title="Permalink to this heading">#</a></h1>
+<p>Author: Andre Ngo</p>
+<p>Email: <a class="reference external" href="mailto:0andrengo&#37;&#52;&#48;gmail&#46;com">0andrengo<span>&#64;</span>gmail<span>&#46;</span>com</a> (personal) and <a class="reference external" href="mailto:ango14&#37;&#52;&#48;uci&#46;edu">ango14<span>&#64;</span>uci<span>&#46;</span>edu</a> (school)</p>
+<p>Course Project, UC Irvine, Math 10, S23</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>I intend to explore how individual player performances affect the probability of winning a singular map or best-of-three series of maps in Counter Strike, as well as predicting their end-of-map rating using their basic scoreboard statistics. These predicitions will be separated in various ways, such as for LAN (in-person) vs online play and player role, and compared with each other.</p>
+</section>
+<section id="the-dataset">
+<h2>The Dataset<a class="headerlink" href="#the-dataset" title="Permalink to this heading">#</a></h2>
+<p>This dataset was taken from <a class="reference external" href="https://www.kaggle.com/datasets/nafisbarizki/csgo-top-tier-match-jan-2020-dec-2022">Kaggle</a>, scraped from <a class="reference external" href="https://hltv.org">HLTV.org</a> by user Nafis Barzki. It contains match, tournament, and player data from January of 2020 until December of 2022, filtering exclusively for top-tier play. HLTV is the premier website for “Counter-Strike” news and statistics, with match, tournament, and player data from all the way to the beginning of the current iteration of Counter-Strike in 2012. One of HLTV’s main propritery features are their <a class="reference external" href="https://www.hltv.org/news/20695/introducing-rating-20">“HLTV Ranking 2.0”</a>- a metric used to condense a player’s in-game performance into a single number. The formula for this rating was kept a secret, but eventually <a class="reference external" href="https://flashed.gg/posts/reverse-engineering-hltv-rating/">reverse engineered</a> by a user named “Dave.” This rating will be one of the most important variables we will be exploring within this analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;hltv_matches.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cleaning-and-splitting-the-dataset-by-lan-versus-online">
+<h3>Cleaning and Splitting the Dataset by LAN versus Online<a class="headerlink" href="#cleaning-and-splitting-the-dataset-by-lan-versus-online" title="Permalink to this heading">#</a></h3>
+<p>The first order of business is splitting the dataset into two, this would ideally be done by the running dates or playing dates of tournemtns or matches respectively, but this dataset unfortunately does not contain any date columns. Therefore, we will instead use the name of the event. This also allows for the oppertunity to only use tier-1 events in our datset, as this dataframe, although filtering for “top tier” tournaments only, also allows for tier-2 tournaments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;bo_won&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;bo_won&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;bool&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A little bit of cleanup due to a scraping error, likely.</p>
+<section id="online-events">
+<h4>Online Events<a class="headerlink" href="#online-events" title="Permalink to this heading">#</a></h4>
+<p>Using HLTV’s built-in <a class="reference external" href="https://www.hltv.org/events/archive?startDate=2020-01-01&amp;endDate=2021-12-31&amp;eventType=ONLINE&amp;prizeMin=200000&amp;prizeMax=2000000">filters</a>, sorting for online events, from 2020-01-01 until 2021-12-31 (considered the “online era”), with a minimum prize pool of $200,000, we can get the names of some of the events were are looking for. Using the <code class="docutils literal notranslate"><span class="pre">.str.contains()</span></code> method, we can also get matches from the qualifier for these events, which would otherwise be skipped since they award qualification to the main event instead of prize money.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">online_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;ESL Pro League Season 11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Flashpoint 1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier Spring 2020 Europe Finals&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier Spring 2020 Americas Finals&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ESL One Cologne 2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ESL Pro League Season 12&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Flashpoint 2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier Fall 2020 Finals&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IEM Global Challenge 2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier Global Final 2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cs_summit 7&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IEM Katowice 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ESL Pro League Season 13&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Funspark ULTI 2020 Europe Final&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dreamhack Masters Spring 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IEM Summer 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier Spring Final 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ESL Pro League Season 14&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_online</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">online_list</span><span class="p">))</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Qualifier|Conference&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Weeding out lower-level competition which use the words “qualifier” or “conference” as they would pass through <code class="docutils literal notranslate"><span class="pre">lan_list</span></code> while not being top tier events.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_online</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;BLAST Premier Spring 2020 Americas Finals&#39;,
+       &#39;BLAST Premier Spring 2020 Europe Finals&#39;,
+       &#39;ESL Pro League Season 11 North America&#39;, &#39;Flashpoint 1&#39;,
+       &#39;ESL Pro League Season 11 Europe&#39;, &#39;IEM Global Challenge 2020&#39;,
+       &#39;BLAST Premier Fall 2020 Finals&#39;, &#39;Flashpoint 2&#39;,
+       &#39;ESL Pro League Season 12 North America&#39;,
+       &#39;ESL Pro League Season 12 Europe&#39;, &#39;ESL One Cologne 2020 Europe&#39;,
+       &#39;ESL One Cologne 2020 North America&#39;,
+       &#39;Funspark ULTI 2020 Europe Final&#39;, &#39;ESL Pro League Season 13&#39;,
+       &#39;IEM Katowice 2021&#39;, &#39;IEM Katowice 2021 Play-In&#39;, &#39;cs_summit 7&#39;,
+       &#39;BLAST Premier Global Final 2020&#39;, &#39;ESL Pro League Season 14&#39;,
+       &#39;BLAST Premier Spring Final 2021&#39;, &#39;IEM Summer 2021&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This allows me to make sure that all of the events in this new dataframe are all what spectators would consider tier 1 events.</p>
+</section>
+<section id="international-lans-and-majors">
+<h4>International LANs and Majors<a class="headerlink" href="#international-lans-and-majors" title="Permalink to this heading">#</a></h4>
+<p>International LANs are tournaments in which teams from around the world fly into once location to compete. Majors are the pinnicale of “Counter-Strike” competition and the marquee events of the year, usually twice a year. Once again, using HLTV’s built-in <a class="reference external" href="https://www.hltv.org/events/archive?startDate=2021-01-01&amp;endDate=2022-12-31&amp;eventType=MAJOR&amp;eventType=INTLLAN&amp;prizeMin=200000&amp;prizeMax=2000000">filters</a>, we sort for for majors and international LANs, from 2021-01-01 until 2022-12-31 (considered “post-online era”), with a minimum prize pool of $200,000, we can get the names of some of the events were are looking for. Using the <code class="docutils literal notranslate"><span class="pre">.str.contains()</span></code> method, we can also get matches from the  play-in stages for these events, which would otherwise be skipped for the same reasons as above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lan_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;IEM Cologne 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PGL Major Stockholm 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;V4 Future Sports Festival 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier Fall Final 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IEM Winter 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier World Final 2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IEM Katowice 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ESL Pro League Season 15&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PGL Major Antwerp 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IEM Dallas 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Pinicle Cup Championship 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Global Esports Tour Dubai 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier Spring Final 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IEM Cologne 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ESL Pro League Season 16&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IEM Rio Major 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Elisa Masters Espoo 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier Fall Final 2022&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BLAST Premier World Final 2022&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lan</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lan_list</span><span class="p">))</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Qualifier|Conference&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Weeding out lower-level competition which use the words “qualifier” or “conference” as they would pass through <code class="docutils literal notranslate"><span class="pre">lan_list</span></code> while not being top tier events as well as usually being played online.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lan</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;IEM Cologne 2021&#39;, &#39;IEM Cologne 2021 Play-In&#39;,
+       &#39;BLAST Premier World Final 2021&#39;, &#39;IEM Winter 2021&#39;,
+       &#39;BLAST Premier Fall Final 2021&#39;, &#39;V4 Future Sports Festival 2021&#39;,
+       &#39;V4 Future Sports Festival 2021 Play-In&#39;,
+       &#39;PGL Major Stockholm 2021&#39;,
+       &#39;PGL Major Stockholm 2021 Challengers Stage&#39;,
+       &#39;V4 Future Sports Festival 2021 International Cup&#39;,
+       &#39;PGL Major Antwerp 2022 Europe RMR B&#39;,
+       &#39;PGL Major Antwerp 2022 Europe RMR A&#39;,
+       &#39;PGL Major Antwerp 2022 Americas RMR&#39;, &#39;ESL Pro League Season 15&#39;,
+       &#39;IEM Katowice 2022&#39;, &#39;IEM Katowice 2022 Play-In&#39;,
+       &#39;ESL Pro League Season 16&#39;, &#39;IEM Cologne 2022&#39;,
+       &#39;IEM Cologne 2022 Play-In&#39;, &#39;BLAST Premier Spring Final 2022&#39;,
+       &#39;Global Esports Tour Dubai 2022&#39;, &#39;IEM Dallas 2022&#39;,
+       &#39;PGL Major Antwerp 2022&#39;,
+       &#39;PGL Major Antwerp 2022 Challengers Stage&#39;,
+       &#39;IEM Rio Major 2022 Challengers Stage&#39;,
+       &#39;BLAST Premier Fall Final 2022&#39;, &#39;Elisa Masters Espoo 2022&#39;,
+       &#39;IEM Rio Major 2022&#39;, &#39;BLAST Premier World Final 2022&#39;],
+      dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="winrate-correlation">
+<h2>Winrate Correlation<a class="headerlink" href="#winrate-correlation" title="Permalink to this heading">#</a></h2>
+<p>Before I try predicting winrates, I’m going to first check the <a class="reference external" href="https://www.youtube.com/watch?v=-HNeDT2qjcg">correlations</a> of our future inputs. This is done using the performance of every member of the team versus the AWPer role. AWPers are widely considered as the most important role in the game. Usually, they are the star players of the roster and teams will build their stratagies and playstyles around the presence of their own AWPer or the opposing team’s AWPer. In short, they’re important, but how important? Are they more imporant than the rest of the team?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AWP_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;s1mple&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ZywOo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CadiaN&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;broky&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;m0nesy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SunPayus&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sh1ro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;oSee&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;torzsi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;saffee&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Jame&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;headtr1ck&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nicoodoz&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FalleN&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;degseter&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hyped&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;syrsoN&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hallzerk&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;junior&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;aliStair&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;try&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;zevy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;acoR&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kennyS&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, I begin by manually creating a list of tier-1 AWPers who played within our given timeframe. This will be used to further split our dataframe.</p>
+<section id="correlation-of-winrate-using-statistics-of-the-whole-team">
+<h3>Correlation of Winrate Using Statistics of the Whole Team<a class="headerlink" href="#correlation-of-winrate-using-statistics-of-the-whole-team" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span> <span class="o">=</span><span class="p">[</span>
+    <span class="s2">&quot;kill_score&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;death_score&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kddiff&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;adr&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kast&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rating&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lan_team</span> <span class="o">=</span> <span class="n">df_lan</span><span class="p">[</span><span class="n">df_lan</span><span class="p">[</span><span class="s2">&quot;player_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AWP_list</span><span class="p">))</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_online_team</span> <span class="o">=</span> <span class="n">df_online</span><span class="p">[</span><span class="n">df_online</span><span class="p">[</span><span class="s2">&quot;player_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AWP_list</span><span class="p">))</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lan_map_team</span> <span class="o">=</span> <span class="n">df_lan_team</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s2">&quot;map_won&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;lan_map_team&quot;</span><span class="p">)</span>
+<span class="n">lan_series_team</span> <span class="o">=</span> <span class="n">df_lan_team</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s2">&quot;bo_won&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;lan_series_team&quot;</span><span class="p">)</span>
+<span class="n">online_map_team</span> <span class="o">=</span> <span class="n">df_online_team</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s2">&quot;map_won&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;online_map_team&quot;</span><span class="p">)</span>
+<span class="n">online_series_team</span> <span class="o">=</span> <span class="n">df_online_team</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s2">&quot;bo_won&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;online_series_team&quot;</span><span class="p">)</span>
+
+<span class="n">team_correlation</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">lan_map_team</span><span class="p">,</span><span class="n">lan_series_team</span><span class="p">,</span><span class="n">online_map_team</span><span class="p">,</span><span class="n">online_series_team</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="aside-map-vs-series-winrate">
+<h4>Aside: Map vs Series Winrate<a class="headerlink" href="#aside-map-vs-series-winrate" title="Permalink to this heading">#</a></h4>
+<p>BO3 (Best of three) matches are considered better dicators of team and player performance per-match compared to BO1 (Best of one) matches. There are seven maps teams are able to veto and pick from. If you’ve been keeping track, I’ve now separated our data firstly between LAN/Online, AWPer/non-AWPer, and now map vs series. We will find out the significance of map vs series soon.</p>
+</section>
+</section>
+<section id="correlation-of-winrate-using-only-awper-statistics">
+<h3>Correlation of Winrate Using Only AWPer Statistics<a class="headerlink" href="#correlation-of-winrate-using-only-awper-statistics" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lan_awp</span> <span class="o">=</span> <span class="n">df_lan</span><span class="p">[</span><span class="n">df_lan</span><span class="p">[</span><span class="s2">&quot;player_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AWP_list</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_online_awp</span> <span class="o">=</span> <span class="n">df_online</span><span class="p">[</span><span class="n">df_online</span><span class="p">[</span><span class="s2">&quot;player_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AWP_list</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lan_map_awp</span> <span class="o">=</span> <span class="n">df_lan_awp</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s2">&quot;map_won&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;lan_map_awp&quot;</span><span class="p">)</span>
+<span class="n">lan_series_awp</span> <span class="o">=</span> <span class="n">df_lan_awp</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s2">&quot;bo_won&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;lan_series_awp&quot;</span><span class="p">)</span>
+<span class="n">online_map_awp</span> <span class="o">=</span> <span class="n">df_online_awp</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s2">&quot;map_won&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;online_map_awp&quot;</span><span class="p">)</span>
+<span class="n">online_series_awp</span> <span class="o">=</span> <span class="n">df_online_awp</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s2">&quot;bo_won&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;online_series_awp&quot;</span><span class="p">)</span>
+
+<span class="n">awp_correlation</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">lan_map_awp</span><span class="p">,</span><span class="n">lan_series_awp</span><span class="p">,</span> <span class="n">online_map_awp</span><span class="p">,</span> <span class="n">online_series_awp</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_corr</span> <span class="o">=</span> <span class="n">team_correlation</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">player_stats</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">t_corr</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_corr</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_corr</span> <span class="o">=</span> <span class="n">awp_correlation</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">player_stats</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">a_corr</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a_corr</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Here, I transpose these new dataframes using [.T](https://www.youtube.com/watch?v=6AjYmHLHlpY
+) to make graphs later.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_stats</span><span class="p">:</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">a_corr</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">i</span>
+    <span class="p">)</span>
+    <span class="n">c2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">t_corr</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">i</span>
+    <span class="p">)</span>
+    <span class="p">(</span><span class="n">c1</span><span class="o">+</span><span class="n">c2</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-6cf9d3b931c74c62b361893e0aa6a0fe"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-6cf9d3b931c74c62b361893e0aa6a0fe") {
+      outputDiv = document.getElementById("altair-viz-6cf9d3b931c74c62b361893e0aa6a0fe");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-4b577b7b42e96ab3be053ef83cef7754"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "kill_score", "type": "quantitative"}}}, {"data": {"name": "data-f4428fcace702d49899f02e2c4dc839d"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "kill_score", "type": "quantitative"}}}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-4b577b7b42e96ab3be053ef83cef7754": [{"kill_score": 0.2845639841069159, "death_score": -0.43405895367574443, "kddiff": 0.5509524976081843, "adr": 0.35189960728171094, "kast": 0.5455413098467984, "rating": 0.5413755350984953, "index": "lan_map_awp"}, {"kill_score": 0.20905545141232887, "death_score": -0.2969893541227548, "kddiff": 0.3900841622017902, "adr": 0.25486485841750683, "kast": 0.3848299981595522, "rating": 0.38648740245372043, "index": "lan_series_awp"}, {"kill_score": 0.25821402657877024, "death_score": -0.4415754287418542, "kddiff": 0.5197180601735414, "adr": 0.3172811359260142, "kast": 0.5436152044951517, "rating": 0.5366939624232987, "index": "online_map_awp"}, {"kill_score": 0.18570758883344485, "death_score": -0.31795408228964356, "kddiff": 0.3740173895824777, "adr": 0.23685798222966964, "kast": 0.38840180452110634, "rating": 0.3815494808089194, "index": "online_series_awp"}], "data-f4428fcace702d49899f02e2c4dc839d": [{"kill_score": 0.29156672526537625, "death_score": -0.3785935915335922, "kddiff": 0.5230165467003531, "adr": 0.3299809240841028, "kast": 0.5304754572168368, "rating": 0.5342025217243069, "index": "lan_map_team"}, {"kill_score": 0.16380443515302434, "death_score": -0.24683717985440817, "kddiff": 0.3172353326870066, "adr": 0.2032025092373086, "kast": 0.32775204450388673, "rating": 0.33014267568074845, "index": "lan_series_team"}, {"kill_score": 0.2882851432915409, "death_score": -0.383355203519815, "kddiff": 0.510970885231694, "adr": 0.32073676558881137, "kast": 0.5245435290372297, "rating": 0.5314340791332766, "index": "online_map_team"}, {"kill_score": 0.1880280915196171, "death_score": -0.2566525794930526, "kddiff": 0.33765681978841083, "adr": 0.21384070440125386, "kast": 0.3472877198130583, "rating": 0.35011973510128563, "index": "online_series_team"}]}}, {"mode": "vega-lite"});
+</script></div><div class="output text_html">
+<div id="altair-viz-753e068a0cdf4b9691f310f5561cbb65"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-753e068a0cdf4b9691f310f5561cbb65") {
+      outputDiv = document.getElementById("altair-viz-753e068a0cdf4b9691f310f5561cbb65");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-4b577b7b42e96ab3be053ef83cef7754"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "death_score", "type": "quantitative"}}}, {"data": {"name": "data-f4428fcace702d49899f02e2c4dc839d"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "death_score", "type": "quantitative"}}}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-4b577b7b42e96ab3be053ef83cef7754": [{"kill_score": 0.2845639841069159, "death_score": -0.43405895367574443, "kddiff": 0.5509524976081843, "adr": 0.35189960728171094, "kast": 0.5455413098467984, "rating": 0.5413755350984953, "index": "lan_map_awp"}, {"kill_score": 0.20905545141232887, "death_score": -0.2969893541227548, "kddiff": 0.3900841622017902, "adr": 0.25486485841750683, "kast": 0.3848299981595522, "rating": 0.38648740245372043, "index": "lan_series_awp"}, {"kill_score": 0.25821402657877024, "death_score": -0.4415754287418542, "kddiff": 0.5197180601735414, "adr": 0.3172811359260142, "kast": 0.5436152044951517, "rating": 0.5366939624232987, "index": "online_map_awp"}, {"kill_score": 0.18570758883344485, "death_score": -0.31795408228964356, "kddiff": 0.3740173895824777, "adr": 0.23685798222966964, "kast": 0.38840180452110634, "rating": 0.3815494808089194, "index": "online_series_awp"}], "data-f4428fcace702d49899f02e2c4dc839d": [{"kill_score": 0.29156672526537625, "death_score": -0.3785935915335922, "kddiff": 0.5230165467003531, "adr": 0.3299809240841028, "kast": 0.5304754572168368, "rating": 0.5342025217243069, "index": "lan_map_team"}, {"kill_score": 0.16380443515302434, "death_score": -0.24683717985440817, "kddiff": 0.3172353326870066, "adr": 0.2032025092373086, "kast": 0.32775204450388673, "rating": 0.33014267568074845, "index": "lan_series_team"}, {"kill_score": 0.2882851432915409, "death_score": -0.383355203519815, "kddiff": 0.510970885231694, "adr": 0.32073676558881137, "kast": 0.5245435290372297, "rating": 0.5314340791332766, "index": "online_map_team"}, {"kill_score": 0.1880280915196171, "death_score": -0.2566525794930526, "kddiff": 0.33765681978841083, "adr": 0.21384070440125386, "kast": 0.3472877198130583, "rating": 0.35011973510128563, "index": "online_series_team"}]}}, {"mode": "vega-lite"});
+</script></div><div class="output text_html">
+<div id="altair-viz-6afbe208b5fd4388b4f549bdbd2d37e6"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-6afbe208b5fd4388b4f549bdbd2d37e6") {
+      outputDiv = document.getElementById("altair-viz-6afbe208b5fd4388b4f549bdbd2d37e6");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-4b577b7b42e96ab3be053ef83cef7754"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "kddiff", "type": "quantitative"}}}, {"data": {"name": "data-f4428fcace702d49899f02e2c4dc839d"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "kddiff", "type": "quantitative"}}}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-4b577b7b42e96ab3be053ef83cef7754": [{"kill_score": 0.2845639841069159, "death_score": -0.43405895367574443, "kddiff": 0.5509524976081843, "adr": 0.35189960728171094, "kast": 0.5455413098467984, "rating": 0.5413755350984953, "index": "lan_map_awp"}, {"kill_score": 0.20905545141232887, "death_score": -0.2969893541227548, "kddiff": 0.3900841622017902, "adr": 0.25486485841750683, "kast": 0.3848299981595522, "rating": 0.38648740245372043, "index": "lan_series_awp"}, {"kill_score": 0.25821402657877024, "death_score": -0.4415754287418542, "kddiff": 0.5197180601735414, "adr": 0.3172811359260142, "kast": 0.5436152044951517, "rating": 0.5366939624232987, "index": "online_map_awp"}, {"kill_score": 0.18570758883344485, "death_score": -0.31795408228964356, "kddiff": 0.3740173895824777, "adr": 0.23685798222966964, "kast": 0.38840180452110634, "rating": 0.3815494808089194, "index": "online_series_awp"}], "data-f4428fcace702d49899f02e2c4dc839d": [{"kill_score": 0.29156672526537625, "death_score": -0.3785935915335922, "kddiff": 0.5230165467003531, "adr": 0.3299809240841028, "kast": 0.5304754572168368, "rating": 0.5342025217243069, "index": "lan_map_team"}, {"kill_score": 0.16380443515302434, "death_score": -0.24683717985440817, "kddiff": 0.3172353326870066, "adr": 0.2032025092373086, "kast": 0.32775204450388673, "rating": 0.33014267568074845, "index": "lan_series_team"}, {"kill_score": 0.2882851432915409, "death_score": -0.383355203519815, "kddiff": 0.510970885231694, "adr": 0.32073676558881137, "kast": 0.5245435290372297, "rating": 0.5314340791332766, "index": "online_map_team"}, {"kill_score": 0.1880280915196171, "death_score": -0.2566525794930526, "kddiff": 0.33765681978841083, "adr": 0.21384070440125386, "kast": 0.3472877198130583, "rating": 0.35011973510128563, "index": "online_series_team"}]}}, {"mode": "vega-lite"});
+</script></div><div class="output text_html">
+<div id="altair-viz-3c77d7b0c3ce4476acb90e70f7f2bda2"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-3c77d7b0c3ce4476acb90e70f7f2bda2") {
+      outputDiv = document.getElementById("altair-viz-3c77d7b0c3ce4476acb90e70f7f2bda2");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-4b577b7b42e96ab3be053ef83cef7754"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "adr", "type": "quantitative"}}}, {"data": {"name": "data-f4428fcace702d49899f02e2c4dc839d"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "adr", "type": "quantitative"}}}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-4b577b7b42e96ab3be053ef83cef7754": [{"kill_score": 0.2845639841069159, "death_score": -0.43405895367574443, "kddiff": 0.5509524976081843, "adr": 0.35189960728171094, "kast": 0.5455413098467984, "rating": 0.5413755350984953, "index": "lan_map_awp"}, {"kill_score": 0.20905545141232887, "death_score": -0.2969893541227548, "kddiff": 0.3900841622017902, "adr": 0.25486485841750683, "kast": 0.3848299981595522, "rating": 0.38648740245372043, "index": "lan_series_awp"}, {"kill_score": 0.25821402657877024, "death_score": -0.4415754287418542, "kddiff": 0.5197180601735414, "adr": 0.3172811359260142, "kast": 0.5436152044951517, "rating": 0.5366939624232987, "index": "online_map_awp"}, {"kill_score": 0.18570758883344485, "death_score": -0.31795408228964356, "kddiff": 0.3740173895824777, "adr": 0.23685798222966964, "kast": 0.38840180452110634, "rating": 0.3815494808089194, "index": "online_series_awp"}], "data-f4428fcace702d49899f02e2c4dc839d": [{"kill_score": 0.29156672526537625, "death_score": -0.3785935915335922, "kddiff": 0.5230165467003531, "adr": 0.3299809240841028, "kast": 0.5304754572168368, "rating": 0.5342025217243069, "index": "lan_map_team"}, {"kill_score": 0.16380443515302434, "death_score": -0.24683717985440817, "kddiff": 0.3172353326870066, "adr": 0.2032025092373086, "kast": 0.32775204450388673, "rating": 0.33014267568074845, "index": "lan_series_team"}, {"kill_score": 0.2882851432915409, "death_score": -0.383355203519815, "kddiff": 0.510970885231694, "adr": 0.32073676558881137, "kast": 0.5245435290372297, "rating": 0.5314340791332766, "index": "online_map_team"}, {"kill_score": 0.1880280915196171, "death_score": -0.2566525794930526, "kddiff": 0.33765681978841083, "adr": 0.21384070440125386, "kast": 0.3472877198130583, "rating": 0.35011973510128563, "index": "online_series_team"}]}}, {"mode": "vega-lite"});
+</script></div><div class="output text_html">
+<div id="altair-viz-6280e170aab74e5699309ce671b7dcd8"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-6280e170aab74e5699309ce671b7dcd8") {
+      outputDiv = document.getElementById("altair-viz-6280e170aab74e5699309ce671b7dcd8");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-4b577b7b42e96ab3be053ef83cef7754"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "kast", "type": "quantitative"}}}, {"data": {"name": "data-f4428fcace702d49899f02e2c4dc839d"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "kast", "type": "quantitative"}}}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-4b577b7b42e96ab3be053ef83cef7754": [{"kill_score": 0.2845639841069159, "death_score": -0.43405895367574443, "kddiff": 0.5509524976081843, "adr": 0.35189960728171094, "kast": 0.5455413098467984, "rating": 0.5413755350984953, "index": "lan_map_awp"}, {"kill_score": 0.20905545141232887, "death_score": -0.2969893541227548, "kddiff": 0.3900841622017902, "adr": 0.25486485841750683, "kast": 0.3848299981595522, "rating": 0.38648740245372043, "index": "lan_series_awp"}, {"kill_score": 0.25821402657877024, "death_score": -0.4415754287418542, "kddiff": 0.5197180601735414, "adr": 0.3172811359260142, "kast": 0.5436152044951517, "rating": 0.5366939624232987, "index": "online_map_awp"}, {"kill_score": 0.18570758883344485, "death_score": -0.31795408228964356, "kddiff": 0.3740173895824777, "adr": 0.23685798222966964, "kast": 0.38840180452110634, "rating": 0.3815494808089194, "index": "online_series_awp"}], "data-f4428fcace702d49899f02e2c4dc839d": [{"kill_score": 0.29156672526537625, "death_score": -0.3785935915335922, "kddiff": 0.5230165467003531, "adr": 0.3299809240841028, "kast": 0.5304754572168368, "rating": 0.5342025217243069, "index": "lan_map_team"}, {"kill_score": 0.16380443515302434, "death_score": -0.24683717985440817, "kddiff": 0.3172353326870066, "adr": 0.2032025092373086, "kast": 0.32775204450388673, "rating": 0.33014267568074845, "index": "lan_series_team"}, {"kill_score": 0.2882851432915409, "death_score": -0.383355203519815, "kddiff": 0.510970885231694, "adr": 0.32073676558881137, "kast": 0.5245435290372297, "rating": 0.5314340791332766, "index": "online_map_team"}, {"kill_score": 0.1880280915196171, "death_score": -0.2566525794930526, "kddiff": 0.33765681978841083, "adr": 0.21384070440125386, "kast": 0.3472877198130583, "rating": 0.35011973510128563, "index": "online_series_team"}]}}, {"mode": "vega-lite"});
+</script></div><div class="output text_html">
+<div id="altair-viz-d3bb31511e6147bbba4734ce7641912c"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-d3bb31511e6147bbba4734ce7641912c") {
+      outputDiv = document.getElementById("altair-viz-d3bb31511e6147bbba4734ce7641912c");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-4b577b7b42e96ab3be053ef83cef7754"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "rating", "type": "quantitative"}}}, {"data": {"name": "data-f4428fcace702d49899f02e2c4dc839d"}, "mark": "bar", "encoding": {"x": {"field": "index", "type": "nominal"}, "y": {"field": "rating", "type": "quantitative"}}}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-4b577b7b42e96ab3be053ef83cef7754": [{"kill_score": 0.2845639841069159, "death_score": -0.43405895367574443, "kddiff": 0.5509524976081843, "adr": 0.35189960728171094, "kast": 0.5455413098467984, "rating": 0.5413755350984953, "index": "lan_map_awp"}, {"kill_score": 0.20905545141232887, "death_score": -0.2969893541227548, "kddiff": 0.3900841622017902, "adr": 0.25486485841750683, "kast": 0.3848299981595522, "rating": 0.38648740245372043, "index": "lan_series_awp"}, {"kill_score": 0.25821402657877024, "death_score": -0.4415754287418542, "kddiff": 0.5197180601735414, "adr": 0.3172811359260142, "kast": 0.5436152044951517, "rating": 0.5366939624232987, "index": "online_map_awp"}, {"kill_score": 0.18570758883344485, "death_score": -0.31795408228964356, "kddiff": 0.3740173895824777, "adr": 0.23685798222966964, "kast": 0.38840180452110634, "rating": 0.3815494808089194, "index": "online_series_awp"}], "data-f4428fcace702d49899f02e2c4dc839d": [{"kill_score": 0.29156672526537625, "death_score": -0.3785935915335922, "kddiff": 0.5230165467003531, "adr": 0.3299809240841028, "kast": 0.5304754572168368, "rating": 0.5342025217243069, "index": "lan_map_team"}, {"kill_score": 0.16380443515302434, "death_score": -0.24683717985440817, "kddiff": 0.3172353326870066, "adr": 0.2032025092373086, "kast": 0.32775204450388673, "rating": 0.33014267568074845, "index": "lan_series_team"}, {"kill_score": 0.2882851432915409, "death_score": -0.383355203519815, "kddiff": 0.510970885231694, "adr": 0.32073676558881137, "kast": 0.5245435290372297, "rating": 0.5314340791332766, "index": "online_map_team"}, {"kill_score": 0.1880280915196171, "death_score": -0.2566525794930526, "kddiff": 0.33765681978841083, "adr": 0.21384070440125386, "kast": 0.3472877198130583, "rating": 0.35011973510128563, "index": "online_series_team"}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>Thusfar, it seems there is no significant difference between LAN and online, but there seems to be even a little bit between map vs series and AWPers and the rest of the team, with AWPers having a slightly higher win correlation in every metric except kill score. Therefore, will will continue forward by using machine learning on AWPers vs the rest of the team, and abandon our LAN vs online angle due to lack of findings.</p>
+<p>(Small aside: I was originally going to try to make these graphs clearer by creating <a class="reference external" href="https://stackoverflow.com/questions/43797379/how-to-create-a-grouped-bar-chart-in-altair">double bar graphs</a> using <code class="docutils literal notranslate"><span class="pre">str.startswith</span></code> for LAN/Online and <code class="docutils literal notranslate"><span class="pre">str.contains</span></code> for team/AWP but unfortunately I couldn’t find a method despite scouring the internet. I also tried some <code class="docutils literal notranslate"><span class="pre">.mean</span></code> methods/<a class="reference external" href="https://stackoverflow.com/questions/17712163/pandas-sorting-columns-by-their-mean-value">techniques</a> to try to extract even more information but it quickly became too bloated.)</p>
+</section>
+</section>
+<section id="winrate-prediction">
+<h2>Winrate Prediction<a class="headerlink" href="#winrate-prediction" title="Permalink to this heading">#</a></h2>
+<p>Here, we begin the machine learning portion of the project, beginning by splitting our test and train sets. Due to the findings of the previous section, we start by creating two new datasets for our AWP players, as well as one for the rest of the team. The target I have chosen for our machine learning is map wins instead of series wins, as seen by the greater correlation on the graphs as well as my previous aside explaination.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rfc</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_leaf_nodes</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_awpers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;player_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AWP_list</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="machine-learning-for-awpers">
+<h3>Machine Learning for AWPers<a class="headerlink" href="#machine-learning-for-awpers" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_awp</span><span class="p">,</span><span class="n">X_test_awp</span><span class="p">,</span><span class="n">y_train_awp</span><span class="p">,</span><span class="n">y_test_awp</span><span class="o">=</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">df_awpers</span><span class="p">[</span><span class="n">player_stats</span><span class="p">],</span><span class="n">df_awpers</span><span class="p">[</span><span class="s2">&quot;map_won&quot;</span><span class="p">],</span><span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_awp</span><span class="p">,</span><span class="n">y_train_awp</span><span class="p">)</span>
+<span class="n">rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_awp</span><span class="p">,</span> <span class="n">y_train_awp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier(max_leaf_nodes=5, n_estimators=200)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_awp</span><span class="p">,</span><span class="n">y_train_awp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_awp</span><span class="p">,</span><span class="n">y_test_awp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_awp</span><span class="p">,</span><span class="n">y_train_awp</span><span class="p">)</span><span class="o">-</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_awp</span><span class="p">,</span><span class="n">y_test_awp</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7793427230046949
+0.7542448614834674
+0.025097861521227505
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_awp</span><span class="p">,</span><span class="n">y_train_awp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_awp</span><span class="p">,</span><span class="n">y_test_awp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_awp</span><span class="p">,</span><span class="n">y_train_awp</span><span class="p">)</span><span class="o">-</span><span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_awp</span><span class="p">,</span><span class="n">y_test_awp</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7918622848200313
+0.7631814119749777
+0.028680872845053607
+</pre></div>
+</div>
+</div>
+</div>
+<p>The test set probability is similar to the train set probability in both machine learning estimators, which suggests little or no overfitting.</p>
+</section>
+<section id="machine-learning-for-the-rest-of-the-team">
+<h3>Machine Learning for the Rest of the Team<a class="headerlink" href="#machine-learning-for-the-rest-of-the-team" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_team</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;player_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AWP_list</span><span class="p">))</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_team</span><span class="p">,</span><span class="n">X_test_team</span><span class="p">,</span><span class="n">y_train_team</span><span class="p">,</span><span class="n">y_test_team</span><span class="o">=</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">df_team</span><span class="p">[</span><span class="n">player_stats</span><span class="p">],</span><span class="n">df_team</span><span class="p">[</span><span class="s2">&quot;map_won&quot;</span><span class="p">],</span><span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_team</span><span class="p">,</span><span class="n">y_train_team</span><span class="p">)</span>
+<span class="n">rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_team</span><span class="p">,</span> <span class="n">y_train_team</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier(max_leaf_nodes=5, n_estimators=200)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_team</span><span class="p">,</span><span class="n">y_train_team</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_team</span><span class="p">,</span><span class="n">y_test_team</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_team</span><span class="p">,</span><span class="n">y_train_team</span><span class="p">)</span><span class="o">-</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_team</span><span class="p">,</span><span class="n">y_test_team</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7436487297459492
+0.7340134693605388
+0.009635260385410405
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_team</span><span class="p">,</span><span class="n">y_train_team</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_team</span><span class="p">,</span><span class="n">y_test_team</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_team</span><span class="p">,</span><span class="n">y_train_team</span><span class="p">)</span><span class="o">-</span><span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_team</span><span class="p">,</span><span class="n">y_test_team</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7543508701740348
+0.7456824698272988
+0.008668400346735994
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once again, the test set probability is similar to the train set probability in both machine learning estimators, which suggests little or no overfitting.</p>
+</section>
+</section>
+<section id="summary-findings">
+<h2>Summary/Findings<a class="headerlink" href="#summary-findings" title="Permalink to this heading">#</a></h2>
+<section id="awpers-vs-the-rest-of-the-team">
+<h3>AWPers vs The Rest of the Team<a class="headerlink" href="#awpers-vs-the-rest-of-the-team" title="Permalink to this heading">#</a></h3>
+<p>In winrate correlation, we found out that the performance of AWP players had a slightly higher correlation to map and match wins than the rest of the team. After running our machine learning methods, we see that the scores for the AWPer test sets were also higher than the scores of the test sets for the rest of the team, (~0.75 vs ~0.73 for DecisionTreeClassifier, and ~0.76 vs ~0.75 for RandomForestClassifier). This supports my assumption that the AWP players are a better indicator for team performance than the rest of the team, due to the impact their role inherently has on the game.</p>
+</section>
+<section id="maps-vs-series">
+<h3>Maps vs Series<a class="headerlink" href="#maps-vs-series" title="Permalink to this heading">#</a></h3>
+<p>All inputs across the board were less significant when correlating/predicting series winrates due to the nature of being longer/more drawn out and therefore an individual’s performance mattering less in the long term.</p>
+</section>
+<section id="lan-vs-online">
+<h3>LAN vs Online<a class="headerlink" href="#lan-vs-online" title="Permalink to this heading">#</a></h3>
+<p>Unforunately, there were no significant differences observed in LAN vs Online play using player statistics as inputs. Perhaps something such as player age or LANs attended would be a better choice, although data such as that would be nearly impossible to scrape.</p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>What is the source of your dataset(s)?
+This dataset was taken from <a class="reference external" href="https://www.kaggle.com/datasets/nafisbarizki/csgo-top-tier-match-jan-2020-dec-2022">Kaggle</a>, scraped from <a class="reference external" href="https://hltv.org">HLTV.org</a> by user Nafis Barzki.</p></li>
+</ul>
+<ul class="simple">
+<li><p>List any other references that you found helpful.</p></li>
+</ul>
+<p><a class="reference external" href="https://stackoverflow.com/questions/17712163/pandas-sorting-columns-by-their-mean-value">StackOverflow</a>
+<a class="reference external" href="https://www.youtube.com/watch?v=-HNeDT2qjcg">YouTube</a>
+<a class="reference external" href="https://sparkbyexamples.com/pandas/pandas-create-dataframe-from-multiple-series/?expand_article=1">Miscellaneous</a> <a class="reference external" href="https://altair-viz.github.io/gallery/grouped_bar_chart.html">Websites</a></p>
+</section>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h2>
+<p>Using the Share button at the top right, <strong>enable Comment privileges</strong> for anyone with a link to the project. Then submit that link on Canvas.</p>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=8bb74000-e3b2-4a83-9168-802c2298385a' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Proj/StudentProjects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="PaulaMendez-Lagunas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Wine Quality</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="QiQin.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Students Performance</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataset">The Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-and-splitting-the-dataset-by-lan-versus-online">Cleaning and Splitting the Dataset by LAN versus Online</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#online-events">Online Events</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#international-lans-and-majors">International LANs and Majors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#winrate-correlation">Winrate Correlation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-winrate-using-statistics-of-the-whole-team">Correlation of Winrate Using Statistics of the Whole Team</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-map-vs-series-winrate">Aside: Map vs Series Winrate</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-winrate-using-only-awper-statistics">Correlation of Winrate Using Only AWPer Statistics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#winrate-prediction">Winrate Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-for-awpers">Machine Learning for AWPers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-for-the-rest-of-the-team">Machine Learning for the Rest of the Team</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-findings">Summary/Findings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#awpers-vs-the-rest-of-the-team">AWPers vs The Rest of the Team</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maps-vs-series">Maps vs Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lan-vs-online">LAN vs Online</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

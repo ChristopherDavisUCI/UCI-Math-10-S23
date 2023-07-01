@@ -1,0 +1,1101 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Energy Consumption &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Proj/StudentProjects/AdrianGuerra';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data science occupation prediction" href="AnjunHou.html" />
+    <link rel="prev" title="Brazil Forest Fires Prediction and Testing" href="DianaGonzalez.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week2/Week2-Intro.html">Week 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Friday.html">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Worksheet6.html">Worksheet 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week4/Week4-Intro.html">Week 4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Tuesday.html">Week 4 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Wednesday.html">Week 4 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Friday.html">Week 4 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Worksheet8.html">Worksheet 8</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week5/Week5-Intro.html">Week 5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Tuesday.html">Week 5 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Wednesday.html">Week 5 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Thursday.html">Week 5 Thursday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Friday.html">Week 5 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Worksheet9.html">Worksheet 9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Worksheet10.html">Worksheet 10</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week6/Week6-Intro.html">Week 6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Monday.html">Week 6 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Wednesday.html">Week 6 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Friday.html">Week 6 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Worksheet11.html">Worksheet 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Worksheet12.html">Worksheet 12</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week7/Week7-Intro.html">Week 7</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Monday.html">Week 7 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Wednesday.html">Week 7 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Friday.html">Week 7 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Worksheet13.html">Worksheet 13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Worksheet14.html">Worksheet 14</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week8/Week8-Intro.html">Week 8</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Monday.html">Week 8 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Wednesday.html">Week 8 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Friday.html">Week 8 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Worksheet15.html">Worksheet 15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Worksheet16.html">Worksheet 16</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week9/Week9-Intro.html">Week 9</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Week9-Wednesday.html">Week 9 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Worksheet17.html">Worksheet 17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Worksheet18.html">Worksheet 18</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week10/Week10-Intro.html">Week 10</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Monday.html">Week 10 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Wednesday.html">Week 10 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Friday.html">Week 10 Friday</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CourseProject.html">Project Instructions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ExtraTopics.html">Possible extra topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../StudentProjects.html">Student Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SethAbuhamdeh.html">Countries and Air Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RachelBronder.html">Subject of Subjectivity: The Global Happiness Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="JacobBustamante.html">Dollar Bill Validity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RuizheCheng.html">Analysis and predictions based on data from Premier League</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HaohongChenxie.html">Analysis the factors related to Publishers on Video Games</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="AminEghbalian.html">Analysis of Stroke Occurance Based on Health Factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShuchengFei.html">Analysis of the Medical Cost Personal Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LukeGalang.html">Overwatch 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DianaGonzalez.html">Brazil Forest Fires Prediction and Testing</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Energy Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnjunHou.html">Data science occupation prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XifanJiang.html">Decision Tree Regressor Analysis on Insurance Charges: The Impact of Age, BMI, and Smoking Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DanielLee.html">MonkeyType: A Typing Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KyleLemler.html">Predicting League of Legends Winners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AndrewLittle.html">Predicting Outcomes of Hockey Games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LoulouVivianMahfouz.html">💄 Makeup Foundation Shades Analysis 💅🏻</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PamelaMartinez.html">Making Predictions of Underwater Ocean Temperature Using Historical Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PaulaMendez-Lagunas.html">Wine Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AndreNgo.html">Predicting Match/Map Outcomes in LAN versus Online Play Using Player Statistics in Professional Counter-Strike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QiQin.html">Students Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FelipeRios.html">Predicting Forza Horizon Car Classes and Ratings</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="AlejandroSalmeron.html">Predicting Star NBA Players</a></li>
+<li class="toctree-l2"><a class="reference internal" href="JoshuaSunga.html">NBA Position Prediction Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NicoleVuong.html">Exploring Recidivism in Iowa</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="ZheyuWu.html">Analyzing Winning factors on Premier League</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MingyangYi.html">Men’s volleyball performances prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KaijieZhang.html">Prediction and Analysis of Crabs’ Age and Sex Base on Physical Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ChenzhangZhao.html">Premier league season 2022-23 match data analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShuoyuZhu.html">Car Price Prediction</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Proj/StudentProjects/AdrianGuerra.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Energy Consumption</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Energy consumption</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="energy-consumption">
+<h1>Energy Consumption<a class="headerlink" href="#energy-consumption" title="Permalink to this heading">#</a></h1>
+<p>Author: Adrian Guerra</p>
+<p>Course Project, UC Irvine, Math 10, S23</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Introduce your project here.  Maybe 3 sentences.</p>
+<p>In my project I’ll be using altair, linear regression, and pandas in order to take in different datasets about hourly energy consumption. I will be using more outdated data in order to try and predict what the MW usage is for more recent years, along with testing predict with splitting the data between two different times and seeing how the predict relates to the real. I think this will be an interesting idea since the prediction wouldnt take into account things like covid and how thats shifts the energy consumption.</p>
+</section>
+<section id="id1">
+<h2>Energy consumption<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>You can either have all one section or divide into multiple sections.  To make new sections, use <code class="docutils literal notranslate"><span class="pre">##</span></code> in a markdown cell.  Double-click this cell for an example of using <code class="docutils literal notranslate"><span class="pre">##</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">csv_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AEP_hourly.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;COMED_hourly.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;DAYTON_hourly.csv&#39;</span><span class="p">,</span><span class="s1">&#39;DEOK_hourly.csv&#39;</span><span class="p">,</span><span class="s1">&#39;DOM_hourly.csv&#39;</span><span class="p">,</span><span class="s1">&#39;DUQ_hourly.csv&#39;</span><span class="p">,</span><span class="s1">&#39;EKPC_hourly.csv&#39;</span><span class="p">,</span><span class="s1">&#39;FE_hourly.csv&#39;</span><span class="p">,</span><span class="s1">&#39;NI_hourly.csv&#39;</span><span class="p">,</span><span class="s1">&#39;pjm_hourly_est.csv&#39;</span><span class="p">,</span><span class="s1">&#39;PJM_Load_hourly.csv&#39;</span><span class="p">,</span><span class="s1">&#39;PJME_hourly.csv&#39;</span><span class="p">,</span><span class="s1">&#39;PJMW_hourly.csv&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">csv_files</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">dfs</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Datetime&#39;</span><span class="p">])</span>
+<span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Datetime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the previous cells I was importing and combining the different csvs in order to try and get everything in one place for simplicities sake. Here I am priming up the DataFrame, using pandas in order to seperate the date into a ‘Years’ colunn for later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">yearly_mw</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">dfs2</span> <span class="o">=</span> <span class="n">yearly_mw</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_sum</span> <span class="o">=</span> <span class="n">yearly_mw</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="n">dfs2</span><span class="p">[(</span><span class="n">dfs2</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1998</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dfs2</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2014</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a various amount of things I’m doing here. I am filling up the nan values, grouping whats in dfs into year, reseting the index in order to have ‘Year’ be a column within df_sum, which is the combined MW used in in each column for each year. Finally creating a time frame (tf) in order to try and create a prediction and comparing to the actual usage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_melt</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;CSV File&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;MW&#39;</span><span class="p">)</span>
+
+<span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_melt</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;MW:Q&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;CSV File:N&#39;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;MW:Q&#39;</span><span class="p">,</span> <span class="s1">&#39;CSV File:N&#39;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Yearly Usage 1998-2014&#39;</span>
+<span class="p">)</span>
+
+<span class="n">chart</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-1433c67682944f3dafffcc508df276dd"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-1433c67682944f3dafffcc508df276dd") {
+      outputDiv = document.getElementById("altair-viz-1433c67682944f3dafffcc508df276dd");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-751723c80de8d105555f6afd93b15d1b"}, "mark": "line", "encoding": {"color": {"field": "CSV File", "type": "nominal"}, "tooltip": [{"field": "MW", "type": "quantitative"}, {"field": "CSV File", "type": "nominal"}], "x": {"field": "Year", "type": "quantitative"}, "y": {"field": "MW", "type": "quantitative"}}, "height": 400, "title": "Yearly Usage 1998-2014", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-751723c80de8d105555f6afd93b15d1b": [{"Year": 1998, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "AEP_MW", "MW": 33479854.0}, {"Year": 2005, "CSV File": "AEP_MW", "MW": 138752914.0}, {"Year": 2006, "CSV File": "AEP_MW", "MW": 137826610.0}, {"Year": 2007, "CSV File": "AEP_MW", "MW": 145781458.0}, {"Year": 2008, "CSV File": "AEP_MW", "MW": 145224910.0}, {"Year": 2009, "CSV File": "AEP_MW", "MW": 133595510.0}, {"Year": 2010, "CSV File": "AEP_MW", "MW": 140187481.0}, {"Year": 2011, "CSV File": "AEP_MW", "MW": 138511181.0}, {"Year": 2012, "CSV File": "AEP_MW", "MW": 134814172.0}, {"Year": 2013, "CSV File": "AEP_MW", "MW": 133105937.0}, {"Year": 2014, "CSV File": "AEP_MW", "MW": 132865962.0}, {"Year": 1998, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "COMED_MW", "MW": 102005794.0}, {"Year": 2012, "CSV File": "COMED_MW", "MW": 101977986.0}, {"Year": 2013, "CSV File": "COMED_MW", "MW": 101149215.0}, {"Year": 2014, "CSV File": "COMED_MW", "MW": 100214404.0}, {"Year": 1998, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "DAYTON_MW", "MW": 4384244.0}, {"Year": 2005, "CSV File": "DAYTON_MW", "MW": 18757648.0}, {"Year": 2006, "CSV File": "DAYTON_MW", "MW": 18361614.0}, {"Year": 2007, "CSV File": "DAYTON_MW", "MW": 19072401.0}, {"Year": 2008, "CSV File": "DAYTON_MW", "MW": 18565515.0}, {"Year": 2009, "CSV File": "DAYTON_MW", "MW": 17214513.0}, {"Year": 2010, "CSV File": "DAYTON_MW", "MW": 17749452.0}, {"Year": 2011, "CSV File": "DAYTON_MW", "MW": 17419249.0}, {"Year": 2012, "CSV File": "DAYTON_MW", "MW": 17408219.0}, {"Year": 2013, "CSV File": "DAYTON_MW", "MW": 17421318.0}, {"Year": 2014, "CSV File": "DAYTON_MW", "MW": 17629130.0}, {"Year": 1998, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2012, "CSV File": "DEOK_MW", "MW": 26914888.0}, {"Year": 2013, "CSV File": "DEOK_MW", "MW": 27075131.0}, {"Year": 2014, "CSV File": "DEOK_MW", "MW": 27405184.0}, {"Year": 1998, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "DOM_MW", "MW": 63679458.0}, {"Year": 2006, "CSV File": "DOM_MW", "MW": 91583693.0}, {"Year": 2007, "CSV File": "DOM_MW", "MW": 96259317.0}, {"Year": 2008, "CSV File": "DOM_MW", "MW": 94729254.0}, {"Year": 2009, "CSV File": "DOM_MW", "MW": 93683715.0}, {"Year": 2010, "CSV File": "DOM_MW", "MW": 98779534.0}, {"Year": 2011, "CSV File": "DOM_MW", "MW": 95160671.0}, {"Year": 2012, "CSV File": "DOM_MW", "MW": 93218606.0}, {"Year": 2013, "CSV File": "DOM_MW", "MW": 95505523.0}, {"Year": 2014, "CSV File": "DOM_MW", "MW": 97011887.0}, {"Year": 1998, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "DUQ_MW", "MW": 14830490.0}, {"Year": 2006, "CSV File": "DUQ_MW", "MW": 14562752.0}, {"Year": 2007, "CSV File": "DUQ_MW", "MW": 15003675.0}, {"Year": 2008, "CSV File": "DUQ_MW", "MW": 14699758.0}, {"Year": 2009, "CSV File": "DUQ_MW", "MW": 13964771.0}, {"Year": 2010, "CSV File": "DUQ_MW", "MW": 14959342.0}, {"Year": 2011, "CSV File": "DUQ_MW", "MW": 14925032.0}, {"Year": 2012, "CSV File": "DUQ_MW", "MW": 15097835.0}, {"Year": 2013, "CSV File": "DUQ_MW", "MW": 14822887.0}, {"Year": 2014, "CSV File": "DUQ_MW", "MW": 14567085.0}, {"Year": 1998, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2012, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2013, "CSV File": "EKPC_MW", "MW": 7260899.0}, {"Year": 2014, "CSV File": "EKPC_MW", "MW": 13143552.0}, {"Year": 1998, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "FE_MW", "MW": 40535968.0}, {"Year": 2012, "CSV File": "FE_MW", "MW": 68097194.0}, {"Year": 2013, "CSV File": "FE_MW", "MW": 68370478.0}, {"Year": 2014, "CSV File": "FE_MW", "MW": 69343696.0}, {"Year": 1998, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "NI_MW", "MW": 65979931.0}, {"Year": 2005, "CSV File": "NI_MW", "MW": 103799551.0}, {"Year": 2006, "CSV File": "NI_MW", "MW": 102359091.0}, {"Year": 2007, "CSV File": "NI_MW", "MW": 105843527.0}, {"Year": 2008, "CSV File": "NI_MW", "MW": 104282279.0}, {"Year": 2009, "CSV File": "NI_MW", "MW": 98211778.0}, {"Year": 2010, "CSV File": "NI_MW", "MW": 103477169.0}, {"Year": 2011, "CSV File": "NI_MW", "MW": 10042.0}, {"Year": 2012, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2013, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2014, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 1998, "CSV File": "AEP", "MW": 0.0}, {"Year": 1999, "CSV File": "AEP", "MW": 0.0}, {"Year": 2000, "CSV File": "AEP", "MW": 0.0}, {"Year": 2001, "CSV File": "AEP", "MW": 0.0}, {"Year": 2002, "CSV File": "AEP", "MW": 0.0}, {"Year": 2003, "CSV File": "AEP", "MW": 0.0}, {"Year": 2004, "CSV File": "AEP", "MW": 33479854.0}, {"Year": 2005, "CSV File": "AEP", "MW": 138752914.0}, {"Year": 2006, "CSV File": "AEP", "MW": 137826610.0}, {"Year": 2007, "CSV File": "AEP", "MW": 145781458.0}, {"Year": 2008, "CSV File": "AEP", "MW": 145224910.0}, {"Year": 2009, "CSV File": "AEP", "MW": 133595510.0}, {"Year": 2010, "CSV File": "AEP", "MW": 140187481.0}, {"Year": 2011, "CSV File": "AEP", "MW": 138511181.0}, {"Year": 2012, "CSV File": "AEP", "MW": 134814172.0}, {"Year": 2013, "CSV File": "AEP", "MW": 133105937.0}, {"Year": 2014, "CSV File": "AEP", "MW": 132865962.0}, {"Year": 1998, "CSV File": "COMED", "MW": 0.0}, {"Year": 1999, "CSV File": "COMED", "MW": 0.0}, {"Year": 2000, "CSV File": "COMED", "MW": 0.0}, {"Year": 2001, "CSV File": "COMED", "MW": 0.0}, {"Year": 2002, "CSV File": "COMED", "MW": 0.0}, {"Year": 2003, "CSV File": "COMED", "MW": 0.0}, {"Year": 2004, "CSV File": "COMED", "MW": 0.0}, {"Year": 2005, "CSV File": "COMED", "MW": 0.0}, {"Year": 2006, "CSV File": "COMED", "MW": 0.0}, {"Year": 2007, "CSV File": "COMED", "MW": 0.0}, {"Year": 2008, "CSV File": "COMED", "MW": 0.0}, {"Year": 2009, "CSV File": "COMED", "MW": 0.0}, {"Year": 2010, "CSV File": "COMED", "MW": 0.0}, {"Year": 2011, "CSV File": "COMED", "MW": 102005794.0}, {"Year": 2012, "CSV File": "COMED", "MW": 101977986.0}, {"Year": 2013, "CSV File": "COMED", "MW": 101149215.0}, {"Year": 2014, "CSV File": "COMED", "MW": 100214404.0}, {"Year": 1998, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 1999, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2000, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2001, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2002, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2003, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2004, "CSV File": "DAYTON", "MW": 4384244.0}, {"Year": 2005, "CSV File": "DAYTON", "MW": 18757648.0}, {"Year": 2006, "CSV File": "DAYTON", "MW": 18361614.0}, {"Year": 2007, "CSV File": "DAYTON", "MW": 19072401.0}, {"Year": 2008, "CSV File": "DAYTON", "MW": 18565515.0}, {"Year": 2009, "CSV File": "DAYTON", "MW": 17214513.0}, {"Year": 2010, "CSV File": "DAYTON", "MW": 17749452.0}, {"Year": 2011, "CSV File": "DAYTON", "MW": 17419249.0}, {"Year": 2012, "CSV File": "DAYTON", "MW": 17408219.0}, {"Year": 2013, "CSV File": "DAYTON", "MW": 17421318.0}, {"Year": 2014, "CSV File": "DAYTON", "MW": 17629130.0}, {"Year": 1998, "CSV File": "DEOK", "MW": 0.0}, {"Year": 1999, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2000, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2001, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2002, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2003, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2004, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2005, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2006, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2007, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2008, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2009, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2010, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2011, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2012, "CSV File": "DEOK", "MW": 26914888.0}, {"Year": 2013, "CSV File": "DEOK", "MW": 27075131.0}, {"Year": 2014, "CSV File": "DEOK", "MW": 27405184.0}, {"Year": 1998, "CSV File": "DOM", "MW": 0.0}, {"Year": 1999, "CSV File": "DOM", "MW": 0.0}, {"Year": 2000, "CSV File": "DOM", "MW": 0.0}, {"Year": 2001, "CSV File": "DOM", "MW": 0.0}, {"Year": 2002, "CSV File": "DOM", "MW": 0.0}, {"Year": 2003, "CSV File": "DOM", "MW": 0.0}, {"Year": 2004, "CSV File": "DOM", "MW": 0.0}, {"Year": 2005, "CSV File": "DOM", "MW": 63679458.0}, {"Year": 2006, "CSV File": "DOM", "MW": 91583693.0}, {"Year": 2007, "CSV File": "DOM", "MW": 96259317.0}, {"Year": 2008, "CSV File": "DOM", "MW": 94729254.0}, {"Year": 2009, "CSV File": "DOM", "MW": 93683715.0}, {"Year": 2010, "CSV File": "DOM", "MW": 98779534.0}, {"Year": 2011, "CSV File": "DOM", "MW": 95160671.0}, {"Year": 2012, "CSV File": "DOM", "MW": 93218606.0}, {"Year": 2013, "CSV File": "DOM", "MW": 95505523.0}, {"Year": 2014, "CSV File": "DOM", "MW": 97011887.0}, {"Year": 1998, "CSV File": "DUQ", "MW": 0.0}, {"Year": 1999, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2000, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2001, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2002, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2003, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2004, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2005, "CSV File": "DUQ", "MW": 14830490.0}, {"Year": 2006, "CSV File": "DUQ", "MW": 14562752.0}, {"Year": 2007, "CSV File": "DUQ", "MW": 15003675.0}, {"Year": 2008, "CSV File": "DUQ", "MW": 14699758.0}, {"Year": 2009, "CSV File": "DUQ", "MW": 13964771.0}, {"Year": 2010, "CSV File": "DUQ", "MW": 14959342.0}, {"Year": 2011, "CSV File": "DUQ", "MW": 14925032.0}, {"Year": 2012, "CSV File": "DUQ", "MW": 15097835.0}, {"Year": 2013, "CSV File": "DUQ", "MW": 14822887.0}, {"Year": 2014, "CSV File": "DUQ", "MW": 14567085.0}, {"Year": 1998, "CSV File": "EKPC", "MW": 0.0}, {"Year": 1999, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2000, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2001, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2002, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2003, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2004, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2005, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2006, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2007, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2008, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2009, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2010, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2011, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2012, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2013, "CSV File": "EKPC", "MW": 7260899.0}, {"Year": 2014, "CSV File": "EKPC", "MW": 13143552.0}, {"Year": 1998, "CSV File": "FE", "MW": 0.0}, {"Year": 1999, "CSV File": "FE", "MW": 0.0}, {"Year": 2000, "CSV File": "FE", "MW": 0.0}, {"Year": 2001, "CSV File": "FE", "MW": 0.0}, {"Year": 2002, "CSV File": "FE", "MW": 0.0}, {"Year": 2003, "CSV File": "FE", "MW": 0.0}, {"Year": 2004, "CSV File": "FE", "MW": 0.0}, {"Year": 2005, "CSV File": "FE", "MW": 0.0}, {"Year": 2006, "CSV File": "FE", "MW": 0.0}, {"Year": 2007, "CSV File": "FE", "MW": 0.0}, {"Year": 2008, "CSV File": "FE", "MW": 0.0}, {"Year": 2009, "CSV File": "FE", "MW": 0.0}, {"Year": 2010, "CSV File": "FE", "MW": 0.0}, {"Year": 2011, "CSV File": "FE", "MW": 40535968.0}, {"Year": 2012, "CSV File": "FE", "MW": 68097194.0}, {"Year": 2013, "CSV File": "FE", "MW": 68370478.0}, {"Year": 2014, "CSV File": "FE", "MW": 69343696.0}, {"Year": 1998, "CSV File": "NI", "MW": 0.0}, {"Year": 1999, "CSV File": "NI", "MW": 0.0}, {"Year": 2000, "CSV File": "NI", "MW": 0.0}, {"Year": 2001, "CSV File": "NI", "MW": 0.0}, {"Year": 2002, "CSV File": "NI", "MW": 0.0}, {"Year": 2003, "CSV File": "NI", "MW": 0.0}, {"Year": 2004, "CSV File": "NI", "MW": 65979931.0}, {"Year": 2005, "CSV File": "NI", "MW": 103799551.0}, {"Year": 2006, "CSV File": "NI", "MW": 102359091.0}, {"Year": 2007, "CSV File": "NI", "MW": 105843527.0}, {"Year": 2008, "CSV File": "NI", "MW": 104282279.0}, {"Year": 2009, "CSV File": "NI", "MW": 98211778.0}, {"Year": 2010, "CSV File": "NI", "MW": 103477169.0}, {"Year": 2011, "CSV File": "NI", "MW": 10042.0}, {"Year": 2012, "CSV File": "NI", "MW": 0.0}, {"Year": 2013, "CSV File": "NI", "MW": 0.0}, {"Year": 2014, "CSV File": "NI", "MW": 0.0}, {"Year": 1998, "CSV File": "PJME", "MW": 0.0}, {"Year": 1999, "CSV File": "PJME", "MW": 0.0}, {"Year": 2000, "CSV File": "PJME", "MW": 0.0}, {"Year": 2001, "CSV File": "PJME", "MW": 0.0}, {"Year": 2002, "CSV File": "PJME", "MW": 276420109.0}, {"Year": 2003, "CSV File": "PJME", "MW": 277617728.0}, {"Year": 2004, "CSV File": "PJME", "MW": 283398959.0}, {"Year": 2005, "CSV File": "PJME", "MW": 291733172.0}, {"Year": 2006, "CSV File": "PJME", "MW": 283840384.0}, {"Year": 2007, "CSV File": "PJME", "MW": 294386758.0}, {"Year": 2008, "CSV File": "PJME", "MW": 289187689.0}, {"Year": 2009, "CSV File": "PJME", "MW": 278955732.0}, {"Year": 2010, "CSV File": "PJME", "MW": 289866969.0}, {"Year": 2011, "CSV File": "PJME", "MW": 283481646.0}, {"Year": 2012, "CSV File": "PJME", "MW": 276107022.0}, {"Year": 2013, "CSV File": "PJME", "MW": 277685747.0}, {"Year": 2014, "CSV File": "PJME", "MW": 275908525.0}, {"Year": 1998, "CSV File": "PJMW", "MW": 0.0}, {"Year": 1999, "CSV File": "PJMW", "MW": 0.0}, {"Year": 2000, "CSV File": "PJMW", "MW": 0.0}, {"Year": 2001, "CSV File": "PJMW", "MW": 0.0}, {"Year": 2002, "CSV File": "PJMW", "MW": 37086112.0}, {"Year": 2003, "CSV File": "PJMW", "MW": 49926102.0}, {"Year": 2004, "CSV File": "PJMW", "MW": 51520627.0}, {"Year": 2005, "CSV File": "PJMW", "MW": 52884360.0}, {"Year": 2006, "CSV File": "PJMW", "MW": 47516081.0}, {"Year": 2007, "CSV File": "PJMW", "MW": 49354805.0}, {"Year": 2008, "CSV File": "PJMW", "MW": 48565624.0}, {"Year": 2009, "CSV File": "PJMW", "MW": 46334702.0}, {"Year": 2010, "CSV File": "PJMW", "MW": 48802983.0}, {"Year": 2011, "CSV File": "PJMW", "MW": 48253429.0}, {"Year": 2012, "CSV File": "PJMW", "MW": 47378985.0}, {"Year": 2013, "CSV File": "PJMW", "MW": 48666311.0}, {"Year": 2014, "CSV File": "PJMW", "MW": 49549487.0}, {"Year": 1998, "CSV File": "PJM_Load", "MW": 189741769.0}, {"Year": 1999, "CSV File": "PJM_Load", "MW": 259605177.0}, {"Year": 2000, "CSV File": "PJM_Load", "MW": 264464074.0}, {"Year": 2001, "CSV File": "PJM_Load", "MW": 265353807.0}, {"Year": 2002, "CSV File": "PJM_Load", "MW": 31569.0}, {"Year": 2003, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2004, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2005, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2006, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2007, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2008, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2009, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2010, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2011, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2012, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2013, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2014, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 1998, "CSV File": "PJM_Load_MW", "MW": 189741769.0}, {"Year": 1999, "CSV File": "PJM_Load_MW", "MW": 259605177.0}, {"Year": 2000, "CSV File": "PJM_Load_MW", "MW": 264464074.0}, {"Year": 2001, "CSV File": "PJM_Load_MW", "MW": 265353807.0}, {"Year": 2002, "CSV File": "PJM_Load_MW", "MW": 31569.0}, {"Year": 2003, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2012, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2013, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2014, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 1998, "CSV File": "PJME_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "PJME_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "PJME_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "PJME_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "PJME_MW", "MW": 276420109.0}, {"Year": 2003, "CSV File": "PJME_MW", "MW": 277617728.0}, {"Year": 2004, "CSV File": "PJME_MW", "MW": 283398959.0}, {"Year": 2005, "CSV File": "PJME_MW", "MW": 291733172.0}, {"Year": 2006, "CSV File": "PJME_MW", "MW": 283840384.0}, {"Year": 2007, "CSV File": "PJME_MW", "MW": 294386758.0}, {"Year": 2008, "CSV File": "PJME_MW", "MW": 289187689.0}, {"Year": 2009, "CSV File": "PJME_MW", "MW": 278955732.0}, {"Year": 2010, "CSV File": "PJME_MW", "MW": 289866969.0}, {"Year": 2011, "CSV File": "PJME_MW", "MW": 283481646.0}, {"Year": 2012, "CSV File": "PJME_MW", "MW": 276107022.0}, {"Year": 2013, "CSV File": "PJME_MW", "MW": 277685747.0}, {"Year": 2014, "CSV File": "PJME_MW", "MW": 275908525.0}, {"Year": 1998, "CSV File": "PJMW_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "PJMW_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "PJMW_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "PJMW_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "PJMW_MW", "MW": 37086112.0}, {"Year": 2003, "CSV File": "PJMW_MW", "MW": 49926102.0}, {"Year": 2004, "CSV File": "PJMW_MW", "MW": 51520627.0}, {"Year": 2005, "CSV File": "PJMW_MW", "MW": 52884360.0}, {"Year": 2006, "CSV File": "PJMW_MW", "MW": 47516081.0}, {"Year": 2007, "CSV File": "PJMW_MW", "MW": 49354805.0}, {"Year": 2008, "CSV File": "PJMW_MW", "MW": 48565624.0}, {"Year": 2009, "CSV File": "PJMW_MW", "MW": 46334702.0}, {"Year": 2010, "CSV File": "PJMW_MW", "MW": 48802983.0}, {"Year": 2011, "CSV File": "PJMW_MW", "MW": 48253429.0}, {"Year": 2012, "CSV File": "PJMW_MW", "MW": 47378985.0}, {"Year": 2013, "CSV File": "PJMW_MW", "MW": 48666311.0}, {"Year": 2014, "CSV File": "PJMW_MW", "MW": 49549487.0}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>Here I am melting the timeframe in order to be able to properly graph each of the columns (or MW per area), then graphing up till 2018.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hist</span> <span class="o">=</span> <span class="n">df_melt</span><span class="p">[</span><span class="n">df_melt</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2014</span><span class="p">]</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">dfs2</span><span class="p">[</span><span class="n">dfs2</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2015</span><span class="p">]</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">hist</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">hist</span><span class="p">[</span><span class="s1">&#39;MW&#39;</span><span class="p">]</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">hist</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">]]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">hist</span><span class="p">[</span><span class="s1">&#39;MW&#39;</span><span class="p">]</span>
+
+<span class="n">pred</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">pred</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">]])</span>
+
+<span class="n">dfs2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dfs2</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2015</span><span class="p">,</span> <span class="s1">&#39;MW_Predicted&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pred</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here I am doing a linear regression fittinf and predicting data in order to get predicted MW numbers for missing years that I’m trying to predict. Specifically for a time after 2014</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Year&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">2019</span><span class="p">)})</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_pred</span><span class="p">)</span>
+
+<span class="n">hist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
+
+<span class="n">years</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">2019</span><span class="p">)</span>
+<span class="n">pred_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Year&#39;</span><span class="p">:</span> <span class="n">years</span><span class="p">,</span> <span class="s1">&#39;MW_Predicted&#39;</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">})</span>
+
+<span class="n">combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">hist</span><span class="p">,</span> <span class="n">pred_df</span><span class="p">])</span>
+<span class="n">combined</span> <span class="o">=</span> <span class="n">combined</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I am creating dataframes that will then be graphed later. You might notice that X_pred is going from 2014-2019, this is to try and make the graph look seemless (even though as you’ll see it still is a split, non continuous one).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred_chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">pred_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;MW_Predicted&#39;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;MW_Predicted&#39;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Predicted MW Values&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">average_mw</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;MW&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">average_mw</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;MW&#39;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;MW&#39;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Predicted MW Usage&#39;</span>
+<span class="p">)</span>
+<span class="n">chart2</span><span class="o">=</span><span class="n">chart</span> <span class="o">+</span> <span class="n">pred_chart</span>
+<span class="n">chart2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-b339b74ff9c7435f9d42d0320e958f9c"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-b339b74ff9c7435f9d42d0320e958f9c") {
+      outputDiv = document.getElementById("altair-viz-b339b74ff9c7435f9d42d0320e958f9c");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-6b9d1beca24f1f871a48e6db79214619"}, "mark": "line", "encoding": {"tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "MW", "type": "quantitative"}], "x": {"field": "Year", "type": "quantitative"}, "y": {"field": "MW", "type": "quantitative"}}, "title": "Predicted MW Usage"}, {"data": {"name": "data-77401dae31bae6a2295d8df331a1d4e9"}, "mark": {"type": "line", "color": "red"}, "encoding": {"tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "MW_Predicted", "type": "quantitative"}], "x": {"field": "Year", "type": "quantitative"}, "y": {"field": "MW_Predicted", "type": "quantitative"}}, "title": "Predicted MW Values"}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-6b9d1beca24f1f871a48e6db79214619": [{"Year": 1998, "MW": 15811814.083333334}, {"Year": 1999, "MW": 21633764.75}, {"Year": 2000, "MW": 22038672.833333332}, {"Year": 2001, "MW": 22112817.25}, {"Year": 2002, "MW": 26128149.166666668}, {"Year": 2003, "MW": 27295319.166666668}, {"Year": 2004, "MW": 36563634.583333336}, {"Year": 2005, "MW": 57036466.083333336}, {"Year": 2006, "MW": 58004185.416666664}, {"Year": 2007, "MW": 60475161.75}, {"Year": 2008, "MW": 59604585.75}, {"Year": 2009, "MW": 56830060.083333336}, {"Year": 2010, "MW": 59485244.166666664}, {"Year": 2011, "MW": 61691917.666666664}, {"Year": 2012, "MW": 65084575.583333336}, {"Year": 2013, "MW": 65921953.833333336}, {"Year": 2014, "MW": 66469909.333333336}], "data-77401dae31bae6a2295d8df331a1d4e9": [{"Year": 2014, "MW_Predicted": 74305311.75326729}, {"Year": 2015, "MW_Predicted": 77842091.66727924}, {"Year": 2016, "MW_Predicted": 81378871.58129025}, {"Year": 2017, "MW_Predicted": 84915651.4953022}, {"Year": 2018, "MW_Predicted": 88452431.4093132}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>The last two cells are making different charts in order to then graph together. The chart is actually interesting since I will be using the mean in order to graph. This is becuase I wanted to combine the different lines from above into one in order to get a better idea as to what the data might be thinking. Rather than there being 14 different line and only one (the predicting one).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs2_melt</span> <span class="o">=</span> <span class="n">dfs2</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;CSV File&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;MW&#39;</span><span class="p">)</span>
+<span class="n">original_mw</span> <span class="o">=</span> <span class="n">dfs2_melt</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;MW&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">chart3</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">original_mw</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;MW&#39;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;MW&#39;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Actual MW Usage&#39;</span>
+<span class="p">)</span>
+<span class="n">chart3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-436d5eceede74d5a8bce1663eea10f87"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-436d5eceede74d5a8bce1663eea10f87") {
+      outputDiv = document.getElementById("altair-viz-436d5eceede74d5a8bce1663eea10f87");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-c4d5b1427a7260f2ab93fe7ca1536c44"}, "mark": {"type": "line", "color": "purple"}, "encoding": {"tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "MW", "type": "quantitative"}], "x": {"field": "Year", "type": "quantitative"}, "y": {"field": "MW", "type": "quantitative"}}, "title": "Actual MW Usage", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-c4d5b1427a7260f2ab93fe7ca1536c44": [{"Year": 1998, "MW": 15811814.083333334}, {"Year": 1999, "MW": 21633764.75}, {"Year": 2000, "MW": 22038672.833333332}, {"Year": 2001, "MW": 22112817.25}, {"Year": 2002, "MW": 26128149.166666668}, {"Year": 2003, "MW": 27295319.166666668}, {"Year": 2004, "MW": 36563634.583333336}, {"Year": 2005, "MW": 57036466.083333336}, {"Year": 2006, "MW": 58004185.416666664}, {"Year": 2007, "MW": 60475161.75}, {"Year": 2008, "MW": 59604585.75}, {"Year": 2009, "MW": 56830060.083333336}, {"Year": 2010, "MW": 59485244.166666664}, {"Year": 2011, "MW": 61691917.666666664}, {"Year": 2012, "MW": 65084575.583333336}, {"Year": 2013, "MW": 65921953.833333336}, {"Year": 2014, "MW": 66469909.333333336}, {"Year": 2015, "MW": 66497634.06669117}, {"Year": 2016, "MW": 66723374.22325161}, {"Year": 2017, "MW": 65287572.45981209}, {"Year": 2018, "MW": 41520169.25637253}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>Here I had to do another melt and reset of index in order to fix the data once again to include a years columns and ensure it will be collecting the data from all csv files. This is the real values attained from the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_melt</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year:O&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;MW&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;CSV File&#39;</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s1">&#39;MW&#39;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;MW&#39;</span><span class="p">,</span> <span class="s1">&#39;CSV File&#39;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;MW Usage by Year Up Until 2014&#39;</span>
+<span class="p">)</span>
+
+<span class="n">scatter_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-27c896a0ba324bf9b47967ac8fbaa765"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-27c896a0ba324bf9b47967ac8fbaa765") {
+      outputDiv = document.getElementById("altair-viz-27c896a0ba324bf9b47967ac8fbaa765");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-751723c80de8d105555f6afd93b15d1b"}, "mark": "circle", "encoding": {"color": {"field": "CSV File", "type": "nominal"}, "size": {"field": "MW", "type": "quantitative"}, "tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "MW", "type": "quantitative"}, {"field": "CSV File", "type": "nominal"}], "x": {"field": "Year", "type": "ordinal"}, "y": {"field": "MW", "type": "quantitative"}}, "title": "MW Usage by Year Up Until 2014", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-751723c80de8d105555f6afd93b15d1b": [{"Year": 1998, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "AEP_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "AEP_MW", "MW": 33479854.0}, {"Year": 2005, "CSV File": "AEP_MW", "MW": 138752914.0}, {"Year": 2006, "CSV File": "AEP_MW", "MW": 137826610.0}, {"Year": 2007, "CSV File": "AEP_MW", "MW": 145781458.0}, {"Year": 2008, "CSV File": "AEP_MW", "MW": 145224910.0}, {"Year": 2009, "CSV File": "AEP_MW", "MW": 133595510.0}, {"Year": 2010, "CSV File": "AEP_MW", "MW": 140187481.0}, {"Year": 2011, "CSV File": "AEP_MW", "MW": 138511181.0}, {"Year": 2012, "CSV File": "AEP_MW", "MW": 134814172.0}, {"Year": 2013, "CSV File": "AEP_MW", "MW": 133105937.0}, {"Year": 2014, "CSV File": "AEP_MW", "MW": 132865962.0}, {"Year": 1998, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "COMED_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "COMED_MW", "MW": 102005794.0}, {"Year": 2012, "CSV File": "COMED_MW", "MW": 101977986.0}, {"Year": 2013, "CSV File": "COMED_MW", "MW": 101149215.0}, {"Year": 2014, "CSV File": "COMED_MW", "MW": 100214404.0}, {"Year": 1998, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "DAYTON_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "DAYTON_MW", "MW": 4384244.0}, {"Year": 2005, "CSV File": "DAYTON_MW", "MW": 18757648.0}, {"Year": 2006, "CSV File": "DAYTON_MW", "MW": 18361614.0}, {"Year": 2007, "CSV File": "DAYTON_MW", "MW": 19072401.0}, {"Year": 2008, "CSV File": "DAYTON_MW", "MW": 18565515.0}, {"Year": 2009, "CSV File": "DAYTON_MW", "MW": 17214513.0}, {"Year": 2010, "CSV File": "DAYTON_MW", "MW": 17749452.0}, {"Year": 2011, "CSV File": "DAYTON_MW", "MW": 17419249.0}, {"Year": 2012, "CSV File": "DAYTON_MW", "MW": 17408219.0}, {"Year": 2013, "CSV File": "DAYTON_MW", "MW": 17421318.0}, {"Year": 2014, "CSV File": "DAYTON_MW", "MW": 17629130.0}, {"Year": 1998, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "DEOK_MW", "MW": 0.0}, {"Year": 2012, "CSV File": "DEOK_MW", "MW": 26914888.0}, {"Year": 2013, "CSV File": "DEOK_MW", "MW": 27075131.0}, {"Year": 2014, "CSV File": "DEOK_MW", "MW": 27405184.0}, {"Year": 1998, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "DOM_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "DOM_MW", "MW": 63679458.0}, {"Year": 2006, "CSV File": "DOM_MW", "MW": 91583693.0}, {"Year": 2007, "CSV File": "DOM_MW", "MW": 96259317.0}, {"Year": 2008, "CSV File": "DOM_MW", "MW": 94729254.0}, {"Year": 2009, "CSV File": "DOM_MW", "MW": 93683715.0}, {"Year": 2010, "CSV File": "DOM_MW", "MW": 98779534.0}, {"Year": 2011, "CSV File": "DOM_MW", "MW": 95160671.0}, {"Year": 2012, "CSV File": "DOM_MW", "MW": 93218606.0}, {"Year": 2013, "CSV File": "DOM_MW", "MW": 95505523.0}, {"Year": 2014, "CSV File": "DOM_MW", "MW": 97011887.0}, {"Year": 1998, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "DUQ_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "DUQ_MW", "MW": 14830490.0}, {"Year": 2006, "CSV File": "DUQ_MW", "MW": 14562752.0}, {"Year": 2007, "CSV File": "DUQ_MW", "MW": 15003675.0}, {"Year": 2008, "CSV File": "DUQ_MW", "MW": 14699758.0}, {"Year": 2009, "CSV File": "DUQ_MW", "MW": 13964771.0}, {"Year": 2010, "CSV File": "DUQ_MW", "MW": 14959342.0}, {"Year": 2011, "CSV File": "DUQ_MW", "MW": 14925032.0}, {"Year": 2012, "CSV File": "DUQ_MW", "MW": 15097835.0}, {"Year": 2013, "CSV File": "DUQ_MW", "MW": 14822887.0}, {"Year": 2014, "CSV File": "DUQ_MW", "MW": 14567085.0}, {"Year": 1998, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2012, "CSV File": "EKPC_MW", "MW": 0.0}, {"Year": 2013, "CSV File": "EKPC_MW", "MW": 7260899.0}, {"Year": 2014, "CSV File": "EKPC_MW", "MW": 13143552.0}, {"Year": 1998, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "FE_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "FE_MW", "MW": 40535968.0}, {"Year": 2012, "CSV File": "FE_MW", "MW": 68097194.0}, {"Year": 2013, "CSV File": "FE_MW", "MW": 68370478.0}, {"Year": 2014, "CSV File": "FE_MW", "MW": 69343696.0}, {"Year": 1998, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2003, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "NI_MW", "MW": 65979931.0}, {"Year": 2005, "CSV File": "NI_MW", "MW": 103799551.0}, {"Year": 2006, "CSV File": "NI_MW", "MW": 102359091.0}, {"Year": 2007, "CSV File": "NI_MW", "MW": 105843527.0}, {"Year": 2008, "CSV File": "NI_MW", "MW": 104282279.0}, {"Year": 2009, "CSV File": "NI_MW", "MW": 98211778.0}, {"Year": 2010, "CSV File": "NI_MW", "MW": 103477169.0}, {"Year": 2011, "CSV File": "NI_MW", "MW": 10042.0}, {"Year": 2012, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2013, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 2014, "CSV File": "NI_MW", "MW": 0.0}, {"Year": 1998, "CSV File": "AEP", "MW": 0.0}, {"Year": 1999, "CSV File": "AEP", "MW": 0.0}, {"Year": 2000, "CSV File": "AEP", "MW": 0.0}, {"Year": 2001, "CSV File": "AEP", "MW": 0.0}, {"Year": 2002, "CSV File": "AEP", "MW": 0.0}, {"Year": 2003, "CSV File": "AEP", "MW": 0.0}, {"Year": 2004, "CSV File": "AEP", "MW": 33479854.0}, {"Year": 2005, "CSV File": "AEP", "MW": 138752914.0}, {"Year": 2006, "CSV File": "AEP", "MW": 137826610.0}, {"Year": 2007, "CSV File": "AEP", "MW": 145781458.0}, {"Year": 2008, "CSV File": "AEP", "MW": 145224910.0}, {"Year": 2009, "CSV File": "AEP", "MW": 133595510.0}, {"Year": 2010, "CSV File": "AEP", "MW": 140187481.0}, {"Year": 2011, "CSV File": "AEP", "MW": 138511181.0}, {"Year": 2012, "CSV File": "AEP", "MW": 134814172.0}, {"Year": 2013, "CSV File": "AEP", "MW": 133105937.0}, {"Year": 2014, "CSV File": "AEP", "MW": 132865962.0}, {"Year": 1998, "CSV File": "COMED", "MW": 0.0}, {"Year": 1999, "CSV File": "COMED", "MW": 0.0}, {"Year": 2000, "CSV File": "COMED", "MW": 0.0}, {"Year": 2001, "CSV File": "COMED", "MW": 0.0}, {"Year": 2002, "CSV File": "COMED", "MW": 0.0}, {"Year": 2003, "CSV File": "COMED", "MW": 0.0}, {"Year": 2004, "CSV File": "COMED", "MW": 0.0}, {"Year": 2005, "CSV File": "COMED", "MW": 0.0}, {"Year": 2006, "CSV File": "COMED", "MW": 0.0}, {"Year": 2007, "CSV File": "COMED", "MW": 0.0}, {"Year": 2008, "CSV File": "COMED", "MW": 0.0}, {"Year": 2009, "CSV File": "COMED", "MW": 0.0}, {"Year": 2010, "CSV File": "COMED", "MW": 0.0}, {"Year": 2011, "CSV File": "COMED", "MW": 102005794.0}, {"Year": 2012, "CSV File": "COMED", "MW": 101977986.0}, {"Year": 2013, "CSV File": "COMED", "MW": 101149215.0}, {"Year": 2014, "CSV File": "COMED", "MW": 100214404.0}, {"Year": 1998, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 1999, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2000, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2001, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2002, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2003, "CSV File": "DAYTON", "MW": 0.0}, {"Year": 2004, "CSV File": "DAYTON", "MW": 4384244.0}, {"Year": 2005, "CSV File": "DAYTON", "MW": 18757648.0}, {"Year": 2006, "CSV File": "DAYTON", "MW": 18361614.0}, {"Year": 2007, "CSV File": "DAYTON", "MW": 19072401.0}, {"Year": 2008, "CSV File": "DAYTON", "MW": 18565515.0}, {"Year": 2009, "CSV File": "DAYTON", "MW": 17214513.0}, {"Year": 2010, "CSV File": "DAYTON", "MW": 17749452.0}, {"Year": 2011, "CSV File": "DAYTON", "MW": 17419249.0}, {"Year": 2012, "CSV File": "DAYTON", "MW": 17408219.0}, {"Year": 2013, "CSV File": "DAYTON", "MW": 17421318.0}, {"Year": 2014, "CSV File": "DAYTON", "MW": 17629130.0}, {"Year": 1998, "CSV File": "DEOK", "MW": 0.0}, {"Year": 1999, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2000, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2001, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2002, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2003, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2004, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2005, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2006, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2007, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2008, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2009, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2010, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2011, "CSV File": "DEOK", "MW": 0.0}, {"Year": 2012, "CSV File": "DEOK", "MW": 26914888.0}, {"Year": 2013, "CSV File": "DEOK", "MW": 27075131.0}, {"Year": 2014, "CSV File": "DEOK", "MW": 27405184.0}, {"Year": 1998, "CSV File": "DOM", "MW": 0.0}, {"Year": 1999, "CSV File": "DOM", "MW": 0.0}, {"Year": 2000, "CSV File": "DOM", "MW": 0.0}, {"Year": 2001, "CSV File": "DOM", "MW": 0.0}, {"Year": 2002, "CSV File": "DOM", "MW": 0.0}, {"Year": 2003, "CSV File": "DOM", "MW": 0.0}, {"Year": 2004, "CSV File": "DOM", "MW": 0.0}, {"Year": 2005, "CSV File": "DOM", "MW": 63679458.0}, {"Year": 2006, "CSV File": "DOM", "MW": 91583693.0}, {"Year": 2007, "CSV File": "DOM", "MW": 96259317.0}, {"Year": 2008, "CSV File": "DOM", "MW": 94729254.0}, {"Year": 2009, "CSV File": "DOM", "MW": 93683715.0}, {"Year": 2010, "CSV File": "DOM", "MW": 98779534.0}, {"Year": 2011, "CSV File": "DOM", "MW": 95160671.0}, {"Year": 2012, "CSV File": "DOM", "MW": 93218606.0}, {"Year": 2013, "CSV File": "DOM", "MW": 95505523.0}, {"Year": 2014, "CSV File": "DOM", "MW": 97011887.0}, {"Year": 1998, "CSV File": "DUQ", "MW": 0.0}, {"Year": 1999, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2000, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2001, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2002, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2003, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2004, "CSV File": "DUQ", "MW": 0.0}, {"Year": 2005, "CSV File": "DUQ", "MW": 14830490.0}, {"Year": 2006, "CSV File": "DUQ", "MW": 14562752.0}, {"Year": 2007, "CSV File": "DUQ", "MW": 15003675.0}, {"Year": 2008, "CSV File": "DUQ", "MW": 14699758.0}, {"Year": 2009, "CSV File": "DUQ", "MW": 13964771.0}, {"Year": 2010, "CSV File": "DUQ", "MW": 14959342.0}, {"Year": 2011, "CSV File": "DUQ", "MW": 14925032.0}, {"Year": 2012, "CSV File": "DUQ", "MW": 15097835.0}, {"Year": 2013, "CSV File": "DUQ", "MW": 14822887.0}, {"Year": 2014, "CSV File": "DUQ", "MW": 14567085.0}, {"Year": 1998, "CSV File": "EKPC", "MW": 0.0}, {"Year": 1999, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2000, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2001, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2002, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2003, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2004, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2005, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2006, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2007, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2008, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2009, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2010, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2011, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2012, "CSV File": "EKPC", "MW": 0.0}, {"Year": 2013, "CSV File": "EKPC", "MW": 7260899.0}, {"Year": 2014, "CSV File": "EKPC", "MW": 13143552.0}, {"Year": 1998, "CSV File": "FE", "MW": 0.0}, {"Year": 1999, "CSV File": "FE", "MW": 0.0}, {"Year": 2000, "CSV File": "FE", "MW": 0.0}, {"Year": 2001, "CSV File": "FE", "MW": 0.0}, {"Year": 2002, "CSV File": "FE", "MW": 0.0}, {"Year": 2003, "CSV File": "FE", "MW": 0.0}, {"Year": 2004, "CSV File": "FE", "MW": 0.0}, {"Year": 2005, "CSV File": "FE", "MW": 0.0}, {"Year": 2006, "CSV File": "FE", "MW": 0.0}, {"Year": 2007, "CSV File": "FE", "MW": 0.0}, {"Year": 2008, "CSV File": "FE", "MW": 0.0}, {"Year": 2009, "CSV File": "FE", "MW": 0.0}, {"Year": 2010, "CSV File": "FE", "MW": 0.0}, {"Year": 2011, "CSV File": "FE", "MW": 40535968.0}, {"Year": 2012, "CSV File": "FE", "MW": 68097194.0}, {"Year": 2013, "CSV File": "FE", "MW": 68370478.0}, {"Year": 2014, "CSV File": "FE", "MW": 69343696.0}, {"Year": 1998, "CSV File": "NI", "MW": 0.0}, {"Year": 1999, "CSV File": "NI", "MW": 0.0}, {"Year": 2000, "CSV File": "NI", "MW": 0.0}, {"Year": 2001, "CSV File": "NI", "MW": 0.0}, {"Year": 2002, "CSV File": "NI", "MW": 0.0}, {"Year": 2003, "CSV File": "NI", "MW": 0.0}, {"Year": 2004, "CSV File": "NI", "MW": 65979931.0}, {"Year": 2005, "CSV File": "NI", "MW": 103799551.0}, {"Year": 2006, "CSV File": "NI", "MW": 102359091.0}, {"Year": 2007, "CSV File": "NI", "MW": 105843527.0}, {"Year": 2008, "CSV File": "NI", "MW": 104282279.0}, {"Year": 2009, "CSV File": "NI", "MW": 98211778.0}, {"Year": 2010, "CSV File": "NI", "MW": 103477169.0}, {"Year": 2011, "CSV File": "NI", "MW": 10042.0}, {"Year": 2012, "CSV File": "NI", "MW": 0.0}, {"Year": 2013, "CSV File": "NI", "MW": 0.0}, {"Year": 2014, "CSV File": "NI", "MW": 0.0}, {"Year": 1998, "CSV File": "PJME", "MW": 0.0}, {"Year": 1999, "CSV File": "PJME", "MW": 0.0}, {"Year": 2000, "CSV File": "PJME", "MW": 0.0}, {"Year": 2001, "CSV File": "PJME", "MW": 0.0}, {"Year": 2002, "CSV File": "PJME", "MW": 276420109.0}, {"Year": 2003, "CSV File": "PJME", "MW": 277617728.0}, {"Year": 2004, "CSV File": "PJME", "MW": 283398959.0}, {"Year": 2005, "CSV File": "PJME", "MW": 291733172.0}, {"Year": 2006, "CSV File": "PJME", "MW": 283840384.0}, {"Year": 2007, "CSV File": "PJME", "MW": 294386758.0}, {"Year": 2008, "CSV File": "PJME", "MW": 289187689.0}, {"Year": 2009, "CSV File": "PJME", "MW": 278955732.0}, {"Year": 2010, "CSV File": "PJME", "MW": 289866969.0}, {"Year": 2011, "CSV File": "PJME", "MW": 283481646.0}, {"Year": 2012, "CSV File": "PJME", "MW": 276107022.0}, {"Year": 2013, "CSV File": "PJME", "MW": 277685747.0}, {"Year": 2014, "CSV File": "PJME", "MW": 275908525.0}, {"Year": 1998, "CSV File": "PJMW", "MW": 0.0}, {"Year": 1999, "CSV File": "PJMW", "MW": 0.0}, {"Year": 2000, "CSV File": "PJMW", "MW": 0.0}, {"Year": 2001, "CSV File": "PJMW", "MW": 0.0}, {"Year": 2002, "CSV File": "PJMW", "MW": 37086112.0}, {"Year": 2003, "CSV File": "PJMW", "MW": 49926102.0}, {"Year": 2004, "CSV File": "PJMW", "MW": 51520627.0}, {"Year": 2005, "CSV File": "PJMW", "MW": 52884360.0}, {"Year": 2006, "CSV File": "PJMW", "MW": 47516081.0}, {"Year": 2007, "CSV File": "PJMW", "MW": 49354805.0}, {"Year": 2008, "CSV File": "PJMW", "MW": 48565624.0}, {"Year": 2009, "CSV File": "PJMW", "MW": 46334702.0}, {"Year": 2010, "CSV File": "PJMW", "MW": 48802983.0}, {"Year": 2011, "CSV File": "PJMW", "MW": 48253429.0}, {"Year": 2012, "CSV File": "PJMW", "MW": 47378985.0}, {"Year": 2013, "CSV File": "PJMW", "MW": 48666311.0}, {"Year": 2014, "CSV File": "PJMW", "MW": 49549487.0}, {"Year": 1998, "CSV File": "PJM_Load", "MW": 189741769.0}, {"Year": 1999, "CSV File": "PJM_Load", "MW": 259605177.0}, {"Year": 2000, "CSV File": "PJM_Load", "MW": 264464074.0}, {"Year": 2001, "CSV File": "PJM_Load", "MW": 265353807.0}, {"Year": 2002, "CSV File": "PJM_Load", "MW": 31569.0}, {"Year": 2003, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2004, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2005, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2006, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2007, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2008, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2009, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2010, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2011, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2012, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2013, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 2014, "CSV File": "PJM_Load", "MW": 0.0}, {"Year": 1998, "CSV File": "PJM_Load_MW", "MW": 189741769.0}, {"Year": 1999, "CSV File": "PJM_Load_MW", "MW": 259605177.0}, {"Year": 2000, "CSV File": "PJM_Load_MW", "MW": 264464074.0}, {"Year": 2001, "CSV File": "PJM_Load_MW", "MW": 265353807.0}, {"Year": 2002, "CSV File": "PJM_Load_MW", "MW": 31569.0}, {"Year": 2003, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2004, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2005, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2006, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2007, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2008, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2009, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2010, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2011, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2012, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2013, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 2014, "CSV File": "PJM_Load_MW", "MW": 0.0}, {"Year": 1998, "CSV File": "PJME_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "PJME_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "PJME_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "PJME_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "PJME_MW", "MW": 276420109.0}, {"Year": 2003, "CSV File": "PJME_MW", "MW": 277617728.0}, {"Year": 2004, "CSV File": "PJME_MW", "MW": 283398959.0}, {"Year": 2005, "CSV File": "PJME_MW", "MW": 291733172.0}, {"Year": 2006, "CSV File": "PJME_MW", "MW": 283840384.0}, {"Year": 2007, "CSV File": "PJME_MW", "MW": 294386758.0}, {"Year": 2008, "CSV File": "PJME_MW", "MW": 289187689.0}, {"Year": 2009, "CSV File": "PJME_MW", "MW": 278955732.0}, {"Year": 2010, "CSV File": "PJME_MW", "MW": 289866969.0}, {"Year": 2011, "CSV File": "PJME_MW", "MW": 283481646.0}, {"Year": 2012, "CSV File": "PJME_MW", "MW": 276107022.0}, {"Year": 2013, "CSV File": "PJME_MW", "MW": 277685747.0}, {"Year": 2014, "CSV File": "PJME_MW", "MW": 275908525.0}, {"Year": 1998, "CSV File": "PJMW_MW", "MW": 0.0}, {"Year": 1999, "CSV File": "PJMW_MW", "MW": 0.0}, {"Year": 2000, "CSV File": "PJMW_MW", "MW": 0.0}, {"Year": 2001, "CSV File": "PJMW_MW", "MW": 0.0}, {"Year": 2002, "CSV File": "PJMW_MW", "MW": 37086112.0}, {"Year": 2003, "CSV File": "PJMW_MW", "MW": 49926102.0}, {"Year": 2004, "CSV File": "PJMW_MW", "MW": 51520627.0}, {"Year": 2005, "CSV File": "PJMW_MW", "MW": 52884360.0}, {"Year": 2006, "CSV File": "PJMW_MW", "MW": 47516081.0}, {"Year": 2007, "CSV File": "PJMW_MW", "MW": 49354805.0}, {"Year": 2008, "CSV File": "PJMW_MW", "MW": 48565624.0}, {"Year": 2009, "CSV File": "PJMW_MW", "MW": 46334702.0}, {"Year": 2010, "CSV File": "PJMW_MW", "MW": 48802983.0}, {"Year": 2011, "CSV File": "PJMW_MW", "MW": 48253429.0}, {"Year": 2012, "CSV File": "PJMW_MW", "MW": 47378985.0}, {"Year": 2013, "CSV File": "PJMW_MW", "MW": 48666311.0}, {"Year": 2014, "CSV File": "PJMW_MW", "MW": 49549487.0}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>This is just a graph I thought would look very interestinf since some places used much more energy than others. I believe we did something like this in class once.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chart4</span> <span class="o">=</span> <span class="n">chart3</span><span class="o">+</span><span class="n">chart2</span>
+<span class="n">chart4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-15c5caeb17c348098b02783cc2231399"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-15c5caeb17c348098b02783cc2231399") {
+      outputDiv = document.getElementById("altair-viz-15c5caeb17c348098b02783cc2231399");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-c4d5b1427a7260f2ab93fe7ca1536c44"}, "mark": {"type": "line", "color": "purple"}, "encoding": {"tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "MW", "type": "quantitative"}], "x": {"field": "Year", "type": "quantitative"}, "y": {"field": "MW", "type": "quantitative"}}, "title": "Actual MW Usage"}, {"layer": [{"data": {"name": "data-6b9d1beca24f1f871a48e6db79214619"}, "mark": "line", "encoding": {"tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "MW", "type": "quantitative"}], "x": {"field": "Year", "type": "quantitative"}, "y": {"field": "MW", "type": "quantitative"}}, "title": "Predicted MW Usage"}, {"data": {"name": "data-77401dae31bae6a2295d8df331a1d4e9"}, "mark": {"type": "line", "color": "red"}, "encoding": {"tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "MW_Predicted", "type": "quantitative"}], "x": {"field": "Year", "type": "quantitative"}, "y": {"field": "MW_Predicted", "type": "quantitative"}}, "title": "Predicted MW Values"}]}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-c4d5b1427a7260f2ab93fe7ca1536c44": [{"Year": 1998, "MW": 15811814.083333334}, {"Year": 1999, "MW": 21633764.75}, {"Year": 2000, "MW": 22038672.833333332}, {"Year": 2001, "MW": 22112817.25}, {"Year": 2002, "MW": 26128149.166666668}, {"Year": 2003, "MW": 27295319.166666668}, {"Year": 2004, "MW": 36563634.583333336}, {"Year": 2005, "MW": 57036466.083333336}, {"Year": 2006, "MW": 58004185.416666664}, {"Year": 2007, "MW": 60475161.75}, {"Year": 2008, "MW": 59604585.75}, {"Year": 2009, "MW": 56830060.083333336}, {"Year": 2010, "MW": 59485244.166666664}, {"Year": 2011, "MW": 61691917.666666664}, {"Year": 2012, "MW": 65084575.583333336}, {"Year": 2013, "MW": 65921953.833333336}, {"Year": 2014, "MW": 66469909.333333336}, {"Year": 2015, "MW": 66497634.06669117}, {"Year": 2016, "MW": 66723374.22325161}, {"Year": 2017, "MW": 65287572.45981209}, {"Year": 2018, "MW": 41520169.25637253}], "data-6b9d1beca24f1f871a48e6db79214619": [{"Year": 1998, "MW": 15811814.083333334}, {"Year": 1999, "MW": 21633764.75}, {"Year": 2000, "MW": 22038672.833333332}, {"Year": 2001, "MW": 22112817.25}, {"Year": 2002, "MW": 26128149.166666668}, {"Year": 2003, "MW": 27295319.166666668}, {"Year": 2004, "MW": 36563634.583333336}, {"Year": 2005, "MW": 57036466.083333336}, {"Year": 2006, "MW": 58004185.416666664}, {"Year": 2007, "MW": 60475161.75}, {"Year": 2008, "MW": 59604585.75}, {"Year": 2009, "MW": 56830060.083333336}, {"Year": 2010, "MW": 59485244.166666664}, {"Year": 2011, "MW": 61691917.666666664}, {"Year": 2012, "MW": 65084575.583333336}, {"Year": 2013, "MW": 65921953.833333336}, {"Year": 2014, "MW": 66469909.333333336}], "data-77401dae31bae6a2295d8df331a1d4e9": [{"Year": 2014, "MW_Predicted": 74305311.75326729}, {"Year": 2015, "MW_Predicted": 77842091.66727924}, {"Year": 2016, "MW_Predicted": 81378871.58129025}, {"Year": 2017, "MW_Predicted": 84915651.4953022}, {"Year": 2018, "MW_Predicted": 88452431.4093132}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">shows</span> <span class="n">the</span> <span class="n">final</span> <span class="n">result</span><span class="o">.</span> <span class="n">The</span> <span class="n">prediction</span> <span class="p">(</span><span class="n">red</span><span class="p">)</span> <span class="n">was</span> <span class="n">projecting</span> <span class="n">a</span> <span class="n">general</span> <span class="n">increase</span> <span class="n">of</span> <span class="n">energy</span> <span class="n">consumtion</span> <span class="p">(</span><span class="n">which</span> <span class="n">was</span> <span class="n">what</span> <span class="n">I</span> <span class="n">thought</span> <span class="k">as</span> <span class="n">well</span><span class="p">)</span> <span class="n">but</span> <span class="n">there</span> <span class="n">was</span> <span class="n">a</span> <span class="n">sharp</span> <span class="n">decrease</span><span class="p">(</span><span class="n">purple</span><span class="p">)</span> <span class="k">for</span> <span class="n">some</span> <span class="n">reason</span> <span class="n">I</span> <span class="n">am</span> <span class="n">unaware</span> <span class="n">of</span><span class="o">.</span> <span class="n">I</span> <span class="n">think</span> <span class="n">its</span> <span class="n">interesting</span> <span class="n">since</span> <span class="n">I</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">remember</span> <span class="n">anything</span> <span class="n">particularly</span> <span class="n">important</span> <span class="n">happening</span> <span class="ow">in</span> <span class="mf">2018.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>Here I used altair, pandas, numpy, and sklearn in order to get data about hourly MW usage. From there I limited the data using pandas in order to test the prediction from sklearn. I then used a variety of graphs from altair to show how where the prediction may have faltered and give a possible explanation as to why</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>Your code above should include references.  Here is some additional space for references.</p>
+<ul class="simple">
+<li><p>What is the source of your dataset(s)?</p></li>
+</ul>
+<p>From Kaggle:
+<a class="reference external" href="https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption">https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption</a></p>
+<ul class="simple">
+<li><p>List any other references that you found helpful.
+chatgpt:
+csv_files = [‘file1.csv’, ‘file2.csv’, ‘file3.csv’]
+dfs = []
+for file in csv_files:
+df = pd.read_csv(file)
+dfs.append(df)
+This code helped me be able to find out how to get all the csv files together</p></li>
+</ul>
+<p>Another helpful code from chat gpt: helping get the years
+melted_df = combined_df.melt(id_vars=’Year’, var_name=’CSV File’, value_name=’MW’)</p>
+<p>I used this code in order to get an idea as to how to switch the y axis, since there was an issue with the y values being upside down:
+y=alt.Y(‘Negative_Value:Q’, title=’Negative Value’),</p>
+<p>I also got some ideas about splitting and comparing with real years from Chris, very appreciated.</p>
+</section>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h2>
+<p>Using the Share button at the top right, <strong>enable Comment privileges</strong> for anyone with a link to the project. Then submit that link on Canvas.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Proj/StudentProjects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="DianaGonzalez.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Brazil Forest Fires Prediction and Testing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="AnjunHou.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data science occupation prediction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Energy consumption</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

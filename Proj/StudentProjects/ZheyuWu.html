@@ -1,0 +1,3141 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Analyzing Winning factors on Premier League &#8212; UC Irvine Math 10, Spring 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Proj/StudentProjects/ZheyuWu';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Men’s volleyball performances prediction" href="MingyangYi.html" />
+    <link rel="prev" title="Exploring Recidivism in Iowa" href="NicoleVuong.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/digitsyellow.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/digitsyellow.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    UC Irvine, Math 10, Spring 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploratory Data Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week1/Week1-Intro.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Monday.html">Week 1 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Wednesday.html">Week 1 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Week1-Friday.html">Week 1 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Worksheet1.html">Worksheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week1/Worksheet2.html">Worksheet 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week2/Week2-Intro.html">Week 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Monday.html">Week 2 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Wednesday.html">Week 2 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Week2-Friday.html">Week 2 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Worksheet3.html">Worksheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week2/Worksheet4.html">Worksheet 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week3/Week3-Intro.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Monday.html">Week 3 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Wednesday.html">Week 3 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Week3-Friday.html">Week 3 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Worksheet5.html">Worksheet 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week3/Worksheet6.html">Worksheet 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week4/Week4-Intro.html">Week 4</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Monday.html">Week 4 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Tuesday.html">Week 4 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Wednesday.html">Week 4 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Week4-Friday.html">Week 4 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Worksheet7.html">Worksheet 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week4/Worksheet8.html">Worksheet 8</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week5/Week5-Intro.html">Week 5</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Tuesday.html">Week 5 Tuesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Wednesday.html">Week 5 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Thursday.html">Week 5 Thursday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Week5-Friday.html">Week 5 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Worksheet9.html">Worksheet 9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week5/Worksheet10.html">Worksheet 10</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week6/Week6-Intro.html">Week 6</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Monday.html">Week 6 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Wednesday.html">Week 6 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Week6-Friday.html">Week 6 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Worksheet11.html">Worksheet 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week6/Worksheet12.html">Worksheet 12</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week7/Week7-Intro.html">Week 7</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Monday.html">Week 7 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Wednesday.html">Week 7 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Week7-Friday.html">Week 7 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Worksheet13.html">Worksheet 13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week7/Worksheet14.html">Worksheet 14</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week8/Week8-Intro.html">Week 8</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Monday.html">Week 8 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Wednesday.html">Week 8 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Week8-Friday.html">Week 8 Friday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Worksheet15.html">Worksheet 15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week8/Worksheet16.html">Worksheet 16</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week9/Week9-Intro.html">Week 9</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Week9-Wednesday.html">Week 9 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Worksheet17.html">Worksheet 17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week9/Worksheet18.html">Worksheet 18</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Week10/Week10-Intro.html">Week 10</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Monday.html">Week 10 Monday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Wednesday.html">Week 10 Wednesday</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Week10/Week10-Friday.html">Week 10 Friday</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CourseProject.html">Project Instructions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ExtraTopics.html">Possible extra topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../StudentProjects.html">Student Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SethAbuhamdeh.html">Countries and Air Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RachelBronder.html">Subject of Subjectivity: The Global Happiness Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="JacobBustamante.html">Dollar Bill Validity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RuizheCheng.html">Analysis and predictions based on data from Premier League</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HaohongChenxie.html">Analysis the factors related to Publishers on Video Games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AminEghbalian.html">Analysis of Stroke Occurance Based on Health Factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShuchengFei.html">Analysis of the Medical Cost Personal Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LukeGalang.html">Overwatch 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DianaGonzalez.html">Brazil Forest Fires Prediction and Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdrianGuerra.html">Energy Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnjunHou.html">Data science occupation prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XifanJiang.html">Decision Tree Regressor Analysis on Insurance Charges: The Impact of Age, BMI, and Smoking Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DanielLee.html">MonkeyType: A Typing Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KyleLemler.html">Predicting League of Legends Winners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AndrewLittle.html">Predicting Outcomes of Hockey Games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LoulouVivianMahfouz.html">💄 Makeup Foundation Shades Analysis 💅🏻</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PamelaMartinez.html">Making Predictions of Underwater Ocean Temperature Using Historical Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PaulaMendez-Lagunas.html">Wine Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AndreNgo.html">Predicting Match/Map Outcomes in LAN versus Online Play Using Player Statistics in Professional Counter-Strike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QiQin.html">Students Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FelipeRios.html">Predicting Forza Horizon Car Classes and Ratings</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="AlejandroSalmeron.html">Predicting Star NBA Players</a></li>
+<li class="toctree-l2"><a class="reference internal" href="JoshuaSunga.html">NBA Position Prediction Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NicoleVuong.html">Exploring Recidivism in Iowa</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analyzing Winning factors on Premier League</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MingyangYi.html">Men’s volleyball performances prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="KaijieZhang.html">Prediction and Analysis of Crabs’ Age and Sex Base on Physical Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ChenzhangZhao.html">Premier league season 2022-23 match data analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShuoyuZhu.html">Car Price Prediction</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/ChristopherDavisUCI/UCI-Math-10-S23" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Proj/StudentProjects/ZheyuWu.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Analyzing Winning factors on Premier League</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-cleaning-the-data">Importing and Cleaning the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#altair-chart-to-visualize-the-correlation">Altair Chart to Visualize the Correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-importance-contribute-to-wins">Factor Importance Contribute to Wins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearregression-model">LinearRegression Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passing-visualizing-map">Passing Visualizing Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analyzing-winning-factors-on-premier-league">
+<h1>Analyzing Winning factors on Premier League<a class="headerlink" href="#analyzing-winning-factors-on-premier-league" title="Permalink to this heading">#</a></h1>
+<p>Author:Zheyu Wu</p>
+<p>Course Project, UC Irvine, Math 10, S23</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p><img alt="Picture title" src="../../_images/image-20230610-213402.png" /></p>
+<p>The English Premier League (EPL) is globally renowned as one of the most popular football leagues. It consists of 20 teams competing in a total of 38 matches over a year. The team with the highest points will be the winner. In this system, a win earns a team 3 points, a draw results in 1 point each for both teams, and a loss yields zero points. Each team faces every other team in the league once at home and once as the away team.
+For this project, I want to investigate which factors will contribute the most for winning a match in the Premier League.</p>
+</section>
+<section id="importing-and-cleaning-the-data">
+<h2>Importing and Cleaning the Data<a class="headerlink" href="#importing-and-cleaning-the-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mplsoccer.pitch</span> <span class="kn">import</span> <span class="n">Pitch</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;stats.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>wins</th>
+      <th>losses</th>
+      <th>goals</th>
+      <th>total_yel_card</th>
+      <th>total_red_card</th>
+      <th>total_scoring_att</th>
+      <th>ontarget_scoring_att</th>
+      <th>hit_woodwork</th>
+      <th>att_hd_goal</th>
+      <th>...</th>
+      <th>total_cross</th>
+      <th>corner_taken</th>
+      <th>touches</th>
+      <th>big_chance_missed</th>
+      <th>clearance_off_line</th>
+      <th>dispossessed</th>
+      <th>penalty_save</th>
+      <th>total_high_claim</th>
+      <th>punches</th>
+      <th>season</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Manchester United</td>
+      <td>28.0</td>
+      <td>5.0</td>
+      <td>83.0</td>
+      <td>60.0</td>
+      <td>1.0</td>
+      <td>698.0</td>
+      <td>256.0</td>
+      <td>21.0</td>
+      <td>12.0</td>
+      <td>...</td>
+      <td>918.0</td>
+      <td>258.0</td>
+      <td>25686.0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>37.0</td>
+      <td>25.0</td>
+      <td>2006-2007</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Chelsea</td>
+      <td>24.0</td>
+      <td>3.0</td>
+      <td>64.0</td>
+      <td>62.0</td>
+      <td>4.0</td>
+      <td>636.0</td>
+      <td>216.0</td>
+      <td>14.0</td>
+      <td>16.0</td>
+      <td>...</td>
+      <td>897.0</td>
+      <td>231.0</td>
+      <td>24010.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>74.0</td>
+      <td>22.0</td>
+      <td>2006-2007</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Liverpool</td>
+      <td>20.0</td>
+      <td>10.0</td>
+      <td>57.0</td>
+      <td>44.0</td>
+      <td>0.0</td>
+      <td>668.0</td>
+      <td>214.0</td>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>...</td>
+      <td>1107.0</td>
+      <td>282.0</td>
+      <td>24150.0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>51.0</td>
+      <td>27.0</td>
+      <td>2006-2007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Arsenal</td>
+      <td>19.0</td>
+      <td>8.0</td>
+      <td>63.0</td>
+      <td>59.0</td>
+      <td>3.0</td>
+      <td>638.0</td>
+      <td>226.0</td>
+      <td>19.0</td>
+      <td>10.0</td>
+      <td>...</td>
+      <td>873.0</td>
+      <td>278.0</td>
+      <td>25592.0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>88.0</td>
+      <td>27.0</td>
+      <td>2006-2007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Tottenham Hotspur</td>
+      <td>17.0</td>
+      <td>12.0</td>
+      <td>57.0</td>
+      <td>48.0</td>
+      <td>3.0</td>
+      <td>520.0</td>
+      <td>184.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>796.0</td>
+      <td>181.0</td>
+      <td>22200.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>51.0</td>
+      <td>24.0</td>
+      <td>2006-2007</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>Huddersfield Town</td>
+      <td>9.0</td>
+      <td>19.0</td>
+      <td>28.0</td>
+      <td>62.0</td>
+      <td>3.0</td>
+      <td>362.0</td>
+      <td>109.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>765.0</td>
+      <td>165.0</td>
+      <td>22619.0</td>
+      <td>21.0</td>
+      <td>6.0</td>
+      <td>416.0</td>
+      <td>2.0</td>
+      <td>31.0</td>
+      <td>24.0</td>
+      <td>2017-2018</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>Swansea City</td>
+      <td>8.0</td>
+      <td>21.0</td>
+      <td>28.0</td>
+      <td>51.0</td>
+      <td>1.0</td>
+      <td>338.0</td>
+      <td>103.0</td>
+      <td>8.0</td>
+      <td>3.0</td>
+      <td>...</td>
+      <td>694.0</td>
+      <td>150.0</td>
+      <td>22775.0</td>
+      <td>26.0</td>
+      <td>1.0</td>
+      <td>439.0</td>
+      <td>3.0</td>
+      <td>44.0</td>
+      <td>15.0</td>
+      <td>2017-2018</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>Southampton</td>
+      <td>7.0</td>
+      <td>16.0</td>
+      <td>37.0</td>
+      <td>63.0</td>
+      <td>2.0</td>
+      <td>450.0</td>
+      <td>145.0</td>
+      <td>15.0</td>
+      <td>7.0</td>
+      <td>...</td>
+      <td>800.0</td>
+      <td>227.0</td>
+      <td>24639.0</td>
+      <td>37.0</td>
+      <td>4.0</td>
+      <td>379.0</td>
+      <td>1.0</td>
+      <td>29.0</td>
+      <td>13.0</td>
+      <td>2017-2018</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>Stoke City</td>
+      <td>7.0</td>
+      <td>19.0</td>
+      <td>35.0</td>
+      <td>62.0</td>
+      <td>1.0</td>
+      <td>384.0</td>
+      <td>132.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>...</td>
+      <td>598.0</td>
+      <td>136.0</td>
+      <td>20368.0</td>
+      <td>33.0</td>
+      <td>3.0</td>
+      <td>402.0</td>
+      <td>0.0</td>
+      <td>27.0</td>
+      <td>14.0</td>
+      <td>2017-2018</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>West Bromwich Albion</td>
+      <td>6.0</td>
+      <td>19.0</td>
+      <td>31.0</td>
+      <td>73.0</td>
+      <td>1.0</td>
+      <td>378.0</td>
+      <td>114.0</td>
+      <td>7.0</td>
+      <td>10.0</td>
+      <td>...</td>
+      <td>784.0</td>
+      <td>176.0</td>
+      <td>20552.0</td>
+      <td>28.0</td>
+      <td>3.0</td>
+      <td>446.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>5.0</td>
+      <td>2017-2018</td>
+    </tr>
+  </tbody>
+</table>
+<p>240 rows × 42 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check for missing values</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#drop the missing values</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(160, 42)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to keep my data to be general on analyzing Premier League teams, I decide to analyze those teams which can stay for at least three seasons since for those relatively weaker teams, they are probably not on the same levels compares to other Premier League teams.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">team_seasons</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">filtered_teams</span> <span class="o">=</span> <span class="n">team_seasons</span><span class="p">[</span><span class="n">team_seasons</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">][</span><span class="s1">&#39;team&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">filtered_teams</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>After cleaning my dataset, I want to check the average data and then I can have a rough thoughts about which factors I should predict to have a positve/negative impact to win.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_avg</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;team&#39;</span><span class="p">],</span><span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df_avg</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;wins&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>wins</th>
+      <th>losses</th>
+      <th>goals</th>
+      <th>total_yel_card</th>
+      <th>total_red_card</th>
+      <th>total_scoring_att</th>
+      <th>ontarget_scoring_att</th>
+      <th>hit_woodwork</th>
+      <th>att_hd_goal</th>
+      <th>...</th>
+      <th>backward_pass</th>
+      <th>total_cross</th>
+      <th>corner_taken</th>
+      <th>touches</th>
+      <th>big_chance_missed</th>
+      <th>clearance_off_line</th>
+      <th>dispossessed</th>
+      <th>penalty_save</th>
+      <th>total_high_claim</th>
+      <th>punches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>Manchester City</td>
+      <td>24.625</td>
+      <td>6.375</td>
+      <td>82.625</td>
+      <td>65.500</td>
+      <td>2.750</td>
+      <td>650.00</td>
+      <td>227.000</td>
+      <td>18.500</td>
+      <td>8.500</td>
+      <td>...</td>
+      <td>3179.500</td>
+      <td>813.75</td>
+      <td>267.625</td>
+      <td>29239.875</td>
+      <td>58.000</td>
+      <td>3.125</td>
+      <td>487.375</td>
+      <td>1.000</td>
+      <td>41.750</td>
+      <td>26.125</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Manchester United</td>
+      <td>22.500</td>
+      <td>7.000</td>
+      <td>68.750</td>
+      <td>62.625</td>
+      <td>2.125</td>
+      <td>549.50</td>
+      <td>195.375</td>
+      <td>15.875</td>
+      <td>12.000</td>
+      <td>...</td>
+      <td>2941.750</td>
+      <td>910.00</td>
+      <td>229.375</td>
+      <td>27705.625</td>
+      <td>47.500</td>
+      <td>3.125</td>
+      <td>461.500</td>
+      <td>0.375</td>
+      <td>33.250</td>
+      <td>14.250</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Chelsea</td>
+      <td>21.875</td>
+      <td>7.750</td>
+      <td>69.875</td>
+      <td>60.750</td>
+      <td>3.000</td>
+      <td>626.25</td>
+      <td>214.500</td>
+      <td>14.250</td>
+      <td>10.875</td>
+      <td>...</td>
+      <td>2889.875</td>
+      <td>812.00</td>
+      <td>239.000</td>
+      <td>27226.375</td>
+      <td>43.625</td>
+      <td>4.000</td>
+      <td>463.750</td>
+      <td>0.250</td>
+      <td>55.125</td>
+      <td>19.250</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 41 columns</p>
+</div></div></div>
+</div>
+<p>So, there is a roughly thinking that “attacking” data should have a positive impact and “defending” data should be otherwise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_avg</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s2">&quot;wins&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>wins                    1.000000
+losses                 -0.968590
+goals                   0.968633
+total_yel_card         -0.257762
+total_red_card         -0.180572
+total_scoring_att       0.833338
+ontarget_scoring_att    0.900001
+hit_woodwork            0.718569
+att_hd_goal             0.502109
+att_pen_goal            0.645460
+att_freekick_goal       0.349527
+att_ibox_goal           0.967825
+att_obox_goal           0.681283
+goal_fastbreak          0.643157
+total_offside           0.211573
+clean_sheet             0.930604
+goals_conceded         -0.917405
+saves                  -0.205303
+outfielder_block       -0.768150
+interception           -0.210378
+total_tackle            0.087433
+last_man_tackle         0.131081
+total_clearance        -0.614563
+head_clearance         -0.377820
+own_goals              -0.470851
+penalty_conceded       -0.554425
+pen_goals_conceded     -0.531732
+total_pass              0.841452
+total_through_ball      0.776743
+total_long_balls       -0.413157
+backward_pass           0.739098
+total_cross             0.444769
+corner_taken            0.901280
+touches                 0.849492
+big_chance_missed       0.858744
+clearance_off_line     -0.642533
+dispossessed            0.514228
+penalty_save           -0.285913
+total_high_claim       -0.386829
+punches                -0.010322
+Name: wins, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="altair-chart-to-visualize-the-correlation">
+<h2>Altair Chart to Visualize the Correlation<a class="headerlink" href="#altair-chart-to-visualize-the-correlation" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;wins&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span><span class="s1">&#39;team&#39;</span><span class="p">,</span><span class="s1">&#39;losses&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From <a class="reference external" href="https://deepnote.com/workspace/zheyu-0ab018e9-04cc-439a-a2c2-90b651fd1424/project/Worksheet-7-Duplicate-8fd1453c-88f3-4839-8c58-d1df36d1ac67/notebook/Worksheet7-328657a7cb814b0190f6481267d5ed24">Worksheet7</a>, I learned a way to draw an altair chart which contains different charts with different columns’ names splits in columns, and it is a way that clearly shows the correlation with the selected_columns and wins in graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_chart</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_avg</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;wins&quot;</span><span class="p">,</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;team&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;darkblue&quot;</span><span class="p">)),</span>
+        <span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;team&quot;</span><span class="p">,</span><span class="s2">&quot;wins&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chart_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_chart</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">selected_columns</span><span class="p">]</span>
+<span class="n">total_chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span><span class="o">*</span><span class="n">chart_list</span><span class="p">)</span>
+<span class="n">total_chart</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-898ef7553b6a44c68e84a2147ab2edc3"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-898ef7553b6a44c68e84a2147ab2edc3") {
+      outputDiv = document.getElementById("altair-viz-898ef7553b6a44c68e84a2147ab2edc3");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "goals", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_yel_card", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_red_card", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_scoring_att", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "ontarget_scoring_att", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "hit_woodwork", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "att_hd_goal", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "att_pen_goal", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "att_freekick_goal", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "att_ibox_goal", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "att_obox_goal", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "goal_fastbreak", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_offside", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "clean_sheet", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "goals_conceded", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "saves", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "outfielder_block", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "interception", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_tackle", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "last_man_tackle", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_clearance", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "head_clearance", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "own_goals", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "penalty_conceded", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "pen_goals_conceded", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_pass", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_through_ball", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_long_balls", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "backward_pass", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_cross", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "corner_taken", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "touches", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "big_chance_missed", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "clearance_off_line", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "dispossessed", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "penalty_save", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "total_high_claim", "type": "quantitative"}}}, {"mark": "circle", "encoding": {"color": {"field": "team", "scale": {"scheme": "darkblue"}, "type": "nominal"}, "tooltip": [{"field": "team", "type": "nominal"}, {"field": "wins", "type": "quantitative"}], "x": {"field": "wins", "type": "quantitative"}, "y": {"field": "punches", "type": "quantitative"}}}], "data": {"name": "data-1ee1e1a47562970631f554a133564465"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-1ee1e1a47562970631f554a133564465": [{"team": "AFC Bournemouth", "wins": 11.333333333333334, "losses": 16.666666666666668, "goals": 48.333333333333336, "total_yel_card": 53.333333333333336, "total_red_card": 1.6666666666666667, "total_scoring_att": 460.3333333333333, "ontarget_scoring_att": 153.66666666666666, "hit_woodwork": 12.333333333333334, "att_hd_goal": 6.666666666666667, "att_pen_goal": 4.333333333333333, "att_freekick_goal": 0.3333333333333333, "att_ibox_goal": 42.666666666666664, "att_obox_goal": 6.0, "goal_fastbreak": 0.6666666666666666, "total_offside": 57.0, "clean_sheet": 7.666666666666667, "goals_conceded": 65.0, "saves": 108.0, "outfielder_block": 138.66666666666666, "interception": 489.0, "total_tackle": 607.0, "last_man_tackle": 1.6666666666666667, "total_clearance": 1026.6666666666667, "head_clearance": 555.0, "own_goals": 2.0, "penalty_conceded": 4.666666666666667, "pen_goals_conceded": 2.6666666666666665, "total_pass": 16851.0, "total_through_ball": 40.333333333333336, "total_long_balls": 2414.6666666666665, "backward_pass": 2483.0, "total_cross": 694.6666666666666, "corner_taken": 210.66666666666666, "touches": 24575.333333333332, "big_chance_missed": 26.666666666666668, "clearance_off_line": 4.0, "dispossessed": 422.6666666666667, "penalty_save": 1.6666666666666667, "total_high_claim": 43.666666666666664, "punches": 17.666666666666668}, {"team": "Arsenal", "wins": 21.125, "losses": 8.5, "goals": 71.625, "total_yel_card": 57.125, "total_red_card": 3.75, "total_scoring_att": 594.0, "ontarget_scoring_att": 220.625, "hit_woodwork": 17.125, "att_hd_goal": 11.75, "att_pen_goal": 3.625, "att_freekick_goal": 1.5, "att_ibox_goal": 65.0, "att_obox_goal": 6.75, "goal_fastbreak": 3.75, "total_offside": 83.625, "clean_sheet": 14.25, "goals_conceded": 42.125, "saves": 69.25, "outfielder_block": 101.875, "interception": 618.75, "total_tackle": 716.125, "last_man_tackle": 9.75, "total_clearance": 930.625, "head_clearance": 512.75, "own_goals": 1.625, "penalty_conceded": 5.625, "pen_goals_conceded": 4.625, "total_pass": 21264.25, "total_through_ball": 206.625, "total_long_balls": 1782.75, "backward_pass": 2873.125, "total_cross": 802.125, "corner_taken": 239.625, "touches": 29200.25, "big_chance_missed": 60.0, "clearance_off_line": 3.25, "dispossessed": 478.75, "penalty_save": 0.75, "total_high_claim": 50.625, "punches": 20.75}, {"team": "Aston Villa", "wins": 8.666666666666666, "losses": 18.666666666666668, "goals": 38.166666666666664, "total_yel_card": 72.66666666666667, "total_red_card": 2.8333333333333335, "total_scoring_att": 435.1666666666667, "ontarget_scoring_att": 135.66666666666666, "hit_woodwork": 10.166666666666666, "att_hd_goal": 7.666666666666667, "att_pen_goal": 2.5, "att_freekick_goal": 1.1666666666666667, "att_ibox_goal": 31.333333333333332, "att_obox_goal": 6.833333333333333, "goal_fastbreak": 3.0, "total_offside": 78.33333333333333, "clean_sheet": 7.666666666666667, "goals_conceded": 62.5, "saves": 56.666666666666664, "outfielder_block": 151.33333333333334, "interception": 648.5, "total_tackle": 743.3333333333334, "last_man_tackle": 6.833333333333333, "total_clearance": 1184.6666666666667, "head_clearance": 613.8333333333334, "own_goals": 2.8333333333333335, "penalty_conceded": 5.666666666666667, "pen_goals_conceded": 4.833333333333333, "total_pass": 14617.833333333334, "total_through_ball": 49.833333333333336, "total_long_balls": 2232.5, "backward_pass": 2204.1666666666665, "total_cross": 799.0, "corner_taken": 187.66666666666666, "touches": 22414.0, "big_chance_missed": 33.666666666666664, "clearance_off_line": 5.666666666666667, "dispossessed": 377.5, "penalty_save": 0.5, "total_high_claim": 69.5, "punches": 21.0}, {"team": "Burnley", "wins": 10.666666666666666, "losses": 17.0, "goals": 34.333333333333336, "total_yel_card": 64.66666666666667, "total_red_card": 1.3333333333333333, "total_scoring_att": 399.6666666666667, "ontarget_scoring_att": 124.33333333333333, "hit_woodwork": 9.0, "att_hd_goal": 7.333333333333333, "att_pen_goal": 2.3333333333333335, "att_freekick_goal": 1.6666666666666667, "att_ibox_goal": 29.0, "att_obox_goal": 5.333333333333333, "goal_fastbreak": 0.6666666666666666, "total_offside": 88.33333333333333, "clean_sheet": 10.666666666666666, "goals_conceded": 49.0, "saves": 133.66666666666666, "outfielder_block": 197.33333333333334, "interception": 502.6666666666667, "total_tackle": 595.3333333333334, "last_man_tackle": 2.3333333333333335, "total_clearance": 1291.6666666666667, "head_clearance": 779.0, "own_goals": 1.6666666666666667, "penalty_conceded": 5.333333333333333, "pen_goals_conceded": 3.3333333333333335, "total_pass": 13254.0, "total_through_ball": 18.666666666666668, "total_long_balls": 3075.0, "backward_pass": 2008.0, "total_cross": 713.3333333333334, "corner_taken": 162.33333333333334, "touches": 20710.666666666668, "big_chance_missed": 22.333333333333332, "clearance_off_line": 6.333333333333333, "dispossessed": 341.0, "penalty_save": 1.3333333333333333, "total_high_claim": 47.333333333333336, "punches": 16.0}, {"team": "Chelsea", "wins": 21.875, "losses": 7.75, "goals": 69.875, "total_yel_card": 60.75, "total_red_card": 3.0, "total_scoring_att": 626.25, "ontarget_scoring_att": 214.5, "hit_woodwork": 14.25, "att_hd_goal": 10.875, "att_pen_goal": 4.625, "att_freekick_goal": 2.125, "att_ibox_goal": 59.75, "att_obox_goal": 10.125, "goal_fastbreak": 3.0, "total_offside": 88.25, "clean_sheet": 14.375, "goals_conceded": 37.625, "saves": 58.375, "outfielder_block": 107.5, "interception": 495.5, "total_tackle": 718.375, "last_man_tackle": 4.625, "total_clearance": 898.625, "head_clearance": 527.375, "own_goals": 1.5, "penalty_conceded": 2.75, "pen_goals_conceded": 2.125, "total_pass": 19501.75, "total_through_ball": 104.375, "total_long_balls": 2156.5, "backward_pass": 2889.875, "total_cross": 812.0, "corner_taken": 239.0, "touches": 27226.375, "big_chance_missed": 43.625, "clearance_off_line": 4.0, "dispossessed": 463.75, "penalty_save": 0.25, "total_high_claim": 55.125, "punches": 19.25}, {"team": "Crystal Palace", "wins": 12.0, "losses": 18.0, "goals": 42.8, "total_yel_card": 66.0, "total_red_card": 1.6, "total_scoring_att": 447.8, "ontarget_scoring_att": 144.8, "hit_woodwork": 10.2, "att_hd_goal": 8.0, "att_pen_goal": 5.2, "att_freekick_goal": 1.4, "att_ibox_goal": 37.8, "att_obox_goal": 5.0, "goal_fastbreak": 1.0, "total_offside": 68.0, "clean_sheet": 8.6, "goals_conceded": 53.6, "saves": 113.0, "outfielder_block": 142.2, "interception": 619.6, "total_tackle": 733.8, "last_man_tackle": 4.4, "total_clearance": 1137.2, "head_clearance": 642.2, "own_goals": 1.6, "penalty_conceded": 4.0, "pen_goals_conceded": 3.6, "total_pass": 13112.4, "total_through_ball": 21.4, "total_long_balls": 2483.4, "backward_pass": 1973.6, "total_cross": 816.8, "corner_taken": 202.6, "touches": 21304.6, "big_chance_missed": 34.8, "clearance_off_line": 5.6, "dispossessed": 426.2, "penalty_save": 0.4, "total_high_claim": 59.2, "punches": 9.0}, {"team": "Everton", "wins": 14.75, "losses": 11.375, "goals": 53.75, "total_yel_card": 57.75, "total_red_card": 2.875, "total_scoring_att": 516.125, "ontarget_scoring_att": 175.125, "hit_woodwork": 12.875, "att_hd_goal": 10.375, "att_pen_goal": 3.625, "att_freekick_goal": 1.5, "att_ibox_goal": 45.75, "att_obox_goal": 8.0, "goal_fastbreak": 2.875, "total_offside": 84.5, "clean_sheet": 11.25, "goals_conceded": 46.375, "saves": 68.375, "outfielder_block": 148.25, "interception": 509.0, "total_tackle": 699.875, "last_man_tackle": 6.375, "total_clearance": 1161.375, "head_clearance": 628.375, "own_goals": 2.0, "penalty_conceded": 4.375, "pen_goals_conceded": 2.875, "total_pass": 16581.875, "total_through_ball": 53.25, "total_long_balls": 2446.625, "backward_pass": 2487.75, "total_cross": 825.125, "corner_taken": 211.375, "touches": 24515.25, "big_chance_missed": 41.25, "clearance_off_line": 4.5, "dispossessed": 462.0, "penalty_save": 0.875, "total_high_claim": 54.5, "punches": 22.125}, {"team": "Fulham", "wins": 11.25, "losses": 16.5, "goals": 46.75, "total_yel_card": 53.0, "total_red_card": 1.25, "total_scoring_att": 494.75, "ontarget_scoring_att": 169.0, "hit_woodwork": 16.0, "att_hd_goal": 9.75, "att_pen_goal": 3.25, "att_freekick_goal": 1.5, "att_ibox_goal": 39.5, "att_obox_goal": 7.25, "goal_fastbreak": 2.0, "total_offside": 86.25, "clean_sheet": 9.5, "goals_conceded": 59.75, "saves": 38.5, "outfielder_block": 151.0, "interception": 639.0, "total_tackle": 712.5, "last_man_tackle": 3.75, "total_clearance": 1285.75, "head_clearance": 701.25, "own_goals": 3.0, "penalty_conceded": 3.5, "pen_goals_conceded": 2.5, "total_pass": 16407.0, "total_through_ball": 63.75, "total_long_balls": 2093.5, "backward_pass": 2695.75, "total_cross": 738.75, "corner_taken": 187.0, "touches": 24300.5, "big_chance_missed": 38.75, "clearance_off_line": 8.75, "dispossessed": 489.25, "penalty_save": 1.0, "total_high_claim": 72.25, "punches": 27.0}, {"team": "Hull City", "wins": 9.0, "losses": 20.666666666666668, "goals": 36.0, "total_yel_card": 64.33333333333333, "total_red_card": 5.0, "total_scoring_att": 417.3333333333333, "ontarget_scoring_att": 129.66666666666666, "hit_woodwork": 12.333333333333334, "att_hd_goal": 8.333333333333334, "att_pen_goal": 2.0, "att_freekick_goal": 1.0, "att_ibox_goal": 31.0, "att_obox_goal": 5.0, "goal_fastbreak": 2.3333333333333335, "total_offside": 76.33333333333333, "clean_sheet": 8.333333333333334, "goals_conceded": 61.333333333333336, "saves": 115.0, "outfielder_block": 162.66666666666666, "interception": 598.6666666666666, "total_tackle": 705.6666666666666, "last_man_tackle": 3.0, "total_clearance": 1155.0, "head_clearance": 649.6666666666666, "own_goals": 2.3333333333333335, "penalty_conceded": 6.666666666666667, "pen_goals_conceded": 5.0, "total_pass": 15242.333333333334, "total_through_ball": 28.0, "total_long_balls": 2519.0, "backward_pass": 2385.0, "total_cross": 798.6666666666666, "corner_taken": 169.33333333333334, "touches": 22742.666666666668, "big_chance_missed": 23.666666666666668, "clearance_off_line": 6.333333333333333, "dispossessed": 418.3333333333333, "penalty_save": 1.6666666666666667, "total_high_claim": 33.333333333333336, "punches": 21.666666666666668}, {"team": "Leicester City", "wins": 14.5, "losses": 13.75, "goals": 54.5, "total_yel_card": 55.25, "total_red_card": 3.25, "total_scoring_att": 458.5, "ontarget_scoring_att": 152.5, "hit_woodwork": 9.75, "att_hd_goal": 9.25, "att_pen_goal": 5.5, "att_freekick_goal": 0.5, "att_ibox_goal": 47.75, "att_obox_goal": 6.75, "goal_fastbreak": 5.0, "total_offside": 66.75, "clean_sheet": 10.75, "goals_conceded": 53.5, "saves": 115.25, "outfielder_block": 149.5, "interception": 630.0, "total_tackle": 741.75, "last_man_tackle": 2.25, "total_clearance": 1040.5, "head_clearance": 576.75, "own_goals": 2.25, "penalty_conceded": 4.0, "pen_goals_conceded": 3.25, "total_pass": 13896.0, "total_through_ball": 41.0, "total_long_balls": 2715.0, "backward_pass": 1991.25, "total_cross": 787.25, "corner_taken": 202.0, "touches": 21769.5, "big_chance_missed": 42.25, "clearance_off_line": 3.75, "dispossessed": 347.25, "penalty_save": 0.5, "total_high_claim": 40.25, "punches": 21.75}, {"team": "Liverpool", "wins": 18.75, "losses": 9.5, "goals": 69.375, "total_yel_card": 56.125, "total_red_card": 2.125, "total_scoring_att": 642.0, "ontarget_scoring_att": 220.625, "hit_woodwork": 19.125, "att_hd_goal": 10.0, "att_pen_goal": 4.75, "att_freekick_goal": 2.375, "att_ibox_goal": 58.375, "att_obox_goal": 11.0, "goal_fastbreak": 3.875, "total_offside": 89.5, "clean_sheet": 13.25, "goals_conceded": 44.375, "saves": 52.625, "outfielder_block": 102.375, "interception": 483.5, "total_tackle": 788.0, "last_man_tackle": 3.875, "total_clearance": 963.125, "head_clearance": 496.75, "own_goals": 2.0, "penalty_conceded": 4.875, "pen_goals_conceded": 3.5, "total_pass": 19910.625, "total_through_ball": 110.75, "total_long_balls": 2211.125, "backward_pass": 2960.875, "total_cross": 794.75, "corner_taken": 246.375, "touches": 27865.375, "big_chance_missed": 50.0, "clearance_off_line": 2.875, "dispossessed": 479.5, "penalty_save": 1.25, "total_high_claim": 38.75, "punches": 25.25}, {"team": "Manchester City", "wins": 24.625, "losses": 6.375, "goals": 82.625, "total_yel_card": 65.5, "total_red_card": 2.75, "total_scoring_att": 650.0, "ontarget_scoring_att": 227.0, "hit_woodwork": 18.5, "att_hd_goal": 8.5, "att_pen_goal": 6.25, "att_freekick_goal": 2.0, "att_ibox_goal": 69.75, "att_obox_goal": 12.875, "goal_fastbreak": 5.375, "total_offside": 77.375, "clean_sheet": 16.125, "goals_conceded": 34.75, "saves": 49.625, "outfielder_block": 87.0, "interception": 537.125, "total_tackle": 705.625, "last_man_tackle": 3.5, "total_clearance": 930.875, "head_clearance": 518.75, "own_goals": 1.625, "penalty_conceded": 2.75, "pen_goals_conceded": 1.625, "total_pass": 21624.375, "total_through_ball": 151.625, "total_long_balls": 1831.25, "backward_pass": 3179.5, "total_cross": 813.75, "corner_taken": 267.625, "touches": 29239.875, "big_chance_missed": 58.0, "clearance_off_line": 3.125, "dispossessed": 487.375, "penalty_save": 1.0, "total_high_claim": 41.75, "punches": 26.125}, {"team": "Manchester United", "wins": 22.5, "losses": 7.0, "goals": 68.75, "total_yel_card": 62.625, "total_red_card": 2.125, "total_scoring_att": 549.5, "ontarget_scoring_att": 195.375, "hit_woodwork": 15.875, "att_hd_goal": 12.0, "att_pen_goal": 3.875, "att_freekick_goal": 1.875, "att_ibox_goal": 59.625, "att_obox_goal": 9.25, "goal_fastbreak": 2.875, "total_offside": 91.625, "clean_sheet": 15.75, "goals_conceded": 35.625, "saves": 62.125, "outfielder_block": 112.375, "interception": 583.375, "total_tackle": 707.0, "last_man_tackle": 5.375, "total_clearance": 1094.625, "head_clearance": 639.25, "own_goals": 1.75, "penalty_conceded": 3.125, "pen_goals_conceded": 2.5, "total_pass": 19916.75, "total_through_ball": 99.375, "total_long_balls": 2358.5, "backward_pass": 2941.75, "total_cross": 910.0, "corner_taken": 229.375, "touches": 27705.625, "big_chance_missed": 47.5, "clearance_off_line": 3.125, "dispossessed": 461.5, "penalty_save": 0.375, "total_high_claim": 33.25, "punches": 14.25}, {"team": "Newcastle United", "wins": 12.428571428571429, "losses": 17.0, "goals": 46.142857142857146, "total_yel_card": 63.714285714285715, "total_red_card": 4.0, "total_scoring_att": 489.14285714285717, "ontarget_scoring_att": 160.14285714285714, "hit_woodwork": 11.285714285714286, "att_hd_goal": 8.714285714285714, "att_pen_goal": 2.4285714285714284, "att_freekick_goal": 1.2857142857142858, "att_ibox_goal": 38.42857142857143, "att_obox_goal": 7.714285714285714, "goal_fastbreak": 2.857142857142857, "total_offside": 71.57142857142857, "clean_sheet": 9.285714285714286, "goals_conceded": 58.57142857142857, "saves": 61.0, "outfielder_block": 123.57142857142857, "interception": 576.2857142857143, "total_tackle": 734.1428571428571, "last_man_tackle": 8.428571428571429, "total_clearance": 1112.857142857143, "head_clearance": 579.8571428571429, "own_goals": 1.4285714285714286, "penalty_conceded": 5.571428571428571, "pen_goals_conceded": 4.714285714285714, "total_pass": 14811.857142857143, "total_through_ball": 79.85714285714286, "total_long_balls": 2270.714285714286, "backward_pass": 2272.5714285714284, "total_cross": 819.2857142857143, "corner_taken": 188.0, "touches": 22811.571428571428, "big_chance_missed": 38.714285714285715, "clearance_off_line": 5.714285714285714, "dispossessed": 484.14285714285717, "penalty_save": 0.7142857142857143, "total_high_claim": 57.57142857142857, "punches": 25.428571428571427}, {"team": "Norwich City", "wins": 9.75, "losses": 18.0, "goals": 40.0, "total_yel_card": 60.25, "total_red_card": 2.25, "total_scoring_att": 453.0, "ontarget_scoring_att": 143.75, "hit_woodwork": 10.0, "att_hd_goal": 9.5, "att_pen_goal": 1.25, "att_freekick_goal": 1.5, "att_ibox_goal": 33.75, "att_obox_goal": 6.25, "goal_fastbreak": 1.25, "total_offside": 78.0, "clean_sheet": 7.5, "goals_conceded": 63.25, "saves": 57.0, "outfielder_block": 140.0, "interception": 502.5, "total_tackle": 662.75, "last_man_tackle": 4.25, "total_clearance": 1220.0, "head_clearance": 596.0, "own_goals": 2.25, "penalty_conceded": 7.0, "pen_goals_conceded": 5.5, "total_pass": 14449.5, "total_through_ball": 43.25, "total_long_balls": 2312.75, "backward_pass": 2246.5, "total_cross": 834.0, "corner_taken": 180.5, "touches": 22002.75, "big_chance_missed": 34.25, "clearance_off_line": 7.0, "dispossessed": 420.25, "penalty_save": 1.0, "total_high_claim": 59.25, "punches": 17.5}, {"team": "Queens Park Rangers", "wins": 7.333333333333333, "losses": 22.0, "goals": 38.333333333333336, "total_yel_card": 62.666666666666664, "total_red_card": 5.0, "total_scoring_att": 524.3333333333334, "ontarget_scoring_att": 148.66666666666666, "hit_woodwork": 13.333333333333334, "att_hd_goal": 8.0, "att_pen_goal": 2.0, "att_freekick_goal": 1.3333333333333333, "att_ibox_goal": 29.333333333333332, "att_obox_goal": 9.0, "goal_fastbreak": 1.3333333333333333, "total_offside": 90.66666666666667, "clean_sheet": 6.666666666666667, "goals_conceded": 66.33333333333333, "saves": 47.333333333333336, "outfielder_block": 173.33333333333334, "interception": 589.3333333333334, "total_tackle": 787.6666666666666, "last_man_tackle": 3.6666666666666665, "total_clearance": 1406.6666666666667, "head_clearance": 795.6666666666666, "own_goals": 3.6666666666666665, "penalty_conceded": 3.3333333333333335, "pen_goals_conceded": 2.6666666666666665, "total_pass": 13558.0, "total_through_ball": 36.333333333333336, "total_long_balls": 2317.6666666666665, "backward_pass": 1950.6666666666667, "total_cross": 745.0, "corner_taken": 181.33333333333334, "touches": 21719.0, "big_chance_missed": 31.333333333333332, "clearance_off_line": 7.333333333333333, "dispossessed": 450.0, "penalty_save": 0.6666666666666666, "total_high_claim": 46.333333333333336, "punches": 26.333333333333332}, {"team": "Southampton", "wins": 13.166666666666666, "losses": 14.0, "goals": 49.0, "total_yel_card": 56.5, "total_red_card": 2.5, "total_scoring_att": 513.0, "ontarget_scoring_att": 167.5, "hit_woodwork": 14.833333333333334, "att_hd_goal": 8.0, "att_pen_goal": 2.8333333333333335, "att_freekick_goal": 1.0, "att_ibox_goal": 44.166666666666664, "att_obox_goal": 4.833333333333333, "goal_fastbreak": 1.5, "total_offside": 86.66666666666667, "clean_sheet": 11.833333333333334, "goals_conceded": 47.333333333333336, "saves": 74.16666666666667, "outfielder_block": 110.16666666666667, "interception": 601.8333333333334, "total_tackle": 747.3333333333334, "last_man_tackle": 6.666666666666667, "total_clearance": 1053.1666666666667, "head_clearance": 522.1666666666666, "own_goals": 1.3333333333333333, "penalty_conceded": 3.6666666666666665, "pen_goals_conceded": 2.5, "total_pass": 17650.5, "total_through_ball": 87.33333333333333, "total_long_balls": 2390.3333333333335, "backward_pass": 2717.8333333333335, "total_cross": 908.1666666666666, "corner_taken": 212.0, "touches": 25574.333333333332, "big_chance_missed": 39.333333333333336, "clearance_off_line": 3.6666666666666665, "dispossessed": 446.6666666666667, "penalty_save": 0.8333333333333334, "total_high_claim": 41.166666666666664, "punches": 14.333333333333334}, {"team": "Stoke City", "wins": 11.625, "losses": 15.625, "goals": 40.75, "total_yel_card": 67.875, "total_red_card": 2.625, "total_scoring_att": 425.5, "ontarget_scoring_att": 127.625, "hit_woodwork": 11.125, "att_hd_goal": 9.25, "att_pen_goal": 3.25, "att_freekick_goal": 0.875, "att_ibox_goal": 34.625, "att_obox_goal": 6.25, "goal_fastbreak": 1.5, "total_offside": 79.875, "clean_sheet": 9.375, "goals_conceded": 52.75, "saves": 80.375, "outfielder_block": 151.125, "interception": 499.5, "total_tackle": 709.125, "last_man_tackle": 6.75, "total_clearance": 1204.375, "head_clearance": 644.375, "own_goals": 2.125, "penalty_conceded": 5.375, "pen_goals_conceded": 4.625, "total_pass": 13496.125, "total_through_ball": 39.0, "total_long_balls": 2257.25, "backward_pass": 2034.75, "total_cross": 758.0, "corner_taken": 169.75, "touches": 21228.75, "big_chance_missed": 35.5, "clearance_off_line": 3.5, "dispossessed": 422.375, "penalty_save": 0.625, "total_high_claim": 62.625, "punches": 16.25}, {"team": "Sunderland", "wins": 9.142857142857142, "losses": 17.714285714285715, "goals": 40.0, "total_yel_card": 69.14285714285714, "total_red_card": 3.857142857142857, "total_scoring_att": 447.42857142857144, "ontarget_scoring_att": 137.42857142857142, "hit_woodwork": 9.0, "att_hd_goal": 5.0, "att_pen_goal": 3.857142857142857, "att_freekick_goal": 2.0, "att_ibox_goal": 33.285714285714285, "att_obox_goal": 6.714285714285714, "goal_fastbreak": 2.2857142857142856, "total_offside": 78.14285714285714, "clean_sheet": 10.428571428571429, "goals_conceded": 57.142857142857146, "saves": 90.85714285714286, "outfielder_block": 161.85714285714286, "interception": 576.2857142857143, "total_tackle": 755.1428571428571, "last_man_tackle": 6.142857142857143, "total_clearance": 1135.4285714285713, "head_clearance": 594.2857142857143, "own_goals": 3.0, "penalty_conceded": 4.714285714285714, "pen_goals_conceded": 4.142857142857143, "total_pass": 13607.714285714286, "total_through_ball": 57.42857142857143, "total_long_balls": 2301.4285714285716, "backward_pass": 2068.5714285714284, "total_cross": 748.0, "corner_taken": 175.28571428571428, "touches": 21302.428571428572, "big_chance_missed": 29.142857142857142, "clearance_off_line": 7.142857142857143, "dispossessed": 410.42857142857144, "penalty_save": 0.14285714285714285, "total_high_claim": 64.71428571428571, "punches": 26.428571428571427}, {"team": "Swansea City", "wins": 11.714285714285714, "losses": 16.857142857142858, "goals": 43.714285714285715, "total_yel_card": 52.57142857142857, "total_red_card": 2.0, "total_scoring_att": 440.2857142857143, "ontarget_scoring_att": 143.42857142857142, "hit_woodwork": 10.857142857142858, "att_hd_goal": 7.428571428571429, "att_pen_goal": 2.857142857142857, "att_freekick_goal": 1.2857142857142858, "att_ibox_goal": 37.0, "att_obox_goal": 6.714285714285714, "goal_fastbreak": 1.1428571428571428, "total_offside": 68.42857142857143, "clean_sheet": 10.142857142857142, "goals_conceded": 54.714285714285715, "saves": 87.71428571428571, "outfielder_block": 137.14285714285714, "interception": 591.5714285714286, "total_tackle": 655.1428571428571, "last_man_tackle": 2.4285714285714284, "total_clearance": 1103.5714285714287, "head_clearance": 569.0, "own_goals": 2.4285714285714284, "penalty_conceded": 4.571428571428571, "pen_goals_conceded": 3.142857142857143, "total_pass": 18535.571428571428, "total_through_ball": 53.285714285714285, "total_long_balls": 2305.285714285714, "backward_pass": 3061.1428571428573, "total_cross": 761.4285714285714, "corner_taken": 182.85714285714286, "touches": 26176.571428571428, "big_chance_missed": 30.714285714285715, "clearance_off_line": 3.857142857142857, "dispossessed": 427.42857142857144, "penalty_save": 1.0, "total_high_claim": 65.28571428571429, "punches": 23.285714285714285}, {"team": "Tottenham Hotspur", "wins": 20.625, "losses": 8.125, "goals": 66.125, "total_yel_card": 59.75, "total_red_card": 2.125, "total_scoring_att": 638.125, "ontarget_scoring_att": 218.75, "hit_woodwork": 15.125, "att_hd_goal": 7.875, "att_pen_goal": 3.875, "att_freekick_goal": 1.5, "att_ibox_goal": 53.875, "att_obox_goal": 12.375, "goal_fastbreak": 4.25, "total_offside": 75.5, "clean_sheet": 12.5, "goals_conceded": 41.75, "saves": 61.5, "outfielder_block": 107.75, "interception": 583.875, "total_tackle": 735.125, "last_man_tackle": 6.375, "total_clearance": 1112.25, "head_clearance": 622.0, "own_goals": 1.625, "penalty_conceded": 3.625, "pen_goals_conceded": 2.75, "total_pass": 18839.5, "total_through_ball": 84.75, "total_long_balls": 2362.375, "backward_pass": 2730.25, "total_cross": 824.875, "corner_taken": 253.0, "touches": 27083.25, "big_chance_missed": 49.375, "clearance_off_line": 3.25, "dispossessed": 530.0, "penalty_save": 0.5, "total_high_claim": 38.875, "punches": 27.125}, {"team": "Watford", "wins": 11.333333333333334, "losses": 18.666666666666668, "goals": 41.333333333333336, "total_yel_card": 73.33333333333333, "total_red_card": 4.0, "total_scoring_att": 436.0, "ontarget_scoring_att": 138.33333333333334, "hit_woodwork": 8.0, "att_hd_goal": 7.666666666666667, "att_pen_goal": 4.0, "att_freekick_goal": 0.3333333333333333, "att_ibox_goal": 37.0, "att_obox_goal": 4.333333333333333, "goal_fastbreak": 0.3333333333333333, "total_offside": 62.333333333333336, "clean_sheet": 9.0, "goals_conceded": 60.666666666666664, "saves": 112.33333333333333, "outfielder_block": 116.33333333333333, "interception": 581.0, "total_tackle": 693.3333333333334, "last_man_tackle": 1.0, "total_clearance": 966.6666666666666, "head_clearance": 460.0, "own_goals": 1.6666666666666667, "penalty_conceded": 6.0, "pen_goals_conceded": 4.333333333333333, "total_pass": 14744.333333333334, "total_through_ball": 26.0, "total_long_balls": 2649.6666666666665, "backward_pass": 2201.6666666666665, "total_cross": 701.0, "corner_taken": 170.33333333333334, "touches": 22345.666666666668, "big_chance_missed": 30.666666666666668, "clearance_off_line": 3.3333333333333335, "dispossessed": 397.0, "penalty_save": 1.3333333333333333, "total_high_claim": 48.333333333333336, "punches": 43.0}, {"team": "West Bromwich Albion", "wins": 10.625, "losses": 16.5, "goals": 42.875, "total_yel_card": 64.0, "total_red_card": 2.375, "total_scoring_att": 463.875, "ontarget_scoring_att": 142.875, "hit_woodwork": 10.5, "att_hd_goal": 11.5, "att_pen_goal": 2.375, "att_freekick_goal": 0.75, "att_ibox_goal": 37.25, "att_obox_goal": 5.625, "goal_fastbreak": 2.25, "total_offside": 86.5, "clean_sheet": 8.75, "goals_conceded": 55.625, "saves": 72.25, "outfielder_block": 150.125, "interception": 562.75, "total_tackle": 669.25, "last_man_tackle": 3.0, "total_clearance": 1046.375, "head_clearance": 597.125, "own_goals": 2.25, "penalty_conceded": 5.625, "pen_goals_conceded": 4.625, "total_pass": 13720.5, "total_through_ball": 49.625, "total_long_balls": 2330.625, "backward_pass": 2001.875, "total_cross": 788.875, "corner_taken": 185.25, "touches": 21252.75, "big_chance_missed": 32.0, "clearance_off_line": 4.125, "dispossessed": 473.75, "penalty_save": 0.75, "total_high_claim": 57.875, "punches": 14.125}, {"team": "West Ham United", "wins": 11.428571428571429, "losses": 15.857142857142858, "goals": 47.42857142857143, "total_yel_card": 66.85714285714286, "total_red_card": 3.0, "total_scoring_att": 486.14285714285717, "ontarget_scoring_att": 151.71428571428572, "hit_woodwork": 14.0, "att_hd_goal": 10.428571428571429, "att_pen_goal": 3.0, "att_freekick_goal": 1.7142857142857142, "att_ibox_goal": 40.285714285714285, "att_obox_goal": 7.285714285714286, "goal_fastbreak": 2.142857142857143, "total_offside": 88.85714285714286, "clean_sheet": 10.0, "goals_conceded": 57.714285714285715, "saves": 90.85714285714286, "outfielder_block": 163.14285714285714, "interception": 530.7142857142857, "total_tackle": 673.5714285714286, "last_man_tackle": 6.142857142857143, "total_clearance": 1261.7142857142858, "head_clearance": 702.7142857142857, "own_goals": 1.2857142857142858, "penalty_conceded": 6.0, "pen_goals_conceded": 4.428571428571429, "total_pass": 13772.57142857143, "total_through_ball": 49.714285714285715, "total_long_balls": 2343.1428571428573, "backward_pass": 2133.5714285714284, "total_cross": 862.2857142857143, "corner_taken": 196.57142857142858, "touches": 21784.85714285714, "big_chance_missed": 34.857142857142854, "clearance_off_line": 5.571428571428571, "dispossessed": 426.85714285714283, "penalty_save": 1.1428571428571428, "total_high_claim": 42.42857142857143, "punches": 17.142857142857142}, {"team": "Wigan Athletic", "wins": 9.666666666666666, "losses": 17.0, "goals": 43.0, "total_yel_card": 66.66666666666667, "total_red_card": 3.0, "total_scoring_att": 510.0, "ontarget_scoring_att": 167.33333333333334, "hit_woodwork": 9.666666666666666, "att_hd_goal": 6.0, "att_pen_goal": 2.6666666666666665, "att_freekick_goal": 2.6666666666666665, "att_ibox_goal": 34.333333333333336, "att_obox_goal": 8.666666666666666, "goal_fastbreak": 3.3333333333333335, "total_offside": 75.0, "clean_sheet": 6.666666666666667, "goals_conceded": 65.33333333333333, "saves": 0.0, "outfielder_block": 126.66666666666667, "interception": 677.6666666666666, "total_tackle": 786.3333333333334, "last_man_tackle": 10.0, "total_clearance": 1007.3333333333334, "head_clearance": 488.0, "own_goals": 1.3333333333333333, "penalty_conceded": 7.0, "pen_goals_conceded": 4.666666666666667, "total_pass": 16274.0, "total_through_ball": 73.33333333333333, "total_long_balls": 2139.6666666666665, "backward_pass": 2426.0, "total_cross": 725.6666666666666, "corner_taken": 193.0, "touches": 23877.666666666668, "big_chance_missed": 38.666666666666664, "clearance_off_line": 4.333333333333333, "dispossessed": 457.3333333333333, "penalty_save": 2.0, "total_high_claim": 44.333333333333336, "punches": 25.333333333333332}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</section>
+<section id="factor-importance-contribute-to-wins">
+<h2>Factor Importance Contribute to Wins<a class="headerlink" href="#factor-importance-contribute-to-wins" title="Permalink to this heading">#</a></h2>
+<p>I will use Random Forest to analyze the feature importance to wins in Premier League</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df_avg</span><span class="p">[</span><span class="n">selected_columns</span><span class="p">],</span> <span class="n">df_avg</span><span class="p">[</span><span class="s1">&#39;wins&#39;</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I used ChatGPT to find a code that could decide how many leaf nodes number I should take, and based on <a class="reference external" href="https://twitter.com/daniela_witten/status/1292293102103748609?s=20">this twitter</a>, I can choose an appropriate number to predict my data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_err</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;leaves&#39;</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">41</span><span class="p">):</span>
+    <span class="n">regressor</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">train_error</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">)</span>
+    
+    <span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">test_error</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
+    
+    <span class="n">df_err</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df_err</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;leaves&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="n">train_error</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">:</span> <span class="s1">&#39;train&#39;</span><span class="p">}</span>
+    <span class="n">df_err</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df_err</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;leaves&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="n">test_error</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">:</span> <span class="s1">&#39;test&#39;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_err</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_err</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;leaves&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;set&#39;</span>
+<span class="p">)</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   leaves     error    set
+0       2  3.399707  train
+1       2  2.408625   test
+2       3  1.794364  train
+3       3  2.094462   test
+4       4  1.110214  train
+..    ...       ...    ...
+73     38  2.098586   test
+74     39  0.678814  train
+75     39  2.098586   test
+76     40  0.678814  train
+77     40  2.098586   test
+
+[78 rows x 3 columns]
+</pre></div>
+</div>
+<div class="output text_html">
+<div id="altair-viz-831fe7d61af14d088bf4d0097ccf0da2"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-831fe7d61af14d088bf4d0097ccf0da2") {
+      outputDiv = document.getElementById("altair-viz-831fe7d61af14d088bf4d0097ccf0da2");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-8f3c8de0e420f5ffc072e0da850930e8"}, "mark": "line", "encoding": {"color": {"field": "set", "type": "nominal"}, "x": {"field": "leaves", "type": "quantitative"}, "y": {"field": "error", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-8f3c8de0e420f5ffc072e0da850930e8": [{"leaves": 2, "error": 3.3997066959610787, "set": "train"}, {"leaves": 2, "error": 2.4086247265216096, "set": "test"}, {"leaves": 3, "error": 1.794364318888679, "set": "train"}, {"leaves": 3, "error": 2.0944616966187706, "set": "test"}, {"leaves": 4, "error": 1.110213762403965, "set": "train"}, {"leaves": 4, "error": 2.1654526516611705, "set": "test"}, {"leaves": 5, "error": 0.9128735792232278, "set": "train"}, {"leaves": 5, "error": 2.0918479412903412, "set": "test"}, {"leaves": 6, "error": 0.7864510654015331, "set": "train"}, {"leaves": 6, "error": 2.0733478753247425, "set": "test"}, {"leaves": 7, "error": 0.718110475474913, "set": "train"}, {"leaves": 7, "error": 2.120181878433939, "set": "test"}, {"leaves": 8, "error": 0.6912960655816669, "set": "train"}, {"leaves": 8, "error": 2.1260460012575724, "set": "test"}, {"leaves": 9, "error": 0.6828921784083136, "set": "train"}, {"leaves": 9, "error": 2.11453861254131, "set": "test"}, {"leaves": 10, "error": 0.6816868873714997, "set": "train"}, {"leaves": 10, "error": 2.105459112856577, "set": "test"}, {"leaves": 11, "error": 0.6793197609951394, "set": "train"}, {"leaves": 11, "error": 2.0989705610015723, "set": "test"}, {"leaves": 12, "error": 0.6788987564586025, "set": "train"}, {"leaves": 12, "error": 2.098569215423438, "set": "test"}, {"leaves": 13, "error": 0.6788139116063097, "set": "train"}, {"leaves": 13, "error": 2.098585561047336, "set": "test"}, {"leaves": 14, "error": 0.6788139116063097, "set": "train"}, {"leaves": 14, "error": 2.098585561047336, "set": "test"}, {"leaves": 15, "error": 0.6788139116063097, "set": "train"}, {"leaves": 15, "error": 2.098585561047336, "set": "test"}, {"leaves": 16, "error": 0.6788139116063097, "set": "train"}, {"leaves": 16, "error": 2.098585561047336, "set": "test"}, {"leaves": 17, "error": 0.6788139116063097, "set": "train"}, {"leaves": 17, "error": 2.098585561047336, "set": "test"}, {"leaves": 18, "error": 0.6788139116063097, "set": "train"}, {"leaves": 18, "error": 2.098585561047336, "set": "test"}, {"leaves": 19, "error": 0.6788139116063097, "set": "train"}, {"leaves": 19, "error": 2.098585561047336, "set": "test"}, {"leaves": 20, "error": 0.6788139116063097, "set": "train"}, {"leaves": 20, "error": 2.098585561047336, "set": "test"}, {"leaves": 21, "error": 0.6788139116063097, "set": "train"}, {"leaves": 21, "error": 2.098585561047336, "set": "test"}, {"leaves": 22, "error": 0.6788139116063097, "set": "train"}, {"leaves": 22, "error": 2.098585561047336, "set": "test"}, {"leaves": 23, "error": 0.6788139116063097, "set": "train"}, {"leaves": 23, "error": 2.098585561047336, "set": "test"}, {"leaves": 24, "error": 0.6788139116063097, "set": "train"}, {"leaves": 24, "error": 2.098585561047336, "set": "test"}, {"leaves": 25, "error": 0.6788139116063097, "set": "train"}, {"leaves": 25, "error": 2.098585561047336, "set": "test"}, {"leaves": 26, "error": 0.6788139116063097, "set": "train"}, {"leaves": 26, "error": 2.098585561047336, "set": "test"}, {"leaves": 27, "error": 0.6788139116063097, "set": "train"}, {"leaves": 27, "error": 2.098585561047336, "set": "test"}, {"leaves": 28, "error": 0.6788139116063097, "set": "train"}, {"leaves": 28, "error": 2.098585561047336, "set": "test"}, {"leaves": 29, "error": 0.6788139116063097, "set": "train"}, {"leaves": 29, "error": 2.098585561047336, "set": "test"}, {"leaves": 30, "error": 0.6788139116063097, "set": "train"}, {"leaves": 30, "error": 2.098585561047336, "set": "test"}, {"leaves": 31, "error": 0.6788139116063097, "set": "train"}, {"leaves": 31, "error": 2.098585561047336, "set": "test"}, {"leaves": 32, "error": 0.6788139116063097, "set": "train"}, {"leaves": 32, "error": 2.098585561047336, "set": "test"}, {"leaves": 33, "error": 0.6788139116063097, "set": "train"}, {"leaves": 33, "error": 2.098585561047336, "set": "test"}, {"leaves": 34, "error": 0.6788139116063097, "set": "train"}, {"leaves": 34, "error": 2.098585561047336, "set": "test"}, {"leaves": 35, "error": 0.6788139116063097, "set": "train"}, {"leaves": 35, "error": 2.098585561047336, "set": "test"}, {"leaves": 36, "error": 0.6788139116063097, "set": "train"}, {"leaves": 36, "error": 2.098585561047336, "set": "test"}, {"leaves": 37, "error": 0.6788139116063097, "set": "train"}, {"leaves": 37, "error": 2.098585561047336, "set": "test"}, {"leaves": 38, "error": 0.6788139116063097, "set": "train"}, {"leaves": 38, "error": 2.098585561047336, "set": "test"}, {"leaves": 39, "error": 0.6788139116063097, "set": "train"}, {"leaves": 39, "error": 2.098585561047336, "set": "test"}, {"leaves": 40, "error": 0.6788139116063097, "set": "train"}, {"leaves": 40, "error": 2.098585561047336, "set": "test"}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>The best choice of max_leaf_nodes should be 5</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rfr</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">rfr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestRegressor(max_leaf_nodes=5, n_estimators=1000, random_state=42)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rfr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9724047981641236
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rfr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.848250967199523
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">rfr</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">selected_columns</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outfielder_block        0.090093
+goals_conceded          0.086272
+goals                   0.065844
+total_scoring_att       0.065017
+total_through_ball      0.062856
+backward_pass           0.059776
+att_ibox_goal           0.059725
+ontarget_scoring_att    0.059307
+clean_sheet             0.057036
+att_obox_goal           0.048713
+big_chance_missed       0.048022
+total_pass              0.042571
+touches                 0.041945
+corner_taken            0.033134
+clearance_off_line      0.029099
+hit_woodwork            0.025168
+att_freekick_goal       0.022858
+att_pen_goal            0.018243
+goal_fastbreak          0.016872
+penalty_conceded        0.009769
+total_clearance         0.006979
+own_goals               0.006838
+penalty_save            0.005824
+pen_goals_conceded      0.005630
+total_high_claim        0.005070
+dispossessed            0.004506
+total_tackle            0.003362
+att_hd_goal             0.003285
+total_yel_card          0.002817
+total_offside           0.002622
+interception            0.002109
+saves                   0.001893
+last_man_tackle         0.001621
+total_long_balls        0.001520
+total_cross             0.001337
+head_clearance          0.001103
+total_red_card          0.000681
+punches                 0.000482
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that “outfielder_block” and “goals_conceded” have the most feature importance to wins. Both stats are defending stats. Thus, from Random Forest model, it shows that defending is the key to win.</p>
+</section>
+<section id="linearregression-model">
+<h2>LinearRegression Model<a class="headerlink" href="#linearregression-model" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lin</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">lin</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_avg</span><span class="p">[</span><span class="n">selected_columns</span><span class="p">],</span><span class="n">df_avg</span><span class="p">[</span><span class="s1">&#39;wins&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">lin</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">lin</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>goals                   0.170069
+total_yel_card         -0.008121
+total_red_card         -0.067695
+total_scoring_att      -0.004115
+ontarget_scoring_att    0.085436
+hit_woodwork           -0.033554
+att_hd_goal            -0.023789
+att_pen_goal           -0.039289
+att_freekick_goal      -0.021382
+att_ibox_goal           0.062600
+att_obox_goal           0.124503
+goal_fastbreak          0.091819
+total_offside          -0.031666
+clean_sheet             0.089106
+goals_conceded         -0.122839
+saves                   0.015306
+outfielder_block       -0.078234
+interception            0.001499
+total_tackle           -0.003998
+last_man_tackle         0.161247
+total_clearance        -0.005070
+head_clearance          0.022121
+own_goals               0.013613
+penalty_conceded        0.032624
+pen_goals_conceded      0.075956
+total_pass              0.001883
+total_through_ball     -0.028828
+total_long_balls       -0.001374
+backward_pass          -0.002561
+total_cross             0.002376
+corner_taken           -0.065405
+touches                -0.001482
+big_chance_missed      -0.021757
+clearance_off_line     -0.101263
+dispossessed           -0.011044
+penalty_save           -0.051346
+total_high_claim        0.011235
+punches                -0.012115
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The results shows that “goals” infulence wins the most in positive way and espeically for “att_ibox_goal”(goals inside the penalty area),”goal_fastbreak”(goals from counter attack) and “att_obox_goal”(goals outside the penalty area). The “goals_conceded” shows a negative impact on wins and it is reasonable since it shows the defending level of a team. The coefficients that is unexpected for me is that “passing” inputs are not that significant to determine the wins.</p>
+</section>
+<section id="passing-visualizing-map">
+<h2>Passing Visualizing Map<a class="headerlink" href="#passing-visualizing-map" title="Permalink to this heading">#</a></h2>
+<p>After finding those key inputs contribute to wins, I am very curious about the passing inputs. Because we can see that the total_pass is contributing a positive effect to wins but the others except for total_cross did otherwise. So I want to go further on this topic by drawing the <a class="reference external" href="https://mplsoccer.readthedocs.io/en/latest/gallery/pitch_plots/plot_arrows.html#sphx-glr-gallery-pitch-plots-plot-arrows-py">Passing Plot</a> on the pitch below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># From here I choose KDB from Man City vs TOT to see what a top midfielder&#39;s passes looks like</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;KDBpasses.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>player</th>
+      <th>minute</th>
+      <th>second</th>
+      <th>x</th>
+      <th>y</th>
+      <th>type</th>
+      <th>outcome</th>
+      <th>endX</th>
+      <th>endY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>KDB</td>
+      <td>45</td>
+      <td>0</td>
+      <td>50</td>
+      <td>50</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>40</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>KDB</td>
+      <td>45</td>
+      <td>25</td>
+      <td>63</td>
+      <td>48</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>75</td>
+      <td>83</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>4</td>
+      <td>74</td>
+      <td>58</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>71</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>7</td>
+      <td>76</td>
+      <td>68</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>95</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>55</td>
+      <td>100</td>
+      <td>1</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>96</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>KDB</td>
+      <td>47</td>
+      <td>42</td>
+      <td>73</td>
+      <td>25</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>70</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>KDB</td>
+      <td>49</td>
+      <td>47</td>
+      <td>75</td>
+      <td>43</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>82</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>KDB</td>
+      <td>50</td>
+      <td>10</td>
+      <td>79</td>
+      <td>31</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>87</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>KDB</td>
+      <td>50</td>
+      <td>17</td>
+      <td>82</td>
+      <td>52</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>93</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KDB</td>
+      <td>50</td>
+      <td>24</td>
+      <td>98</td>
+      <td>62</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>98</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KDB</td>
+      <td>55</td>
+      <td>22</td>
+      <td>30</td>
+      <td>12</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>22</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>KDB</td>
+      <td>56</td>
+      <td>24</td>
+      <td>38</td>
+      <td>42</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>37</td>
+      <td>51</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>KDB</td>
+      <td>56</td>
+      <td>36</td>
+      <td>53</td>
+      <td>44</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>43</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>KDB</td>
+      <td>56</td>
+      <td>43</td>
+      <td>61</td>
+      <td>63</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>64</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>KDB</td>
+      <td>57</td>
+      <td>2</td>
+      <td>96</td>
+      <td>33</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>91</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>KDB</td>
+      <td>62</td>
+      <td>25</td>
+      <td>46</td>
+      <td>45</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>38</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>KDB</td>
+      <td>62</td>
+      <td>31</td>
+      <td>49</td>
+      <td>67</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>61</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>36</td>
+      <td>64</td>
+      <td>22</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>63</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>40</td>
+      <td>74</td>
+      <td>7</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>66</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>42</td>
+      <td>70</td>
+      <td>6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>63</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>43</td>
+      <td>67</td>
+      <td>4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>62</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>48</td>
+      <td>69</td>
+      <td>4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>62</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>KDB</td>
+      <td>66</td>
+      <td>27</td>
+      <td>65</td>
+      <td>36</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>71</td>
+      <td>51</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>KDB</td>
+      <td>67</td>
+      <td>40</td>
+      <td>73</td>
+      <td>58</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>87</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>KDB</td>
+      <td>68</td>
+      <td>19</td>
+      <td>66</td>
+      <td>67</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>60</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>KDB</td>
+      <td>69</td>
+      <td>25</td>
+      <td>71</td>
+      <td>79</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>63</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>KDB</td>
+      <td>71</td>
+      <td>29</td>
+      <td>64</td>
+      <td>30</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>69</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>KDB</td>
+      <td>71</td>
+      <td>46</td>
+      <td>81</td>
+      <td>57</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>96</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>KDB</td>
+      <td>73</td>
+      <td>44</td>
+      <td>50</td>
+      <td>50</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>47</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>KDB</td>
+      <td>76</td>
+      <td>11</td>
+      <td>67</td>
+      <td>43</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>75</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>KDB</td>
+      <td>76</td>
+      <td>25</td>
+      <td>77</td>
+      <td>41</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>84</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>KDB</td>
+      <td>77</td>
+      <td>59</td>
+      <td>100</td>
+      <td>100</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>92</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>KDB</td>
+      <td>78</td>
+      <td>3</td>
+      <td>88</td>
+      <td>96</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>69</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>KDB</td>
+      <td>78</td>
+      <td>9</td>
+      <td>83</td>
+      <td>96</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>81</td>
+      <td>83</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>KDB</td>
+      <td>78</td>
+      <td>58</td>
+      <td>64</td>
+      <td>51</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>69</td>
+      <td>83</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>KDB</td>
+      <td>79</td>
+      <td>5</td>
+      <td>67</td>
+      <td>67</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>66</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>KDB</td>
+      <td>79</td>
+      <td>19</td>
+      <td>70</td>
+      <td>56</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>85</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>KDB</td>
+      <td>79</td>
+      <td>31</td>
+      <td>76</td>
+      <td>84</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>65</td>
+      <td>73</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>KDB</td>
+      <td>80</td>
+      <td>26</td>
+      <td>100</td>
+      <td>1</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>92</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>KDB</td>
+      <td>80</td>
+      <td>30</td>
+      <td>82</td>
+      <td>3</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>76</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>KDB</td>
+      <td>81</td>
+      <td>14</td>
+      <td>59</td>
+      <td>4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>69</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>KDB</td>
+      <td>81</td>
+      <td>20</td>
+      <td>80</td>
+      <td>6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>81</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>KDB</td>
+      <td>83</td>
+      <td>14</td>
+      <td>71</td>
+      <td>40</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>88</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>KDB</td>
+      <td>87</td>
+      <td>24</td>
+      <td>58</td>
+      <td>42</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>66</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>KDB</td>
+      <td>88</td>
+      <td>22</td>
+      <td>100</td>
+      <td>1</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>73</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>KDB</td>
+      <td>90</td>
+      <td>18</td>
+      <td>71</td>
+      <td>25</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>91</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>KDB</td>
+      <td>91</td>
+      <td>18</td>
+      <td>66</td>
+      <td>31</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>76</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>KDB</td>
+      <td>91</td>
+      <td>46</td>
+      <td>74</td>
+      <td>38</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>76</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>KDB</td>
+      <td>94</td>
+      <td>7</td>
+      <td>57</td>
+      <td>37</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>90</td>
+      <td>54</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Converting our data to fit the football map</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">1.2</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">0.8</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endX&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">1.2</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endY&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">0.8</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>player</th>
+      <th>minute</th>
+      <th>second</th>
+      <th>x</th>
+      <th>y</th>
+      <th>type</th>
+      <th>outcome</th>
+      <th>endX</th>
+      <th>endY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>KDB</td>
+      <td>45</td>
+      <td>0</td>
+      <td>60.0</td>
+      <td>40.0</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>48.0</td>
+      <td>34.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>KDB</td>
+      <td>45</td>
+      <td>25</td>
+      <td>75.6</td>
+      <td>38.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>90.0</td>
+      <td>66.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>4</td>
+      <td>88.8</td>
+      <td>46.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>85.2</td>
+      <td>52.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>7</td>
+      <td>91.2</td>
+      <td>54.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>114.0</td>
+      <td>62.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>55</td>
+      <td>120.0</td>
+      <td>0.8</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>115.2</td>
+      <td>30.4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>KDB</td>
+      <td>47</td>
+      <td>42</td>
+      <td>87.6</td>
+      <td>20.0</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>84.0</td>
+      <td>43.2</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>KDB</td>
+      <td>49</td>
+      <td>47</td>
+      <td>90.0</td>
+      <td>34.4</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>98.4</td>
+      <td>30.4</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>KDB</td>
+      <td>50</td>
+      <td>10</td>
+      <td>94.8</td>
+      <td>24.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>104.4</td>
+      <td>19.2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>KDB</td>
+      <td>50</td>
+      <td>17</td>
+      <td>98.4</td>
+      <td>41.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>111.6</td>
+      <td>54.4</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KDB</td>
+      <td>50</td>
+      <td>24</td>
+      <td>117.6</td>
+      <td>49.6</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>117.6</td>
+      <td>48.8</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KDB</td>
+      <td>55</td>
+      <td>22</td>
+      <td>36.0</td>
+      <td>9.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>26.4</td>
+      <td>19.2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>KDB</td>
+      <td>56</td>
+      <td>24</td>
+      <td>45.6</td>
+      <td>33.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>44.4</td>
+      <td>40.8</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>KDB</td>
+      <td>56</td>
+      <td>36</td>
+      <td>63.6</td>
+      <td>35.2</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>51.6</td>
+      <td>49.6</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>KDB</td>
+      <td>56</td>
+      <td>43</td>
+      <td>73.2</td>
+      <td>50.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>76.8</td>
+      <td>50.4</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>KDB</td>
+      <td>57</td>
+      <td>2</td>
+      <td>115.2</td>
+      <td>26.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>109.2</td>
+      <td>27.2</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>KDB</td>
+      <td>62</td>
+      <td>25</td>
+      <td>55.2</td>
+      <td>36.0</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>45.6</td>
+      <td>34.4</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>KDB</td>
+      <td>62</td>
+      <td>31</td>
+      <td>58.8</td>
+      <td>53.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>73.2</td>
+      <td>76.8</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>36</td>
+      <td>76.8</td>
+      <td>17.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>75.6</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>40</td>
+      <td>88.8</td>
+      <td>5.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>79.2</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>42</td>
+      <td>84.0</td>
+      <td>4.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>75.6</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>43</td>
+      <td>80.4</td>
+      <td>3.2</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>74.4</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>KDB</td>
+      <td>63</td>
+      <td>48</td>
+      <td>82.8</td>
+      <td>3.2</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>74.4</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>KDB</td>
+      <td>66</td>
+      <td>27</td>
+      <td>78.0</td>
+      <td>28.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>85.2</td>
+      <td>40.8</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>KDB</td>
+      <td>67</td>
+      <td>40</td>
+      <td>87.6</td>
+      <td>46.4</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>104.4</td>
+      <td>32.8</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>KDB</td>
+      <td>68</td>
+      <td>19</td>
+      <td>79.2</td>
+      <td>53.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>72.0</td>
+      <td>55.2</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>KDB</td>
+      <td>69</td>
+      <td>25</td>
+      <td>85.2</td>
+      <td>63.2</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>75.6</td>
+      <td>57.6</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>KDB</td>
+      <td>71</td>
+      <td>29</td>
+      <td>76.8</td>
+      <td>24.0</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>82.8</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>KDB</td>
+      <td>71</td>
+      <td>46</td>
+      <td>97.2</td>
+      <td>45.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>115.2</td>
+      <td>56.8</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>KDB</td>
+      <td>73</td>
+      <td>44</td>
+      <td>60.0</td>
+      <td>40.0</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>56.4</td>
+      <td>41.6</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>KDB</td>
+      <td>76</td>
+      <td>11</td>
+      <td>80.4</td>
+      <td>34.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>90.0</td>
+      <td>32.8</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>KDB</td>
+      <td>76</td>
+      <td>25</td>
+      <td>92.4</td>
+      <td>32.8</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>100.8</td>
+      <td>29.6</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>KDB</td>
+      <td>77</td>
+      <td>59</td>
+      <td>120.0</td>
+      <td>80.0</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>110.4</td>
+      <td>76.8</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>KDB</td>
+      <td>78</td>
+      <td>3</td>
+      <td>105.6</td>
+      <td>76.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>82.8</td>
+      <td>65.6</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>KDB</td>
+      <td>78</td>
+      <td>9</td>
+      <td>99.6</td>
+      <td>76.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>97.2</td>
+      <td>66.4</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>KDB</td>
+      <td>78</td>
+      <td>58</td>
+      <td>76.8</td>
+      <td>40.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>82.8</td>
+      <td>66.4</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>KDB</td>
+      <td>79</td>
+      <td>5</td>
+      <td>80.4</td>
+      <td>53.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>79.2</td>
+      <td>43.2</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>KDB</td>
+      <td>79</td>
+      <td>19</td>
+      <td>84.0</td>
+      <td>44.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>102.0</td>
+      <td>69.6</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>KDB</td>
+      <td>79</td>
+      <td>31</td>
+      <td>91.2</td>
+      <td>67.2</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>78.0</td>
+      <td>58.4</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>KDB</td>
+      <td>80</td>
+      <td>26</td>
+      <td>120.0</td>
+      <td>0.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>110.4</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>KDB</td>
+      <td>80</td>
+      <td>30</td>
+      <td>98.4</td>
+      <td>2.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>91.2</td>
+      <td>13.6</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>KDB</td>
+      <td>81</td>
+      <td>14</td>
+      <td>70.8</td>
+      <td>3.2</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>82.8</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>KDB</td>
+      <td>81</td>
+      <td>20</td>
+      <td>96.0</td>
+      <td>4.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>97.2</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>KDB</td>
+      <td>83</td>
+      <td>14</td>
+      <td>85.2</td>
+      <td>32.0</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>105.6</td>
+      <td>44.0</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>KDB</td>
+      <td>87</td>
+      <td>24</td>
+      <td>69.6</td>
+      <td>33.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>79.2</td>
+      <td>59.2</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>KDB</td>
+      <td>88</td>
+      <td>22</td>
+      <td>120.0</td>
+      <td>0.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>87.6</td>
+      <td>20.8</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>KDB</td>
+      <td>90</td>
+      <td>18</td>
+      <td>85.2</td>
+      <td>20.0</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>109.2</td>
+      <td>41.6</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>KDB</td>
+      <td>91</td>
+      <td>18</td>
+      <td>79.2</td>
+      <td>24.8</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>91.2</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>KDB</td>
+      <td>91</td>
+      <td>46</td>
+      <td>88.8</td>
+      <td>30.4</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>91.2</td>
+      <td>28.8</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>KDB</td>
+      <td>94</td>
+      <td>7</td>
+      <td>68.4</td>
+      <td>29.6</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>108.0</td>
+      <td>43.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># draw the pitch</span>
+<span class="n">pitch</span> <span class="o">=</span> <span class="n">Pitch</span><span class="p">(</span><span class="n">pitch_type</span><span class="o">=</span><span class="s1">&#39;statsbomb&#39;</span><span class="p">,</span> <span class="n">pitch_color</span><span class="o">=</span><span class="s1">&#39;#22312b&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;#c7d5cc&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pitch</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;#22312b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])):</span>
+    <span class="k">if</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;outcome&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Successful&#39;</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">],</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endX&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">]),(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">],</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endY&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">]),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">],</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">)</span>
+        <span class="c1"># Successful passes are in color cyan</span>
+    <span class="k">if</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;outcome&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Unsuccessful&#39;</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">],</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endX&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">]),(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">],</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endY&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">]),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">],</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+        <span class="c1"># Unsuccessful passes are in color red</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;KDB Pass Map vs TOT&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;KDB Pass Map vs TOT&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/23aa9d249b2174513e13d20927d9af1233404c85dc4e14bdea83983c4fbf8637.png" src="../../_images/23aa9d249b2174513e13d20927d9af1233404c85dc4e14bdea83983c4fbf8637.png" />
+</div>
+</div>
+<p>From here, we can find that most of successful passes are backward passes which are less likely to affect a goal, while about half of the passes are forward passes that are close to the box. Therefore, from here we can say that those forward passes have more impact to score a goal which contribute the most as an attack input to win. After doing some researches, these passes are called <a class="reference external" href="https://www.americansocceranalysis.com/home/2021/2/25/where-goals-come-from-the-five-progressive-passes">Progressive Paases</a>. Therefore, I need to clarrified those progressive passes by following this <a class="reference external" href="https://www.youtube.com/watch?v=kuD1yMwjCwE">Tutorial</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># see the passing distance to determine which passes are progressive pass.</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;beginning&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="mi">120</span><span class="o">-</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="mi">40</span><span class="o">-</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]))</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="mi">120</span> <span class="o">-</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endX&#39;</span><span class="p">])</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="mi">40</span><span class="o">-</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;endY&#39;</span><span class="p">]))</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;progressive&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;beginning&#39;</span><span class="p">][</span><span class="n">x</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">.75</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">beginning</span><span class="p">))]</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>player</th>
+      <th>minute</th>
+      <th>second</th>
+      <th>x</th>
+      <th>y</th>
+      <th>type</th>
+      <th>outcome</th>
+      <th>endX</th>
+      <th>endY</th>
+      <th>beginning</th>
+      <th>end</th>
+      <th>progressive</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>KDB</td>
+      <td>45</td>
+      <td>0</td>
+      <td>60.0</td>
+      <td>40.0</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>48.0</td>
+      <td>34.4</td>
+      <td>60.000000</td>
+      <td>72.217449</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>KDB</td>
+      <td>45</td>
+      <td>25</td>
+      <td>75.6</td>
+      <td>38.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>90.0</td>
+      <td>66.4</td>
+      <td>44.428819</td>
+      <td>39.961982</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>4</td>
+      <td>88.8</td>
+      <td>46.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>85.2</td>
+      <td>52.0</td>
+      <td>31.849647</td>
+      <td>36.810868</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>7</td>
+      <td>91.2</td>
+      <td>54.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>114.0</td>
+      <td>62.4</td>
+      <td>32.199379</td>
+      <td>23.189653</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>55</td>
+      <td>120.0</td>
+      <td>0.8</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>115.2</td>
+      <td>30.4</td>
+      <td>39.200000</td>
+      <td>10.733126</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;progressive&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>player</th>
+      <th>minute</th>
+      <th>second</th>
+      <th>x</th>
+      <th>y</th>
+      <th>type</th>
+      <th>outcome</th>
+      <th>endX</th>
+      <th>endY</th>
+      <th>beginning</th>
+      <th>end</th>
+      <th>progressive</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>7</td>
+      <td>91.2</td>
+      <td>54.4</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>114.0</td>
+      <td>62.4</td>
+      <td>32.199379</td>
+      <td>23.189653</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>KDB</td>
+      <td>46</td>
+      <td>55</td>
+      <td>120.0</td>
+      <td>0.8</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>115.2</td>
+      <td>30.4</td>
+      <td>39.200000</td>
+      <td>10.733126</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>KDB</td>
+      <td>67</td>
+      <td>40</td>
+      <td>87.6</td>
+      <td>46.4</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>104.4</td>
+      <td>32.8</td>
+      <td>33.026050</td>
+      <td>17.181385</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>KDB</td>
+      <td>71</td>
+      <td>46</td>
+      <td>97.2</td>
+      <td>45.6</td>
+      <td>Pass</td>
+      <td>Successful</td>
+      <td>115.2</td>
+      <td>56.8</td>
+      <td>23.477649</td>
+      <td>17.472264</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>KDB</td>
+      <td>83</td>
+      <td>14</td>
+      <td>85.2</td>
+      <td>32.0</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>105.6</td>
+      <td>44.0</td>
+      <td>35.707702</td>
+      <td>14.945233</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>KDB</td>
+      <td>90</td>
+      <td>18</td>
+      <td>85.2</td>
+      <td>20.0</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>109.2</td>
+      <td>41.6</td>
+      <td>40.137763</td>
+      <td>10.917875</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>KDB</td>
+      <td>94</td>
+      <td>7</td>
+      <td>68.4</td>
+      <td>29.6</td>
+      <td>Pass</td>
+      <td>Unsuccessful</td>
+      <td>108.0</td>
+      <td>43.2</td>
+      <td>52.637629</td>
+      <td>12.419340</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>As we can see, most the progressive passes that Kevin did are <strong>unsuccessful</strong> in the second half of this match.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualizing the progressive passes made by KDB</span>
+<span class="n">pitch</span> <span class="o">=</span> <span class="n">Pitch</span><span class="p">(</span><span class="n">pitch_type</span><span class="o">=</span><span class="s1">&#39;statsbomb&#39;</span><span class="p">,</span><span class="n">pitch_color</span><span class="o">=</span><span class="s1">&#39;#22312b&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;#c7d5cc&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">pitch</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;#22312b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+<span class="n">pitch</span><span class="o">.</span><span class="n">lines</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">df3</span><span class="o">.</span><span class="n">y</span><span class="p">,</span><span class="n">df3</span><span class="o">.</span><span class="n">endX</span><span class="p">,</span><span class="n">df3</span><span class="o">.</span><span class="n">endY</span><span class="p">,</span><span class="n">comet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x7fe204dc3650&gt;
+</pre></div>
+</div>
+<img alt="../../_images/717c5c56ec3119354168cf65f834642137144f9c0d02cf1639337c1f321e8bcd.png" src="../../_images/717c5c56ec3119354168cf65f834642137144f9c0d02cf1639337c1f321e8bcd.png" />
+</div>
+</div>
+<p>Therefore, not all passes are creating chances to score goals. Only progressive passes (like crossing) are the “key” passes. That’s why passes like backward passes have a negative impact on winning a match, since it has an opposite relation with goals.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>Overall, this project I did are basically analyzing the important facotrs contributing to win a match in Premier League. Scoring a goal is the key attacking input for winning. outfielder_block and goals_conceded are the key defending inputs for winning.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>Your code above should include references.  Here is some additional space for references.</p>
+<ul class="simple">
+<li><p>What is the source of your dataset(s)?</p></li>
+</ul>
+<p><a class="reference external" href="https://www.kaggle.com/datasets/zaeemnalla/premier-league?select=stats.csv">Data</a></p>
+<ul class="simple">
+<li><p>List any other references that you found helpful.</p></li>
+</ul>
+<p><a class="reference external" href="https://www.stlcitysc.com/news/soccer-stats-explained-progressive-passing">Prgressive Pass Def</a>
+<a class="reference external" href="https://www.youtube.com/watch?v=55k1mCRyd2k">Create a soccer pitch</a></p>
+</section>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h2>
+<p>Using the Share button at the top right, <strong>enable Comment privileges</strong> for anyone with a link to the project. Then submit that link on Canvas.</p>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=c163aa9f-e454-4344-b4d7-80ed3f1e3d79' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Proj/StudentProjects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="NicoleVuong.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Exploring Recidivism in Iowa</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="MingyangYi.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Men’s volleyball performances prediction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-cleaning-the-data">Importing and Cleaning the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#altair-chart-to-visualize-the-correlation">Altair Chart to Visualize the Correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-importance-contribute-to-wins">Factor Importance Contribute to Wins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearregression-model">LinearRegression Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passing-visualizing-map">Passing Visualizing Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
